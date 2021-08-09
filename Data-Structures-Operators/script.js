@@ -107,7 +107,7 @@ for (const item of menu) console.log(item);
    //entries saca el indice de cada uno.
   console.log(`${item[0] + 1}: ${item[1]}`); // esto es para que inicie como un menu desde uno y no desde 0;
  }*/
-//------------------FOR OF CON DESTRUGTURING----------------------------//
+//------------------FOR OF AND DESTRUGTURING----------------------------//
 for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`);
 }
@@ -142,7 +142,7 @@ console.log(0 && 'Dog'); // retorna 0 porque es el primer falsy value.
 console.log(7 && 'Dog'); // cuando los valores son truty , retorna Dog porque es el ultimo'
 console.log('Hello' && 23 && null && 'Dog'); // null = falsy value.
 
-//----------------------PRACTICAL EXAMPLE-------------------------------------//
+//-----------------PRACTICAL EXAMPLE WITH RESTAURANT OBJECT--------------------------//
 if (restaurant.orderPizza) {
   restaurant.orderPizza('mushroom', 'spinach');
 }
@@ -331,4 +331,33 @@ const g = arr3[0];
 const h = arr3[1];
 const i = arr3[2];
 
-const [x, y, z];
+const [x1, y1, z1] = arr3;
+console.log(x1, y1, z1); // 2 3 4
+console.log(arr3); //[2,3,4]
+
+let [main, secondary] = restaurant.categories;
+// si se quiere sacar el tercer elemento pero no el segundo se agraga el espacio vacio.
+console.log(main, secondary); //Italian pizzeria
+
+//SWITCHING VARIABLES
+const temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary); //Pizzeria Italian
+
+[main, secondary] = [secondary, main];
+console.log(main, secondary); //Italian Pizzeria
+
+//RECEIVE 2 RETURN VALUES FROM A FUNCTION
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse); //Garlic Bread Pizza
+
+//NESTED DESTRUCTURING
+const nested = [2, 4, [5, 6]];
+//const [i , , j] = nested2;
+const [i1, , [j, k]] = nested;
+console.log(i1, j, k); //2,5,6
+
+//DEFAULT VALUES
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r); //8 9 1
