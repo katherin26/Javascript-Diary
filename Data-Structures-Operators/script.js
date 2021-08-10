@@ -107,7 +107,25 @@ for (const item of menu) console.log(item);
    //entries saca el indice de cada uno.
   console.log(`${item[0] + 1}: ${item[1]}`); // esto es para que inicie como un menu desde uno y no desde 0;
  }*/
-//------------------FOR OF AND DESTRUGTURING----------------------------//
+
+//NOTE:ahora vamos a hacer un loop por todo el array y luego log to the console = ya sea que el restaurante este abierto o cerrado en cada uno de los dias.
+
+const days = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+for (const day of days) {
+  const open = restaurant.openingHours[day]?.open ?? 'Closed';
+  console.log(`Oh ${day}, We open at ${open}`);
+}
+/*
+Oh mon, We open at Closed
+Oh tue, We open at Closed
+Oh wed, We open at Closed
+Oh thu, We open at 12
+Oh fri, We open at 11
+Oh sat, We open at 0
+Oh sun, We open at Closed 
+*/
+
+//NOTE:------------------FOR OF AND DESTRUGTURING AND ENTRIES()----------------------------//
 for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`);
 }
@@ -121,6 +139,19 @@ console.log(guests); //10
 //NULLISH = NULL AND UNDEFINED (NOT 0 OR '')
 const guestCorrect = restaurant.numGuests ?? 10; // asigna el valor de la derecha si el valor de la izquierda es null or undefined
 console.log(guestCorrect); //0
+
+//NOTE: METHODS
+console.log(`METHODSSSSS`);
+console.log(restaurant.order?.(0, 1) ?? 'Method does not exist');
+console.log(restaurant.orderRisotto?.(0, 1) ?? 'Method does not exist');
+
+//NOTE:ARRAYS
+const users = [{ name: 'kat', email: 'Hello@kat.com' }];
+console.log(users[0]?.name ?? 'user array empty');
+//solo si existe users[0] toma su nombre .name y si no 'user array empty'
+//ANTERIORMENTE =
+//if(users.length > 0) console.log(user[0].name);
+//else console.log(('user array empty'));
 
 //NOTE:-----USE ANY DATA TYPE , RETURN ANY DATA TYPE , SHORT-CIRCUITING----//
 console.log('-----OR-----');
@@ -142,14 +173,14 @@ console.log(0 && 'Dog'); // retorna 0 porque es el primer falsy value.
 console.log(7 && 'Dog'); // cuando los valores son truty , retorna Dog porque es el ultimo'
 console.log('Hello' && 23 && null && 'Dog'); // null = falsy value.
 
-//-----------------PRACTICAL EXAMPLE WITH RESTAURANT OBJECT--------------------------//
+//TITTLE:-----------------PRACTICAL EXAMPLE WITH RESTAURANT OBJECT--------------------------//
 if (restaurant.orderPizza) {
   restaurant.orderPizza('mushroom', 'spinach');
 }
 restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
 restaurant.orderPizza('Mushrooms', 'Onios', 'Olives', 'Spinach');
 
-//NOTE:--------------------REST PATTERN AND PARAMETERS-----------------------------//
+//TITTLE:--------------------REST PATTERN AND PARAMETERS-----------------------------//
 //1) DESCTRUCTURING
 //NOTE:SPREAD , BECAUSE ON RIGHT SIDE OF =---------------------//
 
@@ -296,7 +327,44 @@ restaurant.orderDelivery({
   starterIndex: 1,
 }); // Order received!!!Bruschetta and Pizza will be delivered to Via del sol,21 at 20:00
 
-//NOTE:------------------------DESTRUCTURING OBJECTS----------------------------------//
+//TITTLE:------------------------LOOPING OBJECTS = KEYS,VALUES,ENTRIES------------------//
+
+//NOTE:1)PROPERTY NAMES
+const properties = Object.keys(openingHours);
+console.log(properties); //['thu','fri','sat']
+console.log(`We are open in ${properties.length} days`); //in 3 days
+for (const day of Object.keys(openingHours)) {
+  console.log(day); //thu,fri,sat
+}
+
+//NOTE:
+let openStr = `We are open on ${properties.length} days`;
+for (const day of properties) {
+  openStr += ` ${day},`;
+}
+console.log(openStr); //We are open on 3 days thu, fri, sat
+
+//NOTE:2)PROPERTY VALUES
+const values = Object.values(openingHours);
+console.log(values);
+
+/*//[{...}, {...},{...}]
+  0: {open:12, close:22}
+  1: {open:11, close:23}
+  2: {open:0, close:24}
+*/
+
+//NOTE:ENTIRE OBJECT, ENTRIES (NAME + VALUE)
+const entries = Object.entries(openingHours);
+console.log(entries); //[Array(2),Array(2),Array(2)] = Se transforma el object en un array donde esta el key and value.
+
+//NOTE:[KEY,VALUE] DESTRUCTURING
+for (const [key, { open, close }] of entries) {
+  console.log(key); //thu fri sat
+  console.log(`On ${key} we open at ${open} and close at ${close}`); //On thu we open at 12 and close at 22 etc...
+}
+
+//TITTLE:------------------------DESTRUCTURING OBJECTS----------------------------------//
 // // const { name, openingHours, categories } = restaurant;
 // // console.log(name, openingHours, categories);
 
