@@ -578,3 +578,87 @@ console.log([...question]); //unpacking // (7) [Array(2), Array(2), Array(2), A
 console.log(question.entries()); //MapIterator {"question" => "What is the best programming language in the world??", 1 => "C", 2 => "Java", 3 => "Javascript", "correct" => 3, …}
 console.log(...question.keys()); //spread //question 1 2 3 correct true false
 console.log(...question.values()); //spread // What is the best programming language in the world?? C Java Javascript 3 Correct!! Try again!!
+
+//NOTE: MORE MAP EXERCISES
+
+const countriesArr = [
+  { name: 'US', taxRate: 0.25 },
+  { name: 'France', taxRate: 0.4 },
+  { name: 'Sweden', taxRate: 0.5 },
+  { name: 'Colombia', taxRate: 0.1 },
+  { name: 'Peru', taxRate: 0.15 },
+];
+
+const usersMap = [
+  { country: 'US', salary: 100000 },
+  { country: 'US', salary: 90000 },
+  { country: 'US', salary: 30000 },
+  { country: 'US', salary: 80000 },
+  { country: 'US', salary: 34000 },
+  { country: 'US', salary: 55000 },
+  { country: 'France', salary: 100000 },
+  { country: 'France', salary: 90000 },
+  { country: 'France', salary: 30000 },
+  { country: 'France', salary: 80000 },
+  { country: 'France', salary: 34000 },
+  { country: 'France', salary: 55000 },
+];
+
+for (let user of usersMap) {
+  const salary = user.salary;
+  let taxRate;
+
+  for (let country of countriesArr) {
+    if (country.name === user.country) taxRate = country.taxRate;
+  }
+  const tax = salary * taxRate;
+  console.log(`Salary ${salary} in ${user.country} pays ${tax} in taxes`);
+}
+
+//NOTE: SOLUTION WITH OBJECTS
+
+const countriesObj = {
+  US: 0.25,
+  France: 0.4,
+  Sweden: 0.5,
+  Colombia: 0.1,
+  Peru: 0.15,
+};
+
+for (let user of users) {
+  const salary = user.salary;
+  const tax = salary * countriesObj[user.country];
+  console.log(`Salary ${salary} in ${user.country} pays ${tax} in taxes.`);
+}
+
+//NOTE: SOLUTION WITH MAPS
+
+//Way 1 to create and initialize a map
+
+const countriesMap = new Map([
+  ['US', 0.25],
+  ['France', 0.4],
+  ['Sweden', 0.5],
+  ['Colombia', 0.1],
+  ['Peru', 0.15],
+]);
+
+//NOTE:WAY 2 , USING MAP METHOD SET
+
+const countriesMap2 = new Map();
+countriesMap.set('US', 0.25);
+countriesMap.set('France', 0.4);
+countriesMap.set('Sweden', 0.5);
+countriesMap.set('Colombia', 0.1);
+countriesMap.set('Peru', 0.15);
+
+for (let user of users) {
+  const salary = user.salary;
+  const tax = salary * countriesMap2.get(user.country);
+  console.log(`Salary ${salary} in ${user.country} pays ${tax} in taxes`);
+}
+
+//ITERATION MAPS
+for (let [key, val] of countriesMap2) {
+  console.log(`Country ${key} has a tax rate of ${val}`);
+}
