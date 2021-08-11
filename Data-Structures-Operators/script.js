@@ -535,3 +535,46 @@ console.log(restMap); // 7: {Array(2) => "Test"} 8: {h1 => "Heading"}
 
 console.log(restMap.size); //9
 console.log(restMap.get(arr)); //test
+
+//NOTE: MAPS EXERCISES
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world??'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'Correct!!'],
+  [false, 'Try again!!'],
+]);
+console.log(question);
+
+//NOTE: CONVERT OBJECT TO MAP
+console.log(Object.entries(openingHours)); //(3) [Array(2), Array(2), Array(2)]
+const hoursMap = new Map(Object.entries(openingHours));
+console.log(hoursMap); //Map(3) {"thu" => {…}, "fri" => {…}, "sat" => {…}}
+
+//NOTE: ITERATION
+console.log(question.get('question')); // What is the best programming language in the world??
+
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}: ${value}`);
+}
+/* 
+Answer 1: C
+Answer 2: Java
+Answer 3: Javascript
+ */
+
+/*const answer = Number(prompt('You answer'));
+const answer = 3;
+console.log(answer);
+
+console.log(question.get(question.get('correct') === answer));*/
+
+console.log(`CONVERT MAP TO ARRAY`);
+//NOTE: CONVERT MAP TO ARRAY
+console.log([...question]); //unpacking // (7) [Array(2), Array(2), Array(2), Array(2), Array(2), Array(2), Array(2)]
+console.log(question.entries()); //MapIterator {"question" => "What is the best programming language in the world??", 1 => "C", 2 => "Java", 3 => "Javascript", "correct" => 3, …}
+console.log(...question.keys()); //spread //question 1 2 3 correct true false
+console.log(...question.values()); //spread // What is the best programming language in the world?? C Java Javascript 3 Correct!! Try again!!
