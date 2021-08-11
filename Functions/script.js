@@ -299,3 +299,39 @@ bookLX(45, 'Teodoro Lop'); //Teodoro Lop booked a seat on Swiss Air Lines flight
 const bookEW23 = book.bind(eurowings, 23); //The number was preset in the bind method.
 bookEW23('Kioro Mess'); //Kioro Mess booked a seat on Eurowings flight EW23
 bookEW23('Milk Mss'); //Milk Mss booked a seat on Eurowings flight EW23
+
+//NOTE: With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.buy')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+//{airline: "Lufthansa", iataCode: "LH", bookings: Array(4), planes: 300, book: ƒ, …}
+
+//NOTE: Partial Application = Preset Parameters
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(0.1, 200)); //220
+
+//null because we don't pass this keyword.
+const addVAT = addTax.bind(null, 0.23);
+//addVAT = value => value + value * 0.23
+
+console.log(addVAT(100)); //123
+console.log(addVAT(23)); //28.29
+
+//NOTE: FUNCTION CALLING A FUNCTION
+
+const addTaxRate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+};
+const addVAT2 = addTaxRate(0.23);
+console.log(addVAT2(100));
+console.log(addVAT2(23));
