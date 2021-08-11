@@ -16,6 +16,25 @@ const openingHours = {
     close: 24,
   },
 };
+/*
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri', 'sat', 'sun'];
+
+const openingHours = {
+  [weekdays[3]]: {
+    //thu{open:}
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [weekdays[5]]: {
+    open: 0,
+    close: 24,
+  },
+};
+*/
 
 const restaurant = {
   name: 'Classico Italiano',
@@ -429,3 +448,90 @@ console.log(i1, j, k); //2,5,6
 //DEFAULT VALUES
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r); //8 9 1
+
+//TITTLE:-----------------------------SETS----------------------------------------------//
+/*SET = es una coleccion de valores unicos , eso significa que un SET nunca puede tener un duplicado
+y esa cualidad lo hace unico en determinadas situaciones .
+Para escribir un new Set() ==> se debe pasar un Iterable.
+
+//NOTE: SET NO TIENE INDEX Y NO HAY MANERA DE SACAR VALUES
+*/
+
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSet); //Set(3) {'Pasta','Pizza','Risotto}
+console.log(new Set('Cat')); //Set(3) {"C", "a", "t"}
+
+//NOTE:SET SIZE =
+console.log(orderSet.size); //3
+
+//NOTE:SET HAS() ===> METHOD ===> SIMILAR TO INCLUDE IN ARRAYS.
+console.log(orderSet.has('Pizza')); //true
+console.log(orderSet.has('Bread')); //false
+
+//NOTE:SET ADD
+orderSet.add('Garlic Bread'); //Set(4) {'Pasta', 'Pizza', 'Risotto', 'Garlic Bread}
+orderSet.delete('Risotto'); //Set(3) {'Pasta','Pizza', 'Garlic Bread'}
+//orderSet.clear(); //set(0){}
+console.log(orderSet); //Set(3) {"Pasta", "Pizza", "Garlic Bread"}
+
+//NOTE:SET LOOP
+for (const order of orderSet) console.log(order); // Pasta Pizza Garlic Bread
+
+//NOTE:SET USOS = "Casi siempre se usa para remover duplicados"
+//EXAMPLE=
+
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+/*const staffUnique = new Set(staff);
+console.log(staffUnique);//Set(3) {'Waiter', 'Chef', 'Manager'}*/
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique); //(3) ["Waiter", "Chef", "Manager"]
+console.log(
+  new Set(['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter']).size
+); //3
+console.log(new Set('Katoc').size); //5
+
+//TITTLE:-----------------------------MAPS FUNDAMENTALS--------------------------------------------//
+//NOTE:Es una estructura de datos que podemos usar para asignar valores a keys.
+
+//NOTE:ASIGNACION
+
+const restMap = new Map();
+restMap.set('name', 'Classico Italiano');
+restMap.set(1, 'Firenze,Italy');
+console.log(restMap.set(2, 'Lisbon,portugal')); //Map(3) {"name" => "Classico Italiano", 1 => "Firenze,Italy", 2 => "Lisbon,portugal"}
+
+restMap
+  .set('Categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, `We are open =D`)
+  .set(false, `We are closed =(`);
+//llamar el set devuelve el map actualizado
+
+console.log(restMap.get('name')); // Classico Italiano
+console.log(restMap.get(true)); //We are open =D
+
+const time = 21;
+console.log(
+  restMap.get(time > restMap.get('open') && time < restMap.get('close')) //We are open =D
+);
+
+console.log(restMap.has('Categories')); //true
+restMap.delete(2);
+//rest.clear();
+
+const arr = [1, 2];
+restMap.set(arr, 'Test');
+restMap.set(document.querySelector('h1'), 'Heading');
+console.log(restMap); // 7: {Array(2) => "Test"} 8: {h1 => "Heading"}
+
+console.log(restMap.size); //9
+console.log(restMap.get(arr)); //test
