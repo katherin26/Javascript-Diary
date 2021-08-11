@@ -276,3 +276,26 @@ const flightData = [583, 'George Cooper'];
 
 //With Call() and Spread Operator
 book.call(swiss, ...flightData);
+
+//TITTLE:-------------------------------BIND METHOD------------------------------------//
+/*NOTE: Allows us to manually set this keyword for any function call , The difference is that 
+bind does not immediately call the function , instead it return a new function where this keyword 
+is bound, So it's set to whatever value we passenger into bind*/
+
+//Bind Method
+//book.call(eurowings, 23, 'Sarah Gorg');
+
+//this will not call the book function, insted it will return a new function.
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+const bookLX = book.bind(swiss);
+
+bookEW(23, 'Steven Washosky'); //Steven Washosky booked a seat on Eurowing flight EW23
+bookLH(30, 'Mon Lafer'); //Mon Lafer booked a seat on Lufthansa flight LH30
+bookLX(45, 'Teodoro Lop'); //Teodoro Lop booked a seat on Swiss Air Lines flight LX45
+
+//NOTE: Let's create a function for one specific airline and specific flight number.
+
+const bookEW23 = book.bind(eurowings, 23); //The number was preset in the bind method.
+bookEW23('Kioro Mess'); //Kioro Mess booked a seat on Eurowings flight EW23
+bookEW23('Milk Mss'); //Milk Mss booked a seat on Eurowings flight EW23
