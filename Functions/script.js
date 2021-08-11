@@ -207,3 +207,72 @@ asyncSum(5, 10, multiplyBy5);
 console.log('Do another thing 1');
 console.log('Do another thing 2');
 console.log('Do another thing 3');
+
+//TITTLE:----------------------------FUNCTIONS RETURNING FUNCTIONS-----------------------------------//
+
+//NOTE: closures = mechanism that's part of JS
+//NOTE: Our first function greet returned a new function that we stored into greeterHey variable
+const greet = function (greeting) {
+  return function (name) {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeterHey = greet('Hey');
+greeterHey('Pepe'); //Hey Pepe
+greeterHey('Steven'); //Hey Steven
+greet('Hello')('Tete'); //Hello Tete
+
+//NOTE:ARROW FUNCTION
+
+const greet2 = greeting => name2 => console.log(`${greeting} ${name2}`);
+
+greet2('Hi')('Toto'); //Hi Toto
+
+//TITTLE:--------------------------THE CALL AND APPLY METHODS--------------------------------//
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  //book:function() {}
+  book(flightNum, name) {
+    console.log(`${name} booked a seat on ${this.airline}
+    flight ${this.iataCode}${flightNum}`);
+    this.bookings.push({ flight: `${this.iataCode}${flightNum}`, name });
+  },
+};
+
+lufthansa.book(239, 'Pepesito Smech');
+lufthansa.book(635, 'Kouru kio');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+//NOTE: DOES NOT WORK
+//Book (23,'Sarah Williams);
+
+//NOTE: Call() Method.
+book.call(eurowings, 23, 'Sarah Gorg'); //Sarah Gorg booked a seat on Eurowings flight EW23
+book.call(lufthansa, 239, 'Mary Cooper'); //Mary Cooper booked a seat on Lufthansa flight LH239
+
+const swiss = {
+  airline: 'Swiss Air Lines',
+  iataCode: 'LX',
+  bookings: [],
+};
+
+book.call(swiss, 583, 'Mary Cooper Sister'); //Mary Cooper Sister booked a seat on Swiss Air Lines flight LX583
+
+//NOTE: Apply() Method ==> Old way
+const flightData = [583, 'George Cooper'];
+// book.apply(swiss, flightData); //George Cooper booked a seat on Swiss Air Lines flight LX583
+
+//With Call() and Spread Operator
+book.call(swiss, ...flightData);
