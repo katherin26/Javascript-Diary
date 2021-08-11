@@ -662,3 +662,74 @@ for (let user of users) {
 for (let [key, val] of countriesMap2) {
   console.log(`Country ${key} has a tax rate of ${val}`);
 }
+
+//TITTLE:-----------------SOURCES OF DATA ----------------------------//
+
+/*FROM THE PROGRAM ITSELF = data written directly in source code (e.g status message).
+
+FROM THE UI = Data input from the user or data written in DOM (e.g tasks in todo app).
+
+FROM EXTERNAL SOURCES : Data fetched for example from web API (e.g recipe objects).
+
+collection of data ===> Data structure
+
+simple list === > Arrays or Sets
+Key / value pairs?? ===> Objects or Maps
+
+OTHER BUILT-IN
+weakMap
+WeakSet
+
+NON-BUILT IN =
+stacks
+queues
+ Linked lists
+Tress
+Hash tables*/
+
+//TITTLE:----------------------ARRAYS VS SETS AND OBJECTS VS MAPS-----------------------//
+
+/*
+
+NOTE: ARRAYS =
+
+tasks = ['Code','Eat','Code'];
+["code","Eat", "Code"];
+
+-Use when your need ordered list of values (might contain duplicates)
+-Use when you need to manipulate data  
+
+NOTE: SETS = 
+tasks = new Set(['code','Eat','Code']);
+{"code","Eat"}
+
+-Use when you need to work with unique values
+-Use when high-performance is really important (Operaciones como buscar un elemento o eliminar un elemento del set puede ser 10 vecez mas rapido que en array ).
+-Use to remove duplicates from arrays.
+
+//Set no reemplaza a un array solo lo complementa
+
+OBJECTS =
+task = {
+  task: 'Code',
+  date: 'Today',
+  repeat: true
+};
+
+-More "traditional" Key/Value store ("abused" objects)
+-Easier to write and access values with . and [].
+
+
+NOTE: MAPS=
+task = new Map([
+  ['Task','Code'],
+  ['Date','Today'],
+  [false,'Start coding!!']
+]);
+
+-Better Performance 
+-Keys can have any data type
+-Easy to iterate 
+-Easy to compute size 
+
+*/
