@@ -194,7 +194,6 @@ const gameEvents = new Map([
   [92, 'Yellow Card'],
 ]);
 
-console.log(`SOLUTIONSSSS`);
 //1)
 const event = [...new Set(gameEvents.values())];
 console.log(event); //(4) ["GOAL", "Substitution", "Yellow Card", "Red Card"]

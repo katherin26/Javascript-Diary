@@ -667,7 +667,7 @@ for (let [key, val] of countriesMap2) {
 
 /*FROM THE PROGRAM ITSELF = data written directly in source code (e.g status message).
 
-FROM THE UI = Data input from the user or data written in DOM (e.g tasks in todo app).
+FROM THE UI = Data input from tdehe user or data written in DOM (e.g tasks in todo app).
 
 FROM EXTERNAL SOURCES : Data fetched for example from web API (e.g recipe objects).
 
