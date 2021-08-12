@@ -826,3 +826,94 @@ console.log(announcement.replace(/door/g, 'gate')); //All passengers come to boa
 const emailRegex = /\w+@\w+\.\w{3}/;
 let email1 = 'cat@gooogle.com';
 console.log(emailRegex.test(email1)); //true
+
+//NOTE:--------------------------------BOOLEANS-------------------------------------//
+const planes = 'A320neo';
+console.log(planes.includes('A320')); //true;
+console.log(planes.includes('BOeing')); //false
+console.log(planes.includes('neo')); //true
+console.log(planes.startsWith('A3')); //true
+
+if (planes.startsWith('A') && planes.endsWith('neo')) {
+  console.log('Part of the NEW AirBus Family');
+} else {
+  console.log('Sorry!');
+}
+
+//Part of the NEW AirBus Family
+
+//TITTLE:-----------------------------------BASIC EXERCISE-----------------------------------//
+
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log(`You are NOT allowed on board!!`);
+  } else {
+    console.log(`Welcome a board!!`);
+  }
+};
+
+checkBaggage(`I have a laptop, some food and a pocket Knife.`); // You are NOT allowed on board!!
+checkBaggage(`Socks and camera`); // Welcome a board!!
+checkBaggage(`Got some snacks and a *gun* for protection`); //You are NOT allowed on board!!
+
+//TITTLE:----------------------------WORKING WITH STRING PART 3-------------------------------//
+
+//NOTE: SPLIT
+console.log('a+very+nice+string'.split('+')); //[ 'a', 'very', 'nice', 'string' ]
+
+//NOTE: SPLIT AND DESTRUCTURING
+console.log('Catand Dog'.split(' ')); // ["Catand", "Dog"]
+
+const [firstName, lastName] = 'Catand Dog'.split(' ');
+console.log(firstName, lastName); //Catand Dog
+
+//NOTE: usando join() unimos todo el array .
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName);
+
+//NOTE: CAPITALIZE NAME AND SPLIT
+
+const capitalizeName = function (name) {
+  const names = name.split(' ');
+  const namesUpper = [];
+
+  for (const n of names) {
+    //namesUpper.push(n[0].toUpperCase() + n.slice(1));
+    namesUpper.push(n.replace(n[0], n[0].toUpperCase()));
+  }
+  console.log(namesUpper.join(' '));
+};
+
+capitalizeName('rock scissors paper'); //Rock Scissors Paper
+capitalizeName('cat and dog'); //Cat And Dog
+
+//NOTE: PADDING A STRING = Add a number of characters to the string.
+
+const message = 'Go to gate 23';
+console.log(message.padStart(20, '+').padEnd(30, '+')); //++++++Go to gate 23!++++++++++
+console.log('Queen'.padStart(20, '+').padEnd(30, '+')); //+++++++++++++++Queen++++++++++
+
+//NOTE: CREDIT CARD NUMBER WITH padStart()
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+console.log(maskCreditCard(542511452215444)); //***********5444
+console.log(maskCreditCard(454548444455884)); //***********5884
+
+//NOTE: REPEAT METHOD
+
+const message2 = 'Bad weather... All departures delayed...';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'***'.repeat(n)}`);
+};
+
+planesInLine(5); //***************
+planesInLine(4); //************
