@@ -733,3 +733,96 @@ task = new Map([
 -Easy to compute size 
 
 */
+
+//TITTLE:----------------------WORKING WITH STRING-----------------------//
+
+const airline = 'TAPo Air Moon';
+const plane = 'A320';
+
+console.log(plane[0]); //A
+console.log(plane[1]); //3
+console.log(plane[2]); //2
+console.log(plane[3]); //0
+
+console.log('B737'[0]); //B
+console.log(airline.length); //13
+console.log('B737'.length); //4
+
+console.log(airline.indexOf('o')); //3
+console.log(airline.lastIndexOf('o')); //11
+console.log(airline.indexOf('Air')); //5
+
+console.log(airline.slice(4)); //Air Moon
+console.log(airline.slice(2)); //Po Air Moon
+console.log(airline.slice(4, 7)); //Ai
+console.log(airline.slice(0, airline.indexOf(' '))); //TAPo
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); //Moon
+console.log(airline.slice(-2)); //on
+console.log(airline.slice(1, -1)); //APo Air Moo
+
+console.log(typeof new String('at')); //===> Object
+
+//NOTE: -----------------------------BASIC EXERCISE------------------------------------//
+
+const checkMiddleSeat = function (seat) {
+  //B AND E ARE MIDDLE SEATS
+
+  const userSeat = seat.slice(-1);
+  if (userSeat === 'B' || userSeat === 'E')
+    console.log('You got the middle seat!!');
+  else console.log('You got lucky!!');
+};
+
+checkMiddleSeat('11B'); //You got the middle seat!!
+checkMiddleSeat('23C'); //script.js:773 You got lucky!!
+checkMiddleSeat('3E'); // You got the middle seat!!
+
+//NOTE:---------------------------------------------------------------------------------//
+
+console.log(airline.toLowerCase()); // tapo air moon
+console.log(airline.toUpperCase()); // TAPO AIR MOON
+
+//NOTE: CAPITALIZACION IN NAME
+
+const passenger = 'tOffIe';
+const passengerLower = passenger.toLowerCase();
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect); //Toffie
+
+//NOTE: COMPARING hello@hello.@hello.@hello.
+const email = 'hello@hello.com';
+const loginEmail = 'HellO@Hello.com\n';
+//const lowerEmail = loginEmail.toLowerCase();
+//const trimmedEmail = lowerEmail.trim();
+//console.log(trimmedEmail);//hello@hello.com
+
+const normalizeEmail = loginEmail.toLocaleLowerCase().trim();
+console.log(normalizeEmail);
+//console.log(email === normalizedEmail);//true
+
+function isEmail(arg1, arg2) {
+  return arg1 === arg2;
+}
+console.log(isEmail(email, normalizeEmail)); //true
+
+//NOTE:-----------------------------------REPLACING--------------------------------//
+
+//NOTE: REPLACE
+
+const priceGB = '288,97£';
+const priceUS = priceGB.replace('£', '$').replace(',', '.');
+console.log(priceUS); //288.97$
+
+//NOTE: REPLACE ALL
+const announcement = `All passengers come to boarding door 23 . Boarding door 23!`;
+console.log(announcement.replaceAll('door', 'gate')); //All passengers come to boarding gate 23 , Boarding gate 23!
+
+//NOTE:---------------FIXED THE PROBLEM WITH REGULAR EXPRESSION---------------------//
+
+console.log(announcement.replace(/door/g, 'gate')); //All passengers come to boarding gate 23 . Boarding gate 23!
+
+//NOTE:USING REGEX
+const emailRegex = /\w+@\w+\.\w{3}/;
+let email1 = 'cat@gooogle.com';
+console.log(emailRegex.test(email1)); //true
