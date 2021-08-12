@@ -164,3 +164,58 @@ Gnarby: 1
 Hummels: 1
 Lewandowski: 2  
 */
+
+//TITTLE:--------------------------CONTINUE WITH THE FOOTBALL BETTING APP------------------------------//
+
+/*This time , we have a map with a log of the events that happened during the game. 
+The values are the events themselves , and the keys are the minutes in which each 
+event happened (a football game has 90 minutes plus some extra time).
+
+1.Create an array 'events' of the different game events that happened (no duplicates).
+2.After the game has finished , is was found that the yellow card from minute 64 was unfair . 
+So remove this event from the game event log.
+3.Print the following string to the console; : "An event happened , on average , every 9 minutes" 
+(keep in mind that a game has 90 minutes)
+4.Loop over the events and log them to the console , marking whether it's in the first half or 
+second half (after 45 min) of the game , like this:
+     [FIRST HALF] 17 : GOAL*/
+
+const gameEvents = new Map([
+  [17, 'GOAL'],
+  [36, 'Substitution'],
+  [47, 'GOAL'],
+  [61, 'Substitution'],
+  [64, 'Yellow Card'],
+  [69, 'Red Card'],
+  [70, 'Substitution'],
+  [72, 'Substitution'],
+  [76, 'GOAL'],
+  [80, 'GOAL'],
+  [92, 'Yellow Card'],
+]);
+
+console.log(`SOLUTIONSSSS`);
+//1)
+const event = [...new Set(gameEvents.values())];
+console.log(event); //(4) ["GOAL", "Substitution", "Yellow Card", "Red Card"]
+
+//2)
+gameEvents.delete(64);
+
+//3)
+const times = [...gameEvents.keys()].pop();
+console.log(times);
+
+/*[
+  17, 36, 47, 61, 69,
+  70, 72, 76, 80, 92
+]  --- when we added pop() // 92 que es el ultimo minuto del partido*/
+console.log(
+  `An event happend, on average ,every ${times / gameEvents.size} minutes` //92/10
+);
+
+//4)
+for (const [min, value] of gameEvents) {
+  const half = min <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`${half} [HALF] ${min}: ${event}`);
+}
