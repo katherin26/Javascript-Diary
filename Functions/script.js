@@ -486,6 +486,8 @@ booker(); //1 passengers
 booker(); //2 passengers
 booker(); //3 passengers
 
+console.dir(booker); //ƒ anonymous()
+
 /*booker() , was in fact able to increment the passengerCount
 We can say that a closure makes a function remenber all the variables that existed
 at the functions birthplace essentially.*/
@@ -496,3 +498,52 @@ It was born in the execution context of secure booking which was popped on the s
 So therefore the Booker function will get access to this variable enviroment which contains the
 passengerCount Variable And this is how the function will be able to read and manipulate the passengerCount
 variable and so it's this connection that we call closure.*/
+
+//TITTLE: ----------------------------MORE CLOSURE EXAMPLES-------------------------------------------//
+
+//NOTE: EXAMPLE 1 =
+
+//NOTE: EMPTY VARAIBLE
+
+let f;
+
+//NOTE: FUNCTION EXPRESSION
+
+const g = function () {
+  const a = 23;
+  f = function () {
+    console.log(a * 2); //46
+  };
+};
+
+const h = function () {
+  const b = 777;
+  f = function () {
+    console.log(b * 2); //1554
+  };
+};
+
+//console.dir(f) =====> closure is a:23
+g();
+f();
+
+//Re-assigning f functions
+//console.dir(f) =====> closure is b:777
+h();
+f();
+
+//NOTE: EXAMPLE 2 =
+
+const boardPassengers = function (n, wait) {
+  const perGroup = n / 3;
+
+  setTimeout(function () {
+    console.log(`We are now boarding all ${n} passengers`);
+    console.log(`There are 3 groups, each with ${perGroup} passengers`);
+  }, wait * 1000);
+
+  console.log(`Will start boarding in ${wait} seconds`);
+};
+
+boardPassengers(180, 3); // Will start boarding in 3 seconds
+//There are 3 groups, each with 60 passengers
