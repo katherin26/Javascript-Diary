@@ -420,3 +420,33 @@ document
 
 poll.displayResults.call({ answers: [5, 2, 3] }, 'string'); //Poll results are 5, 2, 3
 poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string'); //Poll results are 1, 5, 3, 9, 6, 1
+
+//TITTLE: ------------------IMMEDIATELY INVOKED FUNCTION EXPRESSIONS(IIFE)-----------------------------//
+
+/*sometimes we need a function that is only executed once and then never again , so basically a function
+that disappears right after it's called once,   */
+
+//NOTE: normal function
+const runOnce = function () {
+  console.log('This will never run again');
+};
+
+runOnce();
+
+//NOTE: IIFE
+//NOTE: FUNCTION EXPRESSION = Without assigning it to any variable.
+
+(function () {
+  console.log(
+    'This will never run again'
+  ); /*if we try to run this , we will get an error for now!!
+  However , we can still trick Javascript into thinking that this is just an expression, and we do 
+  that by simply wrapping all of this into parentheses*/
+})(); //() = We can inmidiately call it and so with this , we will get now this text here locked to the console.
+
+//NOTE: ARROW FUNCTION
+
+(() => console.log('This will ALSO never run again'))(); //wrapping all of this into parentheses
+
+//NOTE: DATA ENCAPSULATION AND DATA PRIVACY
+//All data defined inside a scope is private, this data is encapsulated inside of this function scope
