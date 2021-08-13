@@ -423,8 +423,14 @@ poll.displayResults.call({ answers: [1, 5, 3, 9, 6, 1] }, 'string'); //Poll resu
 
 //TITTLE: ------------------IMMEDIATELY INVOKED FUNCTION EXPRESSIONS(IIFE)-----------------------------//
 
-/*sometimes we need a function that is only executed once and then never again , so basically a function
+/*Sometimes we need a function that is only executed once and then never again , so basically a function
 that disappears right after it's called once,   */
+
+//NOTE: DATA ENCAPSULATION AND DATA PRIVACY
+/*All data defined inside a scope is private, this data is encapsulated inside of this function scope
+So many times we actually need to protect our variables from being accidentally overwritten by some other
+parts of the program or even with external scripts or libraries,keep in mind that it's important to hide
+variables and that scopes are a good tool for doing this.*/
 
 //NOTE: normal function
 const runOnce = function () {
@@ -448,5 +454,45 @@ runOnce();
 
 (() => console.log('This will ALSO never run again'))(); //wrapping all of this into parentheses
 
-//NOTE: DATA ENCAPSULATION AND DATA PRIVACY
-//All data defined inside a scope is private, this data is encapsulated inside of this function scope
+//NOTE: BLOCK SCOPE ES6 = let and const create their own scope inside a  block .
+
+{
+  //const isPrivate = 23;
+  var notPrivate = 46;
+}
+
+//console.log(isPrivate); //We cannot acces this variable
+console.log(notPrivate); // Is accecible //46
+
+//TITTLE: ---------------------------------CLOSURES-------------------------------------//
+/*
+closure is not a feature that we explicitly use , we don't create closures manually like we create
+a new array or a new function ,So a closure simply happens automatically in certain situations ,We jus need
+to recognize those situations .
+*/
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(`${passengerCount} passengers`);
+  };
+};
+
+const booker = secureBooking();
+
+booker(); //1 passengers
+booker(); //2 passengers
+booker(); //3 passengers
+
+/*booker() , was in fact able to increment the passengerCount
+We can say that a closure makes a function remenber all the variables that existed
+at the functions birthplace essentially.*/
+
+/*NOTE: Any function always has access to the variable enviroment of the execution
+context in which the function was created. In the case of Booker , this function was created
+It was born in the execution context of secure booking which was popped on the stack previously,
+So therefore the Booker function will get access to this variable enviroment which contains the
+passengerCount Variable And this is how the function will be able to read and manipulate the passengerCount
+variable and so it's this connection that we call closure.*/
