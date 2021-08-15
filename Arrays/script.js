@@ -1,3 +1,4 @@
+'use strict';
 //TITTLE: --------------------------------METHODS--------------------------------------//
 let arr = ['a', 'b', 'c', 'd', 'e'];
 
@@ -86,3 +87,48 @@ loop at all. ForEach will always loop over the entire array .
 
 If you need to break out of a loop then you have to keep isong the for of loop
 */
+
+//TITTLE: FOREACH WITH MAPS AND SETS
+
+/*NOTE: This is an array of arrays and this inner array will be one entry of the map ,
+where this 'USD' is the key and 'United States dollar' is the value , and so we can call forEach also on 
+a map.*/
+
+//NOTE: MAP AND FOREACH
+
+const currencies = new Map([
+  ['USD', 'United States dollar'],
+  ['EUR', 'Euro'],
+  ['GBP', 'Pound sterling'],
+]);
+
+currencies.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});
+
+/*
+USD: United States dollar
+EUR: Euro
+GBP: Pound sterling*/
+
+//NOTE: SET AND FOREACH
+
+const currenciesUnique = new Set(['USD', 'GBP', 'USD', 'EUR', 'EUR']);
+console.log(currenciesUnique); //Set(3) {"USD", "GBP", "EUR"}
+
+/*currenciesUnique.forEach(function (value, key, map) {
+  console.log(`${key}: ${value}`);
+});*/
+
+currenciesUnique.forEach(function (value, _value, map) {
+  console.log(`${value}: ${value}`);
+});
+/*
+USD: USD
+GBP: GBP
+EUR: EUR
+*/
+
+/*The key is exactly the same as the value = Well , a set doesn't have keys and it doesn't have indexes
+either and so there is no value that would make sense for the  key , so essentially this key here makes no
+sense at all */
