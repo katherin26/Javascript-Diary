@@ -50,22 +50,27 @@ console.log(letters.join('-')); // a-b-c-d-f-g-h-i-j
 //what to do.
 //forEach loop over the array and in each iteration it will execute this callback function.
 //Also as the forEach method calls this callback function in each iteration it will pass in the current element
-//of the array as an argument
+//It's a lot easier of the array as an argument to get access to the current index, We can specify them in our
+//parameter list
+
 const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-/*for (const movement of movements) {
-    if (movement > 0) {
-        console.log(`You deposited ${movement}`);
-      } else {
-        console.log(`You withdrew ${Math.abs(movement)}`); //Math.abs() remove the sign
-      }
-}*/
-
-movements.forEach(function (movement) {
+//for (const movement of movements) {
+for (const [i, movement] of movements.entries()) {
+  //entries return an array of arrays
   if (movement > 0) {
-    console.log(`You deposited ${movement}`);
+    console.log(`Movement ${i + 1}: ,You deposited ${movement}`);
   } else {
-    console.log(`You withdrew ${Math.abs(movement)}`); //Math.abs() remove the sign
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`); //Math.abs() remove the sign
+  }
+}
+
+movements.forEach(function (movement, i, arr) {
+  //current element,current index ,entire array
+  if (movement > 0) {
+    console.log(`Movement ${i + 1}: ,You deposited ${movement}`);
+  } else {
+    console.log(`Movement ${i + 1}: You withdrew ${Math.abs(movement)}`); //Math.abs() remove the sign
   }
 });
 
@@ -73,3 +78,11 @@ movements.forEach(function (movement) {
 //in iteration 1: function(450)
 //in iteration 2: function(400)
 //....
+
+//NOTE: When should you use forEach and for of =
+/*
+1) You cannot break out of the  forEach Loop, So the continue and break statements do not work in a forEach
+loop at all. ForEach will always loop over the entire array .
+
+If you need to break out of a loop then you have to keep isong the for of loop
+*/
