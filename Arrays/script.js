@@ -179,7 +179,7 @@ checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
 
 //TITTLE:------------------DATA TRANSFORMATIONS : MAP , FILTER , REDUCE---------------------------------//
 
-NOTE: /*MAP = The map method is another method that we can use to loop over arrays, so map is similar
+/*MAP = The map method is another method that we can use to loop over arrays, so map is similar
 to the forEach method but with the difference that map creates a  new array based on the original array.
 So essentially the map method takes an array, loops over that array and in each iteration it applies a callBack
 function  that we specify on our code to the current array element.
@@ -192,7 +192,7 @@ MAP = current * 2 ======> [6,2,8,6,4] = map returns a new array containing the r
 on all original array elements.
 */
 
-NOTE:/*FILTER =  Is used to filter elements in the original array which satisfy a certain condition
+/*FILTER =  Is used to filter elements in the original array which satisfy a certain condition
 
 Example = So in this example we are only looking for elements greater than two , so all the elements that 
 pass the test that we specified will make it into a new filtered array, In other words elements for which the 
@@ -205,7 +205,7 @@ FILTER = current > 2 ======> [3,4,3] = filter returns a new array containing the
 specified test condition.
 */
 
-NOTE: /*REDUCE = An example of this can be to add all the elements of an array together 
+/*REDUCE = An example of this can be to add all the elements of an array together 
 
 acc = Accumulator variable 
 -- then as the reduce method loops over the array it keeps adding the current element
@@ -216,3 +216,44 @@ into the accumulator until at the end of the loop we have the total sum of all t
 REDUCE = ======> = Reduce boils ("reduces") all array elements down to one single value (e.g adding all elements
   together)
 */
+
+//TITTLE: ----------------------------------THE MAP METHOD----------------------------------------------//
+
+//NOTE: LINE 57 ARRAY MOVEMENTS
+
+const eurToUsd = 1.1;
+
+/*const movementsUSD = movements.map(function (mov) {
+  return mov * eurToUsd;
+});*/
+
+const movementsUSD = movements.map(mov => mov * eurToUsd);
+
+console.log(movements);
+console.log(movementsUSD);
+
+//NOTE: Solution with for of === > Here we simply loop over one array and then manually create a new one.
+const movementUSDfor = [];
+for (const mov of movements) movementUSDfor.push(mov * eurToUsd);
+console.log(movementUSDfor);
+
+//NOTE: ARROW FUNCTION , MAP AND RETURNIG VALUES
+/*const movementsDescriptions = movements.map((mov, i, arr) => {
+  if (mov > 0) {
+    return `Movement ${i + 1}: You deposited ${mov}`;
+  } else {
+    return `Movement ${i + 1}: You withDrew ${Math.abs(mov)}`;
+  }
+});*/
+
+const movementsDescriptions = movements.map(
+  (mov, i) =>
+    `Movement ${i + 1}: You ${mov > 0 ? 'deposited' : 'Withdrew'} ${Math.abs(
+      mov
+    )}`
+);
+
+console.log(movementsDescriptions);
+/*8) ["Movement 1: You deposited 200", "Movement 2: You deposited 450",
+ "Movement 3: You withDrew 400", "Movement 4: You deposited 3000", "Movement 5: You withDrew 650", 
+ "Movement 6: You withDrew 130", "Movement 7: You deposited 70", "Movement 8: You deposited 1300"] */
