@@ -88,7 +88,7 @@ loop at all. ForEach will always loop over the entire array .
 If you need to break out of a loop then you have to keep isong the for of loop
 */
 
-//TITTLE: FOREACH WITH MAPS AND SETS
+//TITTLE: ----------------------FOREACH WITH MAPS AND SETS----------------------------------------------//
 
 /*NOTE: This is an array of arrays and this inner array will be one entry of the map ,
 where this 'USD' is the key and 'United States dollar' is the value , and so we can call forEach also on 
@@ -176,3 +176,43 @@ function checkDogs(dogsJulia, dogsKate) {
 
 checkDogs([3, 5, 2, 12, 7], [4, 1, 15, 8, 3]);
 checkDogs([9, 16, 6, 8, 3], [10, 5, 6, 1, 4]);
+
+//TITTLE:------------------DATA TRANSFORMATIONS : MAP , FILTER , REDUCE---------------------------------//
+
+NOTE: /*MAP = The map method is another method that we can use to loop over arrays, so map is similar
+to the forEach method but with the difference that map creates a  new array based on the original array.
+So essentially the map method takes an array, loops over that array and in each iteration it applies a callBack
+function  that we specify on our code to the current array element.
+
+Example = in this array we say that each element should be multiplied by two
+
+1) original array = [3,1,4,3,2]
+
+MAP = current * 2 ======> [6,2,8,6,4] = map returns a new array containing the results of applying an operation
+on all original array elements.
+*/
+
+NOTE:/*FILTER =  Is used to filter elements in the original array which satisfy a certain condition
+
+Example = So in this example we are only looking for elements greater than two , so all the elements that 
+pass the test that we specified will make it into a new filtered array, In other words elements for which the 
+condition is true will be included in a new array that the filter method returns, all other elements will
+get filtered out so they will not be included in the new array
+
+2) original array = [3,1,4,3,2];
+
+FILTER = current > 2 ======> [3,4,3] = filter returns a new array containing the array elements that passed a 
+specified test condition.
+*/
+
+NOTE: /*REDUCE = An example of this can be to add all the elements of an array together 
+
+acc = Accumulator variable 
+-- then as the reduce method loops over the array it keeps adding the current element
+into the accumulator until at the end of the loop we have the total sum of all the elements
+
+3) original array = [3,1,4,3,2] ===> acc + current = 13
+
+REDUCE = ======> = Reduce boils ("reduces") all array elements down to one single value (e.g adding all elements
+  together)
+*/
