@@ -257,3 +257,83 @@ console.log(movementsDescriptions);
 /*8) ["Movement 1: You deposited 200", "Movement 2: You deposited 450",
  "Movement 3: You withDrew 400", "Movement 4: You deposited 3000", "Movement 5: You withDrew 650", 
  "Movement 6: You withDrew 130", "Movement 7: You deposited 70", "Movement 8: You deposited 1300"] */
+
+//TITTLE: -------------------------COMPUTING USERNAMES--------------------------------//
+
+/* 
+const user = 'Steven Thomas Williams'; //stw
+const username = user
+  .toLocaleLowerCase()
+  .split(' ')
+  .map(
+    function(name){
+      return name[0];
+    })
+  .join('');
+console.log(username);
+*/
+
+const user = 'Steven Thomas Williams'; //stw
+const username = user
+  .toLocaleLowerCase()
+  .split(' ')
+  .map(
+    name => name[0] //return the first letter
+  )
+  .join('');
+//console.log(username);
+//(3) ["steven", "thomas", "williams"]
+//(3) ["s", "t", "w"]
+//stw
+
+//NOTE: DATA FOR COMPUTING USERNAMES EXERCISE AND FOR EACH
+
+console.log(`dataaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa`);
+const account1 = {
+  owner: 'Cat Dog',
+  movements: [800, 480, -600, 8000, -250, -230, 90, 1500],
+  interestRate: 5.2,
+  pin: 1254,
+};
+
+const account2 = {
+  owner: 'Hot Dog',
+  movements: [9000, 8400, -450, -990, -8210, -4000, 500, -70],
+  interestRate: 5.5,
+  pin: 6254,
+};
+
+const accounts = [account1, account2];
+
+const createUserNames = function (accs) {
+  accs.forEach(function (acc) {
+    acc.username = acc.owner
+      .toLowerCase()
+      .split(' ')
+      .map(name => name[0]) //return the first letter.
+      .join('');
+  });
+};
+
+createUserNames(accounts); // username: "cd" , username: "hd"
+console.log(accounts);
+
+//TITTLE: -------------------------THE FILTER METHOD--------------------------------//
+/*Only the values that pass the condition will then make it into the new array*/
+//NOTE: movements line 57
+
+const deposits = movements.filter(function (mov) {
+  return mov > 0;
+});
+
+console.log(deposits); //(5) [200, 450, 3000, 70, 1300]
+
+//WITH FOR OF LOOP
+
+const depositsFor = [];
+for (const mov of movements) if (mov > 0) depositsFor.push(mov);
+console.log(depositsFor); //(5) [200, 450, 3000, 70, 1300]
+
+const withdrawals = movements.filter(mov => mov < 0);
+
+console.log(withdrawals); // (3) [-400, -650, -130]
