@@ -337,3 +337,45 @@ console.log(depositsFor); //(5) [200, 450, 3000, 70, 1300]
 const withdrawals = movements.filter(mov => mov < 0);
 
 console.log(withdrawals); // (3) [-400, -650, -130]
+
+//TITTLE: -------------------------THE REDUCE METHOD--------------------------------//
+
+/*NOTE:accumulator => snowball , reduce also loops over the array and calls this callback in each iteration, but now what
+  will we actually do in each of these iterations , since the accumulator is the value that we will keep 
+  adding to what we're gonna do here is to add the current value to the accumulator ,so the accumulator +
+  the current value . And this works because in each call of  the callback function, the accumulator will
+  be the current sum of all previous values and so we will really keep adding to this accumulator in each 
+  iteration of the loop , Finally we also need to return this value here from the callback and so this is 
+  how the new accumulator can then be used in the next iteration of the loop , so basically in each loop
+  iteration we return the updated accumulator so the current one , plus the new current value and so like 
+  this , we can then keep adding to it in the next iteration . So this callback function is the first argument
+   of the reduce method , but the reduce method actually has another as a second parameter and that is the 
+   initial value of the accumulator so the value that we specify in this case is gonna be zero is the initial
+   value of the accumulator in the first loop iteration , we want to start adding at zero  */
+
+//NOTE: REDUCE
+/*const balance = movements.reduce(function (acc, curr, i, arr) {
+  console.log(`Iteration ${i}: ${acc}`);
+ Iteration 0: 0
+ Iteration 1: 200
+ Iteration 2: 650
+ Iteration 3: 250
+ Iteration 4: 3250
+ Iteration 5: 2600
+ Iteration 6: 2470
+ Iteration 7: 2540
+  return acc + curr;
+}, 0);
+console.log(balance); // 3840*/
+
+//NOTE: REDUCE WITH ARROW FUNCTION
+
+const balance = movements.reduce((acc, cur) => acc + cur, 0);
+console.log(balance); // 3840
+
+//NOTE: SOLUTION WITH FOR OF LOOP
+
+let balance2 = 0; // we always need an external variable.
+
+for (const mov of movements) balance2 += mov;
+console.log(balance2); // 3840
