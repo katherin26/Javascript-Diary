@@ -379,3 +379,18 @@ let balance2 = 0; // we always need an external variable.
 
 for (const mov of movements) balance2 += mov;
 console.log(balance2); // 3840
+
+//NOTE: MAXIMUN VALUE = In this case acc will keep track of the current maximun value.
+/* We got 3000, So we started at 200 so in this iteration is the accumulator greater that the movement
+ well, is it not and so return the current movement. But the first iteration in not that important it gets
+ interesting here in the second one, So now our accumulator is at 200 and the current movement is at 450 . So 
+ the (else statement)  is false again and so now we return to movement as the new accumulator in the next iteration .
+ All right , and so in the next iteration that accumulator is 450 now, the current movement is -400 , and here
+ is (450 > -400) ,Yes of course it is and so let's simply return the accumulator so that it stays the same 
+ in the next iteration and so that's the logic all the way until the  end of the array and  by this , we then 
+ end up with this maximun value */
+const max = movements.reduce((acc, mov) => {
+  if (acc > mov) return acc;
+  else return mov;
+}, movements[0]); //====> movements[0] = 200
+console.log(max); //3000
