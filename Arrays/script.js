@@ -465,3 +465,14 @@ const avg3 = calcAverageHumanAge2([5, 2, 4, 1, 15, 8, 3]);
 console.log(avg3); //4
 const avg4 = calcAverageHumanAge2([16, 6, 10, 5, 6, 1, 4]);
 console.log(avg4); //47.33
+
+//TITTLE: --------------------------THE FIND METHOD----------------------------------------//
+//NOTE: We can use the find method to retrieve one element of an array based on a condition.
+/*THe find method also needs a callback function that returns a Boolean */
+
+const firstWithdrawal = movements.find(mov => mov < 0); //Basically this here will return the first withdrawal.
+console.log(movements); //[200, 450, -400, 3000, -650, -130, 70, 1300]
+console.log(firstWithdrawal); // -400
+
+const account = accounts.find(acc => acc.owner === 'Cat Dog');
+console.log(account); //{owner: "Cat Dog", movements: Array(8), interestRate: 5.2, pin: 1254, username: "cd"}
