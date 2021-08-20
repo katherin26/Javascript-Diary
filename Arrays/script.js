@@ -504,3 +504,25 @@ console.log(account1.movements.every(mov => mov > 0)); //false
 //SEPARATE CALLBACK
 const deposit = mov => mov > 0;
 console.log(movements.some(deposit)); //true
+
+//TITTLE: --------------------------------FLAT AND FLATMAP---------------------------------------//
+
+//NESTED ARRAY:
+const nestedArr = [[1, 2, 3], [4, 5, 6], 7, 8];
+console.log(nestedArr.flat()); //(8) [1, 2, 3, 4, 5, 6, 7, 8]
+
+const nestedDeepArr = [[[1, 2], 3], [4, [5, 6]], 7, 8];
+console.log(nestedDeepArr.flat(2)); //(8) [1, 2, 3, 4, 5, 6, 7, 8]
+
+//FLAT
+const overalBalance = accounts
+  .map(acc => acc.movements)
+  .flat()
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance); // 13970
+
+//FLAT MAP
+const overalBalance2 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((acc, mov) => acc + mov, 0);
+console.log(overalBalance2); // 13970
