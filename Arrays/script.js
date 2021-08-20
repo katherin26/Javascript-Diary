@@ -558,3 +558,74 @@ console.log(movements); //[-650, -400, -130, 70, 200, 450, 1300, 3000]
 
 movements.sort((a, b) => b - a);
 console.log(movements); //[3000, 1300, 450, 200, 70, -130, -400, -650]
+
+//TITTLE: -------------------------MORE WAYS OF CREATING AND FILLING ARRAYS---------------------------//
+//NOTE: So far we have always simply created arrays like this :
+
+const array = [1, 2, 3, 4, 5, 6, 7];
+console.log(new Array(1, 2, 3, 4, 5, 6, 7));
+
+const x = new Array(7);
+console.log(
+  x
+); /*[empty × 7] ,This creates a new array with seven empty elements in there and it simply
+contains nothing*/
+
+/*NOTE: FILL METHOD = is a little similar to the slice method. In this method we can also specify where we want 
+it to start to fill*/
+
+x.fill(1, 3, 5);
+console.log(x); //[empty × 3, 1, 1, empty × 2] ====> x.fill(1,3,5)
+console.log(x); //[empty × 3, 1, 1, 1, 1] ====> x.fill(1,3)
+console.log(x); //[1, 1, 1, 1, 1, 1, 1] ====> x.fill(1)
+
+array.fill(23, 4, 6);
+console.log(array); //[1, 2, 3, 4, 23, 23, 7]
+
+//NOTE: we wanted to create this arr array programmatically , So we used Array.from() function.
+
+//Array.from()
+const y = Array.from({ length: 7 }, () => 1);
+console.log(y); //[1, 1, 1, 1, 1, 1, 1]
+
+const z = Array.from(
+  { length: 7 },
+  (_, i) => i + 1
+); /*(_ this means a throwaway variable and in this
+ case is good to use this convention because we do not need this current value at all)*/
+console.log(z); //[1, 2, 3, 4, 5, 6, 7]
+
+/*NOTE:This Array.from() was initially introduced into Javascript in order to create
+Arrays from array like structures, things like strings , maps or sets they are iterables in
+Javascript, and so they can be converted to real arrays using Array.from().
+
+Another example is using querySelectorALl(), this one return something called a NodeList which is something 
+like an array which contains all the selected elements but is not a real array, We would first need to 
+convert the NodeList to an array and for that Array.from() is perfect */
+
+/*
+const movementsUI = Array.from(document.querySelectorAll('.movements__value'));
+console.log(movementsUI); // [div.movements__value, div.movements__value]
+
+console.log(`array.from()--------------------`);
+
+labelBalance.addEventListener('click', function () {
+  const movementsUI = Array.from(
+    document.querySelectorAll('.movements__value'),
+    el => Number(el.textContent.replace('€', '')) //this line is the second parameter.
+  );
+  console.log(movementsUI);
+});
+*/
+
+/*[div.movements__value, div.movements__value, div.movements__value, div.movements__value, 
+div.movements__value, div.movements__value, div.movements__value, div.movements__value]*/
+
+// [1300, 70, -130, -650, 3000, -400, 450, 200]
+
+/*NOTE:  Recap, We used Array.from() to create an array from the result of the querySelectorALl(), which is a 
+NodeList , which is not really an array , but an array like structure and that array like structure can 
+be easily be converted to an array using Array.from(), and then as a second step , we even included a mapping
+function which then forms that initial array to an array exactly as we want it , So basically converting 
+the raw element to its text content and replacing the Euro sign with nothing , in the end , we  end up exactly
+with the array of numbers that we intented*/
