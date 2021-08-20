@@ -708,3 +708,24 @@ with the array of numbers that we intented*/
 
    (Does not create a new array just loops over it)
 */
+
+//TITTLE:----------------------------ARRAY METHODS PRACTICE------------------------------------//
+
+//1.NOTE: EXERCISE WITH FLATMAP FILTER AND REDUCE
+const bankDepositSum = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov > 0)
+  .reduce((sum, cur) => sum + cur, 0);
+console.log(bankDepositSum); //28770
+
+//2.NOTE:
+
+/*const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .filter(mov => mov >= 1000).length;*/
+
+const numDeposits1000 = accounts
+  .flatMap(acc => acc.movements)
+  .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0); //or prefixed ++ operator =  ++count
+
+console.log(numDeposits1000); //4
