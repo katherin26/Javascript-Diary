@@ -526,3 +526,35 @@ const overalBalance2 = accounts
   .flatMap(acc => acc.movements)
   .reduce((acc, mov) => acc + mov, 0);
 console.log(overalBalance2); // 13970
+
+//TITTLE: --------------------------------SORT METHOD---------------------------------------//
+
+//NOTE: STRINGS
+const owners = ['Juca', 'Nath', 'Ariel', 'Mile'];
+console.log(owners.sort()); //["Ariel", "Juca", "Mile", "Nath"]
+console.log(owners); //["Ariel", "Juca", "Mile", "Nath"] ---> is mutated!
+
+//NOTE: NUMBERS
+console.log(movements);
+console.log(movements.sort()); //[-130, -400, -650, 1300, 200, 3000, 450, 70]
+
+//return < 0, A, B (keep order)
+//return > 0, B, A (switch order)
+
+//Ascending
+/*movements.sort((a, b) => {
+  if (a > b) return 1;
+  if (b > a) return -1;
+});*/
+
+movements.sort((a, b) => a - b);
+console.log(movements); //[-650, -400, -130, 70, 200, 450, 1300, 3000]
+
+//Descending
+/*movements.sort((a, b) => {
+  if (a > b) return -1;
+  if (a < b) return 1;
+});*/
+
+movements.sort((a, b) => b - a);
+console.log(movements); //[3000, 1300, 450, 200, 70, -130, -400, -650]
