@@ -476,3 +476,31 @@ console.log(firstWithdrawal); // -400
 
 const account = accounts.find(acc => acc.owner === 'Cat Dog');
 console.log(account); //{owner: "Cat Dog", movements: Array(8), interestRate: 5.2, pin: 1254, username: "cd"}
+
+//TITTLE: --------------------------SOME AND EVERY----------------------------------------//
+
+console.log(`SOMEEEE AND EVERYYYYYYYYYYYYYYYYYYY`);
+console.log(movements);
+console.log(movements.includes(-130)); //true
+
+/*We can use the includes method to test if an array includes a certain value , now, we can only really
+test for equality,so basically includes here returns true if any value in the array is exactly equal to
+-130 , this is essentially testing for equality but what if we wanted to test for a condition instead
+And so that's where this some method comes into play */
+
+//EQUALITY
+const anyDeposits = movements.some(mov => mov > 0);
+console.log(anyDeposits); //true
+
+//SOME: CONDITION
+console.log(movements.some(mov => mov === -130)); //true
+const anyDeposits2 = movements.some(mov => mov > 0);
+console.log(anyDeposits2); //false
+
+//EVERY: CONDITION
+console.log(movements.every(mov => mov > 0)); //false
+console.log(account1.movements.every(mov => mov > 0)); //false
+
+//SEPARATE CALLBACK
+const deposit = mov => mov > 0;
+console.log(movements.some(deposit)); //true
