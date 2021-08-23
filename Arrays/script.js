@@ -729,3 +729,38 @@ const numDeposits1000 = accounts
   .reduce((count, cur) => (cur >= 1000 ? count + 1 : count), 0); //or prefixed ++ operator =  ++count
 
 console.log(numDeposits1000); //4
+
+//3.NOTE:
+
+const { deposits: a, withdrawals: b } = accounts
+  .flatMap(acc => acc.movements)
+  .reduce(
+    (sums, cur) => {
+      //cur > 0 ? (sums.deposits += cur) : (sums.withdrawals += cur);
+      sums[cur > 0 ? 'deposits' : 'withdrawals'] += cur;
+      return sums;
+    },
+    { deposits: 0, withdrawals: 0 }
+  );
+
+console.log(a, b); // {deposits: 28770, withdrawals: -14800}
+
+//4.NOTE:
+
+const convertTittleCase = function (title) {
+  const capitalize = str => str[0].toUpperCase() + str.slice(1);
+
+  const exceptions = ['a', 'an', 'and', 'the', 'but', 'or', 'on', 'in', 'with'];
+
+  const titleCase = title
+    .toLowerCase()
+    .split(' ')
+    .map(word => (exceptions.includes(word) ? word : capitalize(word)))
+    .join(' ');
+  return capitalize(titleCase);
+};
+
+console.log(convertTittleCase('example and title')); //Example and Title
+console.log(convertTittleCase('this is another EXAMPLE')); //This Is Another Example
+console.log(convertTittleCase('Here is ANOTHER EXAMPLE WITH WITH WITH ....')); // Here Is Another Example with with with ....
+console.log(convertTittleCase('and HERE IS another example')); //And Here Is Another Example
