@@ -133,3 +133,33 @@ const isEven = n => n % 2 === 0;
 console.log(isEven(8)); //true
 console.log(isEven(23)); //false
 console.log(isEven(514)); //true
+
+//TITTLE: BIGINT = It can be used to store numbers as large as we want.
+
+console.log(2 ** 53 - 1); //9007199254740991
+console.log(Number.MAX_SAFE_INTEGER); //9007199254740991
+
+console.log(455554512258466456464649464646464646465464646n); //n = This n here basically transforms a
+//regular number into a BigInt number
+console.log(BigInt(455554512258));
+
+//NOTE: OPERATIONS
+
+console.log(10000n + 10000n);
+console.log(16165646646464654646464n * 10000000000n);
+
+const huge = 66456466556546464654646546n;
+const num = 23;
+console.log(huge * BigInt(num));
+
+//NOTE: EXCEPTIONS
+console.log(20n > 15); //true
+console.log(20n === 20); //false
+console.log(typeof 20n); //bigint
+console.log(20n == 20); //true
+
+console.log(huge + 'is REALLY big!!!');
+
+//NOTE: DIVISIONS
+console.log(10n / 3n); //3n;
+console.log(10 / 3); //3.33
