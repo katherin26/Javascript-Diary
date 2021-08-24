@@ -1,5 +1,47 @@
 'use strict';
 
+const account1 = {
+  owner: 'JUPITER NEP',
+  movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
+  interestRate: 1.2, // %
+  pin: 1111,
+
+  movementsDates: [
+    '2019-11-18T21:31:17.178Z',
+    '2019-12-23T07:42:02.383Z',
+    '2020-01-28T09:15:04.904Z',
+    '2020-04-01T10:17:24.185Z',
+    '2020-05-08T14:11:59.604Z',
+    '2020-05-27T17:01:17.194Z',
+    '2020-07-11T23:36:17.929Z',
+    '2020-07-12T10:51:36.790Z',
+  ],
+  currency: 'EUR',
+  locale: 'pt-PT', // de-DE
+};
+
+const account2 = {
+  owner: 'MARS LUN',
+  movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+  interestRate: 1.5,
+  pin: 2222,
+
+  movementsDates: [
+    '2019-11-01T13:15:33.035Z',
+    '2019-11-30T09:48:16.867Z',
+    '2019-12-25T06:04:23.907Z',
+    '2020-01-25T14:18:46.235Z',
+    '2020-02-05T16:33:06.386Z',
+    '2020-04-10T14:43:26.374Z',
+    '2020-06-25T18:49:59.371Z',
+    '2020-07-26T12:01:20.894Z',
+  ],
+  currency: 'USD',
+  locale: 'en-US',
+};
+
+const accounts = [account1, account2];
+
 //TITTLE: CONVERTING AND CHECKING NUMBERS
 
 /*NOTE: All numbers are presented internally as floating point numbers, So basically , always as decimals .
@@ -163,3 +205,40 @@ console.log(huge + 'is REALLY big!!!');
 //NOTE: DIVISIONS
 console.log(10n / 3n); //3n;
 console.log(10 / 3); //3.33
+
+//TITTLE: CREATING DATES
+
+//NOTE: 1) They all use the new date constructor function, but they can accept different parameters.
+
+const now = new Date();
+console.log(now); //Tue Aug 24 2021 16:48:46 GMT-0400 (Eastern Daylight Time)
+
+//NOTE: 2) Next up the second way is to parse the date from a date string
+
+console.log(new Date('Tue Aug 24 2021 16:48:46 ')); //Tue Aug 24 2021 16:48:46 GMT-0400 (Eastern Daylight Time)
+console.log(new Date('December 24, 2015')); //Thu Dec 24 2015 00:00:00 GMT-0500 (Eastern Standard Time)
+console.log(new Date(account1.movementsDates[0])); // Mon Nov 18 2019 16:31:17 GMT-0500 (Eastern Standard Time)
+console.log(new Date(2037, 10, 19, 15, 23, 5)); // Thu Nov 19 2037 15:23:05 GMT-0500 (Eastern Standard Time)
+//NOTE: November is actually the month 11 , and so that means the month here is zero based.
+
+console.log(new Date(0)); //Wed Dec 31 1969 19:00:00 GMT-0500 (Eastern Standard Time)
+console.log(new Date(3 * 24 * 60 * 60 * 1000)); //Sat Jan 03 1970 19:00:00 GMT-0500 (Eastern Standard Time)
+
+//WORKING WITH DATES = METHODS
+
+const future = new Date(2037, 10, 19, 15, 23);
+console.log(future); //Thu Nov 19 2037 15:23:00 GMT-0500 (Eastern Standard Time)
+console.log(future.getFullYear()); //2037
+console.log(future.getMonth()); //10 ===> 0 based
+console.log(future.getDate()); //19 ==>day
+console.log(future.getDay()); //4 ===> day of the week 0 is sunday and four is thursday
+console.log(future.getHours()); //15
+console.log(future.getMinutes()); //23
+console.log(future.getSeconds()); //0
+console.log(future.toISOString()); //2037-11-19T20:23:00.000Z
+console.log(future.getTime()); // 2142274980000
+
+console.log(Date.now()); // 1629840536077
+
+future.setFullYear(2040);
+console.log(future); //Mon Nov 19 2040 15:23:00 GMT-0500 (Eastern Standard Time)
