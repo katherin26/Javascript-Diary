@@ -114,3 +114,22 @@ console.log(+(2.7).toFixed(2)); //2.7 = Number = because we add (+)
 and primitives actually don't have methods and so behind the scenes , Javascript will do boxing and boxing 
 is basically transform this (2.7) to a number object , then call the method on that object and then once 
 the operation is finished it will convert it back to a primitive. */
+
+//TITTLE: THE REMAINDER OPERATOR
+
+console.log(5 % 2); //1
+
+console.log(5 / 2); //2.5 // 5 = 2 *2 + 1 ===> 1 is the remainder
+
+console.log(8 % 3); //2
+console.log(8 / 3); //2.6 // 8 = 2 * 3 + 2
+
+console.log(6 % 2); //0
+console.log(6 / 2); //3
+console.log(7 % 2); //1
+console.log(7 / 2); //3.5
+
+const isEven = n => n % 2 === 0;
+console.log(isEven(8)); //true
+console.log(isEven(23)); //false
+console.log(isEven(514)); //true
