@@ -242,3 +242,15 @@ console.log(Date.now()); // 1629840536077
 
 future.setFullYear(2040);
 console.log(future); //Mon Nov 19 2040 15:23:00 GMT-0500 (Eastern Standard Time)
+
+//TITTLE: OPERATIONS WITH DATES
+console.log(`OPERATIONS WITH DATES------------------------`);
+
+const future2 = new Date(2037, 10, 19, 15, 23);
+console.log(+future2); // 2142274980000
+
+const calcDaysPassed = (date1, date2) =>
+  Math.abs(date2 - date1) / (1000 * 60 * 60 * 24);
+
+const days1 = calcDaysPassed(new Date(2037, 10, 19), new Date(2037, 10, 24));
+console.log(days1); //5
