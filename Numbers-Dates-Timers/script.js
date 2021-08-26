@@ -307,3 +307,18 @@ console.log(
   navigator.language,
   new Intl.NumberFormat(navigator.language, options).format(numIntl)
 ); //en-US 3,884,764.23 mph
+
+//TITTLE: TIMERS : setTimeout and setInterval
+//setTimeout timer = runs just once, after a defined time
+//set interval timer  = keeps running basically forever , until we stop it
+
+const ingredients = ['olives', ''];
+const pizzaTimer = setTimeout(
+  (ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2}`),
+  3000,
+  ...ingredients
+);
+//NOTE: All the arguments here that we pass after the delay will be arguments to the function
+//NOTE: We can actually cancel the timer at least until the delay has actually passed
+
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
