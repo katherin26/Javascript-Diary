@@ -254,3 +254,56 @@ const calcDaysPassed = (date1, date2) =>
 
 const days1 = calcDaysPassed(new Date(2037, 10, 19), new Date(2037, 10, 24));
 console.log(days1); //5
+
+//TITTLE: INTERNATIONALIZING DATES (INTL)
+//TITTLE: INTERNATIONALIZING NUMBERS (INTL)
+
+/*EXPERIMENTING API //INTL
+ const now = new Date();
+ //all we need to pass into this function here is a so-called locale string and this locale,
+ //is usually the language and the - the country en-US, all this creates a new formatter,
+ //and then on that formatter , we can call dot format (.format) and then here we actually pass in the date
+ //that we want to format(now)
+ const options = {
+   hour: 'numeric',
+   minute: 'numeric',
+   day: 'numeric',
+   month: 'numeric', //long=august / 2-digit= 08 / 'numeric' = 8
+   year: 'numeric',
+   //weekday: 'long', //short: wed/ narrow:W / long: wednesday
+ }; // THIS IS BROWSER TIME
+
+ const locale = navigator.language;
+ console.log(locale); //'en-US
+  labelDate.textContent = new Intl.DateTimeFormat(
+   currentAccount.locale,
+   options
+ ).format(now);
+
+ const now = new Date();
+ const day = `${now.getDate()}`.padStart(2, 0);
+ const month = `${now.getMonth() + 1}`.padStart(2, 0);
+ const year = now.getFullYear();
+ const hour = `${now.getHours()}`.padStart(2, 0);
+ const min = `${now.getMinutes()}`.padStart(2.0);
+ labelDate.textContent = `${day}/${month}/${year}, ${hour}:${min}`;*/
+
+const numIntl = 3884764.23;
+
+const options = {
+  style: 'currency', //unit - percent - currency
+  unit: 'mile-per-hour', //celsius
+  currency: 'EUR',
+  //useGrouping: false,
+};
+
+console.log('US:', new Intl.NumberFormat('en-US', options).format(numIntl)); //US: 3,884,764.23 mph
+console.log(
+  'Germany:',
+  new Intl.NumberFormat('de-DE', options).format(numIntl)
+); //Germany: 3.884.764,23 mi/h
+console.log('Syria:', new Intl.NumberFormat('ar-SY', options).format(numIntl)); //Syria: ٣٬٨٨٤٬٧٦٤٫٢٣
+console.log(
+  navigator.language,
+  new Intl.NumberFormat(navigator.language, options).format(numIntl)
+); //en-US 3,884,764.23 mph
