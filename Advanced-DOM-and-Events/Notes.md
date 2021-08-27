@@ -135,3 +135,86 @@ addEventListener('click', function () {
   //We don't have to select the message element again because we already have it in memory.
 });
 ```
+
+# **STYLES, ATTRIBUTES AND CLASSES **
+
+## **STYLE**
+
+```
+To set a style on an element we get the element.style.propertyName = and then a string with the value.
+
+message.style.backgroundColor = '#37383d';
+
+message.style.width = '120%';
+
+console.log(getComputedStyle(message).color); //rgb(187, 187, 187)
+
+console.log(getComputedStyle(message).height);
+
+message.style.height =
+  Number.parseFloat(getComputedStyle(message).height, 10) + 10 + 'px'; //49px
+
+document.documentElement.style.setProperty('--color-primary', 'orangered');
+  // We pass the name of the property and the value.
+```
+
+## **ATTRIBUTE**
+
+```
+const logo = document.querySelector('.nav__logo');
+console.log(logo.alt);
+
+console.log(logo.className); //nav__logo
+
+logo.alt = 'another string'; //<img src = "img/logo.png" alt= "another string".....>
+```
+
+**NON-STANDARD**
+
+```
+console.log(logo.designer); //undefined
+console.log(logo.getAttribute('designer')); //kat
+logo.setAttribute('company', 'lololo'); //<img src = "img/logo.png"...company="lololo"></img>
+```
+
+**RELATIVE VERSION**
+
+```
+console.log(logo.src); //app logo
+```
+
+**ABSOLUTE VERSION**
+
+```
+console.log(logo.getAttribute('src')); //http://127.0.0.1:8080/img/logo.png
+
+const link = document.querySelector('.nav__link--btn');
+```
+
+**Absolute URL**
+
+```
+console.log(link.href); // http://127.0.0.1:8080/#
+```
+
+**Relative URL**
+
+```
+console.log(link.getAttribute('href')); //#
+```
+
+**DATA ATTRIBUTES**
+
+```
+console.log(logo.dataset.versionNumber); //3
+```
+
+## **CLASSES**
+
+```
+logo.classList.add('class', 'otherclass');
+logo.classList.remove('class', 'otherclass');
+logo.classList.toggle('class');
+logo.classList.contains('class');
+
+```
