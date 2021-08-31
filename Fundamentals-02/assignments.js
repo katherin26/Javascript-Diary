@@ -140,3 +140,49 @@ central European country :D'
 'neighbours' array, and then use that index to change the array at that index position .For example , you can
 search for 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
 */
+
+let neighbours = ['macarena', 'lolostr', 'poleome'];
+
+neighbours.push('Utopia');
+console.log(neighbours);
+neighbours.pop();
+console.log(neighbours);
+
+if (!neighbours.includes('Germany')) {
+  console.log(`Probably not a central European
+  country =D`);
+}
+
+neighbours[neighbours.indexOf('macarena')] = 'Republic of Macarena';
+console.log(neighbours);
+
+/* INTRODUCTION TO OBJECTS =
+1. Create an object 'myCountry' for a country of your choice, containing properties 'country', 'capital',
+'language' , 'population' and 'neighbours' (an array like we used in previous assignments)
+*/
+
+myCountry = {
+  country: 'Finland',
+  capital: 'kokoloco',
+  language: 'another kokoloco',
+  population: 6,
+  neighbours: ['jfdsf', 'fsfsfds', 'werew'],
+};
+
+/* DOT VS BRACKET NOTATION =
+
+1. Using the object from the previous assignment, log a string like this to the console:
+` ${pais} has ${numero} million ${language}-speaking people, ${numero} neighbouring countries and a 
+capital called ${name}`
+2.Increase the country's population by two million using dot notation, and then decrease it by two 
+million using brackets notation. 
+*/
+
+console.log(`${myCountry.country} has ${myCountry.population} million ${myCountry.language}-speaking 
+people, ${myCountry.neighbours.length} neighbouring countries and a  capital called ${myCountry.capital}`);
+
+myCountry.population += 2;
+console.log();
+
+myCountry['population'] -= 2;
+console.log(myCountry.population);
