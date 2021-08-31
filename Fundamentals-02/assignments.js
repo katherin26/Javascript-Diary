@@ -186,3 +186,72 @@ console.log();
 
 myCountry['population'] -= 2;
 console.log(myCountry.population);
+
+/* OBJECT METHODS =
+
+1. Add a method called 'describe' to the 'myCountry' object. This method
+will log a string to the console, similar to the string logged in the previous
+assignment, but this time using the 'this' keyword.
+2. Call the 'describe' method
+3. Add a method called 'checkIsland' to the 'myCountry' object. This
+method will set a new property on the object, called 'isIsland'.
+'isIsland' will be true if there are no neighbouring countries, and false if
+there are. Use the ternary operator to set the property.
+*/
+
+myCountry = {
+  country: 'Finland',
+  capital: 'kokoloco',
+  language: 'another kokoloco',
+  population: 6,
+  neighbours: ['jfdsf', 'fsfsfds', 'werew'],
+  describe: function () {
+    console.log(
+      `${this.country} has ${this.population} million 
+        ${this.language} -speaking people, ${this.neighbours.length} neighbours countries and a capital called ${this.capital}`
+    );
+  },
+
+  checkIsland: function () {
+    this.isIsland = this.neighbours.length === 0 ? true : false;
+  },
+};
+
+myCountry.describe();
+myCountry.checkIsland();
+console.log(myCountry);
+
+/* ITERATION : THE FOR LOOP
+1. There are elections in your country! In a small town, there are only 50 voters.
+Use a for loop to simulate the 50 people voting, by logging a string like this to
+the console (for numbers 1 to 50): 'Voter number 1 is currently voting'
+
+*/
+
+for (let i = 0; i <= 50; i++) {
+  console.log(`Voter number ${i} is currently voting.`);
+}
+
+/* LOOPING ARRAYS , BREAKING AND CONTINUING =
+
+1. Let's bring back the 'populations' array from a previous assignment
+2. Use a for loop to compute an array called 'percentages2' containing the
+percentages of the world population for the 4 population values. Use the
+function 'percentageOfWorld1' that you created earlier
+3. Confirm that 'percentages2' contains exactly the same values as the
+'percentages' array that we created manually in the previous assignment,
+and reflect on how much better this solution is
+*/
+
+let populationsArr = [1441, 60, 50, 30];
+let percentages2 = [];
+
+function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+
+for (let i = 0; i < populationsArr.length; i++) {
+  percentages2.push(percentageOfWorld1(populationsArr[i]));
+}
+
+console.log(percentages2);
