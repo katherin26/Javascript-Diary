@@ -252,7 +252,7 @@ console.log(kathe['first' + nameKey]);
 console.log(kathe['last' + nameKey]);
 
 const interestedIn = prompt(
-  'What do you want to know about Kathe ?? Choose between firstName, lastName, age . job, and friends...'
+  'What do you want to know about K ?? Choose between firstName, lastName, age . job, and friends...'
 );
 
 if (kathe[interestedIn]) {
