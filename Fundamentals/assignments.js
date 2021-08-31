@@ -149,5 +149,6 @@ your time with this, and check part of the solution if necessary.
 not, log 'Portugal does not meet your criteria :('
 4. Probably your country does not meet all the criteria. So go back and temporarily
 change some variables in order to make the condition true (unless you live in
+  
 Canada :D)
 */
