@@ -63,4 +63,80 @@ console.log(countryPolonia);
 console.log(countryArgentina);
 console.log(countryPeru);
 
-/**/
+/* ARROW FUNCTIONS =
+1. Recreate the last assignment , but this time create an arrow function caled 'percentageOfWorld3'
+*/
+
+const percentageOfWorld3 = p => (p / 7900) * 100;
+
+let countryKorea = percentageOfWorld3(1441);
+let countryVietnam = percentageOfWorld3(60);
+let countryRussia = percentageOfWorld3(50);
+
+console.log(countryKorea);
+console.log(countryVietnam);
+console.log(countryRussia);
+
+/* FUNCTIONS CALLING OTHER FUNCTIONS =
+1. Create a function called 'describePopulation' . Use the function type you like the most . This function
+takes in two arguments: 'country' and 'population' and returns a string like this : 'China has 1441 million 
+people, which is about 18.2% of the world.'
+
+2.To calculate the percentage, 'describePopulation' call the 'percentageOfWorld1' you created earlier
+
+3. Call 'describePopulation' with data for 3 countries of your choice.
+*/
+
+const percentageOfWorld2 = function (population) {
+  return (population / 7900) * 100;
+};
+
+function describePopulation(country, population) {
+  const percentage = percentageOfWorld2(population);
+  const description = `${country} has ${population} million
+    people , which is about ${percentage} of the world`;
+  console.log(description);
+}
+
+describePopulation('china', 1441);
+describePopulation('latin', 2020);
+
+/* INTRODUCCION TO ARRAYS =
+1. Create an array containing 4 population values of 4 countries of your choice.
+You may use the values you have been using previously. Store this array into a variable called 'populations'
+2. Log to the console whether the array has 4 elements or not (true or false).
+3. Create an array called 'percentages' containing the percentages of the world population for these 4 
+populations values . Use the function 'percentageOfWorld1' that you created earlier to compute the 4 
+percentage value.
+*/
+
+let populationsArr = [1441, 60, 50, 30];
+
+console.log(populationsArr.length === 4);
+
+function percentageOfWorld1(population) {
+  return (population / 7900) * 100;
+}
+
+let percentagesArr = [
+  percentageOfWorld1(populationsArr[0]),
+  percentageOfWorld1(populationsArr[1]),
+  percentageOfWorld1(populationsArr[2]),
+  percentageOfWorld1(populationsArr[3]),
+];
+
+console.log(percentagesArr);
+
+/* BASIC ARRAY OPERATIONS (METHODS)=
+
+1. Create an array containing all the neighbouring countries of a country of your choice. Choose a country
+which has at least 2 or 3 neighbours. Store the array into a variable called 'neighbours'
+2. At some point, a new country called 'Utopia' is created in the neighbourhood of your selected country.
+So add it to the end of the 'neighbours' array .
+3. Unfortunately , after some time , the new country is dissolved. So remove it from the end of the array.
+4. If the 'neighbours' array does not include the country 'Germany' , log to the console: 'Probably not a 
+central European country :D'
+5. Change the name of one of your neighbouring countries. To do that , find the index of the country in the 
+'neighbours' array, and then use that index to change the array at that index position .For example , you can
+search for 'Sweden' in the array, and then replace it with 'Republic of Sweden'.
+*/
