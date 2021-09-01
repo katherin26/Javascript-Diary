@@ -76,3 +76,32 @@ console.log(h1.parentElement.children); //HTMLCollection(4) [h1, h4, button.btn
   if (el !== h1) el.style.transform = 'scale(0.9)';
 });
 ```
+
+## **A BETTER WAY : THE INTERSECTION OBSERVER API**
+
+```
+Observe changes to the way that a certain target element intersects another element , or the way
+it intersects the viewport.
+```
+
+```
+This callback function here will get called each time that the observed element, so our target element
+here is intersecting the root element at the threshold that we defined.
+```
+
+```
+const obsCallback = function (entries, observer) {
+entries.forEach(entry => {
+console.log(entry);
+});
+};
+
+const obsOptions = {
+root: null, //this root is the element that the target is intersecting.
+threshold: [0, 0.2], //this is basically the percentage of intersection at which the observer callback
+will be called. (intersectionRatio)
+};
+
+const observer = new IntersectionObserver(obsCallback, obsOptions); //callback function and object
+observer.observe(section1); //target
+```
