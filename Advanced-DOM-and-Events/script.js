@@ -1,7 +1,6 @@
 'use strict';
 
 //TITTLE: Modal window
-
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 /*--*/
@@ -46,6 +45,7 @@ document.addEventListener('keydown', function (e) {
 //------------------------------------------------------------------------------//
 //NOTE: IMPLEMENTING SMOOTH SCROLLING
 //We need these coordinates here to tell JavaScript where it should scroll to .
+
 //BUTTON SCROLLING
 
 btnScrollTo.addEventListener('click', function (e) {
@@ -181,7 +181,7 @@ window.addEventListener('scroll', function () {
 
 const header = document.querySelector('.header');
 const navHeight = nav.getBoundingClientRect().height;
-console.log(navHeight); //90
+//console.log(navHeight); //90
 
 const stickyNav = function (entries) {
   const [entry] = entries;
@@ -197,3 +197,25 @@ const headerObserver = new IntersectionObserver(stickyNav, {
 });
 
 headerObserver.observe(header);
+
+//TITTLE: REVEALING ELEMENTS ON SCROLL
+
+const allSections = document.querySelectorAll('.section');
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+  console.log(entry); //90
+
+  if (!entry.isIntersecting) return;
+  entry.target.classList.remove('section--hidden'); //target:section #section--1.section
+  observer.unobserve(entry.target);
+};
+
+const sectionObserver = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObserver.observe(section);
+  section.classList.add('section--hidden');
+});
