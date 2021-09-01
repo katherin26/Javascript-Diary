@@ -132,13 +132,13 @@ document
 So event listeners wait for a certain event to happen on a certain element and as soon as the event occurs, it runs the attached callback function
 ```
 
-## **2) TARGET PHASE =**
+## **2) TARGET PHASE **
 
 ```
  After reaching the target the event actually travels all the way up to the document route again in the so-called =
 ```
 
-## **3) BUBBLING PHASE =**
+## **3) BUBBLING PHASE **
 
 ```
 So we say that events bubble up from the target to the document route , the event passes through all its parents elements
@@ -208,7 +208,7 @@ and in the nex case is attached to "nav__links".
  which the eventListener is attached to.
 ```
 
-## **STOP THE EVENT PROPAGATION =**
+## **STOP THE EVENT PROPAGATION **
 
 ```
  All we have to do is to simply call on the event , stopPropagation
@@ -216,7 +216,7 @@ and in the nex case is attached to "nav__links".
 
 **e.stopPropagation();**
 
-## **THE BUBBLING PHASE =**
+## **THE BUBBLING PHASE **
 
 ```
 Can be very useful for something called event delegation.
