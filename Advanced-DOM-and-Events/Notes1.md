@@ -154,3 +154,70 @@ event listeners in a way that they listen to events in the capturing phase inste
 Also , not all types of events have a capturing and bubbling phase some of them are created right on the target
 element , and we can only handle them there
 ```
+
+## **EVENT PROPAGATION IN PRACTICE**
+
+**rgba(255,255,255)**
+
+```
+const randomInt = (min, max) =>
+Math.floor(Math.random() \* (max - min + 1) + min);
+const randomColor = () =>
+`rgba(${randomInt(0, 255)},${randomInt(0, 255)}, ${randomInt(0, 255)})`;
+
+document.querySelector('.nav\_\_link').addEventListener('click', function (e) {
+this.style.backgroundColor = randomColor();
+});
+
+document.querySelector('.nav\_\_links').addEventListener('click', function (e) {
+this.style.backgroundColor = randomColor();
+});
+
+document.querySelector('.nav').addEventListener('click', function (e) {
+this.style.backgroundColor = randomColor();
+});
+
+```
+
+```
+When we clicked the link the container also got its own random background color.
+The event actually happens at the document root and from there ,then travels down to
+the target element, bubbles up = that means that basically it's as if the event had also
+happened in all of the parent elements . And so that is the reason why this exact event is
+now also being handled by this event listener here that is on nav_links
+```
+
+**e.target**
+
+```
+is essentially where the event originated.When the event first happened
+The target element will always be the same "nav__link"
+```
+
+**e.current**
+
+```
+The element on which the event handler is attached in the first case is attached to nav**link
+and in the nex case is attached to "nav__links".
+```
+
+**e.currentTarget === this :**
+
+```
+ is exactly the same as the this keyword, so the this keyword is also the one pointing to the element on
+ which the eventListener is attached to.
+```
+
+## **STOP THE EVENT PROPAGATION =**
+
+```
+ All we have to do is to simply call on the event , stopPropagation
+```
+
+**e.stopPropagation();**
+
+## **THE BUBBLING PHASE =**
+
+```
+Can be very useful for something called event delegation.
+```
