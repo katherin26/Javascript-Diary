@@ -105,3 +105,58 @@ will be called. (intersectionRatio)
 const observer = new IntersectionObserver(obsCallback, obsOptions); //callback function and object
 observer.observe(section1); //target
 ```
+
+## **Lifecycle DOM Events**
+
+**DOM CONTENT LOADED**
+
+```
+This event is fired by the document as soon as the HTML is completely parsed.
+which means that the HTML has been downloaded and been converted to the DOM tree, Also all scripts
+must be downloaded and executed before the DOM content loaded event can happen And of course we can listen
+to that event and since it happens on the document we call the add event listener method on the document
+And then name of the event is , ('DOMContentLoaded).
+```
+
+```
+document.addEventListener('DOMContentLoaded', function (e) {
+  console.log('HTML parsed and DOM tree built!!', e);
+});
+//HTML parsed and DOM tree built!! > Event{...}
+```
+
+**LOAD EVENT**
+
+```
+The load event is fired by the window . As soon as not only the HTML is parsed but also all the images
+and external resources like CSS files are also loaded , Basically when the complete page has finished loading
+is when this event gets fired .So as always .
+```
+
+```
+window.addEventListener('load', function (e) {
+  console.log('Page fully loaded', e);
+});
+
+//Page fully loaded > Event{...}
+```
+
+**UNLOAD EVENT**
+
+```
+The load is fired by the window, and this event  is created inmediately before a user is about to leave
+a page. So for example after clicking this close button here in the browser tab, So we can basically use
+this event to ask users if they are 100% sure that they want to leave the page.
+Now in some browsers to make this work ,we need to call prevent default ,in chrome is not necessary , but some
+browsers require it .
+And actually in order to display a leaving confirmation we need to set the return value on the event to an empty
+string
+```
+
+```
+window.addEventListener('beforeunload', function (e) {
+  e.preventDefault();
+  console.log(e);
+  e.returnValue = '';
+});
+```
