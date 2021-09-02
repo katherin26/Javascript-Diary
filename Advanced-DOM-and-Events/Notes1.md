@@ -2,7 +2,9 @@
 
 ## **IMPLEMENTING SMOOTH SCROLLING**
 
-We need these coordinates here to tell JavaScript where it should scroll to .
+```
+We need these coordinates here to tell JavaScript where it should scroll to =
+```
 
 ```
 const btnScrollTo = document.querySelector('.btn--scroll-to');
@@ -14,24 +16,16 @@ console.log(
 s1coords
 );
 
-//_DOMRect {x: 0, y: 276.8000183105469, width: 1524,
-height: 1580.425048828125, top: 276.8000183105469, …}_/
+//_DOMRect {x: 0, y: 276.8000183105469, width: 1524, height: 1580.425048828125, top: 276.8000183105469, …}_/
 
-console.log(
-e.target.getBoundingClientRect()
-);
+console.log(e.target.getBoundingClientRect());
 
-//_DOMRect {x: 187, y: 194.5, width: 110,
-height: 27.80000114440918, top: 194.5, …}_/
+//_DOMRect {x: 187, y: 194.5, width: 110, height: 27.80000114440918, top: 194.5, …}_/
 
 console.log('Current scroll (X/Y)', window.pageXOffset, window.pageYOffset);
 //Current scroll (X/Y) 0 174.39999389648438
 
-console.log(
-'height/width viewport',
-document.documentElement.clientHeight,
-document.documentElement.clientWidth
-); // height/width viewport 181 1524
+console.log('height/width viewport',document.documentElement.clientHeight,document.documentElement.clientWidth); // height/width viewport 181 1524
 
 ```
 
@@ -45,13 +39,14 @@ s1coords.left + window.pageXOffset,
 s1coords.top + window.pageYOffset
 );
 
-// and here the first argument is the left position and that is at s1coords
-//current position + current scroll
+//And here the first argument is the left position and that is at s1coords current position + current scroll.
 ```
 
 ## **Another solution**
 
-//And this works by passing in an object now insted of just one argument
+```
+And this works by passing in an object now insted of just one argument.
+```
 
 ```
 window.scrollTo({
@@ -70,7 +65,7 @@ something has happened for example , a click somewhere or the mouse moving or th
 screen mode.
 ```
 
-**mouseenter event**
+## **Mouseenter event**
 
 ```
 const h1 = document.querySelector('h1');
@@ -132,20 +127,20 @@ document
 So event listeners wait for a certain event to happen on a certain element and as soon as the event occurs, it runs the attached callback function
 ```
 
-## **2) TARGET PHASE **
+## **2) TARGET PHASE**
 
 ```
  After reaching the target the event actually travels all the way up to the document route again in the so-called =
 ```
 
-## **3) BUBBLING PHASE **
+## **3) BUBBLING PHASE**
 
 ```
 So we say that events bubble up from the target to the document route , the event passes through all its parents elements
 
 ```
 
-**NOTE**
+### **NOTE**
 
 ```
 By default , events can only be handled in the target and in the bubbling phase, However , we can set up
@@ -208,7 +203,7 @@ and in the nex case is attached to "nav__links".
  which the eventListener is attached to.
 ```
 
-## **STOP THE EVENT PROPAGATION **
+## **STOP THE EVENT PROPAGATION**
 
 ```
  All we have to do is to simply call on the event , stopPropagation
@@ -216,8 +211,125 @@ and in the nex case is attached to "nav__links".
 
 **e.stopPropagation();**
 
-## **THE BUBBLING PHASE **
+## **THE BUBBLING PHASE**
 
 ```
 Can be very useful for something called event delegation.
+```
+
+## **DEFER AND ASYNC SCRIPT LOADING**
+
+### **REGULAR =**
+
+```
+<script src="script.js">
+
+Now in the HTML , We can write the script tag in the document head, or usually at the end of the body .
+
+So when we include a script without any attribute in the head, what will the page loading process look
+like over time?
+```
+
+## **HEAD**
+
+```
+As the user loads the page and receives the HTML , the HTML code will start to be parsed by the browser
+and parsing the HTML is basically building the DOM tree from the HTML elements , then at a certain point, it will find  a script tag , start to fetch the script, and then execute it.
+
+During this time the HTML parsing will actually stop , So it will be waiting for the script to get fetched
+and executed . Only after that , the rest of the HTML can be parsed and at the end of that parsing, the DOM
+content loaded event will finally get fired,
+```
+
+```
+
+PARSING HTML /        WAITING       /  FINISH PARSING HTML|
+time ===>   /Fetch script - Execute/      DOMContentLoaded|
+```
+
+### **BODY**
+
+```
+The HTML is parsed then the script tag is found at the end of the document then the script is fetched, And then
+finally, the script gets executed.
+```
+
+```
+PARSING HTML               / Fetch script / Execute
+                                          / DOMContentLoaded
+```
+
+### **ASYNC =**
+
+```
+<script async src ="script.js">
+```
+
+### **HEAD**
+
+```
+The difference is that the script is loaded at the same time as the HTML is parsed in an asynchronous way,
+so that's already an advantage , However, the HTML parsing still stops for the script execution , So the script
+is actually downloaded asynchronously , But then it's executed right away in a synchronous way. And the HTML
+code has to wait for being parsed .
+```
+
+```
+PARSING HTML     / Waiting / Finish parsing HTML|
+     Fetch script/ Execute /    DOMContentLoaded|
+```
+
+### **USE CASES**
+
+```
+So one important thing about loading an async script is = Usually the DOMContentLoaded event waits
+for all scripts to execute, except for async scripts. So , DOMContentLoaded does not wait for an async script.
+```
+
+```
+ PARSE HTML        |
+       Fetch       |   Run
+   DOMContentLoaded|
+```
+
+### **DEFER =**
+
+```
+<script defer src= "script.js">
+```
+
+### **HEAD**
+
+```
+The script is still loaded asynchronously, But the execution of the script is deferred until the end of the
+HTML parsing , in practice , loading time is similar to the async attribute , but with the key difference
+that would defer the HTML parsing is never interrupted , because the script is only executed at the end.
+```
+
+### **BODY**
+
+```
+Fetching and executing the script, always happens after parsing the HTML anyway , so async and defer
+have no practical effect in the body.
+```
+
+### **USE CASES**
+
+```
+The DOM content loaded event to only get fired after the whole script has been downloaded and executed, And
+so this is the more traditional way , that this event works. Another very important aspect is that async
+scripts are not guaranteed to be executed in the exact order that they are declared in the code . So the script
+that arrives first gets executed first.
+
+By using defer that in not the case , So using the defer attribute guarantees that the scripts are actually
+executed in the order that they are declared or written in the code, And that is usually what we want to
+happen.
+
+This is overall the best solution! use for your own scripts, and when order matters (e.g including a library)
+```
+
+```
+PARSE HTML            |
+      Fetch       /Run|
+
 ```

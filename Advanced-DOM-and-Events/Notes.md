@@ -136,7 +136,7 @@ addEventListener('click', function () {
 });
 ```
 
-# **STYLES, ATTRIBUTES AND CLASSES **
+# **STYLES, ATTRIBUTES AND CLASSES**
 
 ## **STYLE**
 
