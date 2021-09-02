@@ -217,7 +217,7 @@ const sectionObserver = new IntersectionObserver(revealSection, {
 
 allSections.forEach(function (section) {
   sectionObserver.observe(section);
-  section.classList.add('section--hidden');
+  //section.classList.add('section--hidden');
 });
 
 //TITTLE: LAZY LOADING IMAGES
@@ -248,3 +248,54 @@ const imgObserver = new IntersectionObserver(loadImg, {
 });
 
 imgTargets.forEach(img => imgObserver.observe(img));
+
+//TITTLE: BUILDING A SLIDER COMPONENT
+
+const slides = document.querySelectorAll('.slide');
+const btnLeft = document.querySelector('.slider__btn--left');
+const btnRight = document.querySelector('.slider__btn--right');
+
+let curSlide = 0;
+const maxSlide = slides.length;
+
+/*const slider = document.querySelector('.slider');
+slider.style.transform = 'scale(0.4) translateX(-800px)';
+slider.style.transform = 'visible';*/
+
+/*slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));*/
+//0%, 100% , 200%, 300%
+/*slides.forEach(
+  (s, i) => (s.style.transform = `translateX(${100 * (i - curSide)}%)`));*/
+
+const goToSlide = function (slide) {
+  slides.forEach(
+    (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+  );
+};
+goToSlide(0); //app start immediately goes to slide zero.
+
+//GO TO THE NEXT SLIDE
+const nextSlide = function () {
+  if (curSlide === maxSlide - 1) {
+    //because slides.length is not zero based.
+    curSlide = 0;
+  } else {
+    curSlide++;
+  }
+  goToSlide(curSlide);
+  //In the first iteration this will be zero , and then zero minus one will be minus one.
+  //Then the next slide , the index is one and then one minus one is zero
+  //-100%, 0% , 100%, 200%
+};
+
+const prevSlide = function () {
+  if (curSlide === 0) {
+    curSlide = maxSlide - 1; // eliminate the blank space before starting
+  } else {
+    curSlide--;
+  }
+  goToSlide(curSlide);
+};
+
+btnRight.addEventListener('click', nextSlide);
+btnLeft.addEventListener('click', prevSlide);
