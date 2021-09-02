@@ -251,51 +251,116 @@ imgTargets.forEach(img => imgObserver.observe(img));
 
 //TITTLE: BUILDING A SLIDER COMPONENT
 
-const slides = document.querySelectorAll('.slide');
-const btnLeft = document.querySelector('.slider__btn--left');
-const btnRight = document.querySelector('.slider__btn--right');
+const slider = function () {
+  const slides = document.querySelectorAll('.slide');
+  const btnLeft = document.querySelector('.slider__btn--left');
+  const btnRight = document.querySelector('.slider__btn--right');
+  const dotContainer = document.querySelector('.dots');
 
-let curSlide = 0;
-const maxSlide = slides.length;
+  let curSlide = 0;
+  const maxSlide = slides.length;
 
-/*const slider = document.querySelector('.slider');
+  /*const slider = document.querySelector('.slider');
 slider.style.transform = 'scale(0.4) translateX(-800px)';
 slider.style.transform = 'visible';*/
 
-/*slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));*/
-//0%, 100% , 200%, 300%
-/*slides.forEach(
+  /*slides.forEach((s, i) => (s.style.transform = `translateX(${100 * i}%)`));*/
+  //0%, 100% , 200%, 300%
+  /*slides.forEach(
   (s, i) => (s.style.transform = `translateX(${100 * (i - curSide)}%)`));*/
 
-const goToSlide = function (slide) {
-  slides.forEach(
-    (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
-  );
-};
-goToSlide(0); //app start immediately goes to slide zero.
+  //FUNCTIONS
+  const createDots = function () {
+    slides.forEach(function (_, i) {
+      dotContainer.insertAdjacentHTML(
+        'beforeend',
+        `<button class = "dots__dot" data-slide="${i}"></button>`
+      );
+    });
+  };
 
-//GO TO THE NEXT SLIDE
-const nextSlide = function () {
-  if (curSlide === maxSlide - 1) {
-    //because slides.length is not zero based.
-    curSlide = 0;
-  } else {
-    curSlide++;
-  }
-  goToSlide(curSlide);
-  //In the first iteration this will be zero , and then zero minus one will be minus one.
-  //Then the next slide , the index is one and then one minus one is zero
-  //-100%, 0% , 100%, 200%
+  //createDots();
+
+  const activateDot = function (slide) {
+    document
+      .querySelectorAll('.dots__dot')
+      .forEach(dot => dot.classList.remove('dots__dot--active'));
+
+    document
+      .querySelector(`.dots__dot[data-slide="${slide}"]`)
+      .classList.add('dots__dot--active');
+  };
+  //NOTE: So let's say we pass in slide number two, so we want to activate the dot corresponding
+  //to slide number two , We can basically select the element with this class and with this data slide
+  //attribute set to two.
+
+  //activateDot(0); //When reload the first dot is now active
+
+  const goToSlide = function (slide) {
+    slides.forEach(
+      (s, i) => (s.style.transform = `translateX(${100 * (i - slide)}%)`)
+    );
+  };
+
+  //goToSlide(0); //app start immediately goes to slide zero.
+
+  //GO TO THE NEXT SLIDE
+  const nextSlide = function () {
+    if (curSlide === maxSlide - 1) {
+      //because slides.length is not zero based.
+      curSlide = 0;
+    } else {
+      curSlide++;
+    }
+    goToSlide(curSlide);
+    //In the first iteration this will be zero , and then zero minus one will be minus one.
+    //Then the next slide , the index is one and then one minus one is zero
+    //-100%, 0% , 100%, 200%
+    activateDot(curSlide);
+  };
+
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide - 1; // eliminate the blank space before starting
+    } else {
+      curSlide--;
+    }
+    goToSlide(curSlide);
+    activateDot(curSlide);
+  };
+
+  const init = function () {
+    goToSlide(0);
+    createDots();
+    activateDot(0);
+  };
+
+  init();
+
+  //NOTE: EVENT HANDLERS
+  btnRight.addEventListener('click', nextSlide);
+  btnLeft.addEventListener('click', prevSlide);
+
+  document.addEventListener('keydown', function (e) {
+    //if(e.key === 'ArrowLeft') prevSlide();
+    e.key === 'ArrowLeft' && prevSlide();
+    e.key === 'ArrowRight' && nextSlide();
+
+    //console.log(e);
+    //KeyboardEvent {isTrusted: true, key: "ArrowRight", code: "ArrowRight",
+    //location: 0, ctrlKey: false, …}
+
+    //KeyboardEvent {isTrusted: true, key: "ArrowLeft", code: "ArrowLeft",
+    // location: 0, ctrlKey: false, …}
+  });
+
+  dotContainer.addEventListener('click', function (e) {
+    if (e.target.classList.contains('dots__dot')) {
+      const { slide } = e.target.dataset;
+      goToSlide(slide);
+      activateDot(slide);
+    }
+  });
 };
 
-const prevSlide = function () {
-  if (curSlide === 0) {
-    curSlide = maxSlide - 1; // eliminate the blank space before starting
-  } else {
-    curSlide--;
-  }
-  goToSlide(curSlide);
-};
-
-btnRight.addEventListener('click', nextSlide);
-btnLeft.addEventListener('click', prevSlide);
+slider();
