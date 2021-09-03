@@ -364,6 +364,3 @@ slider.style.transform = 'visible';*/
 };
 
 slider();
-
-/*TITTLE: DEFER AND ASYNC SCRIPT LOADING =
-

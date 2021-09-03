@@ -242,7 +242,12 @@ content loaded event will finally get fired,
 ```
 
 ```
+NOTE: Network =
+style.css ===> Time : 578ms
+script.js ===> Time : 573ms
+```
 
+```
 PARSING HTML /        WAITING       /  FINISH PARSING HTML|
 time ===>   /Fetch script - Execute/      DOMContentLoaded|
 ```
@@ -296,6 +301,7 @@ for all scripts to execute, except for async scripts. So , DOMContentLoaded does
 
 ```
 <script defer src= "script.js">
+
 ```
 
 ### **HEAD**
@@ -304,6 +310,13 @@ for all scripts to execute, except for async scripts. So , DOMContentLoaded does
 The script is still loaded asynchronously, But the execution of the script is deferred until the end of the
 HTML parsing , in practice , loading time is similar to the async attribute , but with the key difference
 that would defer the HTML parsing is never interrupted , because the script is only executed at the end.
+```
+
+```
+NOTE: Network =
+style.css ===> Time : 574ms
+script.js ===> Time : 579ms
+
 ```
 
 ### **BODY**
