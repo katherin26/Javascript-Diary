@@ -6,7 +6,7 @@ const example = {
 -------------------------------Data
     userExample: 'coco',
     password: 'dk23s',
--------------------------------Behaviour
+-------------------------------Behavior
     login(password){
         //Login logic
     },
@@ -50,10 +50,10 @@ behavior into one block.
 ## **CLASS**
 
 ```
-In OOP, we need actually a way to generate so to create , new objects from our code and to do that in traditional OOP we used something called class.
+In OOP, we need actually a way to generate a  new object from our code and to do that in traditional OOP we used something called class.
 
 A class is like a blueprint which can be used to create new objects based on the rules described in the class,
-It's like an architecture where the architect develops a blueprint to exactly plan and describe a house, But the blueprint is really just an abstract plan like a set of rules but nothing tangible than you can actually touch.
+It's like an architecture where the architect develops a blueprint to exactly plan and describe a house, But the blueprint is really just an abstract plan like a set of rules but nothing tangible.
 
 But from that blueprint many real houses can then be built in the real world and with classes it's just the same.
 ```
@@ -61,7 +61,7 @@ But from that blueprint many real houses can then be built in the real world and
 ### **ABSTRACTION**
 
 ```
-Ignoring or hiding details that don't matter, allowing us to get an overview perspective of the thing we're
+Ignoring or hiding details , allowing us to get an overview perspective of the thing we're
 implementing , instead of messing with details that don't really matter to our implementation.
 
 ```
@@ -69,8 +69,7 @@ implementing , instead of messing with details that don't really matter to our i
 ### **ENCAPSULATION**
 
 ```
-Keeping properties and methods private inside the class, so they are not accessible from outside the class.Some
-methods can be exposed as a public interface (API).
+Keeping properties and methods private inside the class, so they are not accessible from outside the class. Some methods can be exposed as a public interface (API).
 
 WHY??
 
@@ -107,7 +106,7 @@ User{
 ### **INHERITANCE**
 
 ```
-Making all properties and methods of a certain class available to a child class. forming a hierarchical relationship between classes. This allows us to reuse common logic and to model real-world relationships.
+Making all properties and methods of a certain class available to a child class, forming a hierarchical relationship between classes. This allows us to reuse common logic and to model real-world relationships.
 ```
 
 ```
@@ -138,7 +137,7 @@ User{                                   Admin{
 ### **POLYMORPHISM**
 
 ```
-A child class can overwrite a method it inherited from a parent class.
+A child class can overwrite a method if is inherited from a parent class.
 
 ```
 
