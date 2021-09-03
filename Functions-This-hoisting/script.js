@@ -25,7 +25,7 @@ function calcAge(birthYear) {
 
     function add(a, b) {
       //solo podemos usar el add function dentro de if que seria un block scope.
-      //NOTA = FUNCTION SCOPE SOLO FUNCIONAN EN USE STRICT.
+      //NOTE: = FUNCTION SCOPE SOLO FUNCIONAN EN USE STRICT.
       return a + b;
     }
     console.log(millenial); //imprime porque esta en el global scope. [they are function scope] solo se imprime dentro de printAge.
