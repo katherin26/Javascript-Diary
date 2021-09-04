@@ -24,10 +24,10 @@ html {
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  font-weight: 300;
+  font-family: 'Cardo', serif;
+  font-weight: 600;
   color: #444;
-  line-height: 1.9;
+  line-height: 1.5;
   background-color: #e9e1d4;
 }
 
@@ -35,7 +35,6 @@ body {
 .section {
   padding: 15rem 3rem;
   border-top: 1px solid #f1bcae;
-
   transition: transform 1s, opacity 1s;
 }
 
@@ -47,10 +46,11 @@ body {
 .section__title {
   max-width: 80rem;
   margin: 0 auto 8rem auto;
+  text-align: center;
 }
 
 .section__description {
-  font-size: 1.8rem;
+  font-size: 3rem;
   font-weight: 600;
   text-transform: uppercase;
   color: var(--color-primary);
@@ -59,14 +59,14 @@ body {
 
 .section__header {
   font-size: 4rem;
-  line-height: 1.3;
-  font-weight: 500;
+  line-height: 1.5;
+  font-weight: 800;
 }
 
 .btn {
   display: inline-block;
   background-color: var(--color-primary);
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   font-family: inherit;
   font-weight: 500;
   border: none;
@@ -83,7 +83,7 @@ body {
 .btn--text {
   display: inline-block;
   background: none;
-  font-size: 1.7rem;
+  font-size: 3.7rem;
   font-family: inherit;
   font-weight: 500;
   color: var(--color-primary);
@@ -96,11 +96,11 @@ body {
 
 p {
   color: #666;
+  font-size: 2.5rem;
 }
 
-/* This is BAD for accessibility! Don't do in the real world! */
 button:focus {
-  outline: none;
+  outline: 3px solid var(--color-tertiary-opacity);
 }
 
 img {
@@ -129,7 +129,7 @@ img {
 }
 
 .nav__logo {
-  height: 4.5rem;
+  height: 6.5rem;
   transition: all 0.3s;
 }
 
@@ -145,8 +145,8 @@ img {
 
 .nav__link:link,
 .nav__link:visited {
-  font-size: 1.7rem;
-  font-weight: 400;
+  font-size: 2.7rem;
+  font-weight: 500;
   color: inherit;
   text-decoration: none;
   display: block;
@@ -160,7 +160,6 @@ img {
   padding: 0.8rem 2.5rem;
   border-radius: 1rem;
   background-color: var(--color-primary);
-  color: #222;
 }
 
 .nav__link--btn:hover,
@@ -181,25 +180,23 @@ img {
 
 .header__title {
   flex: 1;
-
   max-width: 115rem;
   display: grid;
   grid-template-columns: 3fr 2fr;
   row-gap: 3rem;
   align-content: center;
   justify-content: center;
-
   align-items: start;
   justify-items: start;
 }
 
 h1 {
-  font-size: 5.5rem;
+  font-size: 7.5rem;
   line-height: 1.35;
 }
 
 h4 {
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   font-weight: 500;
 }
 
@@ -252,20 +249,20 @@ h4 {
   align-items: center;
   justify-content: center;
   background-color: var(--color-primary-opacity);
-  height: 5.5rem;
-  width: 5.5rem;
+  height: 6.5rem;
+  width: 6.5rem;
   border-radius: 50%;
   margin-bottom: 2rem;
 }
 
 .features__icon svg {
-  height: 2.5rem;
-  width: 2.5rem;
+  height: 3.5rem;
+  width: 3.5rem;
   fill: var(--color-primary);
 }
 
 .features__header {
-  font-size: 2rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
 }
 
@@ -274,6 +271,7 @@ h4 {
   max-width: 100rem;
   margin: 12rem auto 0 auto;
   background-color: #fcf3f0;
+  text-align: center;
 }
 
 .operations__tab-container {
@@ -407,14 +405,13 @@ h4 {
   position: absolute;
   top: 50%;
   z-index: 10;
-
   border: none;
   background: rgba(255, 255, 255, 0.7);
   font-family: inherit;
   color: #333;
   border-radius: 50%;
-  height: 5.5rem;
-  width: 5.5rem;
+  height: 6.5rem;
+  width: 6.5rem;
   font-size: 3.25rem;
   cursor: pointer;
 }
@@ -481,15 +478,17 @@ h4 {
 }
 
 .testimonial__header {
-  font-size: 2.25rem;
+  font-size: 4.25rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 .testimonial__text {
-  font-size: 1.7rem;
+  font-size: 2.7rem;
   margin-bottom: 3.5rem;
   color: #666;
+  text-align: center;
 }
 
 .testimonial__author {
@@ -503,12 +502,12 @@ h4 {
 
 .testimonial__photo {
   grid-row: 1 / span 2;
-  width: 6.5rem;
+  width: 7.5rem;
   border-radius: 50%;
 }
 
 .testimonial__name {
-  font-size: 1.7rem;
+  font-size: 2rem;
   font-weight: 500;
   align-self: end;
   margin: 0;
@@ -537,11 +536,11 @@ h4 {
 }
 
 .section--sign-up .section__title {
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
 }
 
 .section--sign-up .btn {
-  font-size: 1.9rem;
+  font-size: 2.5rem;
   padding: 2rem 5rem;
 }
 
@@ -555,7 +554,7 @@ h4 {
   list-style: none;
   display: flex;
   justify-content: center;
-  margin-bottom: 5rem;
+  margin-bottom: 2rem;
 }
 
 .footer__item {
@@ -563,7 +562,7 @@ h4 {
 }
 
 .footer__link {
-  font-size: 1.6rem;
+  font-size: 3rem;
   color: #eee;
   text-decoration: none;
 }
@@ -576,13 +575,13 @@ h4 {
 }
 
 .footer__copyright {
-  font-size: 1.4rem;
+  font-size: 2.4rem;
   color: #aaa;
   text-align: center;
 }
 
 .footer__copyright .footer__link {
-  font-size: 1.4rem;
+  font-size: 2.4rem;
 }
 
 /* MODAL WINDOW */
@@ -594,9 +593,10 @@ h4 {
   max-width: 60rem;
   background-color: #f3f3f3;
   padding: 5rem 6rem;
-  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.3);
+  box-shadow: 0 4rem 6rem rgba(0, 0, 0, 0.5);
   z-index: 1000;
   transition: all 0.5s;
+  border-radius: 10px;
 }
 
 .overlay {
@@ -605,16 +605,18 @@ h4 {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
+
   backdrop-filter: blur(4px);
   z-index: 100;
   transition: all 0.5s;
 }
 
 .modal__header {
-  font-size: 3.25rem;
+  font-size: 4.25rem;
   margin-bottom: 4.5rem;
   line-height: 1.5;
+  text-align: center;
 }
 
 .modal__form {
@@ -626,7 +628,7 @@ h4 {
 }
 
 .modal__form label {
-  font-size: 1.7rem;
+  font-size: 2.5rem;
   font-weight: 500;
 }
 
