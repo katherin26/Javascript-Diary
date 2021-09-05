@@ -197,3 +197,22 @@ prototype chain
 ```
 
 ## **PROTOTYPAL INHERITANCE ON BUILT-IN OBJECTS**
+
+```
+const arr = [3, 6, 4, 5, 6, 9, 3, 6, 9, 6];
+console.log(arr.__proto__); //[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+//new Array === []
+```
+
+```
+console.log(arr.__proto__ === Array.prototype); //true
+console.log(arr.__proto__.__proto__); //{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+```
+
+```
+Array.prototype.unique = function () {
+  return [...new Set(this)];
+};
+
+console.log(arr.unique()); // [3, 6, 4, 5, 9]
+```
