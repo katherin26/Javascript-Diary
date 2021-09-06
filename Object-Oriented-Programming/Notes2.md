@@ -1,116 +1,268 @@
-# **Setters and Getters**
+# **CONSTRUCTOR FUNCTIONS AND THE NEW OPERATOR**
 
 ```
-Are basically functions that get and set a value so just as the name says , but on the outside they still look
-like regular properties.
+const Human = function (firstName, birthYear) {
 
-Setters and Getters can actually be very useful for data validation , look in the clas example set fullName(name)
+//Instance properties
+
+//console.log(this); //Human{}
+this.firstName = firstName;
+this.birthYear = birthYear;
+};
 ```
 
-**Example with Object literal**
-
 ```
-const account = {
-owner: 'Jonas',
-movements: [200, 530, 120, 300],
+const pepa = new Human('Pepa', 1991);
+console.log(pepa); // Human {firstName: "Pepa", birthYear: 1991}
 ```
 
-**Getter**
+1. New {} is created
+2. Function is called, this = {}
 
 ```
-get latest() {
-return this.movements.slice(-1).pop();
-},
-set latest(mov) {
-//1 parameter
-this.movements.push(mov);
-},
+The this keyword will point to the new object that was created in step number one , all of this happens
+only because we are calling the function using the new operator.
+```
+
+3. {} Linked to a prototype
+4. Function automatically return {} = At this point, the object no longer needs to be empty and this is actually the trick of making the constructor function work .
+
+```
+const matilda = new Human('Matilda', 2017);
+const jack = new Human('Jack', 1887);
+console.log(matilda, jack); //Human {firstName: "Matilda", birthYear: 2017} Human {firstName: "Jack", birthYear: 1887}
+
+console.log(pepa instanceof Human); //true
+```
+
+## **PROTOTYPES**
+
+```
+Each and every function in Javascript automatically has a property called prototype and that includes
+constructor functions , Now every object that's created by a certain constructor function will get access
+to all the methods and properties that we define on the constructors prototype property _/
+
+console.log(Human.prototype); //{constructor: ƒ}
+Human.prototype.calcAge = function () {
+console.log(2020 - this.birthYear);
+};
+```
+
+```
+pepa.calcAge(); //29 = We have access because of prototypal inheritance.
+```
+
+```
+The this keyword in each object is as always set to the object that is calling the method.
+Any object always has access to the methods and properties from its prototype and the prototype of Pepa
+and Matilda is Human.prototype.
+```
+
+```
+console.log(pepa.__proto__); // {calcAge: ƒ, constructor: ƒ}
+
+This is the prototype of pepa and inside we can see the calcAge method and that's why pepa
+is able to use this method. So the prototype of pepa object is essentially the prototype property
+of the constructor function.
+```
+
+```
+console.log(pepa.__proto__ === Human.prototype); //true
+
+IMPORTANT: CONFUSING PART =
+Human.prototype is not the prototype of Human, But instead , it is what's gonna be used as the prototype
+of all the objects that are created with the Human constructor function.
+
+
+console.log(Human.prototype.isPrototypeOf(pepa)); //true
+```
+
+```
+__proto__ = step number three = linked to prototype, and it sets its value to the prototype property of
+the function that is being called
+It sets the proto property on the object to the prototype property of the constructor function and this
+is how Javascript knows internally that the pepa object is connected to Human.prototype
+When you see the pepa object, you can see that property in there :
+
+__proto__: Object
+calcAge: f()
+
+And then you see Human.prototype which contains calcAge function
+```
+
+## **SET PROPERTIES ON THE PROTOTYPE**
+
+```
+Human.prototype.species = 'Homo Sapiens';
+console.log(pepa, matilda);
+```
+
+```
+__proto__:
+calcAge: f()
+species: "Homo Sapiens"
+
+```
+
+```
+console.log(pepa.species, matilda.species); // Homo Sapiens Homo Sapiens
+Both of these objects will then inherit so they will get access to this property from the
+prototype.
+```
+
+```
+When we take a look at these objects , Well this property is not really directly in the object so it's
+not it's own property .
+Own properties are only the ones that are declared directly on the object itself, So not including the
+inherited properties.
+```
+
+```
+console.log(pepa.hasOwnProperty('firstName')); //true
+console.log(pepa.hasOwnProperty('lastName')); //false
+```
+
+## **HOW PROTOTYPAL INHERITANCE / DELEGATION WORKS**
+
+```
+                       .prototype
+Constructor function  ------------->       Prototype
+    [Person()]                        [Person.prototype]
+                      ------------->   calcAge: function
+                      .constructor
+                                                / \
+const Person = function(name, birthYear){        |      PROTOTYPAL INHERITANCE/DELEGATION
+    this.name = name;                            |      PROTOTYPE CHAIN
+    this.birthYear = birthYear;                  |
+};                                            Object
+
+                                              [Pepa]
+                                            name: 'Pepa'
+                                            birthYear: 1990
+                                            __proto__:         <---- Always points to an object's prototype.
+                                            Person.prototype
+
+
+const pepa = new Person('Pepa',1990);
+pepa.calcAge();
+
+This is how it works with function
+constructors and ES6 classes.
+
+When we call the calcAge function on the pepa object ,Javascript can not find the calcAge function
+directly in the pepa object.
+If a property or a method cannot be found in a certain object Javascript will look into his prototype
+in this case is : calcAge: function and tha's how the calcAge function can run correctly and return a result.
+And this behavior is what we called prototypal inheritance.
+We can create as many person objects as we like and all of them will then inherit this method.
+So we can call this calcAge method on all the person objects without the method being directly attached to all
+the objects themselves
+Now the fact that Pepa is connected to a prototype and the ability of looking up methods and properties in a prototype is what we call the prototype chain, The pepa object and it's prototype basically from a prototype chain.
+```
+
+**THE NEW OPERATOR**
+
+```
+1. An empty object is created.
+2. This keyword in constructor function call is set to the new object.
+3. The new object is linked (__proto__property) to the constructor function's prototype property.
+4. The new object is returned from the constructor function call.
+```
+
+**THE PROTOTYPE CHAIN**
+
+```
+Constructor function ==>     Prototype   ==> null
+    [Object()]             [Object.prototype]
+                                  / \
+                                   |
+                                   |
+                                   |
+Constructor function ==>       Prototype
+   [Person()]             [Person.prototype]
+
+```
+
+```
+The pepa object is linked with .__proto__ to its prototype = [Person.prototype], but [Person.prototype] is an
+object itself! , every object in Javascript has a prototype and the prototype of person.prototype is
+object.prototype and this is an object which means that it has been built by the built in object constructor function (Constructor function [Object()]) that is called behind the scenes.
+
+NOTE: Built-in constructor function for objects. This is used when we write an object literal:
+{...} === new Object(...)
+
+Prototype chain = series of links between objects, linked through prototypes(similar to the scope chain).
+Object.prototype is usually the top which means that it's prototype is null, which then marks the end of the
+prototype chain
+```
+
+## **PROTOTYPAL INHERITANCE ON BUILT-IN OBJECTS**
+
+```
+const arr = [3, 6, 4, 5, 6, 9, 3, 6, 9, 6];
+console.log(arr.__proto__); //[constructor: ƒ, concat: ƒ, copyWithin: ƒ, fill: ƒ, find: ƒ, …]
+//new Array === []
+```
+
+```
+console.log(arr.__proto__ === Array.prototype); //true
+console.log(arr.__proto__.__proto__); //{constructor: ƒ, __defineGetter__: ƒ, __defineSetter__: ƒ, hasOwnProperty: ƒ, __lookupGetter__: ƒ, …}
+```
+
+```
+Array.prototype.unique = function () {
+  return [...new Set(this)];
 };
 
-console.log(account.latest); //300
-
-account.latest = 50;
-console.log(account.movements); //[200, 530, 120, 300, 50];
+console.log(arr.unique()); // [3, 6, 4, 5, 9]
 ```
 
-**Example with Class**
+## **ES6 CLASSES**
+
+**Class expression**
+
+```
+const PersonCl = class{}
+```
+
+**Class declaration**
 
 ```
 class PersonCl {
-constructor(fullName, birthYear) {
-this.fullName = fullName;
-this.birthYear = birthYear;
-}
-
-calcAge() {
-console.log(2020 - this.birthYear);
-}
-
-greet() {
-console.log(`Hey ${this.firstName}`);
-}
-
-//Getter
-get age() {
-return 2030 - this.birthYear;
-}
-
-//Setter
-//Set a property that already exist
-set fullName(name) {
-console.log(name);
-if (name.includes(' ')) this._fullName = name;
-else alert(`${name} is not a full name!!!!`);
-}
-
-get fullName() {
-return this._fullName;
- }
-}
-```
-
-```
-const maty = new PersonCl('MatyV', 1990);
-console.log(maty); //PersonCl {firstName: "Maty", birthYear: 1990}
-maty.calcAge(); //30
-console.log(maty.age); //40
-```
-
-**STATIC METHODS**
-
-```
-The best way to understand what a static method actually is the build in Array.from method  */
-
-This converts any array like structure to a real Array, .from is attached to the entire constructor and not
-to the prototype property of the constructor, therefore all the arrays do not inherit this method.
-Array.from(document.querySelectorAll('h1')); //[h1]
-```
-
-```
-Car.hey = function () {
-  console.log(` r u n run `);
-};
-```
-
-```
-Car.hey(); // Whatever object is calling the method will be the this keyword inside of that function, is simply
-//that the entire constructor function
-```
-
-**CLASS PersonCl**
-
-```
-All we need to do is to add the static keyword
-Instance methods
-
-{
-  get fullName(){
-    return this._fullName;
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+  //All these methods that we write in the class ,will be added to .prototype property.
+  calcAge() {
+    console.log(2020 - this.birthYear);
   }
 
-  static hey('Hey there');
-  console.log(this);
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
 }
+```
 
-PersonCl.hey(); //Hey there!!
+```
+const Jonathan = new PersonCl('Jonathan', 1996);
+console.log(Jonathan); //PersonCl {firstName: "Jonathan", birthYear: 1996}
+
+Jonathan.calcAge(); //24
+console.log(Jonathan.__proto__ === PersonCl.prototype); //true
+```
+
+```
+PersonCl.prototype.greet = function () {
+  console.log(`Hey ${this.firstName}`);
+};*/
+Jonathan.greet(); //Hey Jonathan
+```
+
+```
+1. Classes are NOT hoisted = even if they are class declarations , So function declarations are hoisted
+which means we can use them before they are declared in the code , but with Classes , that doens't work.
+2. Classes are first-class citizens = So what that means , is that we can pass them into function and also
+return them from functions .
+3.Classes are executed in strict mode = All the code is in the class will be executed in strict mode.
 ```
