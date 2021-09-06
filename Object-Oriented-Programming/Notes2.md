@@ -75,3 +75,42 @@ console.log(maty); //PersonCl {firstName: "Maty", birthYear: 1990}
 maty.calcAge(); //30
 console.log(maty.age); //40
 ```
+
+**STATIC METHODS**
+
+```
+The best way to understand what a static method actually is the build in Array.from method  */
+
+This converts any array like structure to a real Array, .from is attached to the entire constructor and not
+to the prototype property of the constructor, therefore all the arrays do not inherit this method.
+Array.from(document.querySelectorAll('h1')); //[h1]
+```
+
+```
+Car.hey = function () {
+  console.log(` r u n run `);
+};
+```
+
+```
+Car.hey(); // Whatever object is calling the method will be the this keyword inside of that function, is simply
+//that the entire constructor function
+```
+
+**CLASS PersonCl**
+
+```
+All we need to do is to add the static keyword
+Instance methods
+
+{
+  get fullName(){
+    return this._fullName;
+  }
+
+  static hey('Hey there');
+  console.log(this);
+}
+
+PersonCl.hey(); //Hey there!!
+```
