@@ -216,3 +216,53 @@ Array.prototype.unique = function () {
 
 console.log(arr.unique()); // [3, 6, 4, 5, 9]
 ```
+
+## **ES6 CLASSES**
+
+**Class expression**
+
+```
+const PersonCl = class{}
+```
+
+**Class declaration**
+
+```
+class PersonCl {
+  constructor(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  }
+  //All these methods that we write in the class ,will be added to .prototype property.
+  calcAge() {
+    console.log(2020 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.firstName}`);
+  }
+}
+```
+
+```
+const Jonathan = new PersonCl('Jonathan', 1996);
+console.log(Jonathan); //PersonCl {firstName: "Jonathan", birthYear: 1996}
+
+Jonathan.calcAge(); //24
+console.log(Jonathan.__proto__ === PersonCl.prototype); //true
+```
+
+```
+PersonCl.prototype.greet = function () {
+  console.log(`Hey ${this.firstName}`);
+};*/
+Jonathan.greet(); //Hey Jonathan
+```
+
+```
+1. Classes are NOT hoisted = even if they are class declarations , So function declarations are hoisted
+which means we can use them before they are declared in the code , but with Classes , that doens't work.
+2. Classes are first-class citizens = So what that means , is that we can pass them into function and also
+return them from functions .
+3.Classes are executed in strict mode = All the code is in the class will be executed in strict mode.
+```
