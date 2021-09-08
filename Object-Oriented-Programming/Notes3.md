@@ -185,12 +185,6 @@ sarah.calcAge();
 3. Object.create()
 
 ```
-Set up the prototype chain in order =
-
-
-```
-
-```
                                                                    "CLASS" 2 (Parent)
                                                                      PERSON
 
@@ -206,4 +200,36 @@ Set up the prototype chain in order =
                           |
                           |
                        OBJECT
+```
+
+```
+Inheritance =
+Child classes can share behavior from their parent classes, In this diagram, basically what we want to do is to make Person.prototype the Prototype of student.prototype.
+
+We need to create this connection manually, so to link these two prototype objects, We are gonna use object.create, defining prototypes manually is exactly what object.creates does.
+```
+
+```
+Constructor function   ======>  Prototype             Person.prototype
+   [Person()]                  [Person.prototype]     {species:"Homo}
+                                                        calcAge: f()
+                                             / \
+                                              |
+  Student.prototype = Object.create(Person.   |  .__proto__       <==== Create connection manually
+       prototype);                                                         using Object.create()
+
+Constructor function   ======>   Prototype
+   [Student()]                 [Student.prototype]
+                                    proto__:
+                                 Person.prototype
+
+                                             / \
+                                              |
+           const mike = new Student('Mike',)  |  .__proto__
+
+                                            Object
+                                            [mike]
+
+                                            proto__:
+                                        Student.prototype
 ```

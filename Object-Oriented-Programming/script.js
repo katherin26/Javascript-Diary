@@ -78,3 +78,36 @@ result1.calcAccelerate(); //Ford 130km/h New Speed
 console.log(result1.speedUs); //81.25
 result1.speedUs = 50;
 console.log(result1); //Car2 {make: "Ford", speed: 80}
+
+/*TITTLE: INHERITANCE BETWEEN "CLASSES" : CONSTRUCTOR 
+FUNCTIONS*/
+
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2020 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(
+    this,
+    firstName,
+    birthYear
+  ); /*The call method indeed can call Person function and we can specify the
+  this keyword as the first argument in this function, in this case , we want the this keyword inside this
+  function to simply be the this keyword. */
+
+  /*this.firstName = firstName;
+  this.birthYear = birthYear;*/
+  this.course = course;
+};
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+mike.introduce(); // My name is Mike and I study Computer Science
