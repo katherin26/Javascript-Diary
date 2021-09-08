@@ -4,7 +4,7 @@
 Are basically functions that get and set a value so just as the name says , but on the outside they still look
 like regular properties.
 
-Setters and Getters can actually be very useful for data validation , look in the clas example set fullName(name)
+Setters and Getters can actually be very useful for data validation , look in the class example set fullName(name)
 ```
 
 **Example with Object literal**
@@ -176,4 +176,34 @@ sarah.init('Sarah', 1979);
 sarah.calcAge();
 
 
+```
+
+# **INHERITANCE BETWEEN "CLASSES"**
+
+1. Constructor functions
+2. ES6 Classes
+3. Object.create()
+
+```
+Set up the prototype chain in order =
+
+
+```
+
+```
+                                                                   "CLASS" 2 (Parent)
+                                                                     PERSON
+
+ Constructor   ====>  Prototype
+   Function              / \
+                          |    INHERITANCE BETWEEN "CLASSES"
+                          |
+ Constructor   ====>  Prototype                                     "CLASS" 1 (child)
+   Function                                                           STUDENT
+                         / \
+                          |                                         More specific type of person
+                          |                                          ideal as child class.
+                          |
+                          |
+                       OBJECT
 ```
