@@ -206,11 +206,14 @@ sarah.calcAge();
 Inheritance =
 Child classes can share behavior from their parent classes, In this diagram, basically what we want to do is to make Person.prototype the Prototype of student.prototype.
 
-We need to create this connection manually, so to link these two prototype objects, We are gonna use object.create, defining prototypes manually is exactly what object.creates does.
+We need to create this connection manually, so to link these two prototype objects, We are gonna use object.create, defining prototypes manually is exactly what object.creates does (see linking prototypes in the example.)
 ```
 
 ```
-Constructor function   ======>  Prototype             Person.prototype
+
+
+                                                                        ====> Prototype           ===> null
+Constructor function   ======>  Prototype             Person.prototype       [Object.prototype]
    [Person()]                  [Person.prototype]     {species:"Homo}
                                                         calcAge: f()
                                              / \
@@ -232,4 +235,53 @@ Constructor function   ======>   Prototype
 
                                             proto__:
                                         Student.prototype
+```
+
+```
+const Person = function (firstName, birthYear) {
+  this.firstName = firstName;
+  this.birthYear = birthYear;
+};
+
+Person.prototype.calcAge = function () {
+  console.log(2040 - this.birthYear);
+};
+
+const Student = function (firstName, birthYear, course) {
+  Person.call(this, firstName, birthYear);
+  /*The call method indeed can call Person function and we can specify the this keyword as the first
+  argument in this function, in this case , we want the this keyword inside this function to simply be
+  the this keyword. */
+
+  /*this.firstName = firstName;
+  this.birthYear = birthYear;*/
+  this.course = course;
+};
+
+//LINKING PROTOTYPES
+
+/* Student.prototype inherits from person.prototype ,we need to create this connection before we add any
+more methods to the prototype object of student and that's because Object.create will return an empty object.
+So at this point Student.prototype is empty and we can add methods like (.introduce) */
+
+Student.prototype = Object.create(Person.prototype);
+
+Student.prototype.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const mike = new Student('Mike', 2020, 'Computer Science');
+
+mike.introduce(); // My name is Mike and I study Computer Science
+mike.calcAge(); //20
+
+console.log(mike.__proto__); //Person{introduce: f} this object contains the introduce method.
+console.log(mike.__proto__.__proto__); //{calcAge: ƒ, constructor: ƒ} This contains the calcAge function.
+
+console.log(mike instanceof Student); //true
+console.log(mike instanceof Person); //true
+console.log(mike instanceof Object); //true
+
+Student.prototype.constructor = Student;
+console.dir(Student.prototype.constructor); //ƒ Student(firstName, birthYear, course)
 ```
