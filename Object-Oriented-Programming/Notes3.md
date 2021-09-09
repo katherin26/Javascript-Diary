@@ -369,3 +369,80 @@ console.log(martin);
 martin.introduce();
 martin.calcAge();
 ```
+
+## **INHERITANCE BETWEEN "CLASSES" : OBJECT.CREATE**
+
+```
+
+                                          Prototype
+                                        [PersonProto]        <- - - - - - - -|
+                                      calcAge: function                      |
+                                             / \                             |
+  const StudentProto =                        |                              |
+  Object.create(PersonProto);                 |    .__proto__                |
+                                              |                              |
+                                          Prototype
+                                        [StudentProto]               Student inherits
+                                            proto :                     from Person
+                                          PersonProto
+
+  const jay =                                / \
+  Object.create(StudentProto);                |    .__proto__
+                                              |
+                                              |
+                                            Object
+                                            [jay]
+
+                                            proto:
+                                         StudentProto
+
+
+```
+
+```
+const PersonProto = {
+  calcAge() {
+    console.log(2050 - this.birthYear);
+  },
+
+  init(firstName, birthYear) {
+    this.firstName = firstName;
+    this.birthYear = birthYear;
+  },
+};
+```
+
+```
+Now we want to add another prototype in the middle of the chain, between PersonProto and the object ,
+so what we are going to do is to make student inherit directly from person.
+```
+
+```
+const bella = Object.create(PersonProto);
+```
+
+```
+Prototype of students
+The StudentProto object is now the prototype of the jay object and the PersonProto object is in turn the
+prototype of StudentProto, so therefore , PersonProto is a parent prototype of jay which means that's in the
+Prototype chain
+```
+
+```
+const StudentProto = Object.create(PersonProto);
+
+StudentProto.init = function (firstName, birthYear, course) {
+  PersonProto.init.call(this, firstName, birthYear);
+  this.course = course;
+};
+
+StudentProto.introduce = function () {
+  console.log(`My name is ${this.firstName} and I study ${this.course}`);
+};
+
+const jay = Object.create(StudentProto);
+jay.init('Jay', 2020, 'Computer Science');
+console.log(jay);
+jay.introduce();
+jay.calcAge();
+```
