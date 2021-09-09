@@ -237,6 +237,8 @@ Constructor function   ======>   Prototype
                                         Student.prototype
 ```
 
+## **INHERITANCE BETWEEN "CLASSES" : CONSTRUCTOR FUNCTIONS**
+
 ```
 const Person = function (firstName, birthYear) {
   this.firstName = firstName;
@@ -249,21 +251,26 @@ Person.prototype.calcAge = function () {
 
 const Student = function (firstName, birthYear, course) {
   Person.call(this, firstName, birthYear);
-  /*The call method indeed can call Person function and we can specify the this keyword as the first
-  argument in this function, in this case , we want the this keyword inside this function to simply be
-  the this keyword. */
 
+  The call method indeed can call Person function and we can specify the this keyword as the first
+  argument in this function, in this case , we want the this keyword inside this function to simply be
+  the this keyword.
   /*this.firstName = firstName;
   this.birthYear = birthYear;*/
+
   this.course = course;
 };
+```
 
-//LINKING PROTOTYPES
+**LINKING PROTOTYPES**
 
-/* Student.prototype inherits from person.prototype ,we need to create this connection before we add any
+```
+Student.prototype inherits from person.prototype ,we need to create this connection before we add any
 more methods to the prototype object of student and that's because Object.create will return an empty object.
-So at this point Student.prototype is empty and we can add methods like (.introduce) */
+So at this point Student.prototype is empty and we can add methods like (.introduce)
+```
 
+```
 Student.prototype = Object.create(Person.prototype);
 
 Student.prototype.introduce = function () {
@@ -284,4 +291,81 @@ console.log(mike instanceof Object); //true
 
 Student.prototype.constructor = Student;
 console.dir(Student.prototype.constructor); //ƒ Student(firstName, birthYear, course)
+```
+
+## **INHERITANCE BETWEEN "CLASSES" : ES6 CLASSES**
+
+```
+class PersonCl {
+  constructor(fullName, birthYear) {
+    this.fullName = fullName;
+    this.birthYear = birthYear;
+  }
+
+  calcAge() {
+    console.log(2020 - this.birthYear);
+  }
+
+  greet() {
+    console.log(`Hey ${this.fullName}`);
+  }
+
+  //Getter
+  get age() {
+    return 2020 - this.birthYear;
+  }
+
+  //Setter
+  set fullName(name) {
+    if (name.includes(' ')) this._fullName = name;
+    else alert(`${name} is not a full name!!!!`);
+  }
+
+  get fullName() {
+    return this._fullName;
+  }
+
+  static hey() {
+    console.log(`Hey there!!!`);
+  }
+}
+
+const jason = new PersonCl('JasonM', 1994);
+```
+
+```
+ To implement inheritance between ES6 classes, we need the extend keywords and the super function,
+so to make this student class inherit from the person class all we need to do is to say extends and then
+the person class
+```
+
+```
+class StudentCl extends PersonCl {
+  constructor(fullName, birthYear, course) {
+    /*Super function
+    Always needs to happen first! and then we will be able to access the this keyword.
+    In this case the super function would automatically be called with all the arguments that are passed
+    into this constructor. */
+    super(fullName, birthYear);
+    this.course = course;
+  }
+
+  introduce() {
+    console.log(`My name is ${this.fullName} and I styudy ${this.course}`);
+  }
+
+  /*This method overrode the one that was already there in the prototype chain and that's because
+  this new calcAge method appears first in the prototype chain.*/
+  calcAge() {
+    console.log(`I'm ${
+      2037 - this.birthYear
+    } years old, but as a student I feel more like
+    ${2037 - this.birthYear + 10}`);
+  }
+}
+
+const martin = new StudentCl('Martin PO', 2012, 'Computer Science');
+console.log(martin);
+martin.introduce();
+martin.calcAge();
 ```
