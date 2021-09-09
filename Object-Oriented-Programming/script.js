@@ -184,6 +184,15 @@ class StudentCl extends PersonCl {
   introduce() {
     console.log(`My name is ${this.fullName} and I styudy ${this.course}`);
   }
+
+  /*This method overrode the one that was already there in the prototype chain and that's because
+  this new calcAge method appears first in the prototype chain.*/
+  calcAge() {
+    console.log(`I'm ${
+      2037 - this.birthYear
+    } years old, but as a student I feel more like 
+    ${2037 - this.birthYear + 10}`);
+  }
 }
 
 const martin = new StudentCl('Martin PO', 2012, 'Computer Science');
