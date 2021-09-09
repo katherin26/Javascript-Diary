@@ -78,3 +78,53 @@ result1.calcAccelerate(); //Ford 130km/h New Speed
 console.log(result1.speedUs); //81.25
 result1.speedUs = 50;
 console.log(result1); //Car2 {make: "Ford", speed: 80}
+
+/*TITTLE: CODING CHALLENGE 3 
+1. Use a constructor function to implement an Electric car (called EV = Electric vehicle) as a CHILD "class"
+of Car. Besides a make and current speed , the EV also has the current battery charge in % ('charge' property);
+2. Implement a 'chargeBattery' method which takes an argument 'chargeTo' and sets the battery charge to 
+'chargeTo';
+3.Implement an 'accelerate' method that will increase the car's speed by 20, and decrease the charge by 1%. 
+Then log a message like this: 'Tesla going at 140 km/h, with a charge of 22%';
+4. Create an electric car object and experiment with calling 'accelerate', 'brake' and 'chargeBattery' (charge
+  to 90%) . Notice what happens when you 'accelerate'!.
+
+  DATA CAR 1 : 'Tesla' going at 120 km/h, with a charge of 23%
+*/
+
+const Car3 = function (make, speed) {
+  this.make = make;
+  this.speed = speed;
+};
+
+Car3.prototype.accelerate = function () {
+  console.log(`${this.make} ${(this.speed += 10)}km/h New Speed`);
+};
+
+Car3.prototype.brake = function () {
+  console.log(`${this.make} ${(this.speed -= 5)}km/h New Speed`);
+};
+
+const ElectricVehicle = function (make, speed, battery) {
+  Car3.call(this, make, speed);
+  this.battery = battery;
+};
+
+//LINK THE PROTOTYPES
+ElectricVehicle.prototype = Object.create(Car3.prototype);
+
+Car3.prototype.chargeBattery = function (chargeTo) {
+  this.battery = chargeTo;
+};
+
+Car3.prototype.accelerate = function () {
+  console.log(
+    `${this.make} going at ${(this.speed += 20)} with a charge of ${this
+      .battery--}%`
+  );
+};
+
+const tesla = new ElectricVehicle('Tesla', 120, 23);
+tesla.chargeBattery(90);
+console.log(tesla); //ElectricVehicle {make: "Tesla", speed: 120, battery: 90}
+tesla.accelerate(); //Tesla going at 140 with a charge of 90%
