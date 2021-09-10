@@ -164,3 +164,36 @@ console.log(acc1);
 //console.log(acc1.#movements); //Private field '#movements' must be declared in an enclosing class
 //console.log(acc1.#pin); //Private field '#pin' must be declared in an enclosing class
 ```
+
+## **CHAINING METHODS**
+
+**Example**
+
+```
+  deposit(val) {
+    // this._movements.push(val);
+    this.#movements.push(val);
+    return this; //for chaining methods!
+  }
+
+  withdraw(val) {
+    this.deposit(-val);
+    return this; //for chaining methods!
+  }
+
+  requestLoan(val) {
+    if (this._approveLoan(val)) {
+      this.deposit(val);
+      console.log(`Loan approved`);
+      return this; //for chaining methods!
+    }
+  }
+```
+
+**CHAINING**
+
+```
+acc1.deposit(300).deposit(500).withdraw(35).requestLoan(25000).withdraw(40000);
+
+console.log(acc1.getMovements()); //[1000, 250, -140, 300, 500, -35, 25000, -40000]
+```
