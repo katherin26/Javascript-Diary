@@ -1,7 +1,6 @@
 # **What is ?? OOP**
 
 ```
-
 const example = {
 -------------------------------Data
     userExample: 'coco',
