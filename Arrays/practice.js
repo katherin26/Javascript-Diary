@@ -117,3 +117,98 @@ console.log(result); //[1,2,3]
 
 /*The map method will create a new array from an existing array by performing a specified transformation on each
 array item. In this example, each letter is replaced by a corresponding object's value. */
+
+//NOTE: Which of the following methods are valid ways to copy mainArray??
+
+const mainArray = ['one', 'two', 'three', 'five', 'four'];
+
+//1.
+const a1 = mainArray;
+//2.
+const b1 = [...mainArray];
+//3.
+const c1 = [];
+mainArray.forEach(item => {
+  c1.push(item);
+});
+
+console.log(a1); //This is a new reference to the same array.
+console.log(b1); //In order to copy all the values from an array, you'll need to iterate through the array
+console.log(c1); //and copy each value over, which is what options B and C are doing.
+/* 2 and 3 */
+
+/*Keep in mind that methods B and C are making shallow copies, This works in the example because all the values 
+are strings. If mainArray had objects nested within it, the objects wouldn't be cloned; rather,both the original 
+array and the cloned array would be holding a reference to the same object, so a change to the object in on array 
+would result in a change to the object in the other array.
+Javascript passes by reference , not value. If you'd like to learn more about arrays and how to create shallow 
+copies.
+*/
+
+//NOTE: What gets logged??
+
+let first = [1, 2, 3];
+let second = [1, 2, 3];
+let third = '1,2,3';
+
+console.log(first == third);
+console.log(second == third);
+console.log(first == second);
+
+/*When comparing either first or second to third using the equality operator (==), the Javascript interpreter 
+will attempt to use the array's built-in toString method to first convert the array to a string. For both first
+and second, the first.toString() method returns '1,2,3'.This is strictly equal to third, so both first == third 
+and second == third are true!!
+
+Non-primitive values -that is, objects (including functions and arrays) are held by reference. When comparing two
+objects both the equality (==) and identity (===) operators will simply check whether the referencces match (the
+    underlying values are not considered). In this case, first and second are references to different objects in 
+    memory, so first == second is false.
+*/
+
+//NOTE: Will the following function always return the greatest number in an array?
+
+function greatestNumberInArray(arr) {
+  let greatest = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (greatest < arr[i]) {
+      greatest = arr[i];
+    }
+  }
+  return greatest;
+}
+
+console.log(greatestNumberInArray([-1, -2, -3, -4, -5, -8, -7, -10])); //0
+console.log(greatestNumberInArray([1, 2, 3, 4, 5, 8, 7, 10])); //10
+console.log(greatestNumberInArray([-1, 2, 3, 4, 5, 8, -7, -10])); //8
+
+/*No,This function will work fine for arrays where at least one value is 0 or greater;  however, it will fail
+if all numbers are below 0. This is because the greatest variable starts at 0 even if 0 is greater than all array
+elements*/
+
+//NOTE: Consider the following nested array. What will get logged?
+
+const arrayFlat = [1, [2, [3, [4, [5, [6, [7], 8], 9], 10]]], 12];
+
+const resultFlat = arrayFlat.flat(); //testing
+const resultFlat0 = arrayFlat.flat(0); //testing
+const resultFlat1 = arrayFlat.flat(1); //testing
+const resultFlat2 = arrayFlat.flat(2); //testing
+const resultFlat3 = arrayFlat.flat(3); //testing
+const resultFlat4 = arrayFlat.flat(4); //testing
+const resultFlat5 = arrayFlat.flat(5); //original question
+const resultFlat6 = arrayFlat.flat(6); //testing
+
+console.log(resultFlat); //[1,2, Array(2),12];//testing
+console.log(resultFlat0); //[1, Array(2),12];//testing
+console.log(resultFlat1); //[1,2,Array(2),12];//testing
+console.log(resultFlat2); //[1,2,3,Array(3),10,12];//testing
+
+console.log(resultFlat3); //[1,2,3,4,Array(3),10,12];//testing
+console.log(resultFlat4); //[1,2,3,4,5,Array(3),9,10,12];//testing
+console.log(resultFlat6); //[1,2,3,4,5,6,7,8,9,10,12];//testing
+console.log(resultFlat5); //[1,2,3,4,5,6,Array(1),8,9,10,12]; //original answer
+
+/*The Array#flat introduced in ES2019 will flatten an array up to the given depth level. If the depth is unknown,
+Infinity can be passed. If no depth is provided, the default depth will be 1. Passing 0 will return the array
+without modification.*/
