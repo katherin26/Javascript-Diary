@@ -483,9 +483,9 @@ console.log(`SOMEEEE AND EVERYYYYYYYYYYYYYYYYYYY`);
 console.log(movements);
 console.log(movements.includes(-130)); //true
 
-/*We can use the includes method to test if an array includes a certain value , now, we can only really
-test for equality,so basically includes here returns true if any value in the array is exactly equal to
--130 , this is essentially testing for equality but what if we wanted to test for a condition instead
+/*We can use the includes method to test if an array includes a certain value, now we can only really
+test for equality, so basically includes here returns true if any value in the array is exactly equal to
+-130, this is essentially testing for equality but what if we wanted to test for a condition instead
 And so that's where this some method comes into play */
 
 //EQUALITY
