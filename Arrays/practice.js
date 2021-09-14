@@ -212,3 +212,41 @@ console.log(resultFlat5); //[1,2,3,4,5,6,Array(1),8,9,10,12]; //original answer
 /*The Array#flat introduced in ES2019 will flatten an array up to the given depth level. If the depth is unknown,
 Infinity can be passed. If no depth is provided, the default depth will be 1. Passing 0 will return the array
 without modification.*/
+
+/*NOTE: Consider the following two arrays and operations on them. What gets logged as a result of script 
+execution.*/
+
+const exampleArray = [5, 1, 3, 7, 25];
+const arrayS = exampleArray;
+console.log(arrayS.sort());
+
+([5, 25].indexOf(exampleArray[1]) != -1 &&
+  console.log(exampleArray.reverse())) ||
+  (exampleArray[3] == 25 && console.log(exampleArray));
+console.log(arrayS);
+
+/*console.log(arrayS.sort()) // [1,25,3,5,7]
+  console.log(exampleArray.reverse()) // [7,5,3,25,1] 
+  console.log(exampleArray) // [7,5,3,25,1] 
+  console.log(arrayS) // [7,5,3,25,1]
+
+  arraS and exampleArray points to the same array in memory, arrayS.sort() modifies the original array which is 
+  exampleArray. Both variables exampleArray and arrayS point to the same sorted array.
+
+  sort() = When you use this function by default it converts elements to string and then sorts alphabetically based 
+  on their ascii code, so the first result is = 1,25,3,5,7.
+
+  exampleArray[1] is found in the array [5,25] = this is true , leading to the second part of the statement 
+  (exampleArray.reverse()) = Also works in-place and modifies the original array,  so exampleArray the second result
+  is = 7,5,3,25,1.
+
+  console.log returns undefined and this is a falsy value , so the second half of the statement is now evaluated
+  exampleArray[3] == 25 this is true , because index 3 is 25 in the reverseArray, and the third result is 7,5,25,1.
+
+  In the last part, exampleArray is the same modified array and the fourth is 7,5,25,1.
+
+
+
+
+
+*/
