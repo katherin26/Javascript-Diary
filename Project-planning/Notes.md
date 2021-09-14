@@ -193,8 +193,10 @@ want to load the map based on that position.
 Therefore, We're gonna have a method called Load Map, as we click on the map we want a method called Show Form.
 Then we change the input, we want a method called Toggle Elevation Field and then the most important one is the
 event of submitting the form and this new workout method will basically be the heart of this entire class, because
-this is the one that will create new Running objects or new Cycling objects and these objects will be built based on the data that's coming in from the form and as the user keeps adding Running or Cycling workouts a new object will be created for each of the workouts
-
+this is the one that will create new Running objects or new Cycling objects and these objects will be built based on the data that's coming in from the form and as the user keeps adding Running or Cycling workouts a new object will be created for each of the workouts and each of them will then be stored in a Workouts Array which will basi-
+cally hold all of these objects. Alright, so this is gonna be an important class property that all methods of the
+class will then be able to use to work with the workouts. With this structure we have everything that is related
+to building the application itself, organized into one neat block of data and functionality
 ```
 
 ## **5. DEVELOPMENT STEP = Implementation of our plan using code.**
