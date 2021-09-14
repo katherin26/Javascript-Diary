@@ -245,8 +245,16 @@ console.log(arrayS);
 
   In the last part, exampleArray is the same modified array and the fourth is 7,5,25,1.
 
-
-
-
-
 */
+
+/*NOTE: Which option below is NOT correct to merge the arrays?? */
+
+let mergeArray1 = [1, 2, 30];
+let mergeArray2 = [4, 5, 6];
+
+console.log(mergeArray1.concat(mergeArray2)); //[1,2,30,4,5,6] CORRECT WAY TO MERGE ARRAYS
+console.log([...mergeArray1, ...mergeArray2]); //[1,2,30,4,5,6] CORRECT WAY TO MERGE ARRAYS
+console.log(mergeArray1 + mergeArray2); // 1,2,304,5,6 ==> NOT CORRECT WAY TO MERGE ARRAYS
+
+/*mergeArray1 + mergeArray2 = '1,2,304,5,6' = the + operator convert into a string both arrays and that's why 
+the result is a string concatenated with other string  */
