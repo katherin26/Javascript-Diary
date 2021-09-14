@@ -285,3 +285,12 @@ let basketBeans = [0, 0, 0, 0, 9];
 console.log(basketBeans.splice(4, 1)); //[9] ===> Correct Asnwer
 console.log(basketBeans.slice(4, 1)); //[] ===> THe second parameter of the slice method must be the end index of the
 //portion of the array you want to slice , It's not the number of elements you want to delete.
+
+//NOTE: What will the value of citrus be in the below code??
+
+let fruits = ['Banana', 'Orange', 'Lemon', 'Apple', 'Mango'];
+let citrus = fruits.slice(1, 3);
+console.log(citrus); //['Orange','Lemon'];
+
+/*Slice(start index , end index) but the end index will not be included in the result that's why Apple is out 
+of the final result.*/
