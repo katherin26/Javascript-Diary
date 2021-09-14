@@ -258,3 +258,21 @@ console.log(mergeArray1 + mergeArray2); // 1,2,304,5,6 ==> NOT CORRECT WAY TO ME
 
 /*mergeArray1 + mergeArray2 = '1,2,304,5,6' = the + operator convert into a string both arrays and that's why 
 the result is a string concatenated with other string  */
+
+/*NOTE: Which of the following options uses the pop array method to remove the last item from myArray, assigning the
+"popped off" value to removedFromMyArray??*/
+
+let myPopArray = [
+  ['JOE', 23],
+  ['LOUIS', 2],
+];
+
+let removedFromMyArray = myPopArray.pop();
+console.log(removedFromMyArray); // ["LOUIS",2]
+
+/*
+  let removedFromMyArray.pop()
+  let removedFromMyArray = myPopArray.pop() ===> correct answer
+  myPopArray.pop(removedFromMyArray)
+  let removedFromMyArray.pop()
+*/
