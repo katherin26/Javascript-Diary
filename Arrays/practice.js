@@ -276,3 +276,12 @@ console.log(removedFromMyArray); // ["LOUIS",2]
   myPopArray.pop(removedFromMyArray)
   let removedFromMyArray.pop()
 */
+
+/*NOTE: There is a rotten bean which looks different inside a basket. Which option below is the right way to 
+create a new array containing only the rotten bean*/
+
+let basketBeans = [0, 0, 0, 0, 9];
+
+console.log(basketBeans.splice(4, 1)); //[9] ===> Correct Asnwer
+console.log(basketBeans.slice(4, 1)); //[] ===> THe second parameter of the slice method must be the end index of the
+//portion of the array you want to slice , It's not the number of elements you want to delete.
