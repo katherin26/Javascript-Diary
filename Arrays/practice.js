@@ -305,3 +305,50 @@ forEach() = calls a provided callback function once for each element in an array
 every() = will stop as soon as the provided function results in a falsey condition. 
 concat() = simply combines two arrays.
 */
+
+/*NOTE: True or False: array.findIndex will return 0 when no elements pass the test.
+
+ True
+ False ===> Correct Answer
+
+ findIndex will actually return a -1 since 0 would be a legitimate array Index!!
+ Under the hood ,this array method executes a callback function for each index until a truthy value is returned.
+ If the array length is 0 or if the callback never returns a truthy value then findIndex will return -1.
+*/
+
+/*NOTE: Consider the following block of code. What gets logged?*/
+
+let equalArray1 = [9];
+let equalArray2 = [10];
+
+console.log(equalArray1 == 9); //true
+console.log(equalArray2 == 10); //true
+console.log(equalArray1 < equalArray2); //false
+
+/*When using == to compare an array with a number, Javascript tries to coerce the array to a number, which is 
+possible when the array contains a single numeric value. Here [9] turns into 9, and [10] turns into 10, and 
+9 == 9 and 10 == 10 are both true.
+
+When comparing arrays with < or >, the arrays are instead coerced to strings ([9] < [10] turns into '9' < '10').
+When comparing strings, Javascript uses lexicographical order, which means the strings are compared to each other 
+one character at a time. The first characters that are different are the ones at the [0] index, so the comparison
+donde is '9' < '1', which is false.
+*/
+
+/*NOTE: What gets logged in the following code?? */
+
+let i = 0;
+
+const numArr = new Array(5);
+console.log(numArr); //[empty x 5] length: 5 __proto__: Array(0)
+numArr.forEach(() => i++);
+
+console.log(i); //0
+
+/*Array methods like map, filter, reduce, forEach.. take a callback as the first parameter, which is executed 
+for every element in the array . The Array constructor, when given an integer between 0 and (232 - 1), will 
+return a sparse array, which has a length property equal to the given integer. THe returned array is "sparse" 
+because its slots are empty; it does not have any own-properties, other than [.length].
+(In contrast, the array [undefined] does have an own-property of 0, even though the value at that property is 
+  undefined.)
+*/
