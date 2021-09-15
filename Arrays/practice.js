@@ -372,3 +372,29 @@ If the arrays were loosely compared to a Boolean, the results would be different
 
 The first if statement is fulfilled, so [true, true] is returned.
 */
+
+/*NOTE: In the following example, we attempt to get part of our URL's domain name. What ends up being logge?*/
+
+const url = 'quiz.typeofnan.dev';
+const { length: ln, [ln - 1]: domain = 'quiz' } = url
+  .split('.')
+  .filter(Boolean);
+console.log(domain); //dev
+
+/* 
+1) Assign = const url = 'quiz.typeofnan.dev';
+
+2) url.split('.) Will split our url string by the . character resulting in the following array: 
+['quiz','typeofnan','dev'].
+Applying filter(Boolean) on this array is the same as filter(el => Boolean(el)). Since all of the elements are 
+truthy, Boolean(el) will always be true, meaning we don't actually filter anything out.
+
+3) Destructuring =  const {length: ln, [ln - 1] : domain = 'quiz } = ['quiz','typeofnan','dev'];
+
+In this destructuring, we use aliasing to assign the array's length property to a variable we call ln. Next, we use
+aliasing again to assign the ln - 1 element to the domain variable. The = 'quiz' is a default value, meaning 
+domain will equal 'quiz' if there is no ln - 1 array element.
+
+Applying this to our array, length which we assign to ln, is 3 ln - 1 is 2 and the item at index 2 of our array 
+is dev. Therefore, the answer is dev!
+*/
