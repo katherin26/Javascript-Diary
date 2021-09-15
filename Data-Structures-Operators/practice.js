@@ -124,3 +124,35 @@ being iterated over. In this case, as we iterate through the array, we add the c
 If our array was ['a','b','c'],then the aggregator would be a after the first iteration, ab the second time, and 
 finally would return abc.
 */
+
+/*NOTE: What's the value of output?? */
+
+const output = `Soon we must all choose between what is ${
+  [] ? 'right' : 'wrong'
+}
+ and what is ${(() => false) ? 'difficult' : 'easy'}`;
+console.log(output);
+
+/*Soon we must all choose between what is right and what is difficult */
+
+/*NOTE: Which of the following is a valid to delete the property color from the car object? */
+
+const car = {
+  make: 'Mercedez Benz',
+  year: '2019',
+  color: 'black',
+};
+
+/*
+A) car.delete('color'); 
+B) delete car.color; ===> Correct Answer
+C) delete car[color];
+D) car.color.delete();
+
+You can use the JavaScript delete operator to remove a property from a object.
+
+Both option A and D will give a TypeError, because neither car.delete nor car.color.delete is a function.
+
+Option C will give a ReferenceError because color is not defined. However, delete car['color'] will work -notice
+the quotation marks around color.
+*/
