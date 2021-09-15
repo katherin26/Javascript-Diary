@@ -352,3 +352,23 @@ because its slots are empty; it does not have any own-properties, other than [.l
 (In contrast, the array [undefined] does have an own-property of 0, even though the value at that property is 
   undefined.)
 */
+
+/*NOTE: What does the below function return?? */
+
+function ArrayBoolean() {
+  if ([] && [1]) return [true, true];
+  else if ([] && ![1]) return [true, false];
+  else if (![] && [1]) return [false, true];
+  else return [false, false];
+}
+
+console.log(ArrayBoolean()); //[true, true]
+console.log([] == false); //true
+
+/*In JS , both [] empty and non empty arrays are truthy, like all objects. This is not the same thing as 
+comparison.
+If the arrays were loosely compared to a Boolean, the results would be different. 
+[] == false would evaluate to true because the empty array, when converted into a primitive, is falsey.
+
+The first if statement is fulfilled, so [true, true] is returned.
+*/
