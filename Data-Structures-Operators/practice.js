@@ -54,4 +54,52 @@ const exampleObj = {
 
 console.log(Object.keys(exampleObj) == Object.values(exampleObj)); //false
 
-/* */
+/*NOTE: firstObj and secondObj are different objects with the same firstName property. Are these properties
+strictly equal to each other?? */
+
+const firstObj = {
+  firstName: 'Bill',
+};
+
+const secondObj = {
+  firstName: 'BILL',
+};
+
+console.log(firstObj.firstName === secondObj.firstName);
+
+/*
+true ===> Correct Answer
+false
+
+string are primitive values and two identical strings are always equal.
+*/
+
+/*NOTE: Consider objects obj1 and obj2. What gets logged??*/
+
+const obj1 = { firstName: 'Joe' };
+const obj2 = obj1;
+obj2.firstName = 'Pete';
+console.log(obj1);
+
+/*
+firstName: 'Joe';
+firstName: 'Pete'; ===> Correct Asnwer
+
+When we set obj2 = obj1 in the second line, obj2 and obj1 are pointing to the same object in memory. Changing the 
+firstName property on obj2 will therefore change the firstName property on the only object in memory, so 
+obj1.firstName will reflect this change.
+*/
+
+/*NOTE: String Methods
+String methods are used to work with string in Javascript. Which method would be used to find a specified value and
+return the position of the match??
+
+For example, what method would tell you that 'bird' is at position 4 in the following word string??
+*/
+
+const word = 'The bird is blue';
+/*
+length
+indexOf ===> Correct Answer
+find 
+none*/
