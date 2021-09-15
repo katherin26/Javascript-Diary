@@ -294,3 +294,14 @@ console.log(citrus); //['Orange','Lemon'];
 
 /*Slice(start index , end index) but the end index will not be included in the result that's why Apple is out 
 of the final result.*/
+
+/*NOTE: Which of the following array methods is guaranteed to iterate through each element of an array 
+
+1) forEach() ===> Correct Answer
+2) every()
+3) concat()
+
+forEach() = calls a provided callback function once for each element in an array in ascending order. 
+every() = will stop as soon as the provided function results in a falsey condition. 
+concat() = simply combines two arrays.
+*/
