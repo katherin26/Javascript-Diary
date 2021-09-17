@@ -32,3 +32,19 @@ const timesTable = num1 => {
     console.log(timesTable(4)(5));
 };
 */
+
+/*NOTE: When passing an object as an argument to a function, can the original object be mutated? In the following 
+example, will somePerson.valid be true or undefined*/
+
+const somePerson = { username: 'Davey154' };
+
+const personValidator = person => {
+  person.valid = person.username.length > 5;
+  return person.valid;
+};
+
+personValidator(somePerson);
+console.log(somePerson.valid); //true
+
+/* In our function, person will point to the same object in memory that somePerson points to. This means any 
+mutation we do to person within our function also happens to somePerson!!*/
