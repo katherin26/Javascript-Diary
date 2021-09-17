@@ -48,3 +48,35 @@ console.log(somePerson.valid); //true
 
 /* In our function, person will point to the same object in memory that somePerson points to. This means any 
 mutation we do to person within our function also happens to somePerson!!*/
+
+/*NOTE: What gets logged in the following code?? */
+
+let dog = {
+  breed: 'Border Collie',
+  sound: 'Wooh',
+  getBreed: () => {
+    return this.breed;
+  },
+  getSound: function () {
+    return this.sound;
+  },
+};
+
+console.log(dog.getBreed(), dog.getSound()); // Undefined, Wooh
+
+/*The this inside an arrow function does not depend on how the function was called. Instead, they inherit the this
+of the parent scope. This is called "lexical scoping". In sloppy mode, this on the top level refers to the global
+object, so getBreed's this.breed refers to the breed property on the global object, which doesn't exist. */
+
+/*NOTE: When running Javascript in the browser, what gets logged when we try to call myFunction()? */
+
+function myFunction() {
+  console.log(this);
+}
+
+myFunction(); //Window
+
+/*In this case, this references the window. Why?? Because myFunction was not called on an object, nor was a 
+particular this set via .bind or .call. It's a plain standalone function which was invoked without a calling 
+context, so inside it, this will refer to the global object(which is the window).(If we were in stric mode 
+instead, the value of this when there is no calling context is undefined.) */
