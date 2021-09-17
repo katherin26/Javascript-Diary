@@ -80,3 +80,41 @@ myFunction(); //Window
 particular this set via .bind or .call. It's a plain standalone function which was invoked without a calling 
 context, so inside it, this will refer to the global object(which is the window).(If we were in stric mode 
 instead, the value of this when there is no calling context is undefined.) */
+
+/*NOTE: What would be the output of the following three console.logs?? */
+
+function withVar() {
+  const b = () => a;
+  var a = 24;
+  return b;
+}
+
+function withLet() {
+  const b = () => a;
+  let a = 24;
+  return b;
+}
+
+function changingValue() {
+  let a = 24;
+  const b = () => a;
+  a = 42;
+  return b;
+}
+
+console.log(withVar()()); // 24
+console.log(withLet()()); // 24
+console.log(changingValue()()); // 42
+
+/*Closure = occur when a function remembers and accesses its lexical scope, even when it is executed 
+outside of that scope. by Kyle Simpson in YDKJS.
+When the internal functions b are returned from all the three functions, each function b gets a "closure" over
+the value of a defined in its parent function's scope. However, the value of a closed over by b in all cases is
+the "latest" value of a, or in other words, b has closure over the variable a itself, not its value. Hence, even 
+when the value of a is changed, b always has the most recent value assigned to a.
+
+That is why, in withVar, even though a is undefined when b is first defined, however by the time b is executed (
+inside the console.log), the value of a has been updated to 24, and that is what is returned by b .Similarly,
+in withLet, the a variable is no longer in the "Temporal Dead Zone" by the time b is executed. And finally, the
+"updated" value of a is returned by changingValue.
+*/
