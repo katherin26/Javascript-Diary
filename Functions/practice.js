@@ -118,3 +118,26 @@ inside the console.log), the value of a has been updated to 24, and that is what
 in withLet, the a variable is no longer in the "Temporal Dead Zone" by the time b is executed. And finally, the
 "updated" value of a is returned by changingValue.
 */
+
+/*NOTE: In this question, We have a Dog constructor function. Our dog obviously knows the speak command. What
+gets logged in the following example when we ask Pogo to Speak*/
+
+function Dog(name) {
+  this.name = name;
+  this.bark = function () {
+    return 'Woof';
+  };
+}
+
+const dog = new Dog('Pogo');
+
+Dog.prototype.bark = function () {
+  return 'arf';
+};
+
+console.log(dog.bark()); //Woof
+
+/*Every time we create a new Dog instance, we set the bark property of that instance to be a function 
+returning the string Woof. since this is being set every time we create a new dog instance, the interpreter never 
+has to look farther up the prototype chain to find a speak property. As a result, the speak method on 
+Dog.prototype.speak never gets used. */
