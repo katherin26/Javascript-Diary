@@ -166,7 +166,7 @@ console.log(
 );
 
 /*You have 1 notification false =
-Unfortunately, our shot-circuit evaluation will not work as intended here: notifications !== 1 && 's' evaluates
+Unfortunately, our short-circuit evaluation will not work as intended here: notifications !== 1 && 's' evaluates
 to false, meaning we will actually be logging you have 1 notificationfalse. If we want out snippet to work correctly,
 we could consider the conditional operator: ${notifications === 1 ? '' : 's'}.
 
