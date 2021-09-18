@@ -217,3 +217,67 @@ console.log(variable6[2]); //Doggy
 properties hobby and [2] were changed, those changes could also be seen through variable1 and variable3. The 
 change made to variable5 was not changing a property, rather,replacing the variable5 variable itself. Replacing 
 a variable with a new value has no effect on the original value. so variable2 remained unchanged, */
+
+/*NOTE: HOISTING: 
+Consider the following declarations and expressions. What gets logged?? */
+
+immaBeOnTop();
+var immaBeOnTop;
+
+function immaBeOnTop() {
+  console.log('first');
+}
+
+immaBeOnTop = function () {
+  console.log('second');
+};
+
+foo();
+
+function foo() {
+  console.log(1);
+}
+
+var foo = function () {
+  console.log(2);
+};
+
+function foo() {
+  console.log(3);
+}
+
+foo();
+
+/*first 3 2 =
+
+The answer is first for the first question. While both function declarations and variable declarations are hoisted,
+function declarations are hoisted first and the variables. Duplicate var declarations (but not assignments) are 
+also ignored.So the result is ! 
+
+function immaBeOnTop(){
+  console.log('first);
+}
+immaBeOnTop(); //'first'
+
+immaBeOnTop = function(){
+  console.log('second');
+};
+
+The answer is 3 2 for the second question. While duplicate var declarations are ignored, subsequent declarations and 
+variable assignments do override previous ones. So what's happening with the code above is:
+
+function foo(){
+  console.log(1);
+}
+function foo(){
+  console.log(3);
+}
+foo();//3
+
+foo = function(){
+  console.log(2); 
+}
+
+foo();//2
+
+*/
