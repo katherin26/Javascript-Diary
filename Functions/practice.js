@@ -154,3 +154,42 @@ Does the following snippet illustrate an Immediately-Invoked Function Expression
 /*The snippet clearly illustates an IIFE as we immediately invoke a function by passing console.log and 5 to it.
 Additionally, we find that this is a HOF as fn is a function, and a HOF is defined as any function that takes 
 another function as a parameter or returns a function. */
+
+/*NOTE: RECURSION :
+Consider the following recursive function. If we pass the string "hello world" to it, what gets logged?
+*/
+
+const recursionExpl = str => {
+  if (str.length > 1) {
+    return recursionExpl(str.slice(1));
+  }
+  return str;
+};
+
+console.log(recursionExpl('Hello world')); //d
+
+/*The first time we call the function, str.length is greater than 1 ("Hello world" is 11 characters), so we 
+return the same function called on str.slice(1), which is the string "ello world".
+We repeat this process until the string is only one character long: the character "d", which gets returned to the
+initial call of recursionExpl. We then log that character. */
+
+/*NOTE: Consider the following superheroMaker function. What gets logged when we pass the following two inputs.*/
+
+const superheroMaker = a => {
+  return a instanceof Function ? a() : a;
+};
+
+console.log(superheroMaker(() => 'Batman'));
+console.log(superheroMaker('Superman'));
+
+/* "Batman" "Superman" :
+
+When passing () => 'Batman' to superheroMaker, a is an instance of Function. Therefore, the function gets called, 
+returning the string Batman. When passing 'Superman' to superheroMaker, a is not an instance of Function and there-
+fore the string 'Superman' is just returned. Therefore, the output is both Batman and Superman.
+*/
+
+/*NOTE: Pass by value: 
+When setting variables equal to each other and then changing one of them, does it change the other? Consider the 
+following core. What is logged? 
+*/
