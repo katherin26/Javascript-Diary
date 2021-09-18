@@ -156,3 +156,18 @@ Both option A and D will give a TypeError, because neither car.delete nor car.co
 Option C will give a ReferenceError because color is not defined. However, delete car['color'] will work -notice
 the quotation marks around color.
 */
+
+/*NOTE: Let's display some notifications to our user! What gets logged in the following snippet?? */
+
+const notifications = 1;
+
+console.log(
+  `You have ${notifications} notification${notifications !== 1 && 's'}`
+);
+
+/*You have 1 notification false =
+Unfortunately, our shot-circuit evaluation will not work as intended here: notifications !== 1 && 's' evaluates
+to false, meaning we will actually be logging you have 1 notificationfalse. If we want out snippet to work correctly,
+we could consider the conditional operator: ${notifications === 1 ? '' : 's'}.
+
+*/
