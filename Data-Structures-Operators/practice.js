@@ -169,5 +169,16 @@ console.log(
 Unfortunately, our short-circuit evaluation will not work as intended here: notifications !== 1 && 's' evaluates
 to false, meaning we will actually be logging you have 1 notificationfalse. If we want out snippet to work correctly,
 we could consider the conditional operator: ${notifications === 1 ? '' : 's'}.
-
 */
+
+/*NOTE: Set uniqueness and Ordering :
+In the following problem, we use the Set object and spread syntax to create a new array. What gets logged( to 
+  consider : Are items forced to be unique? Are they sorted??)
+*/
+
+const setArr = [...new Set([3, 1, 2, 3, 4])];
+console.log(setArr.length, setArr[2]); // 4 2
+
+/* The Set object will force unique elements (duplicate elements already in the set are ignored), but will not 
+change order. The resultan setArr array will be [3,1,2,4], meaning setArr.length is 4 and setArr[2] (the third
+element of the array) is 2.*/
