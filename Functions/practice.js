@@ -141,3 +141,16 @@ console.log(dog.bark()); //Woof
 returning the string Woof. since this is being set every time we create a new dog instance, the interpreter never 
 has to look farther up the prototype chain to find a speak property. As a result, the speak method on 
 Dog.prototype.speak never gets used. */
+
+/*NOTE: IIFE, HOF , OR BOTH :
+Does the following snippet illustrate an Immediately-Invoked Function Expression (IIFE), a Higher-Order Function
+(HOF), both or neither.?
+*/
+
+((fn, val) => {
+  return fn(val);
+})(console.log, 5);
+
+/*The snippet clearly illustates an IIFE as we immediately invoke a function by passing console.log and 5 to it.
+Additionally, we find that this is a HOF as fn is a function, and a HOF is defined as any function that takes 
+another function as a parameter or returns a function. */
