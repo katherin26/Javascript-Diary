@@ -193,3 +193,27 @@ fore the string 'Superman' is just returned. Therefore, the output is both Batma
 When setting variables equal to each other and then changing one of them, does it change the other? Consider the 
 following core. What is logged? 
 */
+
+let variable1 = {
+  name: 'Johnny',
+  hobby: 'Football',
+};
+let variable2 = 'Lisa prefers Johnny';
+let variable3 = ['Denny', 'Michelle', 'Chris R'];
+
+let variable4 = variable1;
+let variable5 = variable2;
+let variable6 = variable3;
+
+variable4.hobby = 'roofsitting';
+variable5 = 'Lisa prefers Mark';
+variable6[2] = 'Doggy';
+
+console.log(variable1.hobby); //roofsitting
+console.log(variable2); //Lisa prefers Johnny
+console.log(variable6[2]); //Doggy
+
+/*Because variable4 and variable6 refer to the same objects in memory as variable1 and variable3, when their 
+properties hobby and [2] were changed, those changes could also be seen through variable1 and variable3. The 
+change made to variable5 was not changing a property, rather,replacing the variable5 variable itself. Replacing 
+a variable with a new value has no effect on the original value. so variable2 remained unchanged, */
