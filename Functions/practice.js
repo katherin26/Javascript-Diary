@@ -281,3 +281,30 @@ foo = function(){
 foo();//2
 
 */
+
+/*NOTE: GLOBAL LOCAL =
+Consider the following code block. What gets logged?
+*/
+
+var x = 5;
+
+(function () {
+  console.log(x);
+  var x = 10;
+  console.log(x);
+})(); //undefined 10
+
+/*This will print out undefined and 10. Javascript will hoist the var x to the top of the function (or top level) 
+,but it will not hoist the assignment. The code is equivalent to: 
+
+var x;
+x = 5;
+
+(function(){
+  var x;
+  console.log(x);
+  x = 10;
+  console.log(x);
+})();
+
+*/
