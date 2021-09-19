@@ -182,3 +182,18 @@ console.log(setArr.length, setArr[2]); // 4 2
 /* The Set object will force unique elements (duplicate elements already in the set are ignored), but will not 
 change order. The resultan setArr array will be [3,1,2,4], meaning setArr.length is 4 and setArr[2] (the third
 element of the array) is 2.*/
+
+/*NOTE: EQUALITY AND IDENTITY OPERATORS :
+ a and b are two constants. What will be the output on the console??
+*/
+const num1 = '42';
+const num2 = 42;
+
+console.log(num1 == num2 && num1 === num2); //false
+
+/*The answer is false a == b uses the "equality" operator, which will convert the operands to the same type prior
+to performing the comparison. In this case, 42 == '42' will become 42 === 42, which is true.
+
+However, num1 === num2 uses the "identity" operator, and no such type conversion happens. Therefore, 42 === '42' 
+is false. Hence , (num1 == num2) && (num1 === num2) becomes true && false, which is false.
+*/
