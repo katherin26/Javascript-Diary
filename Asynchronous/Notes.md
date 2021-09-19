@@ -125,7 +125,7 @@ like get request to receive data or post request to send data to a server.
 
 Now, when we're asking a server to send us some data, this server usually contains a web API and this API is the
 one that has the data that we're asking for, an API is something pretty important and so let's now see what an API
-and web API actually are.
+is.
 ```
 
 ```
@@ -135,4 +135,56 @@ CLIENT          --------------------------------------------------> WEB SERVER
 (e.g browser)   <--------------------------------------------------
                                        RESPONSE
                             Sending data back (countries)
+```
+
+## **WHAT IS AN API?**
+
+**API**
+
+```
+Application Programming Interface: Piece of software that can be used by another piece of software, in order to
+allow applications to talk to each other.
+
+There are be many types of APIs in web development:
+
+1. DOM API
+
+2. GEOLOCATION API
+
+3. OWN CLASS API
+
+4."ONLINE' API = Just "API"
+
+"Online" API: Application running on a server, that receives request for data and sends data back as response.
+
+We can build our own web APIs (requires back-end development, e.g with node.js) or use 3rd-party APIs.
+
+NOTE: Imagine that you are building a traveling application and you have a database with different destinations and
+tours that you're offering. So on your own server you could build your own API that can receive request from your
+front end application in Javascript and send back the results. So that would be your own API hosted on your own server. But that alone would probably not be enough to build a complete application and so you could also use some
+3rd-party APIs.
+
+There is an API for everything:
+
+1) Weather data.
+2) Data about countries.
+3) Flights data.
+4) Currency conversion data.
+5) APIs for sending email or SMS.
+6) Google Maps,
+7) Millions of possibilities....
+```
+
+**API DATA FORMATS**
+
+```
+        AJAX                                               JSON data format
+         XML                                              Most popular API data format
+  (XML data format)
+
+  Which used to be widely used                            Because it's basically just a Javascript object,
+  to transmit data on the web.                            but converted to a string, therefore it's very
+  But in this days no API uses                            easy to send across the web and also to use in JS.
+  XML data anymore.                                       Once the data arrives
+
 ```
