@@ -109,3 +109,30 @@ We deferred an action into the future making the code asynchronous and non-block
 Event listeners and callback functions alone do not make code asynchronous.
 
 ```
+
+## **WHAT ARE AJAX CALLS??**
+
+**AJAX**
+
+```
+Asynchronous Javascript And XML: Allows us to communicate with remote web servers in an asynchronous way. With
+AJAX calls, we can request data from web servers dynamically.
+
+So with Ajax, we can do an HTTP request to the server which has this data and the server will then set back a
+response containing that data that we requested and this back and forth between Client and server all happens
+asynchronously in the background just the way we learned before and there can even be different types of request,
+like get request to receive data or post request to send data to a server.
+
+Now, when we're asking a server to send us some data, this server usually contains a web API and this API is the
+one that has the data that we're asking for, an API is something pretty important and so let's now see what an API
+and web API actually are.
+```
+
+```
+                            Asking for some data (countries)
+                            REQUEST (GET/POST/etc.)
+CLIENT          --------------------------------------------------> WEB SERVER
+(e.g browser)   <--------------------------------------------------
+                                       RESPONSE
+                            Sending data back (countries)
+```
