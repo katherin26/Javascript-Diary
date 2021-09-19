@@ -354,3 +354,32 @@ await is mostly just a more elegant way to get the promise result than promise.t
 especially when multiple Promises need to be waited for, which would otherwise require somewhat-unwieldy, .then chain.
 
 */
+
+/*NOTE: CURLY Q : 
+What will the foo() and bar() functions return when logged to the console together?
+*/
+const foo = () => {
+  return {
+    foo: 'foo',
+  };
+};
+
+console.log(foo()); //{foo:"foo"}
+
+const bar = () => {
+  return;
+  {
+    bar: 'bar';
+  }
+};
+
+console.log(bar()); //undefined
+
+/*bar returns undefined because (according to Javascript) it contains no inner values when run. This is a good 
+reason to be careful about where you replace brackets!!
+
+const bar = () => {
+  return;
+}
+
+*/
