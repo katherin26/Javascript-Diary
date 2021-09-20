@@ -188,3 +188,152 @@ There is an API for everything:
   XML data anymore.                                       Once the data arrives
 
 ```
+
+## **HOW THE WEB WORKS: REQUEST AND RESPONSES**
+
+```
+   DNS
+DNS LOOKUP (https://104.27.142.889:443)
+
+  / \
+   | |
+   | |
+   | |
+    \ /                                            REQUEST
+CLIENT                                 --------------------------------------> WEB SERVER
+(e.g browser)                          <--------------------------------------
+https://restcountries.eu/rest/v2/alpha/PT          RESPONSE
+
+1) Protocol (HTTP or HTTPS)
+2) Domain name (restcountries.eu)
+3) Resource (/rest/v2/alpha/PT)
+
+```
+
+```
+So this is the diagram when we first talked about AJAX calls, So just to recap, whenever we try to access a Web
+Server to the browser, The client sends a request to the server and the server will then send back a response and that response contains the data or the Web Page that we requested, this process works the exact same way no matter if we're accessing an entire Web page or just some data from a Web API and this whole process actually has a name and it's called the Request-response model or also the Client-server architecture but anyway, let's now dive a bit deeper into this.
+```
+
+```
+So let's use the example of the URL that we actually accessed in the last exercise (getCountryData).
+Now every URL gets an HTTP or HTTPS, which is for the protocol that will be used on this connection, then we have the domain name, which is restcountries.eu in this case.
+
+And also after a slash we have to so-called resource that we want to access and in this case, that's /rest/V2 and so on. Now this domain name, restcountries.eu is actually not the real address of the server that we're trying to access. What this means is that we need a way of kind of converting the domain name to the real address of the server and that happens through a so-called D-N-S.
+```
+
+```
+D-N-S stands for domain name server and domain name servers are a special kind of server, So they are basically like
+the phone books of the internet. So the first step that happens when we access any Web server is that the browser
+makes a request to a DNS and this special server will then simply match the web address of the URL to the server's
+real IP address, all right.
+And actually this all happens through your internet service provider, then after the real IP address has been sent
+back to the browser, we can finally call it.
+
+
+```
+
+```
+ https://104.27.142.889:443
+
+1)protocol                2)IP adress           3)Port number
+(HTTP or HTTPS)                             (Default 443 for HTTPS, 80 for HTTP)
+
+This is how the real address looks like, So it still has the protocol, but then comes the IP address and also the port that we access on the server and this port number is really just to identify a specific service that's running
+on a server. So you can think of it like a sub address, okay.
+This port number has nothing to do with the /rest/V2/ resource that we want to access. So that resource will actually be sent over in the HTTP request, as we will see in a moment and that actually wraps up the first step, once we have the real IP address, a TCP socket connection is established between the browser and the server and so
+they are now finally connected and this connection is typically kept alive for the entire time that it takes to
+transfer all files of the Website or all data.
+```
+
+```
+  1) DNS                                            GET /rest/V2/alpha/PT HTTP/1.1
+DNS LOOKUP (https://104.27.142.889:443)             Host: www.google.com
+                                                    User-Agent: Mozilla/5.0
+                                                    Accept-Language: en-US
+  / \                                               <BODY>
+   | |
+   | |
+   | |
+    \ /
+                                                 3) HTTP REQUEST
+                                       -------------------------------------->
+                                           2) TCP/IP socket connection
+CLIENT                                <-------------------------------------->        WEB SERVER
+(e.g browser)
+https://restcountries.eu/rest/v2/alpha/PT  <---------------------------------
+                                                        4) HTTP RESPONSE
+ Protocol (HTTP or HTTPS)                               HTTP/1.1 200 OK
+ IP address                                             Date: Fri, 18 Jan 2021
+ Port number (Default 443 for HTTPS, 80 for HTTP)       Content-Type: text/html
+                                                        Transfer-Encoding: chunked
+                                                        <BODY>
+```
+
+```
+Now what are TCP and IP?
+
+Well TCP is the Transmission Control Protocol and IP is the Internet Protocol and together they are communication
+protocols that define exactly how data travels across the Web. They are basically the Internet's fundamental control
+system, because again, they are the ones who set the rules about how data moves on the internet.
+
+Now it's time to finally make our request and the request that we make is an HTTP request, where HTTP stands for
+Hypertext Transfer Protocol. So after TCP/IP, HTTP Is another communication protocol and by the way, a communication
+protocol is a simply a system of rules that allows two or more parties to communicate. Now in the case of HTTP, it's
+just a protocol that allows clients and Web servers to communicate and that works by sending requests and response messages from client to server and back.
+```
+
+```
+Now a request message will look something like this :
+
+                            GET /rest/V2/alpha/PT HTTP/1.1 ---->Start line: HTTP method+request target+HTTP version.
+
+                            Host: www.google.com        |
+                            User-Agent: Mozilla/5.0     |-------->HTTP Request headers(many different possibilities)
+                            Accept-Language: en-US      |
+
+                            <BODY>                       --------> Request body(only when sending data to server
+                                                                   e.g POST)
+
+The beginning of the message is the most important part called the start line and this one contains the HTTP method
+that is used in the request then the request target and the HTTP version, so about the HTTP methods, there are many
+available but the most important ones are:
+
+ GET for simply requesting data
+ POST for sending data
+ PUT AND PATCH to basically modify data
+
+ So you'll see that an HTTP request to a server is not only for getting data, but we can also send data.
+ Now about the request target this is where the server is told that we want to access the rest/V2/alpha resource
+ In this case, remember that?. We had this in the URL before and now it is simply sent as the target in the HTTP
+ request and so then the server can figure out what to do with it. Now , if this target was empty, if it was a slash basically then we would be accessing the website's route, which is just restcountries.eu in this example.
+```
+
+```
+ Then the next part of the request are the request headers, which is just some information that we sent about the
+ request itself. There are tons of standard different headers, like what browser is used to make the request at what time, the user's language and many, many more.
+
+ Now finally, in the case, we're sending data to the server. There will also be a request body and that body will
+ contain the data that we're sending, for example: coming from an HTML form, that is the HTTP request .
+
+ It's not us developers who manually write these HTTP requests, but it's still helpful and valuable that you understand what an HTTP request and also a response look like, also HTTPS as you probably know and the main difference between HTTP and HTTPS is that HTTPS is encrypted using TLS or SSL, which are yet some protocols, besides that the logic behind HTTP requests and responses still applies to HTTPS.
+```
+
+```
+Our request is formed and now it hits the server which will then be working on it until it has our data or Web page
+ready to send back and once it's ready, it will send it back using as you can guess, and HTTP response and the HTTP response message actually looks quite similar to the request:
+
+                           HTTP/1.1 200 OK
+
+                           Date: Fri, 18 Jan 2021
+                           Content-Type: text/html
+                           Transfer-Encoding: chunked
+
+                           <BODY>
+
+Also with a start line, headers and a body, in this case, the start line has besides the version also a status code
+and a message and these are used to let the client know whether the request has been successful or failed, for example 200 means OK and the status code that everyone knows is 404 which means page not found. Then the response headers are information about the response itself, just like before and there a ton available and we can also make up our own actually.
+
+Finally, the last part of the response is the body, which is present in most responses and this body usually contains the JSON data coming back from an API or the HTML of the Web page that we requested or something like that
+
+```
