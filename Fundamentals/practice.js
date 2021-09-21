@@ -18,3 +18,9 @@ The first expression evaluates to "21" because the + operator results in string 
 is a string. On the other hand, the - operator cannot act on string so "1" gets converted to a number in the eva-
 luation of the second expression.
 */
+
+/*NOTE: Consider the following code block. What gets logged?? */
+
+console.log(typeof Object, typeof Array, typeof Number); // function function function
+
+/*Because Objec, Array, Number are all constructors functions*/
