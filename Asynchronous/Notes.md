@@ -357,3 +357,72 @@ if we sent the entire data simply as a big chunk, that would be like trying to g
 Now as a second part, the job of the IP protocol is to actually send and route this packets through the Internet, It ensures that they arrive at the destination they should go using IP addresses on each packet
 
 ```
+
+## **WHAT ARE PROMISES??**
+
+```
+Promise: An object that is used as a placeholder for the future result of an asynchronous operation.
+   |
+   | ---> Less formal
+   v
+Promise: A container for an asynchronously delivered value.
+   |
+   | --> Less formal
+   v
+Promise: A container for a future value.
+
+Example: The response coming from an AJAX call
+```
+
+1. We no longer need to rely on events and callbacks passed into asynchronous functions to handle asynchronous results.
+
+2. Instead of nesting callbacks, we can chain promises for a sequence of asynchronous operatios:
+   **escaping callback hell.**
+
+```
+
+Before the future value           Asynchronous task
+    is available                     has finished                        e.g Fetch API returns promise
+
+              ASYNC TASK                                                        BUILD PROMISE
+    PENDING   --------------->    SETTLED                                             |
+                                 /       \                                            |
+                           FULFILLED     REJECTED                                     |
+                               /            \                                         V
+                    Success!! The      An error happended.                      CONSUME PROMISE
+                    value is now
+                     available.                                            When we already have a promise
+                                                                           e.g promise returned from Fetch API.
+          We are able to handle these different states in our code.
+
+
+```
+
+```
+In the very beginning, we say that a promise is pending, and this is before any value resulting from the asynchronous task is available, during this time the asynchronous task is still doing its work in the background.
+
+Then when the task finally finishes, we say that the promise is settled and there are two different types of settled promises and that's fulfilled promises and rejected promises.
+```
+
+**The fulfilled promise**
+
+```
+Is a promise that has successfully resulted in a value just as we expect it, For example, when we use the promise to fetch data from an API, a fulfilled promise successfully got that data and it's now available to being used.
+```
+
+**The rejected promise**
+
+```
+Means that there has been an error during the asynchronous task, For example, fetching data from an API an error would be: when the user is offline and can't connect to the API server
+```
+
+**CONSUME PROMISE**
+
+```
+This results are relevant and useful when we use a promise to get a result, We consume a promise when we already have a promise, For example: the promise that was returned from the fetch function.
+
+But in order for a promise to exist in the first place, it must first be built, So it must be created in the case of the fetch API it's the fetch function that builds the promise and returns it for us to consume.
+
+In this case we don't have to build the promise ourselves in order to consume it. Most of the time we will actually just consume promises, which is also the easier and more useful part.
+
+```

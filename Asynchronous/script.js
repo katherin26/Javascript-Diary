@@ -113,7 +113,7 @@ const getCountryAndNeighbour = function (country) {
 
 //getCountryAndNeighbour('korea');
 //getCountryAndNeighbour('usa');
-getCountryAndNeighbour('mexico');
+//getCountryAndNeighbour('mexico');
 
 //TITTLE: Welcome to callback hell!
 
@@ -138,3 +138,9 @@ Callback hell = Is when we have a lot of nested callbacks in order to execute as
    },1000)
  },1000)
  */
+
+/*TITTLE: PROMISES AND FETCH API
+ */
+
+const request = fetch('https://restcountries.eu/rest/v2/name/portugal');
+console.log(request); //Promise {<pending>}
