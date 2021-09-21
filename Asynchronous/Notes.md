@@ -334,6 +334,26 @@ ready to send back and once it's ready, it will send it back using as you can gu
 Also with a start line, headers and a body, in this case, the start line has besides the version also a status code
 and a message and these are used to let the client know whether the request has been successful or failed, for example 200 means OK and the status code that everyone knows is 404 which means page not found. Then the response headers are information about the response itself, just like before and there a ton available and we can also make up our own actually.
 
-Finally, the last part of the response is the body, which is present in most responses and this body usually contains the JSON data coming back from an API or the HTML of the Web page that we requested or something like that
+Finally, the last part of the response is the body, which is present in most responses and this body usually contains the JSON data coming back from an API or the HTML of the Web page that we requested or something like that.
+
+There will be many more requests and responses and that's because when we do the first request, all we get back is just the initial HTML file. That HTML file will then get scanned by the browser for all the assets that it needs in
+order to build the entire Web page like Javascript, CSS files, Image files or other assets and then for each different file, there will be a new HTTP request made to the server. Basically this entire back and forth between client and server happens for every single file that is included in the Web Page. However, there can be multiple requests and responses happening at the same time, but the amount is still limited because otherwise the connection
+would start to slow down, when all the files have finally arrived, then the Web page can be rendered in the browser according to the HTML,CSS and Javascript specifications that you already know. Now, as a final piece of the puzzle, let's talk again about TCP/IP and figure out how this request and response data is actually sent across the Web.
+
+5)
+index.html is the first to be loaded
+               |
+               v
+Scanned for assets: JS,CSS,images
+               |
+               v
+Process is repeated for each file
+
+```
+
+```
+We said before that TCP and IP are the communication protocols that define how data travels across the Web, first the job of TCP is to break the requests and responses down into thousands of small chunks, called packets before they are sent. Once the small packets arrive at their final destination TCP will reassemble all the packets into the original request or response and this is necessary so that each packet can take a different route through the Internet because this way the message arrives at the destination as quick as possible, which would not be possible
+if we sent the entire data simply as a big chunk, that would be like trying to go through dense traffic like the biggest bus that you can imagine.
+Now as a second part, the job of the IP protocol is to actually send and route this packets through the Internet, It ensures that they arrive at the destination they should go using IP addresses on each packet
 
 ```
