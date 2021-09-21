@@ -27,14 +27,18 @@ const countriesContainer = document.querySelector(
     countriesContainer.insertAdjacentHTML('beforeend', html);
     countriesContainer.style.opacity = 1;
   });
-};*/ /*NOTE: 
+};*/
+
+/*NOTE: 
 What we need to do is to register a callback on the request object for the load event  and then the event is
 addEventListener and here on the request we will wait for the load event, We basically send off the request and so
 that request then fetches the data in the background and then once that is done it will emit the load event and so
 using this event listener we are waiting for that event and so as soon as the data arrives this callback function
-here will be called*/ /*NOTE: 5 AJAX Calls at the same time : if we reload the page a couple of times then they might appear in a different
+here will be called*/
+
+/*NOTE: 5 AJAX Calls at the same time : if we reload the page a couple of times then they might appear in a different
 order and the reason for that is basically that the data arrives at a slightly different time each time that we're
-loading the page and this shows the non-blocking behavior in action*/ //TITTLE: WELCOME TO CALLBACK HELL
+loading the page and this shows the non-blocking behavior in action*/
 
 //TITTLE: OUR FIRST AJAX CALL : XMLHttpRequest
 
@@ -111,13 +115,15 @@ const getCountryAndNeighbour = function (country) {
 //getCountryAndNeighbour('usa');
 getCountryAndNeighbour('mexico');
 
-/*NOTE: We have one AJAX call here that depends on another one and so what we have here is one callback function
- inside of another one , in other words , we have nested callbacks. If we wanted to do more requests in sequence ?
- like the neighbor of the neighbor like 10 times over . So in that case, we would end up with callbacks inside of 
- callbacks ..etc.
- For that kind of structure and for that kind of behavior , we have a special name and is callback hell .
+//TITTLE: Welcome to callback hell!
 
- Callback hell = Is when we have a lot of nested callbacks in order to execute asynchronous tasks in sequence 
+/*NOTE: We have one AJAX call here that depends on another one, in other words, we have nested callbacks. If we 
+wanted to do more requests in sequence ? like the neighbor of the neighbor like 10 times over. So in that case, 
+we would end up with callbacks inside of callbacks ..etc.
+
+For that kind of structure and for that kind of behavior , we have a special name and is callback hell .
+
+Callback hell = Is when we have a lot of nested callbacks in order to execute asynchronous tasks in sequence.
 
  setTimeout(()=>{
    console.log('1 second passed');
