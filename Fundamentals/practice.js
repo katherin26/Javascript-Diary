@@ -82,7 +82,7 @@ Given the following lines, what will be the output??
 */
 
 console.log(1 < 2 < 3);
-console.log(3 > 2 > 1);
+console.log(3 > 2 > 1); //true and false
 
 /*The operators < and > follow left to right associativity, meaning that they will be interpreted starting from the 
 left. For demonstration, left to right evaluated expressions like a OP b OP c can be written as (a OP b) op c.
@@ -93,4 +93,24 @@ Hence, the whole expression evaluates to true.
 
 In the second example (visualized as (3 > 2) > 1), the first part (3 > 2) evaluates to true. The remaining portion 
 true > 1 then gets converted to 1 > 1. As 1 is not greater than itself, the whole expression evaluates to false.
+*/
+
+/*NOTE: TWO MANY DOTS??
+What is the return of the following console.log()??
+*/
+
+const n = 5;
+
+console.log((1).n); //Undefined
+
+/*This is not a syntax error. Rather, to call a method directly on a Number.prototype, two dots are requited for it
+to not be interpreted as a decimal. In this case, 1..n tries to access the property n on 1, which is undefined. A 
+practical example of this would be 1..toString(),which would result in the string "1".
+
+What's going on here is that a decimal point is permitted at the end of a number even if there are no decimal digits
+.1. is interpreted as a numeric literal equivalent to 1 -the dot is an optional decimal point, and is not indicating
+property access. If you add another., the interpreter is forced to treat the second . as the property access operator.
+
+Another way to call a method on a numeric literal without the confusing .. is to surround the number in parentheses,
+eg (1).toString().
 */
