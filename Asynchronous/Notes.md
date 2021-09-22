@@ -380,7 +380,6 @@ Example: The response coming from an AJAX call
    **escaping callback hell.**
 
 ```
-
 Before the future value           Asynchronous task
     is available                     has finished                        e.g Fetch API returns promise
 
@@ -392,10 +391,8 @@ Before the future value           Asynchronous task
                     Success!! The      An error happended.                      CONSUME PROMISE
                     value is now
                      available.                                            When we already have a promise
-                                                                           e.g promise returned from Fetch API.
+                                                                          e.g promise returned from Fetch API.
           We are able to handle these different states in our code.
-
-
 ```
 
 ```
@@ -424,5 +421,4 @@ This results are relevant and useful when we use a promise to get a result, We c
 But in order for a promise to exist in the first place, it must first be built, So it must be created in the case of the fetch API it's the fetch function that builds the promise and returns it for us to consume.
 
 In this case we don't have to build the promise ourselves in order to consume it. Most of the time we will actually just consume promises, which is also the easier and more useful part.
-
 ```

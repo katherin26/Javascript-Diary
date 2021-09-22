@@ -141,6 +141,42 @@ Callback hell = Is when we have a lot of nested callbacks in order to execute as
 
 /*TITTLE: PROMISES AND FETCH API
  */
-
+/*
 const request = fetch('https://restcountries.eu/rest/v2/name/portugal');
-console.log(request); //Promise {<pending>}
+console.log(request); //Promise {<pending>}*/
+
+/*TITTLE: CONSUME A PROMISE = In this case we will consume the promise that was returned by the fetch function  */
+/*
+const getCountryData = function (country) {
+  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+    .then(function (response) {
+      console.log(response);
+      return response.json(); //this response here is in fact a resolved value.
+    })
+    .then(function (data) {
+      console.log(data);
+      renderCountry(data[0]);
+    });
+};*/
+
+const getCountryData = function (country) {
+  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+    .then(response => response.json()) //this response here is in fact a resolved value.
+    .then(data => renderCountry(data[0]));
+};
+
+getCountryData('portugal');
+
+/*Assume that the promise will be fullfilled and that we have a value available to work with, to handle this fulfilled 
+state, We can use the then() method that is available on all promises. Into the then() method we need to pass a callback 
+function that we want to be executed as soon as the promise is actually fulfilled, as soon as the result is available
+this function will actually receive one argument once it's called by JS. And that argument is the resulting value of
+ the fullfilled promise.
+
+ In order to be able to actually read this data from the body , we need to call the json method on the response , json()
+ is a method that is available on all responses of the fetch() method . The problem is that this json function itself
+ is actually also an asynchronous function and it will also return a new promise and what we need to do is to actually
+ return this promise, Now we need to handle that promise as well.
+
+The way we do that is to then call another then(), so we need another callback function
+ */
