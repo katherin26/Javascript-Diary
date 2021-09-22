@@ -44,3 +44,35 @@ The final sum then equals to 0.30000000000000004.
 Similarly, the decimal system cannot represent 1/3 (one third) accurately. And if we took a rounded value like 0.333
 , you wouldn't expect 0.333 + 0.333 + 0.333 to add up to 1,either.
 */
+
+/*NOTE: LEXICAL SCOPE
+What do you think will be printed?
+*/
+
+function printSomething() {
+  console.log(something);
+}
+
+function invokePrintSomething() {
+  var something = 3;
+  printSomething();
+}
+
+var something = 2;
+
+invokePrintSomething();
+
+/* Answer = 2
+
+When a variable is referenced in Javascript, the interpreter will try to find which binding it references by looking 
+through the ancestor blocks and functions to see if a variable with that name is declared in that block or function.
+
+The nearest ancestor block(or the top level) which defines the variable with const, let or var will be identified as
+the biding to use.
+
+Here, when invokePrintSomething is called and the var something = 3 is found, the interpreter will see that the 
+something is initialized with var in the same block, so the binding is to a variable local to invokePrintSomething.
+Then, when printSomething is called, and it comes across console.log(something);, it will look to its ancestor blocks
+to see where a variable named something is defined. The nearest (and only) ancestor block is the top level, with a 
+var something which currently holds the value of 2, so 2 gets logged.
+*/
