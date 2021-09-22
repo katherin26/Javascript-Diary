@@ -114,3 +114,69 @@ property access. If you add another., the interpreter is forced to treat the sec
 Another way to call a method on a numeric literal without the confusing .. is to surround the number in parentheses,
 eg (1).toString().
 */
+
+/*NOTE: IMPLICIT TYPE COERCION
+Consider the following variables greeting and year. Which of the following is an example of implicit coercion in 
+Javascript??
+*/
+
+const greeting = 'Hello';
+const year = 2019;
+
+/*
+ 1) greeting + year.toString()
+ 2) greeting + String(year)
+ 3) greeting + year  ====> CORRECT ANSWER 
+*/
+
+/*Some programming languages have a concept called type casting. This means that, if you want to convert one type
+to another type, you have to make the conversion explicit. In JS there is a mechanism called implicit coercion, 
+which converts type to other types as necessary, In this case, the addition operator + automatically converts 2019
+to a string so it can be concatenated with the string "Hello". In contrast, year.toString() and String(year) are 
+both explicitly converting it to a string. */
+
+/*NOTE: IDENTITY CRISIS 
+Consider the following comparison function and its applications. What gets logged?
+*/
+
+const compare = a => a === a;
+
+console.log(compare(null)); //true
+console.log(compare(undefined)); //true
+console.log(compare(NaN)); //false
+console.log(compare([NaN])); //true
+
+/*Out of all JS values, NaN(Not a Number) is the only one that compares unequal to every other value, including 
+itself.
+
+Note that [NaN] is just a regular array that contains a single element so it will be always equal to itself.
+*/
+
+/*NOTE: DIRECTION OF LOOPS
+In which direction will the following code scan an image?
+*/
+
+const image = new Image();
+const maxHeight = image.height + 1;
+const maxWidth = image.width + 1;
+
+for (let i = 0; i < maxHeight; i++) {
+  for (let j = 0; j < maxWidth; j++) {
+    // Obtaining values of pixels, assuming function getPixel(y, x)
+    //takes argument y as Y-coordinate and x as X-coordinate
+    const pixel = getPixel(i, j);
+    const pixelValues = {
+      red: pixel.getRed(),
+      green: pixel.getGreen(),
+      blue: pixel.getBlue(),
+    };
+    //Update pixel color scheme
+    pixelValues.red /= 2;
+    pixelValues.green /= 3;
+    pixelValues.blue *= 2;
+  }
+}
+
+/*Scans across a row before going to the one below =  because value i will only update
+once all of the values of j have been processed. So, it will read across the row first before going to the next one
+below. Note all the pixel code is essentially a distraction.*/
