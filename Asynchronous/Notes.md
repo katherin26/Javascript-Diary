@@ -422,3 +422,54 @@ But in order for a promise to exist in the first place, it must first be built, 
 
 In this case we don't have to build the promise ourselves in order to consume it. Most of the time we will actually just consume promises, which is also the easier and more useful part.
 ```
+
+## **CHAINING PROMISES**
+
+**Example script.js line 162**
+
+```
+const getCountryData = function (country) {
+
+  // Country 1
+
+  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
+    .then(response => response.json()) //this response here is in fact a resolved value.
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbour = data[0].borders[0];
+
+      if (!neighbour) return;
+
+      // Country 2
+
+      return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
+    });
+};
+
+getCountryData('portugal');
+
+```
+
+The second AJax call basically needs to happen here in this .then(data => renderCountry(data[0])) handler and we
+need to return this new promise, because when we do that we will able to chain a new then() method on the result of this .then()data method , we used return fetch and the url.
+
+The then() method always returns a promise no matter if we actually return anything or not, but if we do return a value then that value will become the fulfillment value of the return promise.
+
+For example : if we return(23) instead of return fetch(`https....etc`) , when we chain a new then() method
+
+```
+   return 23;
+  })
+  .then(data => alert(data));
+
+}
+
+//output :
+
+alert window: 1247.0.0.1:8080 says
+
+23
+```
+
+That happens because whatever we return from this promise will become the fulfilled value of the promise and the
+success value of the promise will be the value that we return from this .then(data) method and that is, 23.
