@@ -76,3 +76,21 @@ Then, when printSomething is called, and it comes across console.log(something);
 to see where a variable named something is defined. The nearest (and only) ancestor block is the top level, with a 
 var something which currently holds the value of 2, so 2 gets logged.
 */
+
+/*NOTE: OPERATOR ASSOCIATIVITY
+Given the following lines, what will be the output??
+*/
+
+console.log(1 < 2 < 3);
+console.log(3 > 2 > 1);
+
+/*The operators < and > follow left to right associativity, meaning that they will be interpreted starting from the 
+left. For demonstration, left to right evaluated expressions like a OP b OP c can be written as (a OP b) op c.
+
+Following this scheme, the first expression becomes (1<2) <3. The part in parenthesis evaluates to true leaving 
+true < 3. Because the right hand side is a number, the true on the left hand side is coerced into the number 1.
+Hence, the whole expression evaluates to true.
+
+In the second example (visualized as (3 > 2) > 1), the first part (3 > 2) evaluates to true. The remaining portion 
+true > 1 then gets converted to 1 > 1. As 1 is not greater than itself, the whole expression evaluates to false.
+*/
