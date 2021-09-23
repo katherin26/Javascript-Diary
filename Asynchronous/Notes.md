@@ -473,3 +473,29 @@ alert window: 1247.0.0.1:8080 says
 
 That happens because whatever we return from this promise will become the fulfilled value of the promise and the
 success value of the promise will be the value that we return from this .then(data) method and that is, 23.
+
+## **HANDLING REJECTED PROMISES**
+
+```
+A promise in which an error happens is a rejected promise
+Uncaught (in promise) TypeError: Failed to fetch
+There are two ways of handling rejections and the first one is to pass a second callback function into the then()
+method
+```
+
+```
+.then(
+      response => response.json(),
+      err => alert(err)
+    )
+```
+
+```
+Now, what happens if the firts one is fullfilled and the second one is rejected  , well then we would also have to
+catch an error too.
+
+The second one is handle all the errors no matter where they appear in the chain right at the end of the chain by
+adding a catch method
+
+.catch(err => alert(err))
+```

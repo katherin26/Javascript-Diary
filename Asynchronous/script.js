@@ -1,9 +1,14 @@
 'use strict';
 
 const btn = document.querySelector('.btn-country');
-const countriesContainer = document.querySelector(
-  '.countries'
-); /*
+const countriesContainer = document.querySelector('.countries');
+
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  //countriesContainer.style.opacity = 1;
+};
+
+/*
   request.addEventListener('load', function () {
     // console.log(this.responseText);
     const [data] = JSON.parse(this.responseText); //convert string to object
@@ -74,7 +79,7 @@ loading the page and this shows the non-blocking behavior in action*/
 </article>
 `;
   countriesContainer.insertAdjacentHTML('beforeend', html);
-  countriesContainer.style.opacity = 1;
+  //countriesContainer.style.opacity = 1;
 };
 
 const getCountryAndNeighbour = function (country) {
@@ -173,10 +178,17 @@ const getCountryData = function (country) {
       return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
     })
     .then(response => response.json())
-    .then(data => renderCountry(data, 'neighbour'));
+    .then(data => renderCountry(data, 'neighbour'))
+    .catch(err => {
+      console.error(`${err} error ----`);
+      renderError(`Something went wrong ${err.message}. Try again!!`);
+    }) //catching errors.
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    }); //Finally works if catch itself also returns a promise.
 };
 
-getCountryData('portugal');
+//getCountryData('portugal');
 
 /*Assume that the promise will be fullfilled and that we have a value available to work with, to handle this fulfilled 
 state, We can use the then() method that is available on all promises. Into the then() method we need to pass a callback 
@@ -191,3 +203,7 @@ this function will actually receive one argument once it's called by JS. And tha
 
 The way we do that is to then call another then(), so we need another callback function
  */
+
+btn.addEventListener('click', function () {
+  getCountryData('portugal');
+});
