@@ -233,3 +233,28 @@ isPalindrome('hannah'); //hannah ====> TRUE ANSWER
   reverse() will reverse that array, and join('') will join the letters back together. If that reversed text is 
   equal to the initial string, then we indeed know we have a palindrome! 
 */
+
+/*NOTE: TRIPLE PLUS 
+Consider the following code block. What is the result??
+*/
+
+let b = '4';
+console.log(b++ + 3, b); //7 5
+
+/*The postfix Increment operator (++) takes precedence over the addition operator (+), and will coerce strings to
+numbers. The expression with  the operator will evaluate to the coerced value, and (in line with the "Post" part of
+"Postfix") will increment the variable immediately afterwards.
+
+The code block in the question is equivalent to 
+
+                               let b = '4';
+                               console.log((b++) + 3, b);
+
+First, b is coerced to a number, and the increment expression evaluates to that number:
+
+                               console.log((4) + 3, b);
+
+b is then incremented from 4 to 5. This resolves to: 
+
+                                console.log(7, 5);
+*/
