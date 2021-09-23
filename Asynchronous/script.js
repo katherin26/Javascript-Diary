@@ -85,7 +85,7 @@ loading the page and this shows the non-blocking behavior in action*/
 const getCountryAndNeighbour = function (country) {
   //AJAX call country 1
   const request = new XMLHttpRequest();
-  request.open('GET', `https://restcountries.eu/rest/v2/name/${country}`);
+  request.open('GET', `https://restcountries.com/rest/v2/name/${country}`);
   request.send();
   request.addEventListener('load', function () {
     // console.log(this.responseText);
@@ -103,7 +103,10 @@ const getCountryAndNeighbour = function (country) {
     //AJAX call country 2 = this is really dependent on the first one, because we are firing of the second AJAX  call
     //in the callback function of the firstone
     const request2 = new XMLHttpRequest();
-    request2.open('GET', `https://restcountries.eu/rest/v2/alpha/${neighbour}`);
+    request2.open(
+      'GET',
+      `https://restcountries.com/rest/v2/alpha/${neighbour}`
+    );
     request2.send();
 
     request2.addEventListener('load', function () {
@@ -164,10 +167,55 @@ const getCountryData = function (country) {
     });
 };*/
 
+const getJSON = function (url, errorMsg = 'Something went wrong') {
+  return fetch(url).then(response => {
+    if (!response.ok) throw new Error(`${errorMsg} (${response.status})`);
+
+    return response.json();
+  });
+};
+
 const getCountryData = function (country) {
   // Country 1
-  fetch(`https://restcountries.eu/rest/v2/name/${country}`)
-    .then(response => response.json()) //this response here is in fact a resolved value.
+  getJSON(
+    `https://restcountries.com/rest/v2/name/${country}`,
+    'Country not found'
+  )
+    .then(data => {
+      renderCountry(data[0]);
+      const neighbour = data[0].borders[0];
+
+      if (!neighbour) throw new Error('No neighbour found!!');
+
+      // Country 2
+      return getJSON(
+        `https://restcountries.com/rest/v2/alpha/${neighbour}`,
+        'Country not found'
+      );
+    })
+
+    .then(data => renderCountry(data, 'neighbour'))
+    .catch(err => {
+      console.error(`${err} error ----`);
+      renderError(`Something went wrong ${err.message}. Try again!!`);
+    }) //catching errors.
+    .finally(() => {
+      countriesContainer.style.opacity = 1;
+    }); //Finally works if catch itself also returns a promise.
+};
+getCountryAndNeighbour('portugal');
+
+/*
+const getCountryData = function (country) {
+  // Country 1
+  fetch(`https://restcountries.com/rest/v2/name/${country}`)
+    .then(response => {
+      console.log(response);
+
+      if (!response.ok)
+        throw new Error(`Country not found (${response.status})`);
+      return response.json();
+    }) //this response here is in fact a resolved value.
     .then(data => {
       renderCountry(data[0]);
       const neighbour = data[0].borders[0];
@@ -175,7 +223,7 @@ const getCountryData = function (country) {
       if (!neighbour) return;
 
       // Country 2
-      return fetch(`https://restcountries.eu/rest/v2/alpha/${neighbour}`);
+      return fetch(`https://restcountries.com/rest/v2/alpha/${neighbour}`);
     })
     .then(response => response.json())
     .then(data => renderCountry(data, 'neighbour'))
@@ -187,8 +235,7 @@ const getCountryData = function (country) {
       countriesContainer.style.opacity = 1;
     }); //Finally works if catch itself also returns a promise.
 };
-
-//getCountryData('portugal');
+*/
 
 /*Assume that the promise will be fullfilled and that we have a value available to work with, to handle this fulfilled 
 state, We can use the then() method that is available on all promises. Into the then() method we need to pass a callback 
@@ -203,7 +250,7 @@ this function will actually receive one argument once it's called by JS. And tha
 
 The way we do that is to then call another then(), so we need another callback function
  */
-
+/*
 btn.addEventListener('click', function () {
   getCountryData('portugal');
-});
+});*/

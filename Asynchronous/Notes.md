@@ -499,3 +499,11 @@ adding a catch method
 
 .catch(err => alert(err))
 ```
+
+## **THROWING ERRORS MANUALLY**
+
+```
+Request 404 error
+
+
+```
