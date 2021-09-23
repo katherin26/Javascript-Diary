@@ -217,3 +217,19 @@ The correct way is =
                Greetings("Giovanni");// Good Morning, Giovanni
  
 */
+
+/*NOTE: PALINDROME??
+Does the following function correctly assess "hannah" to be a palindrome? In other words, what gets logged?
+*/
+
+function isPalindrome(str) {
+  var reverseText = str.split('').reverse().join('');
+  return str == reverseText;
+}
+
+isPalindrome('hannah'); //hannah ====> TRUE ANSWER
+
+/*split(') will split the string into an array of letters : [ 'h', 'a', 'n', 'n', 'a', 'h' ]
+  reverse() will reverse that array, and join('') will join the letters back together. If that reversed text is 
+  equal to the initial string, then we indeed know we have a palindrome! 
+*/
