@@ -180,3 +180,40 @@ for (let i = 0; i < maxHeight; i++) {
 /*Scans across a row before going to the one below =  because value i will only update
 once all of the values of j have been processed. So, it will read across the row first before going to the next one
 below. Note all the pixel code is essentially a distraction.*/
+
+/*NOTE: What does this snippet of code return?? */
+
+function Greetings(name) {
+  return;
+  'Good Morning' + name;
+}
+
+Greetings('Giovanni'); //undefined
+
+/*There are a number of keywords and syntax constructions which are not permitted to have newlines at a particular
+point. For example, return, continue, break, throw, and yield, if connected with another JS token on the right-hand
+side, are forbidden to be separated from the token by a newline.
+For example, when throwing something, the start of the thrown expression must be on the same line as the throw.
+
+When the interpreter is parsing JS text and comes across one of these situations where a newline is forbidden, but 
+a newline is found, and the preceding token (return, continue,etc) does not end with a semicolon, a semicolon will 
+be inserted. So, the interpreter parses the code above into:
+
+               function Greetings(name){
+                 return 
+                   "Good Morning," + name;
+               }
+
+               Greetings("Giovanni");
+
+Nothing is returned, so the return value is undefined.
+
+The correct way is =
+
+                function Greetings(name){
+                  return "Good Morning," + name; 
+               }
+
+               Greetings("Giovanni");// Good Morning, Giovanni
+ 
+*/
