@@ -258,3 +258,61 @@ b is then incremented from 4 to 5. This resolves to:
 
                                 console.log(7, 5);
 */
+
+/*NOTE: COMMA OPERATOR 
+Consider the following code block. What gets logged??
+*/
+
+let x = 5;
+
+function addFive(num) {
+  return num + 5;
+}
+
+x = (x++, (x = addFive(x)), (x *= 2), (x -= 5), (x += 10));
+console.log(x);
+
+/*The comma operator (,) evaluates each of its operands (from left to right) and returns the value of the last 
+operand. The result = (((6 + 5) * 2)- 5) + 10 = 27. */
+
+/*NOTE: TYPEOF NAN = Looking at the code, what would be logged??*/
+
+console.log(parseInt('a123') == Number('123z')); //false
+console.log(typeof '10' / 5 + typeof NaN); //NaNnumber
+console.log(isNaN('10' / 5)); //false
+console.log(typeof (50 + +'100px') == 'number' ? 'orange' : 'apple'); //orange
+
+/*In the first log, both parseInt() and Number would return NaN as these strings can't be parsed into numbers. This
+would result in :
+                                        
+console.log(NaN == NaN)
+
+Since NaN can never equal NaN, false is logged.
+In the second log, typeof "10"/5 returns NaN because of operator precedence.
+Since the typeof operator has a higher precedence than the divide operator /, we evaluate typeof "10" which returns
+"string", we then have "string"/5, which results in NaN.
+
+typeof NaN returns the string "number". Therefore, the concatenated output "NaNnumber".
+
+console.log( typeof "10"/5 + typeof NaN);
+console.log( "string"/5 + "number")
+console.log( NaN + "number")
+console.log( "NaNnumber")
+
+In the third log, "10"/5 would return 2 because of type coercion and since 2 is not equal to NaN, the output is false.
+
+console.log(isNaN( ("10"/5) )); 
+console.log(isNaN(2)); 
+console.log( false ); 
+
+The fourth log, first converts "100px" to NaN as the + operator forces a string to convert to number
+
+console.log( typeof (50 + +"100px") === "number" ? "orange" : "apple"  );
+console.log( typeof (50 + NaN) === "number" ? "orange" : "apple"  );
+
+Since NaN propagates, any operation donde with NaN leads to NaN, 50 + NaN equals NaN 
+
+console.log( typeof (NaN) === "number" ? "orange" : "apple"  );
+
+Since typeof NaN returns "Number" it resolves to true and returns "orange".
+*/
