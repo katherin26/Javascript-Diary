@@ -398,3 +398,22 @@ domain will equal 'quiz' if there is no ln - 1 array element.
 Applying this to our array, length which we assign to ln, is 3 ln - 1 is 2 and the item at index 2 of our array 
 is dev. Therefore, the answer is dev!
 */
+
+/*NOTE: IMPLICIT SEMICOLON BEHAVIOR = What does this snippet of code print? */
+
+let array = [1, 2](array).push(3);
+
+console.log(array); //ReferenceError
+
+/*Javascript would normally add a semicolon after the let array line, however (array) is seen as calling a function
+and JS actually reads let array = [1,2] (array).push(3).
+There is a ReferenceError because the variable array is used inside its definition. If it used var instead, JS would
+attempt to call [1,2] which is a TypeError.
+
+Correct way : 
+
+let arr = [1, 2];
+arr.push(3);
+console.log(arr);
+
+*/
