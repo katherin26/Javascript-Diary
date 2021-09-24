@@ -102,3 +102,5 @@ whereAmI2(52.508, 13.381);
 whereAmI2(52.508, 13.381);
 whereAmI2(19.037, 72.873);
 whereAmI2(-33.933, 18.474);
+
+btn.addEventListener('click', whereAmI2);

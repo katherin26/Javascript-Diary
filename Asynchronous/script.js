@@ -203,7 +203,8 @@ const getCountryData = function (country) {
       countriesContainer.style.opacity = 1;
     }); //Finally works if catch itself also returns a promise.
 };
-getCountryAndNeighbour('portugal');
+
+//getCountryAndNeighbour('portugal');
 
 /*
 const getCountryData = function (country) {
@@ -253,4 +254,5 @@ The way we do that is to then call another then(), so we need another callback f
 /*
 btn.addEventListener('click', function () {
   getCountryData('portugal');
-});*/
+});
+*/
