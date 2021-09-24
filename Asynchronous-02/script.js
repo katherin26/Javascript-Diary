@@ -1,5 +1,8 @@
 'use strict';
 
+const btn = document.querySelector('.btn-country');
+const countriesContainer = document.querySelector('.countries');
+
 /*TITTLE: THE EVENT LOOP IN PRACTICE */
 console.log('Test start');
 setTimeout(() => console.log('0 sec timer'), 0);
@@ -56,7 +59,7 @@ const lotteryPromise = new Promise(function (resolve, reject) {
 
 lotteryPromise.then(res => console.log(res)).catch(err => console.log(err));
 
-//PROMISIFYING SetTimeout
+//NOTE: PROMISIFYING SetTimeout
 const wait = function (seconds) {
   return new Promise(function (resolve) {
     setTimeout(resolve, seconds * 1000);
@@ -83,3 +86,66 @@ wait(2)
 //This should appear at the beggining because is immediately!
 Promise.resolve('abc').then(x => console.log(x));
 Promise.reject(new Error('Problem!')).catch(x => console.log(x));
+
+/*TITTLE: PROMISIFYING THE GEOLOCATION API
+
+getCurrentPosition accepts two callbacks where the first is for the success and the second one is for the error.
+The first callback actually gets access to the position object and the secondpne is in case that the user does not
+allow the page to get access to the current location .
+
+navigator.geolocation.getCurrentPosition(
+  position => console.log(position),
+  err => console.log(err)
+); //GeolocationPosition{...}
+*/
+
+//This is another great opportunity to promisify a callback based API, to a promise based API
+
+const getPosition = function () {
+  return new Promise(function (resolve, reject) {
+    //navigator.geolocation.getCurrentPosition(
+    //position => resolve(position),
+    //err => reject(err)
+    //);
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+//getPosition().then(pos => console.log(pos));
+
+//TITTLE: CHALLENGE WhereAmI
+
+const whereAmI = function () {
+  getPosition()
+    .then(pos => {
+      const { latitude: lat, longitude: long } = pos.coords;
+
+      return fetch(`https://geocode.xyz/${lat},${long}?geoit=json`);
+    })
+    .then(res => {
+      if (!res.ok) throw new Error(`Problem with geocoding ${res.status}`);
+      console.log(res);
+      return res.json();
+    })
+    .then(data => {
+      console.log(data);
+      console.log(`You are in ${data.city}, ${data.country} `);
+
+      return fetch(`https://restcountries.com/v3/name/${data.country}`);
+    })
+    .then(res => {
+      if (!res.ok) throw new Error(`Country not found (${res.status})`);
+
+      return res.json();
+    })
+
+    //IMPORTANT: Fixed the renderCOuntry function , something happen with the API!
+
+    /*.then(data => {
+      renderCountry(data[0]);
+    })*/
+
+    .catch(err => console.error(err)); //Handle the erro "Problem with geocoding 403"
+};
+
+btn.addEventListener('click', whereAmI);
