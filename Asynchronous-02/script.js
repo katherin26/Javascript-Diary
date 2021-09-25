@@ -3,6 +3,25 @@
 const btn = document.querySelector('.btn-country');
 const countriesContainer = document.querySelector('.countries');
 
+const renderCountry = function (data, className = '') {
+  const html = `
+  <article class="country ${className}">
+  <img class="country__img" src="${data.flag}" />
+  <div class="country__data">
+    <h3 class="country__name">${data.name}</h3>
+    <h4 class="country__region">${data.region}</h4>
+    <p class="country__row"><span>👫</span>${(
+      +data.population / 1000000
+    ).toFixed(1)}</p>
+    <p class="country__row"><span>🗣️</span>${data.languages[0].name}</p>
+    <p class="country__row"><span>💰</span>${data.languages[0].name}</p>
+  </div>
+</article>
+`;
+  countriesContainer.insertAdjacentHTML('beforeend', html);
+  countriesContainer.style.opacity = 1;
+};
+
 /*TITTLE: THE EVENT LOOP IN PRACTICE */
 console.log('Test start');
 setTimeout(() => console.log('0 sec timer'), 0);
@@ -148,4 +167,43 @@ const whereAmI = function () {
     .catch(err => console.error(err)); //Handle the erro "Problem with geocoding 403"
 };
 
-btn.addEventListener('click', whereAmI);
+//btn.addEventListener('click', whereAmI);
+
+/*TITTLE: CONSUMING PROMISES WITH ASYNC/AWAIT 
+Inside an a async function, we can have one or more await statements and then we need the promise , we can use the 
+promise returned from the fetch function and await for the result.
+
+Basically await will stop decode execution at this point of the function until the promise is fulfilled , until the
+data has been fetched in this case.
+NOTE: stopping execution in an async function which is what we have here is actually not a problem because 
+this function is running asynchronously in the background and  therefore it is not blocking the main threat of
+execution , it's not blocking the call stack. 
+
+NOTE: async and await is in fact simply syntactic sugar over the then() method in promises.
+  
+          Using then() =
+          fetch(`https://restcountries.com/rest/v2/name/${country}).then(res => console.log(res));
+*/
+
+const whereAmI2 = async function () {
+  //Geolocation , getPosition line 104
+  const position = await getPosition();
+  const { latitude: lat, longitude: long } = position.coords;
+
+  //Reverse Geocoding
+  const resGeo = await fetch(`https://geocode.xyz/${lat},${long}?geoit=json`);
+  const dataGeo = await resGeo.json();
+  console.log(dataGeo);
+
+  //Country Data
+  const res = await fetch(
+    `https://restcountries.com/rest/v2/name/${dataGeo.country}`
+  );
+  const data = await res.json(); //this itself return a new promise, and then chain another then handler.
+  // But all we have to do is await this and the we can store the results directly into the data variable that
+  //we have been using before.
+  console.log(data); //[{...}]
+  renderCountry(data[0]); //IMPORTANT: Fixed the renderCOuntry function , something happen with the API!
+};
+
+whereAmI2();
