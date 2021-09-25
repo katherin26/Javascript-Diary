@@ -22,6 +22,11 @@ const renderCountry = function (data, className = '') {
   countriesContainer.style.opacity = 1;
 };
 
+const renderError = function (msg) {
+  countriesContainer.insertAdjacentText('beforeend', msg);
+  //countriesContainer.style.opacity = 1;
+};
+
 /*TITTLE: THE EVENT LOOP IN PRACTICE */
 console.log('Test start');
 setTimeout(() => console.log('0 sec timer'), 0);
@@ -185,25 +190,46 @@ NOTE: async and await is in fact simply syntactic sugar over the then() method i
           fetch(`https://restcountries.com/rest/v2/name/${country}).then(res => console.log(res));
 */
 
+/*TITTLE: ERROR HANDLING WITH TRY AND CATCH 
+The try catch statement is actually used in regular JS as well, Try catch has nothing to do with async /await 
+but we can still use it to catch errors in async functions .
+
+try{
+  let y = 1;
+  const x = 2;
+  x = 3;
+} catch(err){
+  alert(err.message)
+}
+*/
+
 const whereAmI2 = async function () {
-  //Geolocation , getPosition line 104
-  const position = await getPosition();
-  const { latitude: lat, longitude: long } = position.coords;
+  try {
+    //Geolocation , getPosition line 104
+    const position = await getPosition();
+    const { latitude: lat, longitude: long } = position.coords;
 
-  //Reverse Geocoding
-  const resGeo = await fetch(`https://geocode.xyz/${lat},${long}?geoit=json`);
-  const dataGeo = await resGeo.json();
-  console.log(dataGeo);
+    //Reverse Geocoding
+    const resGeo = await fetch(`https://geocode.xyz/${lat},${long}?geoit=json`);
+    if (!resGeo.ok) throw new Error('Problem getting location data');
+    const dataGeo = await resGeo.json();
+    console.log(dataGeo);
 
-  //Country Data
-  const res = await fetch(
-    `https://restcountries.com/rest/v2/name/${dataGeo.country}`
-  );
-  const data = await res.json(); //this itself return a new promise, and then chain another then handler.
-  // But all we have to do is await this and the we can store the results directly into the data variable that
-  //we have been using before.
-  console.log(data); //[{...}]
-  renderCountry(data[0]); //IMPORTANT: Fixed the renderCOuntry function , something happen with the API!
+    //Country Data
+    const res = await fetch(
+      `https://restcountries.com/rest/v2/name/${dataGeo.country}`
+    );
+    if (!res.ok) throw new Error('Problem getting country');
+    const data = await res.json(); //this itself return a new promise, and then chain another then handler.
+    // But all we have to do is await this and the we can store the results directly into the data variable that
+    //we have been using before.
+    console.log(data); //[{...}]
+    renderCountry(data[0]);
+  } catch (err) {
+    console.log(err);
+    renderError(`Something went wrong ${err.message}`);
+  }
+  //IMPORTANT: Fixed the renderCOuntry function , something happen with the API!
 };
 
 whereAmI2();
