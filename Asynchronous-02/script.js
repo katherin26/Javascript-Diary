@@ -292,3 +292,34 @@ const get3Countries = async function (c1, c2, c3) {
 };
 
 get3Countries('portugal', 'canada', 'tanzania');
+
+//TITTLE: OTHER PROMISE COMBINATORS: RACE, ALLSETTLED AND ANY
+
+/*Promise.race = receives an array of promises and it also returns a promise, This promise returned is settled
+as soon as one of the input promises settles and remember that settled simply means that a value is available but
+it doesn't matter if the promise got rejected or fulfilled . Basically the first settled promise wins the race 
+*/
+
+(async function () {
+  const res = await Promise.race([
+    getJSON(`https://restcountries.com/rest/v2/name/${c1}`),
+    getJSON(`https://restcountries.com/rest/v2/name/${c1}`),
+    getJSON(`https://restcountries.com/rest/v2/name/${c1}`),
+  ]);
+  console.log(res[0]);
+})();
+
+const timeout = function (sec) {
+  return new Promise(function (_, reject) {
+    setTimeout(function () {
+      reject(new Error('Request took too long!'));
+    }, sec * 1000);
+  });
+};
+
+Promise.race([
+  getJSON(`https://restcountries.com/rest/v2/name/${c1}`),
+  timeout(0.2),
+])
+  .then(res => console.log(res[0]))
+  .catch(err => console.log(err));
