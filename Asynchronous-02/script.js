@@ -323,3 +323,44 @@ Promise.race([
 ])
   .then(res => console.log(res[0]))
   .catch(err => console.log(err));
+
+/*Promise.allSettled: This receives an array of promises again and it will simply return an array of all the settled
+promises, no matter if the promises got rejected or not , the difference is that Promise.all will short circuit as
+soon as one promise rejects but promise.allSettled simply never short circuits. So it will simply return all the 
+results of all the promises 
+ */
+
+Promise.allSettled([
+  Promise.resolve('Succes'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Another success'),
+]).then(res => console.log(res));
+//[{...}, {...},{...}]
+/*
+ 0: {status: "fulfilled", value: "Succes"}
+ 1: {status: "rejected", reason: "ERROR"}
+ 2: {status: "fulfilled", value: "Another success"}
+  length: 3
+  __proto__: Array(0)
+ */
+
+//The Promise.all combinator will short circuit if there is one error , if there is one rejected promise!
+Promise.all([
+  Promise.resolve('Succes'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Another success'),
+])
+  .then(res => console.log(res))
+  .catch(err => console.log(err)); //Promise{pending} ERROR
+
+/*Promise.any : This receives an array of multiple promises and this one will then return the first fulfilled promise
+and it will simply ignore rejected promises is very similar to Promise.race with the difference that rejected promises
+are ignored and therefore the results of Promise.any is always gonna be a fulfilled promise unless of course all
+of them reject.
+*/
+
+Promise.any([
+  Promise.resolve('Succes'),
+  Promise.reject('ERROR'),
+  Promise.resolve('Another success'),
+]).then(res => console.log(res));
