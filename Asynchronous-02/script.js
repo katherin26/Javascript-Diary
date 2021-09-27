@@ -225,11 +225,70 @@ const whereAmI2 = async function () {
     //we have been using before.
     console.log(data); //[{...}]
     renderCountry(data[0]);
+
+    return `You are in ${dataGeo.city} , ${dataGeo.country}`;
   } catch (err) {
     console.log(err);
     renderError(`Something went wrong ${err.message}`);
+    //Reject promise returned from async function
+    throw err;
   }
   //IMPORTANT: Fixed the renderCOuntry function , something happen with the API!
 };
 
-whereAmI2();
+console.log(`1 will get location`);
+//TITTLE: Returning values from async function
+/*const city = whereAmI(); console.log(city) */
+/*
+whereAmI2()
+  .then(city => console.log(`2: ${city}`))
+  .catch(err => console.log(`2: ${err.message}`))
+  .finally(() => console.log(`3: Finished getting location`));
+console.log(`3 Finished getting location`);
+*/
+
+(async function () {
+  try {
+    const city = await whereAmI2();
+    console.log(city);
+  } catch (err) {
+    console.log(`2:${err.message}`);
+  }
+  console.log(`3: Finished getting location`);
+})();
+
+//TITTLE: Running Promises in Parallel
+/*Let's imagine that we wanted ti get some data about three countries at the same time but in which the order that 
+the data arrives does matter at all*/
+
+const get3Countries = async function (c1, c2, c3) {
+  try {
+    /* const [data1] = await getJSON(
+      `https://restcountries.com/rest/v2/name/${c1}`
+    );
+    const [data2] = await getJSON(
+      `https://restcountries.com/rest/v2/name/${c2}`
+    );
+    const [data3] = await getJSON(
+      `https://restcountries.com/rest/v2/name/${c3}`
+    );
+    console.log([data1.capital, data2.capital, data3.capital]);*/
+
+    //Loading at the same time
+    //We use the promise.all combinator function, This is a kind of helper function on this promise constructor.
+    //It's a static method, this function here takes in an array of promises and it will return a new promise which
+    //will then run all the promises in the arrray at the same time
+
+    const data = await Promise.all([
+      getJSON(`https://restcountries.com/rest/v2/name/${c1}`),
+      getJSON(`https://restcountries.com/rest/v2/name/${c2}`),
+      getJSON(`https://restcountries.com/rest/v2/name/${c3}`),
+    ]);
+    // console.log(data); // [Array(1), Array(2), Array(3)]
+    console.log(data.map(d => d[0].capital));
+  } catch (err) {
+    console.log(err);
+  }
+};
+
+get3Countries('portugal', 'canada', 'tanzania');
