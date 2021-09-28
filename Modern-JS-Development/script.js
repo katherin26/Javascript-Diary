@@ -7,15 +7,18 @@
 //console.log(price, tq);
 //  Import all the exports of a module at the same time = import * as ShoppingCart from './shopingCart'
 
+import shoppingCart from "./shoppingCart";
+
 /*
 import * as ShoppingCart from './shoppingCart.js';
 ShoppingCart.addToCart('bread', 5);
 console.log(ShoppingCart.totalPrice);*/
 
 //TITTLE: Example Import Default
+/*
 import add, { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 add('pizza', 2);
-console.log(price);
+console.log(price);*/
 
 /*TITTLE: MODULE PATTERN : The main goal of the module pattern is to encapsulate functionality ti have private data
 and to expose a public API and the best way of achieving all that is by simply using a function, because a function
@@ -27,7 +30,7 @@ called once.*/
 //This works for closures, remember allow a function to have access to all the variables that were present at its
 //birthplace, so the addToCart function was created in the ShoppingCart2, so therefore this function never loses
 //connection to its birthplace when we return the function.
-
+/*
 const ShoppingCart2 = (function () {
   const cart = [];
   const shippingCost = 10;
@@ -57,4 +60,25 @@ const ShoppingCart2 = (function () {
 ShoppingCart2.addToCart('apple', 4);
 ShoppingCart2.addToCart('Pizza', 2);
 console.log(ShoppingCart2); //cart: Array(2), totalPrice: 237, totalQuantity: 23, addToCart: ƒ}
-console.log(ShoppingCart2.shippingCost); //Undefined
+console.log(ShoppingCart2.shippingCost); //Undefined */
+
+/*TITTLE: COMMON JS MODULES
+AMD MODULES AND COMMONJS MODULES
+
+Recently Modules have actually been implemented in Node.js and this one is a way of running JS on a web server
+outside of a browser, Now the big consequence of this, is that almost all the modules in the npm repository that
+we can use in our own code still use the CommonJS  module System and the reason for that is that npm was originally
+only intended for Node which uses commonJS , Later npm became the standar repository for the whole JS world.*/
+
+/*EXPORT: 
+This is not going to work in the browser but it would work in Node.js , So this export keyword here is basically
+an object and is important in node.*/
+export.addTocart = function(product,quantity){
+    cart.push({product, quantity});
+    console.log(`${quantity} ${product} added to cart (sipping cost is ${shippingCost})`
+    );
+};
+
+/*IMPORT: 
+const {addTocart} = require('./shoppingCart.js)
+*/
