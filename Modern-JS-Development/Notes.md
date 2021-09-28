@@ -28,3 +28,78 @@ NPM = - 3rd party modules
 
 NODE
 ```
+
+## **AN OVERVIEW OF MODULES**
+
+**Module =**
+
+1. Is a reusable piece of code that encapsulates implementation details of a certain part of our project.
+2. Usually a standalone file, but it doesn't have to be.
+3. Also have imports and exports
+
+```
+ Dependency<-------------------------import{rand} from './math.js';
+                                     const diceP1 = rand(1,6,2);
+                                     const diceP2 = rand(1,6,2);
+                                     const scores = {diceP1, diceP2};
+                                     export {scores};-----------------------------> Public Api
+```
+
+**WHY MODULES?**
+
+**COMPOSE SOFTWARE =**
+Modules are small building blocks that we put together to build complex applications.
+
+**ISOLATE COMPONENTS =**
+Modules can be developed in isolation without thinking about the entire codebase.
+
+**ABSTRACT CODE =**
+Implement low-level code in modules and import these abstractions into other modules.
+
+**ORGANIZED CODE =**
+Modules naturally lead to a more organized codebase.
+
+**REUSE CODE =**
+Modules allow us to easily reuse the same code, even across multiple projects.
+
+### **NATIVE JAVASCRIPT (ES6) MODULES**
+
+**ES6 MODULES OR SCRIPT**
+**MODULES =** Modules stored in files, exactly one module per file.
+
+1. All top level variables are scooped to the module, basically variables are private to the module by default and the only way an outside module can access a value that's inside of a module is by exporting that value.
+2. Modules are always executed in strict mode while scripts on the other hand are executed in sloppy mode by default.
+3. Also the this keyword is always undefined at the top level while in scripts it points at the window object.
+4. You can use Imports and exports and they can only happen at the top level. All imports are hoisted
+5. HTML Linking `<script type = "module">`.
+6. File downloading = Asynchronous
+
+**SCRIPTS =**
+
+1. All top level variables are always global and this can lead to problems like global namespace pollution where multiple scripts try to declare variables with the same name and then collide. So private variables are the solution to this problem.
+2. `<script>`
+3. File downloading = Blocking synchronous way. Unless we use the async or differ attributes on the script tag.
+
+### **HOW ES6 MODULES ARE IMPORTED**
+
+```
+import { rand } from './math.js';
+import { showDice } from './dom.js';
+const dice = rand(1,6,2);
+showDice(dice);
+
+index.js
+
+```
+
+**IMPORTING MODULES BEFORE EXECUTION**
+
+1. Modules are imported sunchronously.
+2. Possible thanks to top-level ('static') imports, which make imports known before execution.
+3. This makes bundling and dead code elimination possible.
+
+When a piece of code is executed the first step is to parse that code and parsing basically means to just read the code but without executing it and this is the moment in which imports are hoisted. In fact, the whole process of importing modules happens before the code in the main module is actually executed. In this example the index.js module imports the dom and math modules in a synchronous way, that means is that only after all imported modules have been downloaded and executed the main index.js module will finally be executed as well. This is possible because of top level imports and exports and that's because if we only export and import values outside of any code that needs to be executed then the engine can know all the imports and exports during the parsing phase. So while the code is still being read before being executed. If we were allowed to import a module inside of a function, then that function would first have to be executed before the import code happened. In that case modules could not be imported in a synchronous way, the importing module would have to be executed first.
+
+After the Parsing process, the modules are actually downloaded from the server and downloading happens in an asynchronous way. It is only the importing operation itself that happens synchronously. After the module arrives, it's also parsed and the module exports are linked to the imports in index.js. This connection is actually a life connection, exported values are not copied to imports, Instead, the import is basically just a reference to the export value. When the value changes in the exporting module then the same value also changes in the import module.
+
+Next up, the code in the imported modules is executed and with this the process of importing modules in finally finished.
