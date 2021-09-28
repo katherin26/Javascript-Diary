@@ -7,8 +7,7 @@
 //console.log(price, tq);
 //  Import all the exports of a module at the same time = import * as ShoppingCart from './shopingCart'
 
-import shoppingCart from "./shoppingCart";
-
+//import shoppingCart from './shoppingCart';
 /*
 import * as ShoppingCart from './shoppingCart.js';
 ShoppingCart.addToCart('bread', 5);
@@ -73,12 +72,53 @@ only intended for Node which uses commonJS , Later npm became the standar reposi
 /*EXPORT: 
 This is not going to work in the browser but it would work in Node.js , So this export keyword here is basically
 an object and is important in node.*/
+/*
 export.addTocart = function(product,quantity){
     cart.push({product, quantity});
     console.log(`${quantity} ${product} added to cart (sipping cost is ${shippingCost})`
     );
-};
+};*/
 
 /*IMPORT: 
 const {addTocart} = require('./shoppingCart.js)
 */
+
+//TITTLE: INTRODUCTION TO NPM = using libraries in this case Lodash-es for clone an nested object.
+/*
+COMMANDS:
+
+1.Check if we actually have NPM Installed  = NPM -v 
+2.NPM initializing ---> questions in order to create package.json = NPM init 
+3.Install a library (example) = NPM install leaflet  or NPM i leaflet
+              
+                   "dependencies" : {
+                     "leaflet" : "^1.6.0"
+                   }
+
+LIBRARY = LODASH 
+
+Work with objects, Functions, datos and more...
+
+Special version = Lodash-es 
+
+NPM i lodash-es
+*/
+
+//NOTE: Using cloneDeep from lodash
+
+import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+
+const state = {
+  cart: [
+    { product: 'Bread', quantity: 5 },
+    { product: 'Pizza', quantity: 5 },
+  ],
+  user: { loggedIn: true },
+};
+
+const stateClone = Object.assign({}, state);
+const stateDeepClone = cloneDeep(state);
+
+state.user.loggedIn = false;
+console.log(stateClone);
+console.log(stateDeepClone);
