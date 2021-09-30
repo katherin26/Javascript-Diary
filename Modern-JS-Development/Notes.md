@@ -149,3 +149,50 @@ Next up, the code in the imported modules is executed and with this the process 
 1. Consume promises with async/await for best readability.
 2. Whenever possible, run promises in parallel(Promise.all).
 3. Handle errors and promise rejections.
+
+### **IMPERATIVE VS DECLARATIVE CODE**
+
+**TWO FUNDAMENTALLY DIFFERENT WAYS OF WRITING CODE (PARADIGMS)**
+
+```
+                IMPERATIVE                                  DECLARATIVE
+
+     - Programmer explains "How to do            - Programmer tells "WHAT do do"
+      things".
+                                                 - We simply describe the way the computer should
+     - We explain the computer every               achieve the result.
+      single step it has to follow to
+      achieve a result.                          - The HOW (step by step intructions) gets abstracted
+                                                   away.
+     - EXAMPLE: Step by step recipe of             EXAMPLE : Description of a cake.
+      a cake.
+
+
+      const arr = [2,4,6,8];                               const arr = [2,4,6,8];
+      const doubled = [];                                  const doubled = arr.map(n => n * 2);
+      for(let i = 0; i < arr.length; i++)
+        doubled[i] = arr[i] * 2;
+```
+
+### **FUNCTIONAL PROGRAMMING**
+
+1. Declarative programming paradigm.
+2. Based on the idea of writing software by combining many pure functions, avoiding side effects and
+   mutating data.
+3. Side effect: Modification(mutation) of any data outside of the function (mutating external variables, logging to console, writing to DOM, etc).
+4. Pure function: Function without side effects. Does not depend on external variables. Given the same inputs, always returns the same outputs.
+5. Immutability : State(data) is never modified! Instead, state is copied and the copy is mutated and returned.
+
+### **FUNCTIONAL PROGRAMMING TECHNIQUES**
+
+1. Try to avoid data mutattions.
+2. Use built-in methods that don't produce side effects.
+3. Do data transformations with methods such as .map(), .filter() and .reduce().
+4. Try to avoid side effects in functions: this is of course not always possible!.
+
+### **DECLARATIVE SYNTAX**
+
+1. Use array and object destructuring.
+2. Use the spread operator (...).
+3. Use the ternary (conditional) operator.
+4. Use template literals.
