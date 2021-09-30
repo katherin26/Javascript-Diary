@@ -19,6 +19,12 @@ import add, { addToCart, totalPrice as price, tq } from './shoppingCart.js';
 add('pizza', 2);
 console.log(price);*/
 
+import add, { cart } from './shoppingCart.js';
+add('pizza', 2);
+add('bread', 2);
+add('apples', 2);
+console.log(cart);
+
 /*TITTLE: MODULE PATTERN : The main goal of the module pattern is to encapsulate functionality ti have private data
 and to expose a public API and the best way of achieving all that is by simply using a function, because a function
 give us private data by default and allow us to return values, which can become our public API*/
@@ -106,6 +112,8 @@ NPM i lodash-es
 
 //NOTE: Using cloneDeep from lodash
 
+import cloneDeep from 'lodash-es';
+
 import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
 
 const state = {
@@ -122,3 +130,22 @@ const stateDeepClone = cloneDeep(state);
 state.user.loggedIn = false;
 console.log(stateClone);
 console.log(stateDeepClone);
+
+//TITTLE: BUNDLING WITH PARCEL AND NPM SCRIPTS
+/*
+The goal of using parcel is to bundle these three modules together 
+
+Npm i parcel --save-dev
+                     "devDependencies" : {
+                       "parcel" : "^1.12.4"
+                     }
+
+RUN PARCEL : Npx or Npm scripts
+
+Npx parcel index.html
+
+*/
+
+if (module.hot) {
+  module.hot.accept();
+}
