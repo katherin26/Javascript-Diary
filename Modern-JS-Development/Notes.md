@@ -103,3 +103,49 @@ When a piece of code is executed the first step is to parse that code and parsin
 After the Parsing process, the modules are actually downloaded from the server and downloading happens in an asynchronous way. It is only the importing operation itself that happens synchronously. After the module arrives, it's also parsed and the module exports are linked to the imports in index.js. This connection is actually a life connection, exported values are not copied to imports, Instead, the import is basically just a reference to the export value. When the value changes in the exporting module then the same value also changes in the import module.
 
 Next up, the code in the imported modules is executed and with this the process of importing modules in finally finished.
+
+### **REVIEW: MODERN AND CLEAN CODE:**
+
+**READABLE CODE**
+
+1. Write code so that others can understand it.
+2. Write code so that you can understan it in 1 year.
+3. Avoid too "clever" and overcomplicated solutions.
+4. Use descriptive variable names: what they contain.
+5. Use descriptive function names: what they do.
+
+**GENERAL**
+
+1. Use DRY principle (refactor your code).
+2. Don't pollute global namespace, encapsulate istead.
+3. Don't use var.
+4. Use strong type checks (=== and !==).
+
+**FUNCTIONS**
+
+1. Generally, functions should do only one thing.
+2. Don't use more than 3 functions parameters.
+3. Use default parameters whenever possible.
+4. Generally, return same data type as received.
+5. Use arrow functions when they make code more readable.
+
+**OOP**
+
+1. Use ES6 classes.
+2. Encapsulate data and don't mutate it from outside the class.
+3. Implement method chaining.
+4. Do not use arrow functions as methods (in regular objects).
+
+**AVOID NESTED CODE**
+
+1. Use early return (guard clauses).
+2. Use ternary (conditional) or logical operators instead of if.
+3. Use multiple if instead of if/else-if.
+4. Avoid for loops, use array methods instead.
+5. Avoid callback-based asynchronous APIs.
+
+**ASYNCHRONOUS CODE**
+
+1. Consume promises with async/await for best readability.
+2. Whenever possible, run promises in parallel(Promise.all).
+3. Handle errors and promise rejections.
