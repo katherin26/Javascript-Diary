@@ -2,15 +2,16 @@
   "name": "modern-js-development",
   "version": "1.0.0",
   "description": "",
-  "main": "clean.js",
+  "main": "script.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver ",
+    "start": "npm-run-all  --parallel devserver ",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
     "compress:css": "node-sass css/style.prefix.css css/style.css --output-style compressed",
-    "build:css": "npm-run-all compile:sass  prefix:css compress:css"
+    "build:css": "npm-run-all compile:sass  prefix:css compress:css",
+    "build:js": "parcel index.html"
   },
   "author": "",
   "license": "ISC",
@@ -22,7 +23,10 @@
     "postcss-cli": "^4.1.1"
   },
   "dependencies": {
+    "core-js": "^3.18.1",
     "leaflet": "^1.7.1",
-    "lodash-es": "^4.17.21"
+    "lodash-es": "^4.17.21",
+    "parcel": "^2.0.0-rc.0",
+    "regenerator-runtime": "^0.13.9"
   }
 }

@@ -112,9 +112,10 @@ NPM i lodash-es
 
 //NOTE: Using cloneDeep from lodash
 
-import cloneDeep from 'lodash-es';
+import cloneDeep, { values } from 'lodash-es';
 
-import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+//import cloneDeep from './node_modules/lodash-es/cloneDeep.js';
+//import cloneDeep from 'lodash';
 
 const state = {
   cart: [
@@ -144,8 +145,74 @@ RUN PARCEL : Npx or Npm scripts
 
 Npx parcel index.html
 
+Example of change the version : npm i parcel@2.00.20
+
+"scripts": {
+  "start": "Parcel index.html",
+  "build": "Parcel build index.html",
+}
+
 */
 
 if (module.hot) {
   module.hot.accept();
 }
+
+/*TITTLE: CONFIGURING BABEL AND POLYFILLING =
+
+Babel works with plugins and presets that can both be configured, A plugin is basically a specific
+JavaScript feature that we want to transpile .
+
+For example: we want to convert arrow functions back to ES5 but leave everything else in ES6 ,for 
+example const and var declarations.
+
+Usually that doesn't make a lot of sense, because we will want to transpile everything at the same
+time and usually instead of using simple plugins for each of these features Babel actually uses 
+presets.
+
+Presets is basically a bunch of plugins bundled together, parcel is going to use this preset : 
+@babel/preset-env and this will automatically select which JS features should be compiled based on
+browser support and again that will all happen automatically and out of the box , babel will convert
+all features only browsers that are barely used anymore with the market share of less than 0.25% are 
+not going to be supported by the transpiling with this preset.
+*/
+
+class Person {
+  #greeting = 'Hey';
+  constructor(name) {
+    this.name = name;
+    console.log(`${this.#greeting}, ${this.name}`);
+  }
+}
+
+const doll = new Person('Annabell');
+
+console.log('Jonas' ?? null);
+
+console.log(cart.find(el => el.quantity >= 2));
+Promise.resolve('TEST').then(x => console.log(x));
+
+/* 
+Babel can actually only transpile ES6 syntax like arrow functions, classes, const or the spread ope-
+rator .
+In this example find and promises are news features in JS, they can simply not be transpiled because
+does not have an equivalent way of writing them in ES5.
+
+POLYFILLING : Babel used to do polyfilling out of the box some time ago but recently they started to
+simply recommending another library and now we have to manually import data as well : core-js
+and then we usually only want to import a part of that library and that's called stable, parcel install
+this automatically.
+
+Polyfilling recreate a defined function and make it available in the bundle and the code can then use 
+it.
+ */
+
+import 'core-js/stable';
+import 'core-js/stable/array/find';
+import 'core-js/stable/promise';
+
+/*Exist one new feature that is not polyfilled by core-js , we need to install =
+NPM install regenerator-runtime : npm i regenerator-runtime */
+
+//Pollyfilling async functions
+import 'regenerator-runtime/runtime';
