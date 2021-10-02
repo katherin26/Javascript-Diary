@@ -103,6 +103,7 @@ Analyzing this, we can see that it's only the controller who imports and calls f
 **EXAMPLE: in a flow chart project!**
 
 ```
+    CONTROLLER ----------------------------> MODEL ----> CONTROLLER ---> VIEW
 
    USER SELECTS RECIPE --------------------> LOAD RECIPE --------------------> RENDER RECIPE
                                                  /\
