@@ -78,9 +78,9 @@ One of the big goals of the MVC pattern is separate logic from application logic
 **THE CONTROLLER** = Contains the application logic and creates a bridge between the model and a view which in fact, should know nothing about each other
 
 ```
-
+            3                           2           1          2                                 0
 WEB   <-------------         MODEL              CONTROLLER            VIEW        ------------->USER
-       ------------->
+       ------------->                   4                      4                       5
                          Business Logic      Application Logic    Presentation Logic
 
                          State               Bridge between model
@@ -88,3 +88,16 @@ WEB   <-------------         MODEL              CONTROLLER            VIEW      
                          HTTP Library        know about one another)
 
 ```
+
+**TAKE A LOOK OF A TYPICAL FLOW OF ACTIONS AND DATA AS SOON AS SOME EVENT HAPPENS ON THE USER**
+**INTERFACE FOR EXAMPLE LIKE A CLICK:**
+
+To start, it's going to be the controller who will handle that event because handling an event is doing something in the application and that is clearly part of the application logic.
+
+Now, this handling might involve updating the user interface and also ask the model for some data. So
+we can say that the controller dispatches tasks to model and to the view or in other words, it controls and orchestrates this entire action, and in fact the whole application itself. Now asking the model for some data might of course involve doing an AJAX request to the web and that's exactly
+what the model does. Then, when the data arrives the controller takes the data and sends it to the view and finally to finish the view will render that data to the user interface and finish this whole cycle.
+
+Analyzing this, we can see that it's only the controller who imports and calls functions from the model and from the view, but never the other way around
+
+**EXAMPLE: in a flow chart project!**
