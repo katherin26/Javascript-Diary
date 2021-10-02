@@ -101,3 +101,17 @@ what the model does. Then, when the data arrives the controller takes the data a
 Analyzing this, we can see that it's only the controller who imports and calls functions from the model and from the view, but never the other way around
 
 **EXAMPLE: in a flow chart project!**
+
+```
+
+   USER SELECTS RECIPE --------------------> LOAD RECIPE --------------------> RENDER RECIPE
+                                                 /\
+                                                 |
+                                                 |
+   PAGE LOADS WITH RECIPE-------------------------
+   ID
+
+```
+
+In this flow-chart, handling these events is associated to the controller then loading the recipe happens in the model, so the controller basically calls some function that is in the model and then
+the model asynchronously get the recipe data from the API and once that data has arrived the controller asks for that data, receives it sends it to the view, which will the ultimately render the recipe on the screen
