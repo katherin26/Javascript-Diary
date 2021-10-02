@@ -34,3 +34,33 @@ change it in the future.
 
 
 ```
+
+# **COMPONENTS OF ANY ARCHITECTURE**
+
+## **BUSICESS LOGIC**
+
+1. Code that solves the actual business problem.
+2. Directly related to what business does and what it needs.
+3. Example : Sending messages, storing transactions, calculating taxes.
+
+## **STATE**
+
+1. Essentially stores all the data about the application.
+2. Should be the "single source of truth".
+3. UI should be kept in sync with the state. (Keeping in sync)
+4. State libraries exist.
+
+## **HTTP LIBRARY**
+
+1. Responsible for making and receiving AJAX requests.
+2. Optional but almost always necessary in real-world apps.
+
+## **APPLICATION LOGIC (ROUTER)**
+
+1. Code that is only concerned about the implementation of application itself.
+2. Handles navigation and UI events.
+
+## **PRESENTATION LOGIC**
+
+1. Code that is concerned about the visible part of the application.
+2. Essentially displays application state. (Keeping in sync)
