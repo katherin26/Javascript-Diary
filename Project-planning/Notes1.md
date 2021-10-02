@@ -16,3 +16,21 @@ The perfect architecture is basically one that allows for all these three aspect
 However, that only works with a really small project, but when the project grows more complex then it's going to be very hard to achieve a good architecture completely on our own, instead we can use a well established architecture pattern that developers have been using for years.
 
 Example : Model view controller , Model view presenter, flux and many other architectures
+
+```
+Like a house, software                                                      - We can create our own
+needs a structure: the way                                                  architecture.
+we organize our code.                                                       - We can use a well-
+                                                                            established architecture
+                                      STRUCTURE                             pattern like MVC, MVP,
+                                                                            Flux, etc.
+                                                                            - We can use a framework like React, Angular, Vue.
+
+                  MAINTAINABILITY                   EXPANDABILITY
+
+A project is never done!
+We need to be able to easily
+change it in the future.
+
+
+```
