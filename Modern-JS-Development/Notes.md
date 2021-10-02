@@ -24,7 +24,7 @@ DEVELOPMENT                                 BUILD PROCESS                       
 NPM = - 3rd party modules
       - Development tools
       - Both repository and
-      Softwate
+      Software
 
 NODE
 ```
