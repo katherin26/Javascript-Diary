@@ -64,3 +64,27 @@ change it in the future.
 
 1. Code that is concerned about the visible part of the application.
 2. Essentially displays application state. (Keeping in sync)
+
+# **THE MODEL VIEW CONTROLLER (MVC) ARCHITECTURE**
+
+This architecture contains three big parts which are the model, the view and the controller.
+
+One of the big goals of the MVC pattern is separate logic from application logic, which makes developing the application so much easier, for that reason we need something to connect these two parts and that is the controller.
+
+**THE VIEW** = Presentation Logic, is the part of the application interacting with the user.
+
+**THE MODEL** = Applications data, usually contains the state and also the business logic that manipulate the state. Also contains the HTTP library that might get some data from the web from some API or some back-end.
+
+**THE CONTROLLER** = Contains the application logic and creates a bridge between the model and a view which in fact, should know nothing about each other
+
+```
+
+WEB   <-------------         MODEL              CONTROLLER            VIEW        ------------->USER
+       ------------->
+                         Business Logic      Application Logic    Presentation Logic
+
+                         State               Bridge between model
+                                             and views(which don't
+                         HTTP Library        know about one another)
+
+```
