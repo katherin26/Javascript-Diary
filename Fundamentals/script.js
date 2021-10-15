@@ -339,7 +339,7 @@ if (day === 'monday') {
   console.log('Not a valid day!!!');
 }
 
-//-----STAMENTS AND EXPRESIONS
+//-----STATEMENTS AND EXPRESIONS
 
 //STATEMENTS : es una pieza de codigo que no produce un value un ejemplo seria
 
