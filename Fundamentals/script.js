@@ -9,6 +9,11 @@ if (age >= 18) {
   console.log(`Pepa is too young , wait another ${yearsLeft} years;`);
 }
 
+//With function and ternary operator =
+function calcAge(curAge){
+  return(curAge >=18 ? `Pepa can drive!, wait another ${18 - curAge} years.`)
+}
+
 //-----------EXERCISE BMI------------------------------------------//
 
 const massMinnie = 95;
@@ -31,16 +36,49 @@ if (BMIMinnie > BMIMickey) {
   );
 }
 
+//With function and ternary operator =
+
+function calcBMI(bmi1,bmi2){
+  return(bmi1 > bmi2)? `Minnie's BMI(${bmi1}) is higher than Mickie's (${bmi2})` : `Mickie's BMI (${bmi2}) is higher than Minnie's (${bmi1})`
+}
+
 //----------TYPE CONVERSION-------------------------------------------//
 
+//NOTE: The global method Number() can convert strings to numbers.
 const inputYear = '1996';
 console.log(Number(inputYear), inputYear);
-
 console.log(Number(inputYear) + 18); //2014
-
 console.log(Number('kat')); //NaN
 console.log(typeof NaN); //number
 console.log(String(23), 23);
+
+//NOTE: NUMBER METHODS
+console.log(Number()); //Returns a number, converted from its argument.
+console.log(parseFLoat());//Parses a string and returns a floating point number.
+console.log(parseInt());//Parses a string and returns an integer.
+
+//NOTE: THE UNARY + OPERATOR
+//The unary + operator can be used to convert a variable to a number.
+
+let z = "10" // y is a string.
+let y = + z; // y is a number.
+
+//NOTE: NUMBERS TO STRINGS
+//The global method String() can convert numbers to strings.
+
+console.log(String(z));//123
+console.log(String(123));//123
+console.log(String(100 + 23));//123
+
+//NOTE: toString() does the same.
+console.log((123).toString());//123
+console.log((100 + 23).toString());//123
+
+//NOTE: BOOLEANS TO NUMBERS
+//The global method Number() can also convert booleans to numbers.
+
+console.log(Number(false));//0
+console.log(Number(true));//1
 
 //----------TYPE COERSION-------------------------------------------//
 
