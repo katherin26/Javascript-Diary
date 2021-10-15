@@ -54,8 +54,8 @@ console.log(String(23), 23);
 
 //NOTE: NUMBER METHODS
 console.log(Number()); //Returns a number, converted from its argument.
-console.log(parseFLoat());//Parses a string and returns a floating point number.
-console.log(parseInt());//Parses a string and returns an integer.
+console.log(parseFLoat('3.14'));//3.14 = Parses a string and returns a floating point number.
+console.log(parseInt(3.14));//3 = Parses a string and returns an integer.
 
 //NOTE: THE UNARY + OPERATOR
 //The unary + operator can be used to convert a variable to a number.
@@ -97,7 +97,8 @@ console.log('5' * '2');// 10 because '5' and '2' are converted to 5 and 2.
 
 
 //----------TYPE COERSION-------------------------------------------//
-
+/*NOTE: Type coercion refers to the process of automatic or implicit conversion
+of values from one data type to another.*/
 console.log('Iam' + 23 + 'Years Old');
 console.log('23' - '10' - 3); // el (-) resta los strings. //10
 console.log('23' + '10' + 3); //el (+) concatena. //23103
@@ -123,13 +124,22 @@ if (money) {
 } else {
   console.log('You should get a job!....');
 }
+//output is a truty value = Don't spend it all
+
+//with function and ternary operator
+function calcMoney(money){
+  return(money > 0 ? `Don't spend it all` : `You should get a job!`)
+}
+//output is a truty value = Don't spend it all
 
 let height;
 if (height) {
   console.log('YAY! Height is defined!!');
 } else {
   console.log('Height is UNDEFINED!!!....');
-}
+} 
+//output is = Height is UNDEFINED!! is a falsy value 
+
 
 //-----------EQUALY OPERATORS ------------------------------------------//
 
