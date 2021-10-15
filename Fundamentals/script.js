@@ -88,6 +88,14 @@ console.log(String(true)); //returns "true"
 console.log(false.toString());//returns "false"
 console.log(true.toString());//returns "true"
 
+//NOTE: AUTOMATIC TYPE CONVERSION
+console.log(5 + null); //5 because null is converted to 0
+console.log('5' + null); // 5null because null is converted to "null"
+console.log('5' + 2); //'52' because 2 is converted to '2'
+console.log('5' - 2); //3 because '5' is converted to 5
+console.log('5' * '2');// 10 because '5' and '2' are converted to 5 and 2.
+
+
 //----------TYPE COERSION-------------------------------------------//
 
 console.log('Iam' + 23 + 'Years Old');
