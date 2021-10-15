@@ -80,6 +80,14 @@ console.log((100 + 23).toString());//123
 console.log(Number(false));//0
 console.log(Number(true));//1
 
+//NOTE: BOOLEANS TO STRINGS 
+console.log(String(false)); //returns "false"
+console.log(String(true)); //returns "true"
+
+//NOTE: toString()
+console.log(false.toString());//returns "false"
+console.log(true.toString());//returns "true"
+
 //----------TYPE COERSION-------------------------------------------//
 
 console.log('Iam' + 23 + 'Years Old');
