@@ -160,6 +160,29 @@ if (favorite === 23) {
 
 if (favorite !== 23) console.log(`Why not 23 ?  -_-`);
 
+/*NOTE: TERNARY OPERATOR = In this exercise we are gonna replace an if else
+statement into a ternary operator conditional chains*/
+
+function calcNum(favorite){
+  return favorite === 23 ? 'cool 23 is amazing'
+        : favorite === 7 ?  'Number is not 23'
+        : `Number is not 23 or 7`
+  }
+
+  console.log(calcNum(favorite));
+
+  //NOTE: HANDLING NULL VALUES
+
+  let greeting = person => {
+    let name = person ? person.name : `stranger`
+    return `Howdy, ${name}`
+  }
+
+  console.log(greeting({name: 'Human'}));
+  console.log(greeting(null));
+
+
+
 //BASIC BOOLEAN LOGIC = THE && ; || AND ! OPERATOR ------------------------------------------//
 
 const hasDriversLicense = true; //Variable a
