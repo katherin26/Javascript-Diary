@@ -432,3 +432,11 @@ console.log(i);
  a sparse array, which has a length property equal to the given integer. The returned array is "sparse" because its
  slots are empty; it does not have any own-properties, other than .length. (In contrast, the array [undefined] does
  have an own-property of 0, even though the value at that property is undefined.) */
+
+/*NOTE: Write a javascript function to clone an array. */
+
+function cloneArr(arr) {
+  return [...arr];
+}
+
+console.log(cloneArr([1, 2, 3, 4, 5]));
