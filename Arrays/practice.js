@@ -468,3 +468,18 @@ function arrayTostring(arr) {
 }
 
 console.log(arrayTostring(['M', 'i', 'n', 'n', 'i', 'e']));
+
+/*NOTE: Function using JSON.stringify */
+
+const obj = {
+  name: 'Bob',
+  citiesVisited: ['Seul', 'New York', 'Los Angeles'],
+  pets: [{ name: 'Dog1' }, { name: 'Dog2' }, { name: 'Dog3' }],
+};
+
+console.log(obj);
+
+// string representation of obj
+const objString = JSON.stringify(obj);
+
+console.log(objString);
