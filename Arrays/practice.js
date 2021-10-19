@@ -440,3 +440,19 @@ function cloneArr(arr) {
 }
 
 console.log(cloneArr([1, 2, 3, 4, 5]));
+
+/*NOTE: Write a javascript function to clone an nested array. */
+
+function clone_arr(arr) {
+  let clone = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      clone.push(clone_arr(arr[i]));
+    } else {
+      clone.push(arr[i]);
+    }
+  }
+  return clone;
+}
+
+console.log(clone_arr([1, 2, 3, [1]]));
