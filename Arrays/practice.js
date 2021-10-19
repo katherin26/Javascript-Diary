@@ -456,3 +456,15 @@ function clone_arr(arr) {
 }
 
 console.log(clone_arr([1, 2, 3, [1]]));
+
+/*NOTE: Convert an array to string*/
+
+function arrayTostring(arr) {
+  let str = '';
+  for (let i = 0; i < arr.length; i++) {
+    str = str + String(arr[i]);
+  }
+  return str;
+}
+
+console.log(arrayTostring(['M', 'i', 'n', 'n', 'i', 'e']));
