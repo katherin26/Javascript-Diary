@@ -486,8 +486,31 @@ console.log(objString);
 
 //NOTE: SORT AN ARRAY
 
+//SOLUTION 1
 function sortArr(arr) {
   return arr.sort();
 }
 
 console.log(sortArr([3, 8, 7, 6, 5, -4, 3, 2, 1]));
+
+//SOLUTION 2
+
+function sortArr2(arr) {
+  let sortedArr = [];
+
+  while (arr.length) {
+    let smallestIndex = null;
+    for (let i = 0; i < arr.length; i++) {
+      if (smallestIndex === null) {
+        smallestIndex = i;
+      } else if (arr[i] < arr[smallestIndex]) {
+        smallestIndex = i;
+      }
+    }
+    sortedArr.push(arr[smallestIndex]);
+    arr.splice(smallestIndex, 1);
+  }
+  return sortedArr;
+}
+
+console.log(sortArr2([3, 8, 7, 6, 5, -4, 3, 2, 1]));
