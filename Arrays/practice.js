@@ -483,3 +483,11 @@ console.log(obj);
 const objString = JSON.stringify(obj);
 
 console.log(objString);
+
+//NOTE: SORT AN ARRAY
+
+function sortArr(arr) {
+  return arr.sort();
+}
+
+console.log(sortArr([3, 8, 7, 6, 5, -4, 3, 2, 1]));
