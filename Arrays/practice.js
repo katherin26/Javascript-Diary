@@ -524,3 +524,17 @@ function totalLength(arr) {
 }
 
 totalLength(myAbc);
+
+/*NOTE: Declare and initialize an array called Planets with 5 string values
+console.log each item in the array
+Also console.log the index in each iteration.*/
+
+let planets = ['Mercury', 'Venus', 'Mars', 'Uranus', 'Saturn'];
+
+function printValue(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(arr[i], i);
+  }
+}
+
+printValue(planets);
