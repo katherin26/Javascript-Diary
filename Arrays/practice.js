@@ -538,3 +538,19 @@ function printValue(arr) {
 }
 
 printValue(planets);
+
+/*NOTE: Declare and initialize an array called wowDatatypes.
+- The array must have  differents data types 
+- Iterate over the array and console.log each item in the array + 
+  it’s index and data type in the array
+*/
+
+let wowDatatypes = ['name', true, 20, null, undefined];
+
+function checkArr(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(i, arr[i], typeof arr[i]);
+  }
+}
+
+checkArr(wowDatatypes);
