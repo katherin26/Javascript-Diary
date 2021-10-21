@@ -560,3 +560,14 @@ checkArr(wowDatatypes);
 let myArr = [1, 2, 'One', true];
 
 myArr.forEach(el => console.log(el));
+
+//NOTE: Loop over the 2 arrays and if there are any common courses, if so console.log them
+
+let student1Courses = ['Math', 'English', 'Programming', 'Spanish'];
+let student2Courses = ['Geography', 'Spanish', 'Programming'];
+
+for (let i = 0; i < student1Courses.length; i++) {
+  let result = student2Courses.indexOf(student1Courses[i], [0]);
+
+  if (result !== -1) console.log(student1Courses[i]);
+}
