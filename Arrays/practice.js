@@ -514,3 +514,13 @@ function sortArr2(arr) {
 }
 
 console.log(sortArr2([3, 8, 7, 6, 5, -4, 3, 2, 1]));
+
+//NOTE: What is the length of the array?.
+
+let myAbc = ['A', 'B', 'C', 'D', 'E', 'F', 'G'];
+
+function totalLength(arr) {
+  return arr.length;
+}
+
+totalLength(myAbc);
