@@ -554,3 +554,9 @@ function checkArr(arr) {
 }
 
 checkArr(wowDatatypes);
+
+/*NOTE: console.log each item in this array WITHOUT using a for loop.*/
+
+let myArr = [1, 2, 'One', true];
+
+myArr.forEach(el => console.log(el));
