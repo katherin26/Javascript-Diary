@@ -23,3 +23,16 @@ function CreateList(name, lastname, age) {
 
 let createList = new CreateList('Var', 'Let', 30);
 console.log(createList);
+
+//Factory function.
+
+function createZone(street, city, zipCode) {
+  return {
+    street,
+    city,
+    zipCode,
+  };
+}
+
+let factoryAddress = createZone(`2020 sw 8 ST`, `Miami`, `33225`);
+console.log(factoryAddress);
