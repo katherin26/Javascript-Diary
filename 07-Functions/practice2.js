@@ -12,3 +12,14 @@ function showAddress(address) {
 }
 
 showAddress(area);
+
+//With constructor function.
+
+function CreateList(name, lastname, age) {
+  this.name = name;
+  this.lastname = lastname;
+  this.age = age;
+}
+
+let createList = new CreateList('Var', 'Let', 30);
+console.log(createList);
