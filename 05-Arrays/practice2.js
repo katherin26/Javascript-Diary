@@ -37,3 +37,34 @@ function findMax(arr) {
 
 let maximum = findMax(arr);
 console.log(`Max: ${maximum}`);
+
+/*NOTE: SUM AND AVERAGE IN AN ARRAY */
+
+let list1 = [1, 2, 3, 4, 5, 6, 7];
+let list2 = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+let list3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14];
+
+//sum
+function sumNumbers(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+
+let result1 = sumNumbers(list1);
+let result2 = sumNumbers(list2);
+let result3 = sumNumbers(list3);
+console.log(result1, result2, result3);
+
+//Average
+
+function averageNum(arr) {
+  let average = sumNumbers(arr) / arr.length;
+  return average;
+}
+
+console.log(`The sum is ${result1} and the average is ${averageNum(list1)}`);
+console.log(`The sum is ${result2} and the average is ${averageNum(list2)}`);
+console.log(`The sum is ${result3} and the average is ${averageNum(list3)}`);
