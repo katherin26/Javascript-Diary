@@ -95,3 +95,25 @@ function clone_arr(arr) {
 }
 
 console.log(clone_arr([1, 2, 3, [4, 5, 6]]));
+
+/*NOTE: Write a function to get the first element of an array. Passing a parameter 'arr'
+will return the first element of the array.*/
+
+function firstElement(arr) {
+  return arr.slice(0, 1);
+}
+
+console.log(firstElement([7, 7])); //[7]
+console.log(firstElement([7, 7, 6])); //[7]
+console.log(firstElement([[], 7, 7, 6])); //[]
+
+//Second solution
+
+let firstE = function (arr, n) {
+  if (arr == null) return void 0;
+  if (n == null) return arr[0];
+  if (n < 0) return [];
+  return arr.slice(0, n);
+};
+
+console.log(firstE([7, 7])); //7
