@@ -68,3 +68,14 @@ function averageNum(arr) {
 console.log(`The sum is ${result1} and the average is ${averageNum(list1)}`);
 console.log(`The sum is ${result2} and the average is ${averageNum(list2)}`);
 console.log(`The sum is ${result3} and the average is ${averageNum(list3)}`);
+
+/*NOTE: CLONE AN ARRAY USING A FUNCTION */
+
+function cloneArr(arr) {
+  let clone = [];
+  for (let i = 0; i < arr.length; i++) {
+    clone.push(arr[i]);
+    return clone;
+  }
+}
+console.log(cloneArr([1, 2, 3, 4, 5, 6]));
