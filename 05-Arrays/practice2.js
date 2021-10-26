@@ -75,7 +75,23 @@ function cloneArr(arr) {
   let clone = [];
   for (let i = 0; i < arr.length; i++) {
     clone.push(arr[i]);
-    return clone;
   }
+  return clone;
 }
 console.log(cloneArr([1, 2, 3, 4, 5, 6]));
+
+//WITH NESTED ARRAY
+
+function clone_arr(arr) {
+  let clone = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (Array.isArray(arr[i])) {
+      clone.push(clone_arr(arr[i]));
+    } else {
+      clone.push(arr[i]);
+    }
+  }
+  return clone;
+}
+
+console.log(clone_arr([1, 2, 3, [4, 5, 6]]));
