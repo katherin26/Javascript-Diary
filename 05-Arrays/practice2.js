@@ -198,3 +198,16 @@ const course = courses.find(function (course) {
 });
 
 console.log(course); //{id:1, name:'a'}
+
+//FindIndex
+
+const numbers = [
+  { i: 0, num: '0' },
+  { i: 1, num: '1' },
+];
+
+const numb = numbers.findIndex(function (numb) {
+  return numb.num === '0';
+});
+
+console.log(numb); //0
