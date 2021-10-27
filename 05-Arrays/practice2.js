@@ -133,3 +133,15 @@ for (let i = 1; i < str.length; i++) {
 }
 
 console.log(result.join(''));
+
+//NOTE: Write an array of objects and print the tooltip value of each object.
+
+let priceRanges = [
+  { label: '$', tooltip: 'Inexpensive', minPerPerson: 0, maxPerPerson: 10 },
+  { label: '$', tooltip: 'Moderate', minPerPerson: 11, maxPerPerson: 20 },
+  { label: '$', tooltip: 'Expensive', minPerPerson: 21, maxPerPerson: 50 },
+];
+
+console.log(priceRanges[0].tooltip);
+console.log(priceRanges[1].tooltip);
+console.log(priceRanges[2].tooltip);
