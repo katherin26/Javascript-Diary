@@ -30,3 +30,7 @@ console.log(mySecondString);
 
 const myThirdString = 'This is my third example';
 console.log(myThirdString.split(' ')); //[ 'This', 'is', 'my', 'third', 'Example' ]
+
+//NOTE: STRING OBJECT
+const another = new String('hi');
+console.log(typeof another); //object
