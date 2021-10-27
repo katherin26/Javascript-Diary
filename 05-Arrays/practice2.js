@@ -145,3 +145,25 @@ let priceRanges = [
 console.log(priceRanges[0].tooltip);
 console.log(priceRanges[1].tooltip);
 console.log(priceRanges[2].tooltip);
+
+//NOTE: Create an array and used push , unshift, splice and log to the console the results.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+//end
+numbers.push(10, 11);
+
+//Beginning
+numbers.unshift(0, 0.1);
+
+//Middle:
+numbers.splice(6, 2, 'a', 'b');
+
+//Results
+console.log(numbers);
+
+/*
+  0,   0.1, 1, 2, 3, 4,
+  'a', 'b', 7, 8, 9, 10,
+  11
+] */
