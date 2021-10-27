@@ -211,3 +211,13 @@ const numb = numbers.findIndex(function (numb) {
 });
 
 console.log(numb); //0
+
+//Arrow function
+
+const notes = [
+  { name: 'alejandro', note: 3 },
+  { name: 'pedro', note: 5 },
+];
+
+const average = notes.find(avg => avg.note === 3);
+console.log(average);
