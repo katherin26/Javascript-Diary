@@ -167,3 +167,21 @@ console.log(numbers);
   'a', 'b', 7, 8, 9, 10,
   11
 ] */
+
+//NOTE: Finding elements primitives with indexOf - lastIndexOf - includes.
+
+const foods = [
+  'soup',
+  'rice',
+  'pasta',
+  'sushi',
+  'corn',
+  'guacamole',
+  'guacamole',
+];
+
+console.log(foods.indexOf('pasta')); //2
+console.log(foods.indexOf('guacamole')); //5
+console.log(foods.lastIndexOf('guacamole')); //6
+console.log(foods.indexOf('rice') !== -1); //true
+console.log(foods.includes('rice')); //true
