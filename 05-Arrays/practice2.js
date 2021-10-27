@@ -185,3 +185,16 @@ console.log(foods.indexOf('guacamole')); //5
 console.log(foods.lastIndexOf('guacamole')); //6
 console.log(foods.indexOf('rice') !== -1); //true
 console.log(foods.includes('rice')); //true
+
+/*NOTE: Create an array of objects and with the find method find the 'a' letter*/
+
+const courses = [
+  { id: 1, name: 'a' },
+  { id: 2, name: 'b' },
+];
+
+const course = courses.find(function (course) {
+  return course.name === 'a';
+});
+
+console.log(course); //{id:1, name:'a'}
