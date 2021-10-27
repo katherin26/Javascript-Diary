@@ -18,7 +18,7 @@ console.log(
 console.log(message.toUpperCase()); //Return a new string and the original remains intact.
 console.log(message.trim()); //This removes the white spaces. also you can use (trim left and trim right).
 
-/*NOTE: ESCAPE NOTATION (\') = This became part of the single cuote.*/
+/*NOTE: ESCAPE NOTATION (\') = This became part of the single quote.*/
 const myString = "This is 'another example";
 console.log(myString); //This is 'another example
 
@@ -34,3 +34,22 @@ console.log(myThirdString.split(' ')); //[ 'This', 'is', 'my', 'third', 'Example
 //NOTE: STRING OBJECT
 const another = new String('hi');
 console.log(typeof another); //object
+
+//EXAMPLE WITH SINGLE QUOTE O STRING LITERAL.
+const message = 'This is my \n' + "' first' message";
+console.log(message);
+
+//EXAMPLE WITH BACK TICKS
+const another = `This is my 'first' message`;
+console.log(another);
+
+//EXAMPLE EMAIL WITH TEMPLE LITERALS.
+
+const name = 'Paty';
+const email = `Hi ${name}, 
+Thank you for joining my mailing list.
+
+Regards,
+Anonimo`;
+
+console.log(email);
