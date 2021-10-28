@@ -30,3 +30,12 @@ they are not copied they are referenced.*/
 
 const clone = combined.slice();
 console.log(clone); //['Dog',   'Cat','Bird',  'Guinea Pig','Bunny', 'Butterfly','Pig',   'Snake']
+
+//THE SPREAD OPERATOR
+//You can add a element inside the array and between the spread operators for example 'a'.
+const combined2 = [...animals, 'a', ...animals2];
+console.log(combined2); //['Dog',       'Cat','Bird',      'Guinea Pig','a',         'Bunny','Butterfly', 'Pig','Snake']
+
+//Clone with The spread operator
+const copy = [...combined2];
+console.log(copy);
