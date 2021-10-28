@@ -39,3 +39,51 @@ console.log(combined2); //['Dog',       'Cat','Bird',      'Guinea Pig','a',    
 //Clone with The spread operator
 const copy = [...combined2];
 console.log(copy);
+
+//NOTE: REMOVING ELEMENTS / EMPTYING AN ARRAY
+
+const numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+//Beginning (shift());
+
+const first = numbers.shift();
+console.log(first); //10
+
+//Middle (splice());
+
+const mid = numbers.splice(2, 2);
+console.log(mid);
+
+//End (pop.());
+
+const end = numbers.pop();
+console.log(end); //100
+
+//EMPTYNG AN ARRAY = REMOVE ALL ELEMENTS.
+
+let numbers2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+/*Solution 1:
+The problem is that if there is another variable 
+referencing the same array, it's not counted as empty 
+but is still stored in memory. 
+*/
+
+numbers2 = [];
+
+/*Solution 2: 
+The array looks empty and we don't have problemas or conflict 
+with other variables. The array is still empty.
+*/
+
+numbers2.length = 0;
+
+//Solution 3:
+
+numbers2.splice(0, numbers2.length);
+
+/*Solution 4:
+Is not a good solution if the array is too long*/
+
+while (numbers2.length > 0) numbers2.pop();
+console.log(numbers2);
