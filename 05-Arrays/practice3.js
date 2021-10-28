@@ -87,3 +87,33 @@ Is not a good solution if the array is too long*/
 
 while (numbers2.length > 0) numbers2.pop();
 console.log(numbers2);
+
+/*NOTE: ITERATING AN ARRAY AND JOINING IT */
+
+const animals3 = ['Dog', 'Cat', 'Bird', 'Guinea Pig'];
+const animals4 = ['Bunny', 'Butterfly', 'Pig', 'Snake'];
+
+//FOR OF
+
+for (let pets of animals) console.log(pets);
+
+//FOR EACH
+
+animals2.forEach(function (pets, index) {
+  console.log(index, pets);
+});
+
+//JOINING ARRAYS
+
+const nums = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+const joined = numbers.join(',');
+console.log(joined);
+
+//USING SPLIT WITH STRING.
+
+const message = 'This is my first message';
+const parts = message.split(''); //This returns an array.
+console.log(parts);
+
+const combined3 = parts.join('-');
+console.log(combined3);
