@@ -117,3 +117,10 @@ console.log(parts);
 
 const combined3 = parts.join('-');
 console.log(combined3);
+
+//NOTE: CHANGE THE ORDER OF THE ELEMENTS
+
+const numbers = [10, 30, 50, 20, 40, 90];
+
+numbers.sort();
+console.log(numbers);
