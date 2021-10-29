@@ -123,4 +123,9 @@ console.log(combined3);
 const numbers = [10, 30, 50, 20, 40, 90];
 
 numbers.sort();
-console.log(numbers);
+console.log(numbers); //[ 10, 20, 30, 40, 50, 90 ]
+
+//NOTE: REVERSE THE ARRAY
+
+numbers.reverse();
+console.log(numbers); //[ 90, 50, 40, 30, 20, 10 ]
