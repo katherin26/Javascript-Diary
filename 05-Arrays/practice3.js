@@ -129,3 +129,27 @@ console.log(numbers); //[ 10, 20, 30, 40, 50, 90 ]
 
 numbers.reverse();
 console.log(numbers); //[ 90, 50, 40, 30, 20, 10 ]
+
+//NOTE: SORT AN OBJECT USING A FUNCTION.
+
+const subjects = [
+  {
+    name: 'Social',
+    grade: '8',
+  },
+  {
+    name: 'Arimetica',
+    grade: '4',
+  },
+];
+
+subjects.sort(function (a, b) {
+  const name1 = a.name.toLowerCase();
+  const name2 = b.name.toLowerCase();
+
+  if (name1 < name2) return -1;
+  if (name1 > name2) return 1;
+  return 0;
+});
+
+console.log(subjects);
