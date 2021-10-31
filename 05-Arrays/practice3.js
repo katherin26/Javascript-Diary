@@ -269,3 +269,19 @@ function includes(arr, searchElement) {
 }
 
 console.log(includes(numb, -1)); //false
+
+//NOTE: Except Exercise.
+
+const numbers = [10, 20, 3, 0, 50, 44, 55, 66, 22, 0, 1, 7];
+
+function except(arr, excluded) {
+  const output = [];
+
+  for (let element of arr)
+    if (!excluded.includes(element)) output.push(element);
+
+  return output;
+}
+
+const output = except(numbers, [1]);
+console.log(output);
