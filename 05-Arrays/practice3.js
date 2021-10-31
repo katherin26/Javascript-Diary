@@ -206,3 +206,15 @@ console.log(filtered);
 
 const filtered2 = arrNumbers.filter(n => n >= 0);
 console.log(filtered2);
+
+//NOTE: MAPPING AN ARRAY (FILTER METHOD + MAP + JOIN )
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13];
+
+const result = numbers
+  .filter(n => n >= 0)
+  .map(n => ({ value: n }))
+  .filter(obj => obj.value > 1)
+  .map(obj => obj.value);
+
+console.log(result); //[ 2, 3, 4,  5, 6,7, 8, 9, 10]
