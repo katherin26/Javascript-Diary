@@ -218,3 +218,28 @@ const result = numbers
   .map(obj => obj.value);
 
 console.log(result); //[ 2, 3, 4,  5, 6,7, 8, 9, 10]
+
+//NOTE: REDUCING AN ARRAY
+
+const arr = [10, -20, 30, -40, 50, -60, 70, 80, -90, 100];
+
+//With For Loop
+
+let sum = 0;
+for (let n of arr) sum += n;
+
+console.log(sum); //130
+
+//With Reduce
+
+const sum = arr.reduce((acc, curVal) => acc + curVal);
+
+console.log(sum);
+
+/*What is happening inside the reduce?? =
+
+a = 10, c = -20 => a = -10
+a = -10 c = 30 => a = 20
+etc ...
+at the end the result is 130.
+*/
