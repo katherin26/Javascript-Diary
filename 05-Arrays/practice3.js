@@ -259,3 +259,13 @@ function ArrayFromRange(min, max) {
 
 const numbers = ArrayFromRange(-4, 10);
 console.log(numbers); //[-4, -3, -2, -1, 0, 1,2,  3,  4,  5, 6, 7,8,  9, 10]
+
+//NOTE: Find an element inside an array using a For Loop.
+const numb = [1, 2, 3, 4, 6, 6, 7, 8, 9];
+
+function includes(arr, searchElement) {
+  for (let element of arr) if (element === searchElement) return true;
+  return false;
+}
+
+console.log(includes(numb, -1)); //false
