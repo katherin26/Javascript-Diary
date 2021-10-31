@@ -193,3 +193,16 @@ const atLeastOnePositive = arrNumbers.some(function (value) {
 });
 
 console.log(atLeastOnePositive); //true
+
+/*Filtering an array: if is true this return a new array.*/
+
+const filtered = arrNumbers.filter(function (value) {
+  return value >= 0;
+});
+
+console.log(filtered);
+
+//Filter with arrow function.
+
+const filtered2 = arrNumbers.filter(n => n >= 0);
+console.log(filtered2);
