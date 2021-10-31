@@ -171,3 +171,16 @@ fruits.sort(function (a, b) {
 });
 
 console.log(fruits);
+
+//NOTE: Check in the array if every value is a positive number.
+
+//Using every: This method accepts (value,index,array[]), also you can
+//call a function.
+
+const arrNumbers = [10, 11, 12, -13, 14, 15, 16, 17, 18, 19, 20];
+
+const allPositive = arrNumbers.every(function (value) {
+  return value >= 0;
+});
+
+console.log(allPositive); //false
