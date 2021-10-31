@@ -243,3 +243,19 @@ a = -10 c = 30 => a = 20
 etc ...
 at the end the result is 130.
 */
+
+/*NOTE: Create a function ArrayFromRange with two paremeters (min,max)
+This function needs to create an array with the min numbers to max numbers.
+for example (-4, 10)
+*/
+
+function ArrayFromRange(min, max) {
+  const result = [];
+  for (let i = min; i <= max; i++) {
+    result.push(i);
+  }
+  return result;
+}
+
+const numbers = ArrayFromRange(-4, 10);
+console.log(numbers); //[-4, -3, -2, -1, 0, 1,2,  3,  4,  5, 6, 7,8,  9, 10]
