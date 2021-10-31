@@ -174,7 +174,7 @@ console.log(fruits);
 
 //NOTE: Check in the array if every value is a positive number.
 
-//Using every: This method accepts (value,index,array[]), also you can
+//Using Every: This method accepts (value,index,array[]), also you can
 //call a function.
 
 const arrNumbers = [10, 11, 12, -13, 14, 15, 16, 17, 18, 19, 20];
@@ -184,3 +184,12 @@ const allPositive = arrNumbers.every(function (value) {
 });
 
 console.log(allPositive); //false
+
+/*Using Some: This method checks if the first element and if is the same, 
+returns true and does not continue iterating over the rest.*/
+
+const atLeastOnePositive = arrNumbers.some(function (value) {
+  return value >= 0;
+});
+
+console.log(atLeastOnePositive); //true
