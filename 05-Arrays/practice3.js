@@ -341,4 +341,12 @@ const arr1 = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
 const reducer = (acc, curVal) => acc + curVal;
 console.log(arr1.reduce(reducer));
 
-//NOTE:
+//NOTE: Using a Find Method.
+
+const numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+function getMax(arr) {
+  const found = arr.find(el => el > 90);
+  return found;
+}
+console.log(getMax(numbers)); //100
