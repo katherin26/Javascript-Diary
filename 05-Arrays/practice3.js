@@ -285,3 +285,22 @@ function except(arr, excluded) {
 
 const output = except(numbers, [1]);
 console.log(output);
+
+//NOTE: MOVING ELEMENTS.
+
+const numbersArray = [1, 2, 3, 4];
+
+function move(arr, i, offset) {
+  const position = i + offset;
+  if (position >= arr.length || position < 0) {
+    console.error('Invalid offset');
+    return;
+  }
+  const result = [...array];
+  const element = result.splice(i, 1)[0];
+  result.splice(position, 0, element);
+  return result;
+}
+
+const result = move(numbersArray, 0, 0);
+console.log(result);
