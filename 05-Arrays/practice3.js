@@ -350,3 +350,15 @@ function getMax(arr) {
   return found;
 }
 console.log(getMax(numbers)); //100
+
+//Find a value With reduce method.
+
+function getMax2(arr) {
+  if (arr.length === 0) return undefined;
+  return arr.reduce((acc, cur) => {
+    return acc > cur ? acc : cur;
+  });
+}
+
+const max = getMax2(numbers);
+console.log(max); //100
