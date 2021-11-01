@@ -362,3 +362,56 @@ function getMax2(arr) {
 
 const max = getMax2(numbers);
 console.log(max); //100
+
+/*Using Sort Method. 
+In each object you will have 3 properties (title, year, rating).
+All the movies in 2015 with rating > 4 (sorting year and rating).
+
+Sort them by their rating , descending order, pick their title.
+*/
+
+const movies = [
+  {
+    title: 'a',
+    year: 2015,
+    rating: 8.8,
+  },
+  {
+    title: 'b',
+    year: 2015,
+    rating: 4.7,
+  },
+  {
+    title: 'c',
+    year: 2016,
+    rating: 5.0,
+  },
+  {
+    title: 'd',
+    year: 2017,
+    rating: 8.8,
+  },
+];
+
+const titles = movies
+  .filter(m => m.year === 2015 && m.rating >= 4)
+  .sort((a, b) => a.rating - b.rating)
+  .reverse()
+  .map(m => m.title);
+
+console.log(titles); // [a,b]
+
+/*Sort for default works with numbers and strings, but for objects we 
+need to manage a compare function. 
+In this comparison function suppose that we have: 
+
+a = 4.5 and b = 4 
+
+The subtraction of these two gives us 0.5 which would be a positive number
+therefore 0.5 => a > b (a is greater than b) is already positioned first, 
+but if these ranges are equal the result is 0 and that means 0 => a === b
+with this subtraction we avoid putting 3 lines of code with the if statement.
+
+The sort method is organized in ascending order but what we want is a descending
+order for that we use reverse().
+*/
