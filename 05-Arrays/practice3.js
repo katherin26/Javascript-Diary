@@ -304,3 +304,16 @@ function move(arr, i, offset) {
 
 const result = move(numbersArray, 0, 0);
 console.log(result);
+
+//NOTE: COUNT OCURRENCES WITH FOR OF
+
+const numbers = [1, 2, 3, 4, 1, 1, 1, 1];
+
+function countOccurrences(array, searchElement) {
+  let count = 0;
+  for (let element of array) if (element === searchElement) count++;
+  return count;
+}
+
+const count = countOccurrences(numbers, 1);
+console.log(count); //5
