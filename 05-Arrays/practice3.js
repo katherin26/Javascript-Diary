@@ -317,3 +317,19 @@ function countOccurrences(array, searchElement) {
 
 const count = countOccurrences(numbers, 1);
 console.log(count); //5
+
+//NOTE: Occurrences using Reduce Method;
+
+const numb = [1, 2, 3, 4, 5, 6, 1];
+
+function occurrences(arr, el) {
+  return arr.reduce((acc, curVal) => {
+    const occurrence = curVal === el ? 1 : 0;
+    console.log(acc, curVal, el);
+
+    return acc + occurrence;
+  }, 0);
+}
+
+const total = occurrences(numb, 1);
+console.log(total);
