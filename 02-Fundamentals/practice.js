@@ -14,3 +14,20 @@ for (let x = 1; x < str.length; x++) {
 }
 
 console.log(result.join(''));
+
+//NOTE: Using a For Loop get the max value
+
+const numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+function getMax(arr) {
+  if (arr.length === 0) return undefined;
+
+  let max = arr[0];
+
+  for (let i = 0; i < arr.length; i++) if (arr[i] > max) max = arr[i];
+
+  return max;
+}
+
+const max = getMax(numbers);
+console.log(max);
