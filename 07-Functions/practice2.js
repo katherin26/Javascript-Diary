@@ -103,3 +103,34 @@ run(); //.....result
 
 let move = run;
 move(); //.....result
+
+/*NOTE: HOW WORKS THE ARGUMENTS 
+We are passing 1 and 2 as an argument, but what if we only passed one argument.
+
+console.log(sum(1)); =
+The result is NaN , 
+for default a = 1 and b = undefined and when we have =
+ 1 + undefined the result is = NaN 
+ This is not a valid mathematical operation for Javascript 
+ but what happens if we did not pass any argument.?
+
+ console.log(sum()); = //NaN
+
+ But what happens if we pass than 2 arguments??
+
+ console.log(sum(1,2,3,4));//3 =
+
+ The answer is 3 because Javascript takes the first 2 arguments.
+
+*/
+
+function sum(a, b) {
+  let total = 0;
+  for (let value of arguments) total += value;
+  return total;
+}
+
+console.log(sum(1, 2)); //3
+console.log(sum(1)); //NaN
+console.log(sum()); //NaN
+console.log(sum(1, 2, 3, 4)); //3
