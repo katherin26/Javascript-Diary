@@ -86,3 +86,20 @@ walking();
 function walking() {
   console.log('walking...');
 }
+
+/*NOTE: FUNCTION EXPRESSION =
+  In javascript function are objects.
+  In the next example we can have a named function or we can have a anonymous function expression
+  When is anonymous we call the function expression. When is anonymous we call the function
+  with the value of the variable in this case run().
+  We declare another variable and set it to run , move and run are referencing the same 
+  anonymous function which is one object in memory.
+*/
+
+let run = function () {
+  console.log('.....result');
+};
+run(); //.....result
+
+let move = run;
+move(); //.....result
