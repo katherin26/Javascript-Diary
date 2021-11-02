@@ -69,3 +69,20 @@ function checkObj2(obj1, obj2) {
 }
 
 checkObj2(object1, object2);
+
+/*NOTE: AN EXAMPLE OF FUNCTION DECLARATION = 
+We can invoke or call a function before defining it!, But have you wondered why??
+and in a Function Expression if we do this it gives us Error!.
+
+The reason is because when JavaScript executes the code it moves all the functions declarations 
+to the top, so  the function declaration below executes the code of the function and then the 
+invocation and this is called Hoisting.
+
+HOISTING: Is the process of moving a function declaration to the top and is done automa-
+tically by Javascript engine that is executing the code.
+*/
+
+walking();
+function walking() {
+  console.log('walking...');
+}
