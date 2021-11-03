@@ -197,3 +197,13 @@ function interest1(principal, rate, years) {
   return ((principal * rate) / 100) * years;
 }
 console.log(interest1(10000)); //1750
+
+/*ES6 = Now with ES6 we have another way to do this!
+Instead of putting the expressions with or || operator. We can put the default value inside the
+parameters.
+*/
+
+function interest2(principal, rate = 3.5, years = 5) {
+  return ((principal * rate) / 100) * years;
+}
+console.log(interest2(10000)); //1750
