@@ -56,3 +56,37 @@ let incorrectWay = Pet('Dug', 8); //Undefined
 
 let myFirstPet = new Pet('Lala', 4);
 console.log(myFirstPet); //Pet {name: 'Lala', age:4}
+
+/*Method 3 : Using the class Syntax. This function behaves exactly the same as the 
+constructor function in method 2.
+*/
+
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  //Add you can also add methods.
+  getName() {
+    return this.name;
+  }
+
+  sayWoofWoof() {
+    return `Woof Woof! I am ${this.name}`;
+  }
+}
+
+//As in method 2 use new to create a new object.
+
+let mySecondPet = new Animal('fairy', 2);
+console.log(mySecondPet); //Animal {name: 'fairy', age:2}
+console.log(mySecondPet.name); //fairy
+
+//This invokes mySecondPet method sayWoofWoof
+console.log(mySecondPet.sayWoofWoof());
+
+/*You could have implemented methods in method 2, but that is a little bit more difficult, 
+you need to use prototypes that way many people prefer method 3, it is easy to implement 
+methods, encapsulate and inherit methods from other classes.
+*/
