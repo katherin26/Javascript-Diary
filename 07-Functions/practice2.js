@@ -124,7 +124,7 @@ for default a = 1 and b = undefined and when we have =
 
 */
 
-function sum(a, b) {
+function sum() {
   let total = 0;
   for (let value of arguments) total += value;
   return total;
@@ -134,3 +134,28 @@ console.log(sum(1, 2)); //3
 console.log(sum(1)); //NaN
 console.log(sum()); //NaN
 console.log(sum(1, 2, 3, 4)); //3
+
+/*But if we want flexibility or dynamism of passing multiple arguments and getting the sum,
+every function in Javascript has a special object called arguments.
+
+ARGUMENT: 
+In the console an object appears that has as key the indexes of the arguments that were passed
+in this function, now we are going to write an algorithm that adds all the parameters.
+*/
+
+console.log(sum(1, 2, 3, 4, 5)); //15
+
+/*NOTE: THE REST OPERATOR 
+In modern Javascript if you want to have a function with a variety of numbers or parameters you
+can use this Operator.
+
+Do no get confused with the spread operator that we use in arrays since the spread operator
+takes the elements individually but when we use these 3 dots... and we refer it in a function
+it is called rest operator.
+*/
+
+function sum2(...args) {
+  console.log(args); //[1,2,3,4,5,6,7,8,9,10]
+  return args.reduce((a, b) => a + b);
+}
+console.log(sum2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)); //55
