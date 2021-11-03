@@ -159,3 +159,15 @@ function sum2(...args) {
   return args.reduce((a, b) => a + b);
 }
 console.log(sum2(1, 2, 3, 4, 5, 6, 7, 8, 9, 10)); //55
+
+/*NEXT LEVEL EXAMPLE = 
+Now we are gonna used this function to calc the total of the items in a shopping cart and 
+we want a discount factor , So we need to add the parameter discount and parameter prices.
+*/
+
+function sum3(discount, ...prices) {
+  const total = prices.reduce((a, b) => a + b);
+  return total * (1 - discount);
+}
+
+console.log(sum3(0.1, 20, 30)); //45
