@@ -171,3 +171,16 @@ function sum3(discount, ...prices) {
 }
 
 console.log(sum3(0.1, 20, 30)); //45
+
+/*NOTE: DEFAULT VALUES:
+It depends on the exercise or the problem, We need to put default values in some 
+parameters of a function.
+
+Example: 
+A function that calculates the total interest (principal, rate, years).
+*/
+
+function interest(principal, rate, years) {
+  return ((principal * rate) / 100) * years;
+}
+console.log(interest(10000, 3.5, 5)); //1750
