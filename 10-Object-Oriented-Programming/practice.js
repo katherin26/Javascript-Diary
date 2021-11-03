@@ -14,3 +14,14 @@ console.log(date1, date2); //1/1/2019 2/1/2019
 string as a date. In this case, "2019,1,1" is interpreted as January 1,2019. If the Date constructor is passed 
 three numbers, the first value will be interpreted as the year, the second value the month, and the third the day.
 The catch here in JS starts in month indexing at 0, so month 1 is February.*/
+
+/*NOTE: Creating an Object */
+
+//Method 1 : Literal Object.
+
+let robot = {
+  name: 'Lucia',
+  age: 5,
+};
+
+console.log(robot.name); //This prints robot's name = Lucia.
