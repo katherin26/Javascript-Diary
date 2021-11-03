@@ -184,3 +184,16 @@ function interest(principal, rate, years) {
   return ((principal * rate) / 100) * years;
 }
 console.log(interest(10000, 3.5, 5)); //1750
+
+/*But what if we want to add default values to interest, rate and years.
+The or operator || =  If rate has a value and is a truthy value we use it but otherwise
+we will use 3.5 .
+In Conclusion: We can use the or || operator to obtain a default value.
+*/
+
+function interest1(principal, rate, years) {
+  rate = rate || 3.5;
+  years = years || 5;
+  return ((principal * rate) / 100) * years;
+}
+console.log(interest1(10000)); //1750
