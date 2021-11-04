@@ -163,3 +163,70 @@ const person2 = {
 
 person2.fullName = 'Serena Choi';
 console.log(person2); //{firstName: 'Serana Choi', lastName: 'Choi' , fullName: [Getter/Setter]}
+
+/*NOTE: What would happen if we pass a boolean??
+
+person2.fullName = true;
+
+It is supposed to be a valid string but when we pass a boolean we get Error!, 
+and if we pass null or undefined, it also gives us an error because split
+works for string.
+
+ADD ERROR HANDLING :
+In this situation we should add Error Handling at the beginning of a function 
+or a method.
+
+DEFENSIVE PROGRAMMING :
+We want to make sure that the values coming in are valid, They are in the right 
+shape, So we can execute logic, So the first line of this method should be something 
+like this. 
+
+With if (if(logic))
+
+We want to make sure that this value is a string! 
+
+THROW new Error :
+Instead of returning from this method, use the throw keyword and then create 
+a new error object.
+
+Error:
+Error is a constructor function because we have a pascal case an we are calling this
+function using the new operator to create a new error object.
+
+Argument: 
+We can pass an Error Message.
+
+CATCH an exception: 
+Now we need to catch an exception.
+
+We need to wrap this line in a try block, the try block can have one or more 
+statement and one of the statements at least can have a throw an exepction.
+
+Now we add the Catch block after in parenthesis and we given an identifier.
+
+In the catch block we can get that Error object and do something with it.
+
+Report a Error in out application, that's where we need to throw an exception.
+Throwing an exception is a technical jargon that you might here in a lot of 
+programming languages.
+
+*/
+
+const person3 = {
+  firstName: 'Amiie',
+  lastName: 'Mai',
+  set fullName(value) {
+    if (typeof value !== 'string') throw new Error('Value is not a string...');
+    const parts3 = value.split(' ');
+    if (parts3.length !== 2) throw new Error('Enter a first and last name!');
+    this.firstName = parts3[0];
+    this.lastName = parts3[1];
+  },
+};
+
+try {
+  person3.fullName = null;
+} catch (e) {
+  alert(e);
+}
+console.log(person3);
