@@ -90,3 +90,40 @@ console.log(mySecondPet.sayWoofWoof());
 you need to use prototypes that way many people prefer method 3, it is easy to implement 
 methods, encapsulate and inherit methods from other classes.
 */
+
+/*NOTE: GETTERS AND SETTERS: 
+They are a special kind of methods in objects .
+In this example we have an object and we want to print the full name! 
+*/
+
+const person = {
+  firstName: 'Amiie',
+  lastName: 'Mai',
+};
+
+console.log(person); // {firstName:'Amiie', lastName:'Mai'}
+console.log(person.firstName); //Amiie
+console.log(person.lastName); //Mai
+console.log(`${person.firstName} ${person.lastName}`); //Amiie Mai
+
+/*If we want to use this information and print it as many times as we want in
+another part of our application, we would have to repeat this template over and
+over again in many places, which implies more memory occupation and slowing down
+the process.
+
+We are going to define a method in the object and we will call it fullName and
+move this expression ${person.firstName} ${person.lastName}.
+
+But we found another problem, in this implementation we cannot change the first 
+and last name from outside, it would only print what is already in the object.
+*/
+
+const person1 = {
+  firstName: 'Minako',
+  lastName: 'Aino',
+  fullName() {
+    return `${person1.firstName} ${person1.lastName}`;
+  },
+};
+
+console.log(person1.fullName()); //Minako Aino
