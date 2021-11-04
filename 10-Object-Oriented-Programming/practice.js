@@ -127,3 +127,39 @@ const person1 = {
 };
 
 console.log(person1.fullName()); //Minako Aino
+
+/* GETTERS AND SETTERS IN PRACTICE:
+  Getters : access properties, 
+  when we add a getter and we can read this person fullName like a property.
+
+  Setters : Change (mutate) them: we can set it from the outside.
+
+  How it works, you wonder?? We need to add the get key word to fullName.
+
+  Setter in this exercice needs a parameter, in this case we call it value 
+  and the value will be the new firstname and lastname. 
+
+  Assuming it is a valid string what we are passing we need to split that string
+  by space(' ') separate them and assign them to the properties of firstName and
+  lastName. 
+
+  In this case : 
+
+  console.log(parts);//['Serena', 'Choi']
+  */
+
+const person2 = {
+  firstName: 'Kaoru',
+  lastName: 'Me',
+  get fullName() {
+    return `${person2.firstName} ${person2.lastName}`;
+  },
+  set fullName(value) {
+    const parts = value.split(' ');
+    this.firstName = parts[0];
+    this.lastName = parts[1];
+  },
+};
+
+person2.fullName = 'Serena Choi';
+console.log(person2); //{firstName: 'Serana Choi', lastName: 'Choi' , fullName: [Getter/Setter]}
