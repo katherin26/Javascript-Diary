@@ -228,3 +228,11 @@ function doubleNumbers(arr) {
   return arr.map(el => el * 2);
 }
 console.log(doubleNumbers([2, 5, 100]));
+
+//NOTE:Take an array of numbers and make them strings.
+
+function stringItUp(arr) {
+  return arr.map(el => el.toString());
+}
+
+console.log(stringItUp([1, 2, 3]));
