@@ -236,3 +236,10 @@ function stringItUp(arr) {
 }
 
 console.log(stringItUp([1, 2, 3]));
+
+//NOTE: CAPITALIZE EACH OF AN ARRAY OF NAMES
+
+function capitalizeName(arr) {
+  return arr.map(el => el.toUpperCase());
+}
+console.log(capitalizeName(['john', 'JACOB', 'jinGleHeimer', 'schmidt']));
