@@ -230,3 +230,23 @@ try {
   alert(e);
 }
 console.log(person3);
+
+/*NOTE:  The this keyword inside an object: 
+
+This object contains a property called name and a method called sayHello.
+
+Now: The this keyword is equal to the value of name inside the scope.
+
+So: When you invoke this function (person.sayHello()) the result is : This is my name : Paco
+ */
+
+const person = {
+  name: 'Paco',
+  sayHello() {
+    console.log(`This is my name : ${this.name}`);
+  },
+};
+
+console.log(person); //{name: 'Paco', sayHello"[Function: sayHello] }
+console.log(person.name); //Paco
+person.sayHello(); //This is my name Paco
