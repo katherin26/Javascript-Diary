@@ -257,3 +257,25 @@ let fn = person.sayHello;
 
 var name = 'Sass'; //Window object
 fn(); //This is my name : Sass
+
+/*NOTE: METHOD ===> OBJECT
+In this case the this keyword references the movie object.
+
+movie.play() and movie.stop() =
+Same result and this is because stop is a method in the video object.
+*/
+
+const movie = {
+  tittle: 'Skull Stalker',
+  play() {
+    console.log(this);
+  },
+};
+
+movie.stop = function () {
+  console.log(this);
+};
+
+movie.play(); //{tittle: 'Skull Stalker', play: [Function: play] }
+
+movie.stop(); //{tittle: 'Skull Stalker', play: [Function: play] }
