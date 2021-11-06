@@ -298,3 +298,30 @@ function PlayMovie2(title) {
 
 const m = new PlayMovie2('Matrix'); //{ title: 'Disaster', play: [Function: play] }
 //PlayMovie2 { title: 'Matrix' }
+
+//NOTE:
+
+const movie2 = {
+  title: 'La era de Hielo',
+  tags: [1, 2, 3],
+  showTags() {
+    this.tags.forEach(function (tag) {
+      //utilizamos for.Each method porque estamos iterando un array y utilizamos un callBack function y en este pasamos
+      console.log(this.title, tag);
+    }, this);
+  },
+};
+
+movie2.showTags();
+
+/*pero que pasa si queremos imprimir el  title y despues el tags, para eso 
+agregaremos this.title, console.log(tag) en la linea 62 pero con esto saldria 
+undefined porque this en ese caso esta referenciando el window object 
+Pero se supondria que estamos en el movie2 object ?? pero  estamos dentro
+ callback function y es una funcion regular no es un method en el movie2 object
+  por esa razon se referencia en el global object 
+la solucion se encuentra en el forEach , ya que tenemos 2 parametros el 
+primero es el callback function y el segundo thisArg , con el segundo podemos
+ pasar un objeto y this referenciara ese objeto. 
+
+*/
