@@ -250,3 +250,10 @@ const person = {
 console.log(person); //{name: 'Paco', sayHello"[Function: sayHello] }
 console.log(person.name); //Paco
 person.sayHello(); //This is my name Paco
+
+/* Here we are removing the function from the scope and we are assigning it to (let fn) but it is still a function so  JS 
+looks in the global scope which would be window (browser) for a variable with the same name "name" and if it does not find it the value it would be undefined, In this example we have var name: 'Sass'*/
+let fn = person.sayHello;
+
+var name = 'Sass'; //Window object
+fn(); //This is my name : Sass
