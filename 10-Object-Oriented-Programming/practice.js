@@ -279,3 +279,22 @@ movie.stop = function () {
 movie.play(); //{tittle: 'Skull Stalker', play: [Function: play] }
 
 movie.stop(); //{tittle: 'Skull Stalker', play: [Function: play] }
+
+/*NOTE: EJEMPLO DE FUNCTION => GLOBAL (WINDOW , GLOBAL )*/
+
+const movie1 = {
+  title: 'Disaster',
+  play() {
+    console.log(this);
+  },
+};
+
+movie1.play();
+
+function PlayMovie2(title) {
+  this.title = title;
+  console.log(this);
+}
+
+const m = new PlayMovie2('Matrix'); //{ title: 'Disaster', play: [Function: play] }
+//PlayMovie2 { title: 'Matrix' }
