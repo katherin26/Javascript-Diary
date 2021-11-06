@@ -19,3 +19,11 @@ console.log(variable1)
   let variable2 = 'c';
   console.log(variable2);
 }
+
+/*Implementing Hoisting.
+The variable2 rises but the value of the variable remains in the line 29 ; 
+therefore when the console.log is printed the result would be undefined.
+*/
+
+console.log(variable2);
+var variable2 = 'd'; //undefined
