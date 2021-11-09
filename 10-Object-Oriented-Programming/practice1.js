@@ -28,3 +28,24 @@ console.log(st2); //Simple literal string!
 
 let st3 = String('Just string!');
 console.log(st3); //Just String!
+
+//Now Numbers
+
+let n1 = 7;
+console.log(n1);
+
+let n2 = new Number(7);
+console.log(n2);
+
+let n3 = Number(7);
+console.log(n3);
+
+//Boolean
+let b1 = true;
+console.log(b1);
+
+let b2 = new Boolean(true);
+console.log(b2);
+
+let b3 = Boolean(true); //Boxed
+console.log(b3);
