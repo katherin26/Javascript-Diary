@@ -243,3 +243,13 @@ function capitalizeName(arr) {
   return arr.map(el => el.toUpperCase());
 }
 console.log(capitalizeName(['john', 'JACOB', 'jinGleHeimer', 'schmidt']));
+
+//NOTE: Using push().
+
+const theFridge = ['Nutella', 'Cold Stone', 'Vegan Pizza'];
+
+theFridge.push('Kat');
+console.log(theFridge); // [ 'Nutella', 'Cold stone', 'Vegan pizza', 'Kat' ]
+
+theFridge[3] = 'Bread';
+console.log(theFridge); // [ 'Nutella', 'Cold stone', 'Vegan pizza', 'Bread' ]

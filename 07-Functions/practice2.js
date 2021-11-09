@@ -256,3 +256,5 @@ const func2 = () => {
 
 const func3 = () => 'Hi3'; // The return here is implide so you don't have
 // to use return or curly braces.
+
+
