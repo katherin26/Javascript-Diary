@@ -243,3 +243,16 @@ function sumA(x, y) {
 
 let result = sumA(1, 2);
 console.log(result);
+
+/*NOTE: Function declaration , Function expression , Arrow function */
+
+function func1() {
+  return 'Hi1';
+}
+
+const func2 = () => {
+  return 'Hi2';
+};
+
+const func3 = () => 'Hi3'; // The return here is implide so you don't have
+// to use return or curly braces.
