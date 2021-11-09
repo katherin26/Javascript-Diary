@@ -31,3 +31,9 @@ function getMax(arr) {
 
 const max = getMax(numbers);
 console.log(max);
+
+/*NOTE: FOR LOOPS */
+
+let fridge = ['tomato1', 'tomato2', 'tomato3', 'tomato4', 'tomato5'];
+
+for (let i = 0; i <= fridge.length; i++) console.log(fridge[i]);
