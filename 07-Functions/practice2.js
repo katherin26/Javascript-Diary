@@ -207,3 +207,12 @@ function interest2(principal, rate = 3.5, years = 5) {
   return ((principal * rate) / 100) * years;
 }
 console.log(interest2(10000)); //1750
+
+/*NOTE:  SUM ARGUMENTS ARRAY AND NUMBERS*/
+
+function sum(...arg) {
+  if (arg.length === 1 && Array.isArray(arg[0])) arg = [...arg[0]];
+  return arg.reduce((a, b) => a + b);
+}
+
+console.log(sum([1, 2, 3, 4, 5])); //11
