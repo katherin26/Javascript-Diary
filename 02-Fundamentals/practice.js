@@ -55,3 +55,10 @@ for (let i = 0; i < average.length; i++) {
 
 average = sum / average.length;
 console.log(average); //5
+
+/*NOTE: CONCATENATION */
+
+let i = 10;
+
+i += 2;
+console.log(i); //12
