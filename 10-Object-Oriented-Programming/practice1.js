@@ -83,3 +83,15 @@ let persona = {
 
 persona.printName1();
 persona.printName2(); //undefined por el lexical scope,
+
+//Objects adding keys and values and copy by reference.
+
+let object = {
+  name: 'Teo',
+  lastName: 'Doro',
+  age: 12,
+};
+
+object.new = 'New Position'; //new : "New Position"
+object.inventor = 'Albert'; //inventor : "ALbert"
+let object1 = { ...object }; //This is a copy by reference.
