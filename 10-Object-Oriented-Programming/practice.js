@@ -325,3 +325,33 @@ primero es el callback function y el segundo thisArg , con el segundo podemos
  pasar un objeto y this referenciara ese objeto. 
 
 */
+
+const movie3 = {
+  title: 'La era de Hielo3',
+  tags: [0, 2, 3],
+  showTags() {
+    const self = this;
+    this.tags.forEach(function (tag) {
+      console.log(self.title, tag);
+    });
+  },
+};
+
+movie3.showTags3();
+/*a era de Hielo 3 0
+La era de Hielo 3 2
+La era de Hielo 3 3 */
+
+//EXAMPLE WITH ARROW FUNCTION
+
+const movie4 = {
+  title: 'La era de Hielo 4',
+  tags: [0, 0, 0, 0],
+  showTags4() {
+    this.tags.forEach(tag => {
+      console.log(this.title, tag);
+    });
+  },
+};
+
+movie4.showTags4();
