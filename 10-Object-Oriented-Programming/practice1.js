@@ -49,3 +49,22 @@ console.log(b2);
 
 let b3 = Boolean(true); //Boxed
 console.log(b3);
+
+//Literal Object =
+
+let object = {
+  name: 'Br',
+  lastName: 'Men',
+  age: 12,
+};
+console.log(object);
+
+//Constructor =
+
+function person1(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+let datos = new person1('Ka', '27');
+console.log(datos);
