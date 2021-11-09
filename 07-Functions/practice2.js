@@ -234,3 +234,12 @@ function countOcurrences(array, searchElement) {
     return accumulator + occurrence;
   }, 0);
 }
+
+/*NOTE:  FUNCTIONS, RETURN AND PASS THE VALUE TO  A VARIABLE.*/
+
+function sumA(x, y) {
+  return x + y;
+}
+
+let result = sumA(1, 2);
+console.log(result);
