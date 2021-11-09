@@ -62,3 +62,9 @@ let i = 10;
 
 i += 2;
 console.log(i); //12
+
+/*NOTE: FOR LOOP WITH (i+=10) */
+
+let number = 50;
+
+for (let i = 10; i <= number; i += 10) console.log(i); //10 20 30 40 50
