@@ -68,3 +68,18 @@ function person1(name, age) {
 
 let datos = new person1('Ka', '27');
 console.log(datos);
+
+// Methods
+
+let persona = {
+  name: 'Br',
+  printName1: function () {
+    console.log(this.name);
+  },
+  printName2: () => {
+    console.log(this.name); //binding this, lexical scope
+  },
+};
+
+persona.printName1();
+persona.printName2(); //undefined por el lexical scope,
