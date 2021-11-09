@@ -42,3 +42,16 @@ for (let i = 0; i <= fridge.length; i++) console.log(fridge[i]);
 
 for (let i = 0; i <= 20; i++) if (i % 2 === 0) console.log(i);
 //0,2,4,6,8,10,12,14,16,18,20
+
+/*NOTE: Loops in Arrays */
+
+let score = [7, 4, 3, 4, 5, 6, 4, 4, 6, 7];
+sum = 0;
+average = 0;
+
+for (let i = 0; i < average.length; i++) {
+  sum = sum + average[i];
+}
+
+average = sum / average.length;
+console.log(average); //5
