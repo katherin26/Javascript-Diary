@@ -9,3 +9,22 @@ const circle = {
 };
 
 console.log(circle.area);
+
+/*NOTE: Literal object o constructors */
+
+//3 WAYS TO CREATE A TEXT STRING
+
+//Constructor
+
+let st1 = new String('My string Contructor');
+console.log(st1); //[String: 'My string constructor!']
+
+//Literal object
+
+let st2 = 'Simple literal string';
+console.log(st2); //Simple literal string!
+
+//Boxed string
+
+let st3 = String('Just string!');
+console.log(st3); //Just String!
