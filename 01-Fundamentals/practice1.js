@@ -54,4 +54,9 @@ numbers, string, objects.
 let name = 'Teo';
 let lastname = 'doro';
 
-console.log(`Name is ${name} and lastname is ${lastname}`);
+console.log(`Name is ${name} and lastname is ${lastname}`); //name is Teo and lastname is doro.
+
+/*NOTE: Using UpperCase() */
+
+let happy = 'hey hey hey';
+console.log(happy.toUpperCase()); //HEY HEY HEY
