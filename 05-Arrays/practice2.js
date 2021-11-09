@@ -253,3 +253,13 @@ console.log(theFridge); // [ 'Nutella', 'Cold stone', 'Vegan pizza', 'Kat' ]
 
 theFridge[3] = 'Bread';
 console.log(theFridge); // [ 'Nutella', 'Cold stone', 'Vegan pizza', 'Bread' ]
+
+/*NOTE: Index in arrays. */
+
+const firstFridge = ['tomatos', 'cellery', 'onion'];
+firstFridge[2] = 'Butter'; //Position 2.
+console.log(firstFridge); //[ 'tomatos', 'cellery', 'Butter' ]
+
+//Copy by reference
+const secondFridge = firstFridge;
+console.log(secondFridge); // [ 'tomatos', 'cellery', 'Butter' ]
