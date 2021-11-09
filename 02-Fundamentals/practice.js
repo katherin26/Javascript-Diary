@@ -37,3 +37,8 @@ console.log(max);
 let fridge = ['tomato1', 'tomato2', 'tomato3', 'tomato4', 'tomato5'];
 
 for (let i = 0; i <= fridge.length; i++) console.log(fridge[i]);
+
+/*NOTE: Log the module % 2  */
+
+for (let i = 0; i <= 20; i++) if (i % 2 === 0) console.log(i);
+//0,2,4,6,8,10,12,14,16,18,20
