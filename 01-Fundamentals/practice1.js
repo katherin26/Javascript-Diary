@@ -45,3 +45,13 @@ function start() {
 }
 
 start(); //0 1 2 3 4
+
+/*NOTE: Using Template Literals(Template Strings).
+What can store in a variable = objects, is all the information like booleans,
+numbers, string, objects.
+*/
+
+let name = 'Teo';
+let lastname = 'doro';
+
+console.log(`Name is ${name} and lastname is ${lastname}`);
