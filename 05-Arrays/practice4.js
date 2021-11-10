@@ -34,3 +34,20 @@ function getLongestNames(names) {
   return names[longestNameIndex];
 }
 console.log(getLongestNames(pets)); //marcelo
+
+//Now with For In
+
+function getLongestNames3(names) {
+  let longestNameIndex;
+  let maxNameLength = 0;
+
+  for (let index in names) {
+    if (names[index].length > maxNameLength) {
+      longestNameIndex = index;
+      maxNameLength = names[index].length;
+    }
+  }
+  return names[longestNameIndex];
+}
+
+console.log(getLongestName(pets));
