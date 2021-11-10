@@ -16,3 +16,21 @@ function getLongestName(names) {
 }
 
 console.log(getLongestName(persons)); //kaoru
+
+//Now using For Of
+
+let pets = ['chichi', 'marcelo', 'pinky'];
+
+function getLongestNames(names) {
+  let longestNameIndex;
+
+  let maxNameLength = 0;
+  for (let [index, name] of names.entries()) {
+    if (name.length > maxNameLength) {
+      longestNameIndex = index;
+      maxNameLength = name.length;
+    }
+  }
+  return names[longestNameIndex];
+}
+console.log(getLongestNames(pets)); //marcelo
