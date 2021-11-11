@@ -60,3 +60,19 @@ let name1 = 'Patricia';
 let name2 = 'Lolo';
 
 console.log(name1.localeCompare(name2)); //1 is Lolo.
+
+//NOTE: How many "amet" words there in the paragraph.
+
+let paragraph = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse pulvinar fermentum velit, in eleifend urna posuere sed. Mauris imperdiet venenatis est, id tempor diam ullamcorper non. Donec vehicula eros mi, sit amet scelerisque est hendrerit ac. Morbi a quam ut urna accumsan feugiat. Duis lorem ipsum, vulputate sed molestie sit amet, molestie at leo. Maecenas auctor nisi nec nibh luctus, quis congue nisl volutpat. Nunc auctor nisi eget lacus pretium, id fringilla diam euismod.`;
+
+let countE = 0;
+let paragraphArray = paragraph.split(' ');
+
+console.log(paragraphArray); //This is an array .
+console.log(paragraphArray.length); //74
+
+for (let i = 0; i < paragraphArray.length; i++) {
+  if (paragraphArray[i] === 'amet') countE++;
+}
+
+console.log(`The total "amet" words in the paragraph is ${countE}`); //1
