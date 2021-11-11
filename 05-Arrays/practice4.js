@@ -51,3 +51,24 @@ function getLongestNames3(names) {
 }
 
 console.log(getLongestName(pets));
+
+//NOTE:You get an array of numbers, return the sum of all of the positives ones.
+
+let arrPositives = [1, 5, 4, 2, -12, -54, 74];
+
+function positiveNumber(arr) {
+  let sum = 0;
+  for (let i = 0; i <= arr.length; i++) {
+    if (arr[i] > 0) {
+      sum = sum + arr[i];
+    }
+  }
+  return sum;
+}
+
+console.log(positiveNumber(arrPositives)); //86
+console.log((positiveNumber([1, 2, 3, 4, 5]), 15));
+console.log((positiveNumber([1, -2, 3, 4, 5]), 13));
+console.log((positiveNumber([]), 0));
+console.log((positiveNumber([-1, -2, -3, -4, -5]), 0));
+console.log((positiveNumber([-1, 2, 3, 4, -5]), 9));
