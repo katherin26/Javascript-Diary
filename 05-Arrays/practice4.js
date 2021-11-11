@@ -72,3 +72,12 @@ console.log((positiveNumber([1, -2, 3, 4, 5]), 13));
 console.log((positiveNumber([]), 0));
 console.log((positiveNumber([-1, -2, -3, -4, -5]), 0));
 console.log((positiveNumber([-1, 2, 3, 4, -5]), 9));
+
+//For of
+
+let sum2 = 0;
+for (let value of arrPositives) {
+  if (value > 0) sum2 += value;
+}
+
+console.log(sum2); //86
