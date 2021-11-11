@@ -53,3 +53,10 @@ Regards,
 Anonimo`;
 
 console.log(email);
+
+//NOTE: Using localeCompare
+
+let name1 = 'Patricia';
+let name2 = 'Lolo';
+
+console.log(name1.localeCompare(name2)); //1 is Lolo.
