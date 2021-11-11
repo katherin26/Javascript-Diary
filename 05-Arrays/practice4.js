@@ -81,3 +81,8 @@ for (let value of arrPositives) {
 }
 
 console.log(sum2); //86
+
+//With reduce method.
+
+let sum3 = arrPositives.filter(n => n > 0).reduce((sum, n) => (sum += n), 0);
+console.log(sum3); //86
