@@ -76,3 +76,7 @@ for (let i = 0; i < paragraphArray.length; i++) {
 }
 
 console.log(`The total "amet" words in the paragraph is ${countE}`); //1
+
+//Another solution with RegExp
+
+console.log(paragraph.match(/lorem/g).length);
