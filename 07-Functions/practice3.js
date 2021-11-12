@@ -12,16 +12,15 @@ forLoopFunction(0); //1 2 3 4 5
 
 //Example print numbers.
 
-function countDown(num) {
+let forLoopFunction = num => {
+  num++;
   console.log(num);
-
-  const newNumber = num - 1;
-  if (newNumber > 0) {
-    countDown(newNumber);
+  if (num < 5) {
+    forLoopFunction(num);
   }
-}
+};
 
-countDown(5); // 5 4 3 2 1
+forLoopFunction(0); // 1 2 3 4 5
 
 /*In the above program, the user passes a number as an argument when calling 
 a function.
