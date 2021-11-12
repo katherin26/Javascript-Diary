@@ -8,7 +8,7 @@ let forLoopFunction = num => {
   }
 };
 
-forLoopFunction(0);
+forLoopFunction(0); //1 2 3 4 5
 
 //Example print numbers.
 
@@ -21,7 +21,7 @@ function countDown(num) {
   }
 }
 
-countDown(5);
+countDown(5); // 5 4 3 2 1
 
 /*In the above program, the user passes a number as an argument when calling 
 a function.
@@ -37,4 +37,28 @@ countDown(1) prints 5 and calls countDown(0)
 
 When the number reaches 0, the base condition is met and the function is not 
 called anymore.
+*/
+
+//SUM IN RECURSION
+
+function sumUpTo(n) {
+  if (n == 1) return 1;
+  return n + sumUpTo(n - 1);
+}
+
+sumUpTo(10); //The total is 55
+
+/*In this case :
+
+sumUpTo(1) 2 + 1
+sumUpTo(2) 3 + 3
+sumUpTo(3) 4 + 6
+sumUpTo(4) 5 + 10
+sumUpTo(5) 6 + 15
+sumUpTo(6) 7 + 21 
+sumUpTo(7) 8 + 28
+sumUpTo(8) 9 + 36
+sumUpTo(9) 10 + 45
+sumUpTo(10) 11 + 55
+
 */
