@@ -257,4 +257,20 @@ const func2 = () => {
 const func3 = () => 'Hi3'; // The return here is implide so you don't have
 // to use return or curly braces.
 
+/*Write a function that received 4 arguments and  those arguments should be the data below.
+Inside the function print a message using the firstName and LastName.
+*/
 
+let movies = ['Alien', 'Matrix', 'Hitch'];
+let hobby = 'Running';
+let car = {
+  name: 'Lambo',
+};
+let firstName = 'Ana';
+let lastName = 'Gun';
+
+const getNewMovieDeal = (name, lastName, hobby, car) => {
+  console.log(`${name} ${lastName} has a hobby ${hobby} and has a ${car} `);
+};
+
+getNewMovieDeal(firstName, lastName, hobby, car.name);
