@@ -86,3 +86,36 @@ console.log(sum2); //86
 
 let sum3 = arrPositives.filter(n => n > 0).reduce((sum, n) => (sum += n), 0);
 console.log(sum3); //86
+
+/*NOTE: Order names lexicographically
+Using sort function Array.prototype.sort() sorts an array in place it means
+it modifies the original array we need to clone it to have two different sorted 
+Arrays.
+
+By default, it orders in ascending order. The answer start with Mar.
+*/
+
+let name = ['Maria', 'Mar', 'Ocean11', 'Nano', 'Proxy', 'Paco'];
+
+//Ascending
+let ascendingNames = [...names];
+ascendingNames.sort();
+console.log(ascendingNames); //[Mar, Maria, Nano, Ocean11, Paco, Proxy]
+
+//Descending
+
+let descendingNames = [...names];
+
+/*If sorting function returns a negative number, name2 goes before name1.
+If it return a positive number, name2 goes after name1 if it return 0, they 
+stay where they are.
+
+This method used the Unicode chart 0 es la posicion de donde queremos empezar 
+en este caso 0 es la inicial.
+This output should be start with proxy.
+*/
+
+descendingNames.sort((name1, name2) => {
+  return name2.charCodeAt(0) - name1.charCodeAt(0);
+});
+console.log(descendingNames); //[Proxy,Paco,Ocean11,Nano,Maria,Mar]
