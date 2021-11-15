@@ -132,3 +132,10 @@ function sumArr(num) {
 }
 
 sumArr(numbers); //87
+
+//Solution with reduce method
+
+function sumArr2(num) {
+  return num.reduce((acc, curr) => acc + curr);
+}
+console.log(sumArr2(numbers));
