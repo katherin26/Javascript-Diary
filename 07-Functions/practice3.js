@@ -91,3 +91,30 @@ function getMax(arr) {
 }
 
 console.log(getMax(words2)); //cocodrile
+
+//SOLUTION WITH FOR LOOP.
+
+const words = [
+  'mystery',
+  'brother',
+  'aviator',
+  'crocodile',
+  'pearl',
+  'orchard',
+  'crackpot',
+];
+
+function findLongestWord(arr) {
+  let longest = '';
+  if (arr.length === 0) {
+    return null;
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].length > longest.length) {
+      longest = arr[i];
+    }
+  }
+  return longest;
+}
+
+console.log(findLongestWord(words)); //cocodrile
