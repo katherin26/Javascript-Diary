@@ -61,3 +61,12 @@ sumUpTo(9) 10 + 45
 sumUpTo(10) 11 + 55
 
 */
+
+/*NOTE: Find the maximun
+ */
+
+function maxOfTwoNumbers(x, y) {
+  return Math.max(x, y);
+}
+
+console.log(maxOfTwoNumbers(10, 20)); //20
