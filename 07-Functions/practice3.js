@@ -118,3 +118,17 @@ function findLongestWord(arr) {
 }
 
 console.log(findLongestWord(words)); //cocodrile
+
+/*NOTE: Calculate the sum with reduce and function. */
+
+const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
+
+function sumArr(num) {
+  let sum = 0;
+  for (let i = 0; i < num.length; i++) {
+    sum += num[i];
+  }
+  return sum;
+}
+
+sumArr(numbers); //87
