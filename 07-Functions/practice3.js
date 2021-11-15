@@ -70,3 +70,24 @@ function maxOfTwoNumbers(x, y) {
 }
 
 console.log(maxOfTwoNumbers(10, 20)); //20
+
+/*NOTE: Find longest word*/
+
+const words2 = [
+  'mystery',
+  'brother',
+  'aviator',
+  'crocodile',
+  'pearl',
+  'orchard',
+  'crackpot',
+];
+
+function getMax(arr) {
+  if (arr.length === 0) return undefined;
+  return arr.reduce((acc, cur) => {
+    return acc.length > arr.length ? acc : cur;
+  }, '');
+}
+
+console.log(getMax(words2)); //cocodrile
