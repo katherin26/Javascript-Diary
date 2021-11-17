@@ -139,3 +139,20 @@ function sumArr2(num) {
   return num.reduce((acc, curr) => acc + curr);
 }
 console.log(sumArr2(numbers));
+
+/*Calculate the average with a for loop.*/
+
+const arr = [2, 6, 9, 10, 7, 4, 1, 9];
+
+function calcAverage(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+    if (arr.length === 0) {
+      return null;
+    }
+  }
+  return sum / arr.length;
+}
+
+console.log(calcAverage(arr)); //6
