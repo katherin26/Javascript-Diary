@@ -156,3 +156,32 @@ function calcAverage(arr) {
 }
 
 console.log(calcAverage(arr)); //6
+
+/*Calculate the average word length in the wordsArr Array. */
+
+const wordsArr = [
+  'seat',
+  'correspond',
+  'linen',
+  'motif',
+  'hole',
+  'smell',
+  'smart',
+  'chaos',
+  'fuel',
+  'palace',
+];
+
+function averageWordLength(arr) {
+  let averageLength = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.length === 0) {
+      return null;
+    }
+    averageLength += arr[i].length;
+  }
+  return averageLength / arr.length;
+}
+
+console.log(averageWordLength(wordsArr)); //5.3
