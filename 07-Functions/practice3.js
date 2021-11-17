@@ -185,3 +185,35 @@ function averageWordLength(arr) {
 }
 
 console.log(averageWordLength(wordsArr)); //5.3
+
+/*Unique arrays with includes method. */
+
+const wordsUnique = [
+  'crab',
+  'poison',
+  'contagious',
+  'simple',
+  'bring',
+  'sharp',
+  'playground',
+  'poison',
+  'communion',
+  'simple',
+  'bring',
+  'poison',
+  'poison',
+  'poison',
+  'poison',
+];
+
+function includeWord(arr) {
+  let uniqueWord = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (!uniqueWord.includes(arr[i])) {
+      uniqueWord.push(arr[i]);
+    }
+  }
+  return uniqueWord;
+}
+console.log(includeWord(wordsUnique));
+//'crab','poison','contagious','simple','bring','sharp','playground','communion'
