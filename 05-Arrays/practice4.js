@@ -119,3 +119,24 @@ descendingNames.sort((name1, name2) => {
   return name2.charCodeAt(0) - name1.charCodeAt(0);
 });
 console.log(descendingNames); //[Proxy,Paco,Ocean11,Nano,Maria,Mar]
+
+/*NOTE: Using find method in a function.*/
+
+const wordsFind = [
+  'machine',
+  'subset',
+  'trouble',
+  'starting',
+  'matter',
+  'eating',
+  'truth',
+  'disobedience',
+];
+
+function doesWordExist(arr, word) {
+  return arr.includes(word);
+}
+
+console.log(doesWordExist(wordsFind, 'eating')); //true
+
+console.log(doesWordExist(wordsFind, 'eat')); //false
