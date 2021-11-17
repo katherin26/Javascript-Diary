@@ -140,3 +140,35 @@ function doesWordExist(arr, word) {
 console.log(doesWordExist(wordsFind, 'eating')); //true
 
 console.log(doesWordExist(wordsFind, 'eat')); //false
+
+/*NOTE: Count repetition using a for loop. */
+const wordsCount = [
+  'machine',
+  'machine',
+  'machine',
+  'machine',
+  'machine',
+  'matter',
+  'subset',
+  'trouble',
+  'starting',
+  'matter',
+  'eating',
+  'matter',
+  'truth',
+  'disobedience',
+  'matter',
+];
+
+function howManyTimes(arr, word) {
+  if (arr.length === 0) return 0;
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] == word) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+console.log(howManyTimes(wordsCount, 'machine')); //5
