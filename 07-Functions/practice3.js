@@ -230,3 +230,13 @@ let total = firstFunction(function () {
 });
 
 console.log(total);
+
+/*Arrow function inside a function*/
+
+function secondFunction(n1, n2) {
+  let sum = (num1, num2) => num1 + num2;
+  return sum(n1, n2);
+}
+
+let result = secondFunction(2, 3);
+console.log(result); //5
