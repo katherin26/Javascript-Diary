@@ -240,3 +240,17 @@ function secondFunction(n1, n2) {
 
 let result = secondFunction(2, 3);
 console.log(result); //5
+
+//The functions can be passed as arguments to other function.
+
+let suma = (n1, n2) => n1 + n2;
+let multiplicacion = (n1, n2) => n1 * n2;
+
+function sumaYMultiplicacion(num1, num2, sumFn, multiFn) {
+  let suma = sumFn(num1, num2);
+  let multiplicacion = multiFn(num1, num2);
+
+  return { suma, multiplicacion };
+}
+let result = sumaYMultiplicacion(5, 5, suma, multiplicacion);
+console.log(result);
