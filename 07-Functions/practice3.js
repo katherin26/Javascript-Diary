@@ -217,3 +217,16 @@ function includeWord(arr) {
 }
 console.log(includeWord(wordsUnique));
 //'crab','poison','contagious','simple','bring','sharp','playground','communion'
+
+/*NOTE:  Passing a function inside a function*/
+
+function firstFunction(fn) {
+  let result = fn();
+  return result;
+}
+
+let total = firstFunction(function () {
+  return 'Hello World!';
+});
+
+console.log(total);
