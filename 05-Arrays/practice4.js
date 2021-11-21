@@ -189,3 +189,17 @@ function orderAlphabetically(arr) {
 }
 
 console.log(orderAlphabetically(movies));
+
+//SUM THE RATE OF THE ARRAY MOVIES
+
+//Sum rate
+
+function sumRate(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i].rate;
+  }
+  return sum;
+}
+
+console.log(sumRate(movies)); //27.5
