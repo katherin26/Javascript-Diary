@@ -172,3 +172,7 @@ function howManyTimes(arr, word) {
 }
 
 console.log(howManyTimes(wordsCount, 'machine')); //5
+
+//NOTE: Another popular way to order the movies is to sort them alphabetically using the title key. However, in this case, we only need to print the title of the first 20. Easy peasy for an expert like you. 😉
+
+//Create a orderAlphabetically() function, that receives an array and returns an array of first 20 titles, alphabetically ordered. Return only the title of each movie, and if the array you receive has less than 20 movies, return all of them.
