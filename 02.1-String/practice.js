@@ -80,3 +80,12 @@ console.log(`The total "amet" words in the paragraph is ${countE}`); //1
 //Another solution with RegExp
 
 console.log(paragraph.match(/lorem/g).length);
+
+//NOTE: Eliminate a and e with replace method.
+
+function eliminatedV(str) {
+  let newText = str.replace(/[ae]/gi, '');
+  return newText;
+}
+
+console.log(eliminatedV('Tata vaaaagas lllleras zaappp'));
