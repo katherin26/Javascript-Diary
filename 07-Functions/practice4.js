@@ -176,3 +176,12 @@ function revealMystery(envelope) {
 
 let mysterySolution = revealMystery(mysteryEnvelope);
 console.log(mysterySolution);
+
+//NOTE: Removes vowels from a string with replace.
+
+function disemvowel(str) {
+  let newText = str.replace(/[aeiou]/gi, '');
+  return newText;
+}
+
+console.log(disemvowel('This website is for workers =D!!!'));
