@@ -276,3 +276,11 @@ function rateAverage(arr) {
 }
 
 console.log(rateAverage(movies)); //9.08
+
+//Includes some word ??
+
+function dramaMoviesRate(arr) {
+  let dramaMovies = arr.filter(d => d.genre.includes('Drama'));
+  return rateAverage(dramaMovies);
+}
+console.log(dramaMoviesRate(movies)); //9.13
