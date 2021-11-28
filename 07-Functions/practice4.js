@@ -284,3 +284,40 @@ function dramaMoviesRate(arr) {
   return rateAverage(dramaMovies);
 }
 console.log(dramaMoviesRate(movies)); //9.13
+
+//Turn hours to Minutes.
+
+function turnHoursToMinutes(arr) {
+  let newMovies = arr.map(movie => {
+    let newObj = { ...movie };
+    let mins = 0;
+
+    let hoursMinutes = newObj.duration.split(' ');
+    console.log(hoursMinutes);
+    let hours = hoursMinutes[0].replace('h', '');
+    console.log(hours);
+
+    if (hoursMinutes[1] !== undefined) {
+      mins = hoursMinutes[1].replace('min', '');
+    }
+    newObj.duration = hours * 60 + Number.parseInt(mins);
+
+    return newObj;
+  });
+  return newMovies;
+}
+
+console.log(turnHoursToMinutes(movies.slice(0, 5)));
+
+/* 
+[ '2h' ]
+2
+[ '2h', '55min' ]
+2
+[ '3h', '22min' ]
+3
+[ '2h', '32min' ]
+2
+[ '1h', '36min' ]
+1
+*/
