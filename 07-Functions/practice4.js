@@ -185,3 +185,52 @@ function disemvowel(str) {
 }
 
 console.log(disemvowel('This website is for workers =D!!!'));
+
+/*NOTE: Create a orderAlphabetically() function, that receives an array and returns an array of first 3 titles, Alphabetically ordered. Return only the title of each movie, and if the array you receive has less than 2 movies, return all of them.*/
+
+let movies = [
+  {
+    title: 'The Shawshank Redemption',
+    year: 1994,
+    director: 'Frank Darabont',
+    duration: '2h',
+    genre: ['Crime', 'Drama'],
+    rate: 9.3,
+  },
+  {
+    title: 'The Godfather',
+    year: 1972,
+    director: 'Francis Ford Coppola',
+    duration: '2h 55min',
+    genre: ['Crime', 'Drama'],
+    rate: 9.2,
+  },
+  {
+    title: 'The Godfather: Part II',
+    year: 1974,
+    director: 'Francis Ford Coppola',
+    duration: '3h 22min',
+    genre: ['Crime', 'Drama'],
+    rate: 9,
+  },
+  {
+    title: 'The Dark Knight',
+    year: 2008,
+    director: 'Christopher Nolan',
+    duration: '2h 32min',
+    genre: ['Action', 'Crime', 'Drama', 'Thriller'],
+    rate: 9,
+  },
+];
+
+function orderAlphabetically(arr) {
+  let clone = [...arr];
+  let result = clone
+    .sort((mov1, mov2) => mov1.title.localeCompare(mov2.title))
+    .map(mov => mov.title)
+    .slice(0, 2);
+
+  return result;
+}
+
+console.log(orderAlphabetically(movies));
