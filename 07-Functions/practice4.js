@@ -266,3 +266,13 @@ function sumRate(arr) {
 }
 
 console.log(sumRate(movies)); //45.4
+
+//Rates average
+
+function rateAverage(arr) {
+  if (arr.length === 0) return 0;
+  let average = sumRate(arr.filter(m => m.rate)) / arr.length;
+  return Number.parseFloat(average.toFixed(2));
+}
+
+console.log(rateAverage(movies)); //9.08
