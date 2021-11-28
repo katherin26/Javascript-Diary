@@ -223,6 +223,8 @@ let movies = [
   },
 ];
 
+// Solution with sort().map().slice()
+
 function orderAlphabetically(arr) {
   let clone = [...arr];
   let result = clone
@@ -231,6 +233,24 @@ function orderAlphabetically(arr) {
     .slice(0, 2);
 
   return result;
+}
+
+console.log(orderAlphabetically(movies));
+
+//Solution with function and without chaning.
+
+function orderAlphabetically(arr) {
+  let clone = [...arr];
+  clone.sort(function (movie1, movie2) {
+    return movie1.title.localeCompare(movie2.title);
+  });
+
+  let titles = clone.map(function (movie) {
+    return movie.title;
+  });
+  let firstTitles = titles.slice(0, 2);
+
+  return firstTitles;
 }
 
 console.log(orderAlphabetically(movies));
