@@ -251,3 +251,24 @@ function firstName2(arr) {
 
 console.log(firstName2(users)); /*['Bradley',  'Chloe','Jonathan', 'Michael',
 'Robert',   'Wes','Zach']*/
+
+//NOTE: Using spread operator.
+
+let arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+let newArr = [...arr];
+console.log(newArr); //[10,20,30,40,50,60,70,80,90,100];
+
+let object = {
+  firstName: 'Tatiana',
+  lastName: 'Vargas',
+};
+
+console.log(object);
+
+let newCopyObj = { ...object };
+console.log(newCopyObj); //{ firstName: 'Tatiana', lastName: 'Vargas' }
+
+//Passing a value by reference.
+newCopyObj.firstName = 'Luis';
+console.log(newCopyObj); //{ firstName: 'Luis', lastName: 'Vargas' }
