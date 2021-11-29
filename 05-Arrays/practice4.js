@@ -203,3 +203,27 @@ function sumRate(arr) {
 }
 
 console.log(sumRate(movies)); //27.5
+
+//NOTE: Changin the time : string value to number using split, replace and concatenation.
+
+let duration = '2h 22min';
+
+let newArr = duration.split(' ', 2);
+console.log(newArr); //['2h','22min']
+
+let newArr2 = newArr[0].replace('h', '');
+console.log(newArr2); //2
+
+let newArr3 = newArr[1].replace('min', '');
+
+console.log(newArr3); //22
+
+let result = newArr2 * 60;
+console.log(result); //120
+
+let result2 = Number.parseInt(newArr3);
+
+console.log(result2); //22
+
+let finalArr = result + result2;
+console.log(finalArr); //142 min.
