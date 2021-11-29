@@ -272,3 +272,42 @@ console.log(newCopyObj); //{ firstName: 'Tatiana', lastName: 'Vargas' }
 //Passing a value by reference.
 newCopyObj.firstName = 'Luis';
 console.log(newCopyObj); //{ firstName: 'Luis', lastName: 'Vargas' }
+
+//NOTE: CHANGE THE TEMP VALUE AN LOG TO THE CONSOLE THE NEW VALUE.
+
+let patients = [
+  {
+    name: 'John',
+    temp: 38,
+  },
+  {
+    name: 'Eva',
+    temp: 39,
+  },
+  {
+    name: 'Ocelot',
+    temp: 40,
+  },
+  {
+    name: 'Snake',
+  },
+];
+
+function convertPatientsToFar(patiens) {
+  let patientsInFar = patients.map(function (patient) {
+    let patientClone = { ...patient };
+    console.log(`Patient ${patientClone.name} has temp ${patientClone.temp}`);
+
+    if (patientClone.temp !== undefined)
+      patientClone.temp = patient.temp * (9 / 5) + 32;
+
+    return patientClone;
+  });
+
+  return patientsInFar;
+}
+
+let patientsInFar = convertPatientsToFar(patients);
+
+console.log(patients);
+console.log(patientsInFar);
