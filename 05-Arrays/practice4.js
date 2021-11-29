@@ -227,3 +227,27 @@ console.log(result2); //22
 
 let finalArr = result + result2;
 console.log(finalArr); //142 min.
+
+//NOTE: Exercise using Map() = We have an array of objects but we need a new array with only the firstName of each object.
+
+let users = [
+  { firstName: 'Bradley', lastName: 'Bouley', role: 'Full Stack Resident' },
+  { firstName: 'Chloe', lastName: 'Alnaji', role: 'Full Stack Resident' },
+  { firstName: 'Jonathan', lastName: 'Baughn', role: 'Enterprise Instructor' },
+  { firstName: 'Michael', lastName: 'Herman', role: 'Lead Instructor' },
+  { firstName: 'Robert', lastName: 'Hajek', role: 'Full Stack Resident' },
+  { firstName: 'Wes', lastName: 'Reid', role: 'Instructor' },
+  { firstName: 'Zach', lastName: 'Klabunde', role: 'Instructor' },
+];
+
+let firstName = users.map(f => f.firstName);
+console.log(firstName);
+/*['Bradley',  'Chloe','Jonathan', 'Michael',
+'Robert',   'Wes','Zach']*/
+
+function firstName2(arr) {
+  return arr.map(f => f.firstName);
+}
+
+console.log(firstName2(users)); /*['Bradley',  'Chloe','Jonathan', 'Michael',
+'Robert',   'Wes','Zach']*/
