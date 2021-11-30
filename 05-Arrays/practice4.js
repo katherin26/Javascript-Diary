@@ -311,3 +311,58 @@ let patientsInFar = convertPatientsToFar(patients);
 
 console.log(patients);
 console.log(patientsInFar);
+
+//NOTE: ARRAY AND OBJECTS ACCESING VALUES.
+
+let names = ['Isa', 'Ded', 'LLi'];
+
+let pet = {
+  name: 'Isa',
+  age: 5,
+  weight: 7,
+};
+
+console.log(names);
+//Access property name from object pet using . and [].
+console.log(pet.name); //Isa
+
+console.log(pet['name']); //Isa
+
+//Array of objects
+
+let petsArray = [
+  { name: 'Isa', age: 5 },
+  { name: 'Lele', age: 6 },
+  { name: 'Lily', age: 7 },
+];
+
+// This prints entire object
+console.log(petsArray[0]); // This prints the age property in the object at index 0.
+
+console.log(petsArray[0].age); // Esto imprime solo el valor que se encuentra en age lo cual es 5.
+
+//ARRAY OF OBJECTS WITH OTHER OBJECT INSIDE.
+
+let books = [
+  {
+    name: 'You dont know JS',
+    author: {
+      name: 'Kyle Simpson',
+    },
+  },
+  {
+    name: 'Light Functional Programming',
+    author: {
+      name: 'Kyle Simpson',
+    },
+  },
+];
+
+// To print first book
+console.log(books[0]); //This print the object in the position 0.
+
+// To print first book name
+console.log(books[0].name); //You don't know JS
+
+// To print first book author name
+console.log(books[0].author.name); //In this case = we access to array in position 0 , then the propertie author and then the propertie name and the result is Kyle Simpson.
