@@ -15,3 +15,11 @@ For of automatically iterates over the values of an array, so you don't need to 
 for (let name of names) {
   console.log(name);
 } //Pepe Giro Lulu
+
+/*Method 3 : Using For In Loop
+For In automatically iterates over the keys of an array.
+*/
+
+for (let index in names) {
+  console.log(names[index]);
+} //Pepe Giro Lulu
