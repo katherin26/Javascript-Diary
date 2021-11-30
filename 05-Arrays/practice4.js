@@ -366,3 +366,37 @@ console.log(books[0].name); //You don't know JS
 
 // To print first book author name
 console.log(books[0].author.name); //In this case = we access to array in position 0 , then the propertie author and then the propertie name and the result is Kyle Simpson.
+
+//Other object.
+
+let people = [
+  {
+    name: 'Melis',
+    pets: [{ name: 'Nene', age: 1 }],
+  },
+  {
+    name: 'Santi',
+    pets: [{ name: 'Bebe', age: 3 }],
+  },
+  {
+    name: 'Kitty',
+    pets: [
+      { name: 'Pooh', age: 2 },
+      { name: 'Tiger', age: 5 },
+      { name: 'Lulu', age: 3 },
+    ],
+  },
+];
+
+// To access the third person object.
+
+console.log(people[2]);
+
+// To access the third person's name
+
+console.log(people[2].name);
+
+// To access the third person's pets
+// this prints the array of pets
+
+console.log(people[2].pets); //All the pets Array.
