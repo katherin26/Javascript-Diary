@@ -23,3 +23,12 @@ For In automatically iterates over the keys of an array.
 for (let index in names) {
   console.log(names[index]);
 } //Pepe Giro Lulu
+
+/*Method 4 : Using forEach()
+Executes the given function for every element in the array.
+*/
+
+names.forEach(function (cur, i) {
+  console.log(cur); //Pepe Giro Lulu
+  console.log(i); //0 1 2
+});
