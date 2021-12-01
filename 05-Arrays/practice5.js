@@ -104,3 +104,8 @@ let evenNumbers2 = nums.filter(function (num) {
 });
 
 console.log(evenNumbers2);
+
+/*NOTE: Bonus, using shorthand syntax with arrow function, it does exactly the same. */
+
+let evenNumber3 = nums.filter(n => n % 2 === 0);
+console.log(evenNumber3);
