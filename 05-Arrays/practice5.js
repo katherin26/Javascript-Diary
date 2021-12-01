@@ -63,3 +63,27 @@ function converttoUpperCase(arr) {
   return newObj;
 }
 console.log(converttoUpperCase(patients));
+
+/*NOTE: ARRAY FILTERING 
+Filtering an array means checking that every element meets a certain condition and the add these elements to other array.
+ */
+
+//Array of numbers.
+
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+/*Get even numbers.
+Method 1 : Use for Loop and create a new array to store even numbers.
+
+This block executess for every element in the array.
+First check number is even using mod operator.
+If num at index i has a mod of 2 equal 0, it meas is an even number.
+Then add number at index i to evenNumbers1 array.
+*/
+
+let evenNumbersNew = [];
+for (let i = 0; i < nums.length; i++) {
+  if (nums[i] % 2 === 0) evenNumbersNew.push(nums[i]);
+}
+
+console.log(evenNumbersNew);
