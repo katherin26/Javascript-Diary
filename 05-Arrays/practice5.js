@@ -140,3 +140,15 @@ for (let pet of pets) {
 }
 
 console.log(petsWithUpperCaseName);
+
+/*Method 2 : Using Array.prototype.map()
+Executes the given function for every element in the array, The result of every function call will be added to the result array.
+ */
+
+let petsWithUpperCaseName = pets.map(function (pet) {
+  let petClone = { ...pet };
+  petClone.name = petClone.name.toUpperCase();
+  return petClone;
+});
+
+console.log(petsWithUpperCaseName);
