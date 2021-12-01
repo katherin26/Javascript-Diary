@@ -109,3 +109,34 @@ console.log(evenNumbers2);
 
 let evenNumber3 = nums.filter(n => n % 2 === 0);
 console.log(evenNumber3);
+
+/*NOTE: ARRAY MAPPING 
+Mapping an array means processing every element using a mapping function, the return value of the mapping function will
+be added to a result array.
+An array of pet objects.
+*/
+
+//An array of pet objects
+
+let pets = [
+  { name: 'Deda', age: 2 },
+  { name: 'Bisac', age: 2 },
+  { name: 'Julieth', age: 2 },
+];
+
+/*First : Create a new array with the same pets but with their names in uppercase.
+Clone object to avoid modifying the original.
+Convert name to uppercase and reassign it to the name property.
+Once the processing is finished, add the processed element to the result array.
+*/
+
+//Method 1 : Using for of Loop.
+
+let petsWithUpperCaseName = [];
+for (let pet of pets) {
+  let petClone = { ...pet };
+  petClone.name = petClone.name.toUpperCase();
+  petsWithUpperCaseName.push(petClone);
+}
+
+console.log(petsWithUpperCaseName);
