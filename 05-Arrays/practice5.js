@@ -32,3 +32,34 @@ names.forEach(function (cur, i) {
   console.log(cur); //Pepe Giro Lulu
   console.log(i); //0 1 2
 });
+
+//NOTE: Using map change the name to uppercase.
+
+let patients = [
+  {
+    name: 'John',
+    temp: 38,
+  },
+  {
+    name: 'Eva',
+    temp: 39,
+  },
+  {
+    name: 'Ocelot',
+    temp: 40,
+  },
+  {
+    name: 'Snake',
+  },
+];
+
+function converttoUpperCase(arr) {
+  let newObj = arr.map(function (paciente) {
+    let objClone = { ...paciente };
+    objClone.name = objClone.name.toUpperCase();
+
+    return objClone;
+  });
+  return newObj;
+}
+console.log(converttoUpperCase(patients));
