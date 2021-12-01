@@ -87,3 +87,20 @@ for (let i = 0; i < nums.length; i++) {
 }
 
 console.log(evenNumbersNew);
+
+/*NOTE: METHOD 2 
+Using Array.prototype.filter().
+
+The given function will be executed for every element in the array, when the function results true the element will be 
+added to the result array.
+*/
+
+let evenNumbers2 = nums.filter(function (num) {
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
+console.log(evenNumbers2);
