@@ -84,7 +84,7 @@ let persona = {
 persona.printName1();
 persona.printName2(); //undefined por el lexical scope,
 
-//Objects adding keys and values and copy by reference.
+//NOTE: Objects adding keys and values and copy by reference.
 
 let object = {
   name: 'Teo',
@@ -95,3 +95,20 @@ let object = {
 object.new = 'New Position'; //new : "New Position"
 object.inventor = 'Albert'; //inventor : "ALbert"
 let object1 = { ...object }; //This is a copy by reference.
+
+//NOTE: OBJECT CONSTRUCTOR
+
+function Book(title, author, year) {
+  this.title = title;
+  this.author = author;
+  this.year = year;
+}
+
+const book = new Book('Hippie', 'Paulo Coelho', '2021');
+console.log(book);
+const book2 = new Book('Hip', 'Coel', '2020');
+console.log(book2);
+
+//NOTE: The instanceof operator tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. The return value is a boolean value.
+
+book instanceof Book; //True
