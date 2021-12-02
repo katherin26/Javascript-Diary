@@ -152,3 +152,20 @@ let petsWithUpperCaseName = pets.map(function (pet) {
 });
 
 console.log(petsWithUpperCaseName);
+
+/*NOTE: Given a two-dimensional array of integers, return the flattened version of the array with all the integers
+in the sorted (ascending) order.
+
+Example : 
+
+Given [[3,2,1],[4,6,5],[],[9,7,8]]
+
+Your function should return [1,2,3,4,5,6,7,8,9]
+*/
+
+const numbs = [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]];
+
+for (let i = 0; i < numbs.length; i++) {
+  numbs[i].sort();
+}
+console.log(numbs);
