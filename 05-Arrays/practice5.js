@@ -169,3 +169,25 @@ for (let i = 0; i < numbs.length; i++) {
   numbs[i].sort();
 }
 console.log(numbs);
+
+/*SOLUTION WITH FOR LOOP*/
+
+function numb(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      newArr.push(arr[i][j]);
+    }
+  }
+  return newArr.sort((a, b) => a - b);
+}
+console.log(numb([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]]));
+
+//ARRAY FLAT
+
+function numb1(arr) {
+  let newArr = arr.flat();
+  return newArr;
+}
+
+console.log([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]].flat());
