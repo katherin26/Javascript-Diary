@@ -125,3 +125,17 @@ const book = Object.create(Book2);
 book.author = 'PAPA NOEL';
 book.title = 'NAVIDAD';
 console.log(book.summary());
+
+//NOTE: CLASS - special functions.
+
+function Book(name) {
+  this.name = name;
+}
+
+function HorrorBook(name) {
+  Book.call(this, name);
+}
+
+HorrorBook.prototype = Object.create(Book.prototype);
+const book3 = new HorrorBook('The Alchemist');
+console.log(book3);
