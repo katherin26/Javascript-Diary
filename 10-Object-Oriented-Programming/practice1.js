@@ -112,3 +112,16 @@ console.log(book2);
 //NOTE: The instanceof operator tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. The return value is a boolean value.
 
 book instanceof Book; //True
+
+//NOTE: Object.create() , Object.create(proto,[propertiesObject]);
+
+const Book2 = {
+  summary: function () {
+    console.log(`${this.title} is written by ${this.author}.`);
+  },
+};
+
+const book = Object.create(Book2);
+book.author = 'PAPA NOEL';
+book.title = 'NAVIDAD';
+console.log(book.summary());
