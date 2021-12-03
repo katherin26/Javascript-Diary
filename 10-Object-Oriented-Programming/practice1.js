@@ -178,3 +178,40 @@ When you add new, it make a constructor call instead of a regular invokation cal
  */
 let myFirstPet = new Pet('Bambi2', 6);
 console.log(myFirstPet); //Pet { name: 'Bambi2', age: 6 }
+
+/*Method 3 : Using the class syntax. 
+
+This function behaves exactly the same as the constructor function in method 2.
+*/
+
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  //and you can also add methods.
+
+  getName() {
+    return this.name;
+  }
+
+  sayWoofWoof() {
+    return `Woof Woof! I am ${this.name}`;
+  }
+}
+
+//As is method 2, use new to create a new object.
+
+let mySecondPet = new Animal('Ada', 2);
+
+//This prints name.
+
+console.log(mySecondPet.name);
+
+//This invokes mySecondPet method sayWoofWoof.
+
+console.log(mySecondPet.sayWoofWoof());
+
+/*You could have implemented methods in method 2, but that is a little bit more difficult, you need to use prototypes
+ that way many people prefer method 3, it is easy to implement methods, encapsulate and inherit methods from other 
+ classes. */
