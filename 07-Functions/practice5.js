@@ -122,3 +122,15 @@ let division2 = divide(10, 4, function toNumberWithTwoDecimals(number) {
 });
 
 console.log(`Invoking divide with method 2 : ${division2}`);
+
+/*Method 3 : Passing anonymous function as third parameter
+Pass a function without name as third parameter internally javascript assign this anonymous function to the parameter
+named formatterFunction.
+*/
+
+let division3 = divide(10, 4, function (number) {
+  let result = number.toFixed(2);
+  return result;
+});
+
+console.log(`Invoking divide with method 3 : ${division3}`);
