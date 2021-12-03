@@ -151,3 +151,30 @@ let pet = {
 
 //This prints pet's  name
 console.log(pet.name); //Bambi
+
+/*Method 2 : Using Constructor Function.
+This function is called constructor function because it constructs objects in this case it creates an object with two properties name and age, such object represents a pet in order for this object to return an object you need to call it with new. 
+'this' is a keyword that serves as a placeholder for the object being constructed and it's the one returned at the end.
+Under the hood this is equal to {}.
+
+Behind the scenes this = {} is like pet = {} in method 1.
+
+It will return the new object created even though there is no return here, If you add a return value, it will ignore whatever you do to 'this' (don't do that, but if you want to experiment.)
+
+Remember to call it with new if you call it without new, it will act as a regular function and it will return undefined because the Pet function does not have a return value.
+
+//Wrong way 
+
+let incorrectWay = Pet('Isaac',5); undefined.
+*/
+
+function Pet(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+/*Right way, 
+When you add new, it make a constructor call instead of a regular invokation call.
+ */
+let myFirstPet = new Pet('Bambi2', 6);
+console.log(myFirstPet); //Pet { name: 'Bambi2', age: 6 }
