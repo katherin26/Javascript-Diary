@@ -171,3 +171,94 @@ Se agregan a la etiqueta en css para modificar uno o varios elementos.
 - Viewport
 - Media queries
 - Grid
+
+# **JAVASCRIPT QUESTIONS AND ANSWERS**
+
+22. Write a function that prints "Hello world".
+
+```
+Function sayHello(){
+    return `Hello`;
+}
+console.log(sayHello());
+
+
+```
+
+23. Write a function that receives two numbers and returns their sum.
+
+```
+function calcSum(a,b){
+    return a + b;
+}
+console.log(calcSum(1,2));
+
+```
+
+24. Write a function that receives an array of numbers and returns the sum , example `[1,2,3]` should return 6.
+
+```
+function calcSum(arr){
+    return arr.reduce((el,acc) => el + acc);
+}
+console.log(calcSum([1,2,3]));
+
+```
+
+25. Loop through the following array and print each value using Array.forEach().
+
+```
+let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October','November', 'December'];
+months.forEach(el => console.log(el));
+```
+
+26. Loop through the following array and print each value using a regular "For loop"
+
+```
+let days = ['Monday', 'Martes', 'Wednesday', 'Thursday', 'Friday'];
+
+for(let i = 0; i < days.length; i++){
+    console.log(days[i]);
+}
+
+```
+
+27. Loop through the following array and print each value using a "For In" loop.
+
+```
+let colors = ['Yellow', 'Blue', 'Red'];
+
+for(const value in colors){
+    console.log(colors[value]);
+}
+
+```
+
+28. Loop through the following array and print each value using a "For Of" loop.
+
+```
+let ages = [10,20,30,40,50];
+for (const value of ages){
+    console.log(value);
+}
+```
+
+29. Given a list of people, print whether people are allowed into the party based on age, if a person is younger
+    than 18, you should print their name along with a message that says "Not Allowed", if person is 18 or older, do the same but the message is "Allowed".
+
+let people = [
+{name: 'bambi', age: 32},
+{name: 'bambi2', age: 33},
+{name: 'bambi3', age: 34},
+{name: 'bambi4', age: 35},
+{name: 'bambi5', age: 36},
+{name: 'bambi6', age: 37},
+];
+
+```
+for (let i = 0; i < people.length; i++){
+    const allowed = people[i].age >= 18 ? "Allowed" : "Not Allowed";
+    console.log(`${people[i].name} is ${allowed});
+}
+
+```
