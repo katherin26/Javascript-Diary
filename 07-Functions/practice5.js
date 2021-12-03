@@ -40,3 +40,26 @@ console.log(`5 x 5 =${multiply(5, 5)}`); // 5 x 5 = 25
 //You can also use the old concatenation a method.
 
 console.log(`5 x 5 =` + multiply(5, 5)); // 5 x 5 = 25
+
+/*The two examples above work as expected, but we did not store the returned value if you need to use the returned 
+value later, for example to do other math operations, you need to store it in a variable.
+To save the result, assign the returned value to a variable now we can use output somewhere else
+*/
+
+let output = multiply(input1, input2); //returns 70
+
+//Use the returned value for other operation
+
+let sum = output + 30; //100
+
+/*Now let's see how we can represent the same function in different ways .
+Create a function that sums up two numbers.
+
+Method 1 : Using function declaration, remember function declaration are hoisting.
+*/
+
+function sum1(number1, number2) {
+  return number1 + number2;
+}
+
+console.log(`Invoking sum1(2,2) result is ${sum1(2, 2)}`); //4
