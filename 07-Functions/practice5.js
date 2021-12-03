@@ -63,3 +63,11 @@ function sum1(number1, number2) {
 }
 
 console.log(`Invoking sum1(2,2) result is ${sum1(2, 2)}`); //4
+
+/*Method 2 : Using function expression with anonymous function. */
+
+let sum2 = function (number1, number2) {
+  return number1 + number2;
+};
+
+console.log(`Invoking sum2 (4,4) result is : ${sum1(4, 4)}`); //8
