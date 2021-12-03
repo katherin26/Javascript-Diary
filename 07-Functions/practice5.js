@@ -112,3 +112,13 @@ We don't invoke it.
 
 let division1 = divide(10, 4, toNumberWithTwoDecimals);
 console.log(`Invoking divide with method 1: ${division1}`);
+
+//Method 2 : Passing formatterFunction directly as the third parameter.
+/*Here we pass the function declaration directly, internally javascript assign this to the parameter named formatterFunction. */
+
+let division2 = divide(10, 4, function toNumberWithTwoDecimals(number) {
+  let result = number.toFixed(2);
+  return result;
+});
+
+console.log(`Invoking divide with method 2 : ${division2}`);
