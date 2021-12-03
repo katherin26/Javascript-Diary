@@ -134,3 +134,12 @@ let division3 = divide(10, 4, function (number) {
 });
 
 console.log(`Invoking divide with method 3 : ${division3}`);
+
+//Method 4 : Passing arrow function as third parameter.
+
+let division4 = divide(10, 4, number => {
+  let result = number.toFixed(2);
+  return result;
+});
+
+console.log(`Invoking divide with method 4 : ${division4}`);
