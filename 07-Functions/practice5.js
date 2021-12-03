@@ -71,3 +71,13 @@ let sum2 = function (number1, number2) {
 };
 
 console.log(`Invoking sum2 (4,4) result is : ${sum1(4, 4)}`); //8
+
+//Method 3 : Using function expression with arrow function.
+
+let sum3 = (number1, number2) => {
+  return number1 + number2;
+};
+
+//You can use shorter version (number1, number2) => number1 + number2
+
+console.log(`Invoking sum3(5,5) result is: ${sum1(5, 5)}`);
