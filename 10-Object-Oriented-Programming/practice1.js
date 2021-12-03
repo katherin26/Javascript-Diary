@@ -139,3 +139,15 @@ function HorrorBook(name) {
 HorrorBook.prototype = Object.create(Book.prototype);
 const book3 = new HorrorBook('The Alchemist');
 console.log(book3);
+
+//NOTE: Creating Object.
+
+//Method 1: Literal Object.
+
+let pet = {
+  name: 'Bambi',
+  age: 6,
+};
+
+//This prints pet's  name
+console.log(pet.name); //Bambi
