@@ -81,3 +81,34 @@ let sum3 = (number1, number2) => {
 //You can use shorter version (number1, number2) => number1 + number2
 
 console.log(`Invoking sum3(5,5) result is: ${sum1(5, 5)}`);
+
+/*Sometimes a function can receive another function as parameter and invoke that function inside lets create a 
+function that receives three parameters two numbers and a formatter function which will format the end result.
+*/
+
+function divide(number1, number2, formatterFunction) {
+  //Divide first
+  let division = number1 / number2;
+
+  /*The format division with formatterFunction update division value with the returned value of formatterFunction*/
+  division = formatterFunction(division);
+  return division;
+}
+
+/*There 4 ways to invoke divide  
+Method 1 : formatterFunction as a declared function (can also be a function expression)
+let toNumberWithTwoDecimals = function()...*/
+
+//Declare formatterFunction first
+
+function toNumberWithTwoDecimals(number) {
+  let result = number.toFixed(2);
+  return result;
+}
+
+/*Invoke divide function with the three arguments it expects, Notice that we pass only the functions name (toNumberWithTwoDecimals)
+We don't invoke it.
+*/
+
+let division1 = divide(10, 4, toNumberWithTwoDecimals);
+console.log(`Invoking divide with method 1: ${division1}`);
