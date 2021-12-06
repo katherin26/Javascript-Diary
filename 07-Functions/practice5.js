@@ -159,3 +159,12 @@ function toNumberWithTwoDecimals(number) {
 
 let resultDivision1 = divide(10, 4, toNumberWithTwoDecimals);
 console.log(resultDivision1); //2.5
+
+//NOTE: METHOD 2 = Passing a function as a argument.
+
+let resultDivision2 = divide(10, 4, function toNumberWithTwoDecimals(number) {
+  let result = number.toFixed(2);
+  return result;
+});
+
+console.log(resultDivision2); //2.5
