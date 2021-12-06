@@ -225,3 +225,14 @@ let animal = {
 console.log(animal); //{name: 'Sasha', age: 5}
 console.log(animal.name); //Sasha
 console.log(animal.age); //5
+
+//NOTE: With a function and the object constructor.
+
+function Pet(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+let firstPet = new Pet(`Isa`, 5);
+let secondPet = new Pet(`Ada`, 2);
+console.log(firstPet, secondPet); //Pet { name: 'Isa', age: 5 } Pet { name: 'Ada', age: 2 }
