@@ -236,3 +236,33 @@ function Pet(name, age) {
 let firstPet = new Pet(`Isa`, 5);
 let secondPet = new Pet(`Ada`, 2);
 console.log(firstPet, secondPet); //Pet { name: 'Isa', age: 5 } Pet { name: 'Ada', age: 2 }
+
+// NOTE: Classes example using constructor , super and methods.
+
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  getName() {
+    return this.name;
+  }
+
+  getAge() {
+    return this.age;
+  }
+}
+
+class Dog extends Animal {
+  constructor(name, age, breed) {
+    super(name, age);
+    this.breed = breed;
+  }
+
+  sayWoofWoof() {
+    return `Woof Woof! My name is ${this.name} and I am ${this.breed}`;
+  }
+}
+
+let dog1 = new Dog('Ada', 2, 'Poodle');
+console.log(dog1.sayWoofWoof()); //Woof Woof! My name is Ada and I am Poodle.
