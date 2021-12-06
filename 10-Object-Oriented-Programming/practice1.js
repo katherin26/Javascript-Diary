@@ -215,3 +215,13 @@ console.log(mySecondPet.sayWoofWoof());
 /*You could have implemented methods in method 2, but that is a little bit more difficult, you need to use prototypes
  that way many people prefer method 3, it is easy to implement methods, encapsulate and inherit methods from other 
  classes. */
+
+//NOTE: Print the value of the object.
+let animal = {
+  name: 'Sasha',
+  age: 5,
+};
+
+console.log(animal); //{name: 'Sasha', age: 5}
+console.log(animal.name); //Sasha
+console.log(animal.age); //5
