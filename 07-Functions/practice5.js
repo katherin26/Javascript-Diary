@@ -169,10 +169,19 @@ let resultDivision2 = divide(10, 4, function toNumberWithTwoDecimals(number) {
 
 console.log(resultDivision2); //2.5
 
-//METHOD 3
+//NOTE: METHOD 3
 let resultDivision3 = divide(10, 4, function (num) {
   let result = num.toFixed(2);
   return result;
 });
 
 console.log(resultDivision3); //2.5
+
+//NOTE: METHOD 4 = with arrow function
+
+let resultDivision4 = divide(10, 4, number => {
+  let result = number.toFixed(2);
+  return result;
+});
+
+console.log(resultDivision4); //2.5
