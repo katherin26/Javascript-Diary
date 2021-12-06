@@ -143,3 +143,19 @@ let division4 = divide(10, 4, number => {
 });
 
 console.log(`Invoking divide with method 4 : ${division4}`);
+
+//NOTE: Function katas (passing a function as a parameter)
+
+function divide(n1, n2, formatterFunction) {
+  let division = n1 / n2;
+  divsion = formatterFunction(division);
+  return division;
+}
+
+function toNumberWithTwoDecimals(number) {
+  let result = number.toFixed(2);
+  return result;
+}
+
+let resultDivision1 = divide(10, 4, toNumberWithTwoDecimals);
+console.log(resultDivision1); //2.5
