@@ -374,3 +374,32 @@ Exist caniuse.com , and this tells you exactly which browsers support which feat
 - CSS Grid : Is more of a layout tool for the entire page. While Flexbox excels in laying out items along a single axis, Grid is better for layouts with both horizontal and vertical axes.
 
 ```
+
+# **CSS PREPROCESSORS**
+
+42. Do you use any CSS preprocessors, and which do you prefer ??
+
+```
+In my case SCSS
+```
+
+43. What is file splitting and why should you use it?
+
+```
+File splitting helps organize your CSS into multiple files, decreasing page load time and making things easier to manage. If you’re working with any of the preprocessors above, you can start splitting up your files.
+
+```
+
+44. What are variables used for??
+
+```
+When you are using the same color or font-size for example it is very usable because you only used the name of the variable.
+```
+
+45. What are functions / mixins??
+
+```
+Is a way of adding a number of styles, based on a particular input parameter.
+The @mixin directive lets you create CSS code that is to be reused throughout the website.
+
+```
