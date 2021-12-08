@@ -262,3 +262,115 @@ for (let i = 0; i < people.length; i++){
 }
 
 ```
+
+30. Could you describe the different kinds of selectors??
+    Selects the content you want to style :
+
+```
+   - tags references an HTML tag.
+   - A class references the class attribute on an HTML tag.
+   - ID references the id attribute on an HTML tag.
+
+```
+
+31. Explain the three main ways to target elements.??
+
+```
+By tag
+By class
+By ID
+```
+
+32. How do you target something inside or around another element??
+
+```
+Using Combinators.
+```
+
+33. What are attributes and how are they used??
+
+```
+There are a few that apply to all tags, like class and id, but a lot of tags have their own ones.
+For example : input tags can have a type (text, number, radio,etc) and a tags can have href.
+You can target elements with particular attributes by using square brackets:
+[attribute=”value’] for example, you can target all input fields that are of type radio like so:
+input[type=”radio”]{background-color: #eee;}
+
+```
+
+# **SPECIFICITY**
+
+34. Can you describe the rules around specificity??
+
+```
+Type selectors and pseudo-elements.
+Class selectors, attributes selectors and pseudo-classes.
+ID selectors.
+
+NOTE: the more selectors you use, the higher it ranks in terms of specificity
+example: button.primary[target=”_blank”] is more specific than simply button.
+```
+
+35. Should you use !important??
+
+```
+No, it’s dangerous and you need to override every single rule.
+
+```
+
+36. What’s your preferred way of sizing fonts??
+
+```
+em and rem because they are scalable.
+```
+
+37. What are web safe fonts and fallback fonts??
+
+```
+You should choose a web safe fallback font to display, followed by a generic font family. If your fallback font doesn’t display either, the browser can pick a generic font in the sans-serif family.
+```
+
+38. How would you use media queries in a mobile-first approach??
+
+### **mobile styles**
+
+```
+body{
+font-size:1em;
+}
+
+
+```
+
+### **Desktop styles**
+
+```
+@media only screen and (min-width: 768px){
+   body{
+            font-size:1.5em;
+  }
+}
+
+```
+
+# **BROWSERS**
+
+39. How do you handle browser differences in your user base?
+
+```
+@supports query in CSS can be very useful to scan if the user’s current browser has a certain feature.
+```
+
+40. Do you use any tools for browser support?
+
+```
+Exist caniuse.com , and this tells you exactly which browsers support which features , including CSS and Javascript.
+```
+
+41. Have you used Flexbox and CSS Grid before?? What are the differences between them??
+
+```
+- Flexbox: Is useful especially for smaller areas within the site.
+- CSS Grid : Is more of a layout tool for the entire page. While Flexbox excels in laying out items along a single axis, Grid is better for layouts with both horizontal and vertical axes.
+
+```
