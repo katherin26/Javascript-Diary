@@ -18,3 +18,16 @@ function unique_in_order(sequence) {
 }
 
 console.log(unique_in_order('AAAABBBCCDAABBB'));
+
+//WITHOUT FUNCTION
+
+const str = 'AAAABBBCCDAABBB';
+
+const result = str.split('');
+const filtered = result.filter(function (word, index) {
+  if (result.indexOf(word) === index) {
+    return true;
+  }
+});
+
+console.log(filtered);
