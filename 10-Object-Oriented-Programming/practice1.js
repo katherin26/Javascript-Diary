@@ -271,3 +271,39 @@ console.log(dog1.sayWoofWoof()); //Woof Woof! My name is Ada and I am Poodle.
 
 let resultNewDate = new Date(1997, 2, 14);
 console.log(`The day is : ${resultNewDate.getDay()}`); //5
+
+/*NOTE: Write a Javascript program to display the current day and time in the following format.
+
+Sample Output : Today is : Tuesday.
+Current Time is : 10PM : 30 : 38
+*/
+
+let weekdays = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+
+function currentDay(arr) {
+  let currentDay = new Date();
+  let day = currentDay.getDay();
+  let hours = currentDay.getHours();
+
+  if (hours > 12) {
+    hours = hours - 12;
+    hours = `${hours} PM`;
+  } else {
+    hours = `${hours} AM`;
+  }
+
+  let minutes = currentDay.getMinutes();
+  let seconds = currentDay.getSeconds();
+
+  return `Today is : ${weekdays[day]} ${hours}: ${minutes} : ${seconds}`;
+}
+
+console.log(currentDay());
