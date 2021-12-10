@@ -266,3 +266,8 @@ class Dog extends Animal {
 
 let dog1 = new Dog('Ada', 2, 'Poodle');
 console.log(dog1.sayWoofWoof()); //Woof Woof! My name is Ada and I am Poodle.
+
+//NOTE: Print the day using new Date and .getDay()
+
+let resultNewDate = new Date(1997, 2, 14);
+console.log(`The day is : ${resultNewDate.getDay()}`); //5
