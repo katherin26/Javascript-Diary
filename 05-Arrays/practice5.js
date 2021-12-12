@@ -209,3 +209,15 @@ function myAlphabetLength(arr) {
 }
 
 myAlphabetLength(myAlphabet);
+
+/*NOTE: Print the index and the value using a function and a for Loop */
+
+let planet = ['Tierra', 'Marte', 'Jupiter', 'Urano', 'Neptuno', 'pluton'];
+
+function printValue(arr) {
+  for (let i = 0; i < planet.length; i++) {
+    console.log(`El index ${i} is ${planet[i]}`);
+  }
+}
+
+printValue(planet);
