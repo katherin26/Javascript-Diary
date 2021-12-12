@@ -191,3 +191,21 @@ function numb1(arr) {
 }
 
 console.log([[3, 2, 1], [4, 6, 5], [], [9, 7, 8]].flat());
+
+/* NOTE: How many letters exist within the array.*/
+
+let myAlphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+console.log(myAlphabet.length);
+
+function myAlphabetLength(arr) {
+  console.log(arr.length);
+  if (arr.length < 4) {
+    console.log(`This arr contains less than 4`);
+  } else {
+    console.log(`This arr contains more than 4`);
+  }
+  return;
+}
+
+myAlphabetLength(myAlphabet);
