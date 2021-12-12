@@ -237,3 +237,9 @@ function printTypeof(arr) {
 }
 
 printTypeof(arrData);
+
+/*NOTE: Print the value using a forEach(). */
+
+let myArr = [1, 2, 'One', true];
+
+myArr.forEach(el => console.log(el));
