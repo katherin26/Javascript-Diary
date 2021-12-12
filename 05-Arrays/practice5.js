@@ -221,3 +221,19 @@ function printValue(arr) {
 }
 
 printValue(planet);
+
+/*NOTE: Print the index and the value using a function, a for Loop and the typeof */
+
+let arrData = ['name', 29, true, null, undefined];
+
+function printTypeof(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(
+      `The index is : ${i}, The value is : ${
+        arr[i]
+      } and the data Type is ${typeof arr[i]}`
+    );
+  }
+}
+
+printTypeof(arrData);
