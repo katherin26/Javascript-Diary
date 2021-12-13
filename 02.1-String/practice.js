@@ -192,3 +192,28 @@ The letter f has 1 Ocurrency.
 cceee
 
 */
+
+/*NOTE:  We need the ability to divide an unknown integer into a given number of even parts — or at least as even as they can be. The sum of the parts should be the original value, but each part should be an integer, and they should be as close as possible.
+
+ Example code:
+
+splitInteger(20, 6)  // returns [3, 3, 3, 3, 4, 4]
+Complete the function so that it returns an array of integer representing the parts. Ignoring the order of the parts, there is only one valid solution for each input to your function!
+
+(Also, there is no reason to test for edge cases: the input to your function will always be valid for this kata.)*/
+
+let splitInteger = function (num, parts) {
+  let base = Math.floor(num / parts);
+  let answer = [];
+  //let aditional = num - (parts*base);
+  let additional = num % parts;
+  for (let i = 0; i < parts; i++) {
+    answer[i] = base;
+  }
+  for (let i = 1; i <= additional; i++) {
+    answer[parts - 1 - i] += 1;
+  }
+  return answer;
+};
+
+console.log(splitInteger(20, 6));
