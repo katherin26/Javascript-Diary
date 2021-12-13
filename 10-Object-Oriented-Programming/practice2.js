@@ -28,3 +28,25 @@ if (person1.isAdult()) {
 } //You can have a beer!!
 
 console.log(isAdult); //true
+
+//Second exercise using this
+
+class Person2 {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  isAdult() {
+    if (this.age >= 18) {
+      return `${this.name} You can have a beer because your age is ${this.age} !!`;
+    } else {
+      return `${this.name} You cannot have a beer because your age is ${this.age}!!`;
+    }
+  }
+}
+
+let person3 = new Person2('Snorlax', 45);
+console.log(person3); //Person2 { name: 'Snorlax', age: 45 }
+
+console.log(person3.isAdult()); //Snorlax You can have a beer because your age is 45 !!
