@@ -269,3 +269,17 @@ function includeAword(arr, arr2) {
 }
 
 includeAword(food, food1);
+
+//Using includes in three variables.
+let values1 = ['Apple', 1, false];
+let values2 = ['Fries', 2, true];
+let values3 = ['Mars', 9, 'Apple'];
+
+for (let i = 0; i < values1.length; i++) {
+  if (values2.includes(values1[i])) {
+    console.log(`${values[i]}`);
+  }
+  if (values3.includes(values1[i])) {
+    console.log(`${values1[i]}`);
+  }
+} //Apple
