@@ -243,3 +243,14 @@ printTypeof(arrData);
 let myArr = [1, 2, 'One', true];
 
 myArr.forEach(el => console.log(el));
+
+/*NOTE: Find the repeated value inside an array. */
+
+let course1 = ['Math', 'English', 'Programming'];
+let course2 = ['Geography', 'Spanish', 'Programming'];
+
+for (let i = 0; i < course1.length; i++) {
+  if (course1[i] === course2[i]) {
+    console.log(`The repeated word is ${course1[i]} `);
+  }
+}
