@@ -283,3 +283,14 @@ for (let i = 0; i < values1.length; i++) {
     console.log(`${values1[i]}`);
   }
 } //Apple
+
+/*Print each value and each letter using forEach() */
+
+let furniture = ['Table', 'Chairs', 'Couch'];
+
+furniture.forEach(el => {
+  console.log(`Print ${el}`);
+  for (let i = 0; i < el.length; i++) {
+    console.log(el[i]);
+  }
+});
