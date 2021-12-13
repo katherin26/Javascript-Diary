@@ -124,3 +124,24 @@ for (let i = 0; i < furniture.length; i++) {
 }
 
 // T a b l e
+
+/*NOTE: Given a string, remove any characters that are unique from the string.
+Example: 
+Input : "abccdefee"
+output: "cceee"
+ */
+
+//SOLUTION WITH REGULAR EXPRESSION CONSTRUCTOR
+
+let letters = 'abccdefee';
+
+console.log(letters.match(/e/g).length); //true
+
+const lettersSplit = letters.split('');
+console.log(lettersSplit); //['a', 'b', 'c','c', 'd', 'e','f', 'e', 'e']
+
+const result = lettersSplit.filter(
+  letter => letters.match(new RegExp(`${letter}`, 'g')).length > 1
+);
+
+console.log(result.join('')); // cceee
