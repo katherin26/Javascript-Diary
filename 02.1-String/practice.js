@@ -145,3 +145,50 @@ const result = lettersSplit.filter(
 );
 
 console.log(result.join('')); // cceee
+
+//SOLUTION WITH FOR LOOP AND hasOwnProperty.
+
+let letters = 'abccdefee';
+
+let letterCount = {};
+for (let i = 0; i < letters.length; i++) {
+  console.log(letters[i]);
+  if (!letterCount.hasOwnProperty(letters[i])) {
+    letterCount[letters[i]] = 1;
+  } else {
+    letterCount[letters[i]]++;
+  }
+}
+
+console.log(letterCount); /*
+a
+b
+c
+c
+d
+e
+f
+e
+e { a: 1, b: 1, c: 2, d: 1, e: 3, f: 1 }*/
+
+let result2 = [];
+for (property in letterCount) {
+  console.log(`The letter ${property} has ${letterCount[property]} has
+  ${letterCount[property]} Ocurrency.`);
+
+  if (letterCount[property] > 1) {
+    result2.push(property.repeat(letterCount[property]));
+  }
+}
+
+console.log(result2.join(''));
+/*
+The letter a has 1 Ocurrency.
+The letter b has 1 Ocurrency.
+The letter c has 2 Ocurrency.
+The letter d has 1 Ocurrency.
+The letter e has 3 Ocurrency.
+The letter f has 1 Ocurrency.
+cceee
+
+*/
