@@ -254,3 +254,18 @@ for (let i = 0; i < course1.length; i++) {
     console.log(`The repeated word is ${course1[i]} `);
   }
 }
+
+//Using Includes() method.
+
+let food = ['Noodle', 'Pasta', 'Ice-Cream'];
+let food1 = ['Fries', 'Ice-Cream', 'Pizza'];
+
+function includeAword(arr, arr2) {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr.includes(arr2[i])) {
+      console.log(`The repeated word is : ${arr[i]}`);
+    }
+  }
+}
+
+includeAword(food, food1);
