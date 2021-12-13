@@ -114,3 +114,13 @@ function checkFunction(str) {
 }
 
 console.log(checkFunction('kkkkk'));
+
+//NOTE: Print each letter !
+
+let furniture = 'Table';
+
+for (let i = 0; i < furniture.length; i++) {
+  console.log(furniture[i]);
+}
+
+// T a b l e
