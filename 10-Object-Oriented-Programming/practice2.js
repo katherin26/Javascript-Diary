@@ -136,3 +136,69 @@ juegos.pop();
 juegos.pop();
 console.log(juegos.display());
 /*[ 'MGS1', 'MGS2' ] */
+
+/*NOTE: Class exercise with constructor and methods. */
+class Person {
+  constructor(name, pet, age, weight) {
+    this.name = name;
+    this.pet = pet;
+    this.age = age;
+    this.weight = weight;
+  }
+
+  sayHello() {
+    return `Mi nombre es ${this.name} y el 
+    de mi perro es ${this.pet}`;
+  }
+
+  isAdult() {
+    if (this.age >= 18) {
+      return `${this.name}, Puedes tomar cerveza eres mayor de edad`;
+    } else {
+      return `${this.name}, No puedes tomar cerveza porque no eres mayor de edad.`;
+    }
+  }
+
+  eatBrunch() {
+    this.weight = this.weight + 1;
+  }
+
+  exercise() {
+    this.weight = this.weight - 1;
+  }
+
+  pesarme() {
+    return `Mi peso actual es ${this.weight}`;
+  }
+}
+
+let ejercicio = new Person('Rambo', 'Rocky', 28, 60);
+console.log(ejercicio);
+/*Person { name: 'Rambo', pet: 'Rocky', age: 28, weight: 60 } */
+
+console.log(ejercicio.pesarme()); //Mi peso actual es 60.
+
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+
+console.log(ejercicio.pesarme()); //Mi peso actual es 64
+
+ejercicio.exercise();
+ejercicio.exercise();
+
+console.log(ejercicio.pesarme()); //Mi peso actual es 62
+
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+ejercicio.eatBrunch();
+
+console.log(ejercicio.pesarme()); //Mi peso actual es 72
