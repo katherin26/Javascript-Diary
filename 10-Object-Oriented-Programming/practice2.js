@@ -222,3 +222,33 @@ class Poligono {
 
 const cuadrado = new Poligono(10, 10);
 console.log(cuadrado.area); //100
+
+//NOTE: EXERCISE WITH CLASS CONSTRUCTOR AND PUSH().
+
+class Person {
+  constructor(name) {
+    this.name = name;
+    this.pets = [];
+  }
+
+  sayHello() {
+    return `My name is ${this.name}`;
+  }
+  addPet(element) {
+    this.pets.push(element);
+  }
+}
+
+let result = new Person('Bulma');
+console.log(result); //Person { name: 'Bulma', pets: [] }
+
+console.log(result.sayHello()); //My name is Bulma
+
+result.addPet('Ada');
+console.log(result); //Person { name: 'Bulma', pets: [ 'Ada' ] }
+
+result.addPet('Isaac');
+console.log(result); //Person { name: 'Bulma', pets: [ 'Ada', 'Isaac' ] }
+
+result.addPet('Jill');
+console.log(result); //Person { name: 'Bulma', pets: [ 'Ada', 'Isaac', 'Jill' ] }
