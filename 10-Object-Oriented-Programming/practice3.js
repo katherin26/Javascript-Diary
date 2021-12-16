@@ -90,3 +90,41 @@ console.log(person2.canDrink());
 //OUTPUT = Lola can have a beer!
 
 /*As you can see the code is repetitive and there is no reusability of functionality, you need to manually construct the object every time. */
+
+/*NOTE: USING CLASSES
+  A class allows you to create a factory that will construct objects with the properties you assign and functionality you want to implement in every object constructed by this class.
+ */
+
+class Person {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+
+  canDrink() {
+    if (this.age >= 18) {
+      return `${this.name} can have a beer!`;
+    } else {
+      return `${this.name} cannot have a beer!`;
+    }
+  }
+}
+
+/*When you construct an object using the class, You just provide the state, charactetistics the object will have in this case our class Person who has two properties name and age.
+  
+  As you can see, we wrote a lot less code this time, all property and method initialization is inside the class.
+   */
+
+let person1 = new Person('Bambi', 30);
+let person2 = new Person('Patico', 65);
+let person3 = new Person('Adita', 4);
+
+console.log(person1.canDrink());
+console.log(person2.canDrink());
+console.log(person3.canDrink());
+
+/*
+  Bambi can have a beer!
+  Patico can have a beer!
+  Adita cannot have a beer!
+   */
