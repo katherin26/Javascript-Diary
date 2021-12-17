@@ -60,3 +60,15 @@ console.log(`Name is ${name} and lastname is ${lastname}`); //name is Teo and la
 
 let happy = 'hey hey hey';
 console.log(happy.toUpperCase()); //HEY HEY HEY
+
+/*NOTE: ACCESS TO AN OBJECT. */
+
+let names = ['Pedro', 'Ada', 'Jill', 'Sasha', 'Nano'];
+
+console.log(names);
+//[ 'Pedro', 'Ada', 'Jill', 'Sasha', 'Nano' ]
+console.log(names[0]); //Pedro
+console.log(names[1]); //Ada
+console.log(names[2]); //Jill
+console.log(names[3]); //Sasha
+console.log(names[4]); //Nano
