@@ -302,3 +302,29 @@ let arr = ['22', '33', '66', 'Tatte', 'Br'];
 let randomVal = arr[Math.floor(arr.length * Math.random())];
 
 console.log(randomVal);
+
+//NOTE: Using filter method.
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let letters = ['a', 'b', 'c', 'd'];
+let objects = [{ name: 'FirstObject' }, { name: 'SecondObject' }];
+
+let newNumbers = numbers.filter(function (num) {
+  if (num > 4) return true;
+  return false;
+});
+
+let letterToSearch = 'b';
+let newLetters = letters.filter(function (letter) {
+  if (letter === letterToSearch) return true;
+  else return false;
+});
+
+let objectNameToSearch = 'SecondObject';
+let newObjects = objects.filter(function (obj) {
+  if (obj.name === objectNameToSearch) return true;
+  return false;
+});
+
+console.log(newNumbers);
+console.log(newLetters);
+console.log(newObjects);
