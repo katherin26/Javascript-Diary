@@ -294,3 +294,11 @@ furniture.forEach(el => {
     console.log(el[i]);
   }
 });
+
+//NOTE: Using Math.random and Math.floor
+
+let arr = ['22', '33', '66', 'Tatte', 'Br'];
+
+let randomVal = arr[Math.floor(arr.length * Math.random())];
+
+console.log(randomVal);
