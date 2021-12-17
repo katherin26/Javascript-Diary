@@ -72,3 +72,25 @@ console.log(names[1]); //Ada
 console.log(names[2]); //Jill
 console.log(names[3]); //Sasha
 console.log(names[4]); //Nano
+
+//NOTE:
+let pet = {
+  name: 'Lola',
+  age: 5,
+  weight: 7,
+};
+
+console.log(pet.name); //Lola
+console.log(pet.age); //5
+console.log(pet.weight); //7
+
+//NOTE:
+let petArr = [
+  { name: 'Isac', age: 5 },
+  { name: 'Poppy', age: 15 },
+  { name: 'Julieth', age: 25 },
+];
+
+console.log(petArr[0].name); //Isac
+console.log(petArr[1].name); //Poppy
+console.log(petArr[2].name); //Julieth
