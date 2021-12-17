@@ -128,3 +128,35 @@ console.log(person3.canDrink());
   Patico can have a beer!
   Adita cannot have a beer!
    */
+
+/*NOTE: Using Bind */
+
+class Person {
+  constructor(name) {
+    this.name = name;
+    this.greet = this.greet.bind(this);
+  }
+
+  greet() {
+    console.log(`Hello my name is ${this.name}`);
+  }
+}
+
+//Create a new Person:
+let person = new Person('Pepe');
+//Using greet() + person:
+person.greet(); //Hello my name is pepe.
+
+console.log(person);
+
+/*Hello my name is Pepe 
+  Person{name: 'Pepe', greet:[Function: bound greet]}
+ */
+
+//Using a diferent function.
+function doSomething(fn) {
+  fn();
+}
+
+doSomething(person.greet);
+//Hello my name is Pepe.
