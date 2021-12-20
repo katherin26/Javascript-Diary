@@ -126,3 +126,20 @@ function checkWinner(avg1, avg2) {
 }
 
 checkWinner(totalAverageDolphins1, totalAverageKoalas1);
+
+//NOTE: CALCULATING A TIP.
+
+function calcTip(bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+}
+
+let bills = [125, 555, 44, 100];
+let tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+let total = [bills[0] + tips[0]];
+console.log(bills, tips, total);
+
+console.log(
+  `The bill was ${bills} , the tip was ${tips}, and the total value ${
+    bills + tips
+  }`
+);
