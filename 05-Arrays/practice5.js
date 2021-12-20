@@ -328,3 +328,54 @@ let newObjects = objects.filter(function (obj) {
 console.log(newNumbers);
 console.log(newLetters);
 console.log(newObjects);
+
+//NOTE: Exercise calcAge with function.
+
+const calcAge = function (birthYear) {
+  return 2037 - birthYear;
+};
+
+const years = [1990, 1967, 2002, 2010, 2018];
+const age1 = calcAge(years[0]);
+const age2 = calcAge(years[1]);
+
+console.log(age1, age2);
+
+const ages = [calcAge(years[0]), calcAge(years[1])];
+console.log(ages);
+
+//METHODS
+
+const friends = ['michael', 'steven', 'peter'];
+friends.push('Jay');
+
+//REMOVE ELEMENTS
+friends.pop();
+const popped = friends.pop();
+console.log(popped);
+console.log(friends);
+
+friends.shift();
+console.log(friends);
+
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob'));
+
+friends.push(23);
+console.log(friends.includes('steven'));
+console.log(friends.includes('Bob'));
+console.log(friends.includes(23));
+
+if (friends.includes('steven')) {
+  console.log('You have a friend called peter');
+}
+
+//coding challenge
+
+const bill = 100;
+const tip = bill <= 300 && bill >= 50 ? bill * 0.15 : bill * 0.2;
+console.log(
+  `The bill waas ${bill} , the tip was ${tip}, and the total value ${
+    bill + tip
+  }`
+);
