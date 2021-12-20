@@ -68,3 +68,61 @@ const yearsUntilRetirement = function (birthYear, firstName) {
 };
 
 console.log(yearsUntilRetirement(1982, 'mike'));
+
+//NOTE: Exercise with function, arrays and average .
+
+let dolphinsScoreData1 = [44, 23, 71];
+let koalasScoreData1 = [85, 54, 41];
+let dolphinsScoreData2 = [65, 54, 49];
+let koalasScoreData2 = [23, 34, 27];
+
+//ARROW FUNCTION
+const calcAverage = arr => {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total / arr.length;
+};
+
+const totalAverageDolphins1 = calcAverage(dolphinsScoreData1);
+console.log(totalAverageDolphins1); //46
+
+const totalAverageKoalas1 = calcAverage(koalasScoreData1);
+console.log(totalAverageKoalas1); //60
+
+const totalAverageDolphins2 = calcAverage(dolphinsScoreData2);
+console.log(totalAverageDolphins2); //56
+
+const totalAverageKoalas2 = calcAverage(koalasScoreData2);
+console.log(totalAverageKoalas2); //28
+
+//---------------arrow function--------------------------
+// const calcAverage= (a,b,c) => (a+b+c)/3;
+// console.log(calcAverage(3,4,5));
+// let scoreDolphins = calcAverage(44,23,71);
+// let scoreKoalas = calcAverage(65,54,49);
+// console.log(scoreDolphins,scoreKoalas);
+
+//FUNCTION DECLARATION
+// function calcAverage(arr){
+//   let total = 0;
+//   for(let i = 0; i < arr.length; i++){
+//     total += arr[i];
+//   }
+//   return total/ arr.length;
+// }
+// const totalAverage = calcAverage(dolphinsScoreData1);
+// console.log(totalAverage);
+
+function checkWinner(avg1, avg2) {
+  if (avg1 >= 2 * avg2) {
+    console.log(`dolphins is the winner (${avg1} vs ${avg2})`);
+  } else if (avg2 >= 2 * avg1) {
+    console.log(`Koalas is the winner (${avg2} vs ${avg1})`);
+  } else {
+    console.log(`We don't have a winner!!`);
+  }
+}
+
+checkWinner(totalAverageDolphins1, totalAverageKoalas1);
