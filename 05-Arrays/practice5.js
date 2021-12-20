@@ -379,3 +379,42 @@ console.log(
     bill + tip
   }`
 );
+
+//NOTE: Arrays and objects (dots and brackets).
+
+const jonasArray = [
+  'Jonas',
+  'Kat',
+  2021 - 1992,
+  'Teacher',
+  ['Michael', 'Peter', 'Steven'],
+];
+
+const jonas = {
+  firstName: 'jonas',
+  lastName: 'JJJ',
+  age: 2021 - 1992,
+  job: 'Teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+};
+
+//prompt function = es una function incorporada que podemos usar en cualquier script , esto creara un popup window con un input field.
+const interestedIn = prompt(
+  'What do you want to know about Jonas ??choose between firstName , lastname , age , job , and friends '
+);
+
+//console.log(interestedIn);
+//Ponemos en el prompt 'job'
+//podemos usar brackets notacion en interedIn , Javascript remplazara el valor de interedIn por el verdadero valor y ese es el que va a buscar en el object. y ahi es cuando sale el resultado.
+
+if (jonas[interestedIn]) {
+  console.log(jonas[interestedIn]); //truty value
+} else {
+  console.log(`Wrong value`);
+}
+
+//ADDING NEW PROPERTIES
+
+jonas.location = 'Portugal';
+jonas['twitter'] = '@jONASSCHMEDMANT';
+//console.log(jonas);
