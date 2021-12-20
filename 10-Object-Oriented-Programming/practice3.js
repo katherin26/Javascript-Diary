@@ -160,3 +160,23 @@ function doSomething(fn) {
 
 doSomething(person.greet);
 //Hello my name is Pepe.
+
+//NOTE: LOG to the console the information insde the object.
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'JJJ',
+  age: 2021 - 1992,
+  job: 'Teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+};
+
+jonas.location = 'Portugal';
+jonas['twitter'] = '@jONASSCHMEDMANT';
+console.log(jonas);
+
+//challenge "Jonas has 3 friends, and his best friend is callled michael "
+
+console.log(
+  `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}  `
+);
