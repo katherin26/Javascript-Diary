@@ -180,3 +180,25 @@ console.log(jonas);
 console.log(
   `${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is called ${jonas.friends[0]}  `
 );
+
+//NOTE: OBJECTS METHODS AND THIS.
+
+const jonas = {
+  firstName: 'Jonas',
+  lastName: 'schmedmant',
+  birthYear: '1991',
+  job: 'Teacher',
+  friends: ['Michael', 'Peter', 'Steven'],
+  hasDriversLicense: true,
+  calcAge: function () {
+    this.age = 2021 - this.birthYear;
+    return this.age;
+  },
+  getSummary: function () {
+    return `${this.firstName} is a ${this.calcAge()} -year old ${
+      jonas.job
+    }, and he has ${this.hasDriversLicense ? 'a' : 'no'} driver's license `;
+  },
+};
+
+console.log(jonas.getSummary());
