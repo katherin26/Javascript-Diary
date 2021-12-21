@@ -152,3 +152,21 @@ for (const property in colors) {
 }
 
 //OUTPUT = Yellow Red Blue
+
+/*NOTE: FOR OF STATEMENT
+The for...of statement creates a loop iterating over iterable objects, including: built-in String, Array, array-like objects (e.g., arguments or NodeList), TypedArray, Map, Set, and user-defined iterables. It invokes a custom iteration hook with statements to be executed for the value of each distinct property of the object.
+
+SYNTAX = 
+
+for (variable of iterable) {
+  statement
+}
+ */
+
+let colors = ['Yellow', 'Red', 'Blue'];
+
+for (const values of colors) {
+  console.log(values);
+}
+
+//OUTPUT = Yellow Red Blue
