@@ -331,3 +331,23 @@ While lifting weights repetition 9
 While lifting weights repetition 10
 10
  */
+
+//NOTE: WHILE AND Math.random() and Math.Trunc().
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+
+console.log(dice);
+
+while (dice !== 6) {
+  console.log(`Yoy rolled the ${dice}`);
+  dice = Math.trunc(Math.random() * 6) + 1;
+  if (dice === 6) console.log(`Loop is about to end..!`);
+}
+
+/*1
+Yoy rolled the 1
+Yoy rolled the 3
+Yoy rolled the 3
+Yoy rolled the 1
+Yoy rolled the 2
+Loop is about to end..! */
