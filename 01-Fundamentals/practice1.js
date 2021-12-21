@@ -112,3 +112,22 @@ Walking east one step 1
 Walking east one step 2
 Walking east one step 3
 Walking east one step 4*/
+
+/*NOTE: DO WHILE STATEMENT
+The do while statement repeats until a specified condition evaluates to false.
+
+A do while statement looks as follows :
+ */
+
+/*do
+statement 
+while(condition);
+ */
+
+let i = 0;
+do {
+  i++;
+  console.log(i);
+} while (i < 5);
+
+//OUTPUT : 1 2 3 4 5
