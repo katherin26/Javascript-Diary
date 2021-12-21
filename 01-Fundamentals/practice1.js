@@ -211,3 +211,14 @@ for (let i = 0; i < jonasArray.length; i++) {
 
 console.log(types);
 //[ 'string', 'string', 'number', 'string', 'object' ]
+
+//NOTE: ITERATE WITH A FOR LOOP AND USING A PUSH METHOD LOG TO THE CONSOLE THE NEW VALUE AGES.
+
+const years = [1991, 2007, 1969, 2020];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+  ages.push(2021 - years[i]);
+}
+
+console.log(ages); //[30,14,52,1]
