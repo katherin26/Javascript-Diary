@@ -131,3 +131,24 @@ do {
 } while (i < 5);
 
 //OUTPUT : 1 2 3 4 5
+
+/*NOTE: FOR IN STATEMENT
+
+The for in statement iterates a specified variable over all the enumerable properties of an object.
+
+For each distinc property, Javascript executes the specified statements.
+
+A for in statement looks as follows :
+
+for(variable in object){
+  statement
+}
+ */
+
+let colors = ['Yellow', 'Red', 'Blue'];
+
+for (const property in colors) {
+  console.log(colors[property]);
+}
+
+//OUTPUT = Yellow Red Blue
