@@ -170,3 +170,25 @@ for (const values of colors) {
 }
 
 //OUTPUT = Yellow Red Blue
+
+//NOTE: USING FOR LOOP AND TYPEOF LOG TO THE CONSOLE THE VALUE AND TYPE OF THE ARRAY.
+
+const personArr = [
+  'Bambi',
+  'Schemedmand',
+  2021 - 1993,
+  'Teacher',
+  ['Michael', 'Peter', 'Steve'],
+];
+
+for (let i = 0; i < personArr.length; i++) {
+  console.log(personArr[i]);
+  /*Bambi 
+     Schemedmand
+     28
+     Teacher
+     [...]
+    */
+  console.log(typeof personArr[i]);
+  /*string string number string object */
+}
