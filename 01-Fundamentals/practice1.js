@@ -94,3 +94,21 @@ let petArr = [
 console.log(petArr[0].name); //Isac
 console.log(petArr[1].name); //Poppy
 console.log(petArr[2].name); //Julieth
+
+/*NOTE: FOR LOOP STATEMENT
+A for loop repeats until a specified condition evaluates to false, the Javascript for loop is similar to the Java and C loop.
+
+A for Statement looks as follows: 
+
+for([initialExpression];[conditionExpression];[incrementExpression])STATEMENT
+*/
+
+for (let step = 0; step < 5; step++) {
+  console.log(`Walking east one step ${step}`);
+}
+
+/* Walking east one step 0
+Walking east one step 1
+Walking east one step 2
+Walking east one step 3
+Walking east one step 4*/
