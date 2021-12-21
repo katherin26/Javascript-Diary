@@ -256,3 +256,23 @@ for (let i = 0; i < jonasArray.length; i++) {
 Schmedmand string
    */
 }
+
+//BACKWARDS LOOP
+
+for (let i = jonasArray.length - 1; i >= 0; i--) {
+  console.log(`BACKWARDS LOOP!`);
+  console.log(i, jonasArray[i]);
+}
+
+/* BACKWARDS LOOP!
+5 [ 'Michael', 'Peter', 'Steven' ]
+BACKWARDS LOOP!
+4 teacher
+BACKWARDS LOOP!
+3 34
+BACKWARDS LOOP!
+2 46
+BACKWARDS LOOP!
+1 Schmedmand
+BACKWARDS LOOP!
+0 Jonas*/
