@@ -307,3 +307,27 @@ Exercise 3 and 2 repetition.
 Exercise 3 and 3 repetition.
 Exercise 3 and 4 repetition.
 Exercise 3 and 5 repetition.*/
+
+//NOTE: LOOP INSIDE ANOTHER LOOP
+
+//WITH A WHILE LOOP: The difference between for and whiles , while is more versatil.
+
+let rep = 1;
+while (rep <= 10) {
+  console.log(`While lifting weights repetition ${rep}`);
+  rep++;
+}
+
+/*
+While lifting weights repetition 1
+While lifting weights repetition 2
+While lifting weights repetition 3
+While lifting weights repetition 4
+While lifting weights repetition 5
+While lifting weights repetition 6
+While lifting weights repetition 7
+While lifting weights repetition 8
+While lifting weights repetition 9
+While lifting weights repetition 10
+10
+ */
