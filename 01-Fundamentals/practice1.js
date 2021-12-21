@@ -276,3 +276,34 @@ BACKWARDS LOOP!
 1 Schmedmand
 BACKWARDS LOOP!
 0 Jonas*/
+
+//LOOP INSIDE ANOTHER LOOP
+
+for (let exercise = 1; exercise < 4; exercise++) {
+  console.log(`starting exercise ${exercise}`);
+
+  for (let rep = 1; rep < 6; rep++) {
+    console.log(`Exercise ${exercise} and ${rep} repetition.`);
+  }
+}
+
+/*
+starting exercise 1
+starting exercise 1
+Exercise 1 and 1 repetition.
+Exercise 1 and 2 repetition.
+Exercise 1 and 3 repetition.
+Exercise 1 and 4 repetition.
+Exercise 1 and 5 repetition.
+starting exercise 2
+Exercise 2 and 1 repetition.
+Exercise 2 and 2 repetition.
+Exercise 2 and 3 repetition.
+Exercise 2 and 4 repetition.
+Exercise 2 and 5 repetition.
+starting exercise 3
+Exercise 3 and 1 repetition.
+Exercise 3 and 2 repetition.
+Exercise 3 and 3 repetition.
+Exercise 3 and 4 repetition.
+Exercise 3 and 5 repetition.*/
