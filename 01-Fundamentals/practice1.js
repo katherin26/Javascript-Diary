@@ -192,3 +192,22 @@ for (let i = 0; i < personArr.length; i++) {
   console.log(typeof personArr[i]);
   /*string string number string object */
 }
+
+//NOTE: USING FOR LOOP , TYPEOF AND PUSH METHOD.
+
+const jonasArray = [
+  'Jonas',
+  'Schmedmand',
+  2037 - 1991,
+  'teacher',
+  ['Michael', 'Peter', 'Steven'],
+];
+
+const types = [];
+
+for (let i = 0; i < jonasArray.length; i++) {
+  types.push(typeof jonasArray[i]);
+}
+
+console.log(types);
+//[ 'string', 'string', 'number', 'string', 'object' ]
