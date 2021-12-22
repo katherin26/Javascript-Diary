@@ -351,3 +351,22 @@ Yoy rolled the 3
 Yoy rolled the 1
 Yoy rolled the 2
 Loop is about to end..! */
+
+/*NOTE: Write a function calcTips and set empty variables with the name tips and totals and with a for Loop Iterate over the arrey bills to print the bill, tip and total of the account. */
+
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+let tips = [];
+let totals = [];
+
+function calcTips(bills) {
+  const tip = bills >= 50 && bills <= 300 ? bills * 0.15 : bills * 0.2;
+  return tip;
+}
+
+for (let i = 0; i < bills.length; i++) {
+  tips.push(calcTips(bills[i]));
+  totals.push(calcTips(bills[i] + bills[i]));
+  console.log(
+    `Your bill is : ${bills[i]} and your tip is ${tips[i]} and the total is : ${totals}`
+  );
+}
