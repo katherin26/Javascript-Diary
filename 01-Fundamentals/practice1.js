@@ -443,3 +443,50 @@ const data2 = [12, 5, -5, 0, 4];
 
 printForecast(data1);
 printForecast(data2);
+
+//NOTE: PRINT THE MEDALS
+
+let country = 'China';
+
+let athletes = 9;
+let goldMedals = 2;
+let silverMedals = 3;
+let bronzeMedals = 1;
+
+let arr = ['Argentina', 5, 4, 3, 2, 1];
+
+function createCountry(
+  country,
+  athletes,
+  goldMedals,
+  silverMedals,
+  bronzeMedals
+) {
+  let countryObject = {
+    country: country,
+    athletes: athletes,
+    goldMedals: goldMedals,
+    silverMedals: silverMedals,
+    bronzeMedals: bronzeMedals,
+  };
+  return countryObject;
+}
+
+let countryArr = [];
+
+countryArr.push(createCountry('COL', 9, 2, 3, 1));
+
+countryArr.push(createCountry(arr[0], arr[1], arr[2], arr[3], arr[4]));
+
+function arrCountry(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    let totalMedals =
+      arr[i].goldMedals + arr[i].silverMedals + arr[i].bronzeMedals;
+
+    console.log(
+      `${arr[i].country} has ${arr[i].athletes} athletes, and won ${arr[i].goldMedals} gold medals, ${arr[i].silverMedals} silver medals, ${arr[i].bronzeMedals} Bronze Medals and the total medals is = ${totalMedals}.`
+    );
+  }
+}
+
+arrCountry(countryArr);
