@@ -490,3 +490,58 @@ function arrCountry(arr) {
 }
 
 arrCountry(countryArr);
+
+//NOTE: DESTRUCTURING EXERCISE
+
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Brushcheta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
+
+//RECEIVE 2 RETURN VALUES FROM A FUNCTION.
+
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse); //Garlic Bread, Pizza
+
+//EXAMPLE WITH NESTED ARRAY.
+
+const nested = [2, 4, [5, 6]];
+const [i, , j] = nested;
+console.log(i, j); //2[5,6]
+
+const nested1 = [2, 4, [5, 6]];
+const [l, , [m, n]] = nested1;
+console.log(l, m, n); //2 5 6
+
+//DEFAULT VALUES
+
+const [p = 1, q = 1, r = 1] = [8, 9];
+console.log(p, q, r); //8 9 1
+
+const arr = [2, 3, 4];
+const a = arr[0];
+const b = arr[1];
+const c = arr[2];
+
+const [x, y, z] = arr;
+console.log(x, y, z); //2 3 4
+
+const [first, second] = restaurant.categories;
+console.log(first, second); //Italian Pizzeria
+
+let [main, secondary] = restaurant.categories;
+console.log(main, secondary); //Italian Pizzeria
+
+//SWITCHING VALUES WITHOUT DESTRUCTURING.
+
+let temp = main;
+main = secondary;
+secondary = temp;
+console.log(main, secondary); //Pizzeria Italian
