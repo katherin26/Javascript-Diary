@@ -273,3 +273,8 @@ const [pizza, , risotto, ...otherFood] = [
 console.log(pizza, risotto, otherFood);
 
 /*Pizza Risotto [ 'Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad' ] */
+
+//OBJECTS
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+/*{ thu: { open: 12, close: 22 }, fri: { open: 11, close: 23 } } */
