@@ -68,3 +68,12 @@ console.log(i); //12
 let number = 50;
 
 for (let i = 10; i <= number; i += 10) console.log(i); //10 20 30 40 50
+
+//NOTE: USE ANY DATA TYPE RETURN ANY DATA TYPE SHORT-CIRCUITING
+
+//OR
+
+console.log(3 || 'Jonas'); //3 (truty)
+console.log('' || 'Jonas'); //Jonas
+console.log(true || 0); //true (truty);
+console.log(undefined || null); //both are falsy
