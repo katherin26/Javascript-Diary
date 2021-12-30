@@ -77,3 +77,9 @@ console.log(3 || 'Jonas'); //3 (truty)
 console.log('' || 'Jonas'); //Jonas
 console.log(true || 0); //true (truty);
 console.log(undefined || null); //both are falsy
+
+//And
+
+console.log(0 && 'Jonas'); //0
+console.log(7 && 'Jonas'); //Jonas
+console.log('Hello' && 23 && null && 'Jonas'); //null
