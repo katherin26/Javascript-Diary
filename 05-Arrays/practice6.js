@@ -132,3 +132,11 @@ for (const {
 }
 //Name: Mike Smith,Father:Harry S
 //Name: Tom Jones,Father:Richard J
+
+//Destructuring objects, computed object property names and Destructuring.
+
+//is a dinamic way to search the key in the object.
+let key = 'z';
+let { [key]: foo } = { z: 'bar', x: 'hhh' };
+
+console.log(foo); //hhh
