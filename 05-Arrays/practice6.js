@@ -232,3 +232,14 @@ console.log(menu); /*[
   'Pasta',
   'Risotto'
 ] */
+
+//ITERABLES = ARRAYS, STRINGS, MAPS, SETS, NOT OBJECTS.
+
+const str = 'Isaac';
+const letters = [...str, '', 'S.'];
+console.log(letters);
+/*[
+  'I',  's', 'a',
+  'a',  'c', '',
+  'S.'
+] */
