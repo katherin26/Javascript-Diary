@@ -253,3 +253,13 @@ const ingredients = [
 ];
 //input 1  2  3
 console.log(ingredients); //['1','2','3']
+
+//NOTE: REST PATTERN
+
+//SPREAD BECAUSE ON RIGHT SIDE OF =
+const arr = [1, 2, ...[3, 4]];
+console.log(arr);
+
+//REST BECAUSE ON LEFT SIDE OF =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
