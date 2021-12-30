@@ -32,3 +32,10 @@ console.log(bar); //true
 const { j = 10, k = 5 } = { j: 3 };
 console.log(j); //3
 console.log(k); //5
+
+//Destructuring and assigning to new variables names and providing default values.
+
+const { a: aa = 10, b: bb = 15 } = { a: 13 };
+
+console.log(aa); // 13
+console.log(bb); // 15
