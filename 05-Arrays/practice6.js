@@ -219,3 +219,16 @@ console.log(newMenu); //['Pizza', 'Pasta', 'Risotto', 'gnocci']
 
 const mainMenuCopy = [...restaurant.mainMenu];
 console.log(mainMenuCopy); //[ 'Pizza', 'Pasta', 'Risotto' ]
+
+//Join 2 arrays.
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu); /*[
+  'Focaccia',
+  'Bruschetta',
+  'Garlic Bread',
+  'Caprese Salad',
+  'Pizza',
+  'Pasta',
+  'Risotto'
+] */
