@@ -26,3 +26,9 @@ const o = { p: 42, q: true };
 const { p: foo, q: bar } = o;
 console.log(foo); //42
 console.log(bar); //true
+
+//Destructuring and default values.
+
+const { j = 10, k = 5 } = { j: 3 };
+console.log(j); //3
+console.log(k); //5
