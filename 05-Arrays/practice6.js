@@ -76,3 +76,26 @@ drawChart({
   coords: { x: 18, y: 30 },
   radius: 30,
 }); // big{x: 18, y:30} 30
+
+//Nested object and array destructuring.
+
+const metadata = {
+  title: 'Scratchpad',
+  translations: [
+    {
+      locale: 'de',
+      localization_tags: [],
+      last_edit: '2014-04-14T08:43:37',
+      url: '/de/docs/Tools/Scratchpad',
+      title: 'JavaScript-Umgebung',
+    },
+  ],
+};
+
+let {
+  title: englishTitle,
+  translations: [{ title: localeTitle }],
+} = metadata;
+
+console.log(englishTitle); //Scratchpad
+console.log(localeTitle); //JavaScript-Umgebung
