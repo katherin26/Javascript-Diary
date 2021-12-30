@@ -278,3 +278,17 @@ console.log(pizza, risotto, otherFood);
 const { sat, ...weekdays } = restaurant.openingHours;
 console.log(weekdays);
 /*{ thu: { open: 12, close: 22 }, fri: { open: 11, close: 23 } } */
+
+//FUNCTIONS
+
+const add = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+    console.log(sum);
+  }
+};
+
+add(2, 3); //5
+add(5, 3, 7, 2); //17
+add(8, 5, 2, 3, 2, 1, 4); //25
