@@ -263,3 +263,13 @@ console.log(arr);
 //REST BECAUSE ON LEFT SIDE OF =
 const [a, b, ...others] = [1, 2, 3, 4, 5];
 console.log(a, b, others);
+
+//DESCTRUCTURING
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+/*Pizza Risotto [ 'Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad' ] */
