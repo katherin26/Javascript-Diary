@@ -243,3 +243,13 @@ console.log(letters);
   'a',  'c', '',
   'S.'
 ] */
+
+//Print a prompt window
+
+const ingredients = [
+  prompt(`Let's make pasta!! Ingredient 1 ? `),
+  prompt(`Let's make pasta!! Ingredient 2 ? `),
+  prompt(`Let's make pasta!! Ingredient 3 ? `),
+];
+//input 1  2  3
+console.log(ingredients); //['1','2','3']
