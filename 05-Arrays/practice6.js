@@ -19,3 +19,10 @@ let { a, b, ...rest } = { a: 10, b: 20, c: 30, d: 40 };
 console.log(a); //10
 console.log(b); //20
 console.log(rest); //{c:30, d:40}
+
+//Destructuring objects assigning to new variable names.
+
+const o = { p: 42, q: true };
+const { p: foo, q: bar } = o;
+console.log(foo); //42
+console.log(bar); //true
