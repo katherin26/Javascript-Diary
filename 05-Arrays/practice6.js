@@ -99,3 +99,36 @@ let {
 
 console.log(englishTitle); //Scratchpad
 console.log(localeTitle); //JavaScript-Umgebung
+
+//Destructuring objects with for if iteration.
+
+const people = [
+  {
+    name: 'Mike Smith',
+    family: {
+      mother: 'Jane S',
+      father: 'Harry S',
+      sister: 'Samantha S',
+    },
+    age: 35,
+  },
+
+  {
+    name: 'Tom Jones',
+    family: {
+      mother: 'Norah J',
+      father: 'Richard J',
+      brother: 'Howard J',
+    },
+    age: 25,
+  },
+];
+
+for (const {
+  name: n,
+  family: { father: f },
+} of people) {
+  console.log('Name: ' + n + ',Father:' + f);
+}
+//Name: Mike Smith,Father:Harry S
+//Name: Tom Jones,Father:Richard J
