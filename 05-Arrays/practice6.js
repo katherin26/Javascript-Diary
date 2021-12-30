@@ -292,3 +292,8 @@ const add = function (...numbers) {
 add(2, 3); //5
 add(5, 3, 7, 2); //17
 add(8, 5, 2, 3, 2, 1, 4); //25
+
+//Add the value of the x variable with spread operator.
+
+const x = [23, 5, 7];
+add(...x); //35
