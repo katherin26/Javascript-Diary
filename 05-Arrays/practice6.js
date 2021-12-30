@@ -147,3 +147,14 @@ const foo = { 'fizz-buzz': true };
 const { 'fizz-buzz': fizzBuzz } = foo;
 
 console.log(fizzBuzz); //true
+
+//Destructuring objects and Combined Array .
+
+const props = [
+  { id: 1, name: 'Fixx' },
+  { id: 2, name: 'Buxx' },
+  { id: 3, name: 'FixxBuxx' },
+];
+
+const [, , { name }] = props;
+console.log(name); //FixxBuxx
