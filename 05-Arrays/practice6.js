@@ -39,3 +39,25 @@ const { a: aa = 10, b: bb = 15 } = { a: 13 };
 
 console.log(aa); // 13
 console.log(bb); // 15
+
+//Destructuring objects : Unpacking fields from objects passed as a function parameter.
+
+const user = {
+  id: 42,
+  displayName: 'Lola',
+  fullName: {
+    firstName: 'Lucrecia',
+    lastName: 'Doe',
+  },
+};
+
+function userId({ id }) {
+  return id;
+}
+
+function whois({ displayName, fullName: { firstName: name } }) {
+  return `${displayName} is ${name}`;
+}
+
+console.log(userId(user)); //42
+console.log(whois(user)); //Lola is Lucrecia.
