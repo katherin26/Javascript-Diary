@@ -214,3 +214,8 @@ const restaurant = {
 
 const newMenu = [...restaurant.mainMenu, 'gnocci'];
 console.log(newMenu); //['Pizza', 'Pasta', 'Risotto', 'gnocci']
+
+//Copy array
+
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy); //[ 'Pizza', 'Pasta', 'Risotto' ]
