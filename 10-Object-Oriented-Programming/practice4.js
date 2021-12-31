@@ -37,3 +37,8 @@ let allPlayers = [...players1, ...players2];
 console.log(
   allPlayers
 ); /*[ 'Gorsssi', 'Pavard', 'Martinez', 'Brandt', 'Sancho', 'Gotze' ] */
+
+//Spread operator and adding values at the end.
+let players1Final = [...players1, 'Gonzales', 'loo', 'li'];
+console.log(players1Final);
+/*[ 'Gorsssi', 'Pavard', 'Martinez', 'Gonzales', 'loo', 'li' ] */
