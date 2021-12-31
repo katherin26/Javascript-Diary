@@ -193,3 +193,68 @@ for (const [team, odd] of Object.entries(game.odds)) {
 /*Odd of Victory Bayern Munich 1.33
 Odd of draw 3.25
 Odd of Victory Borrussia Dortmund 6.5 */
+
+//NOTE: new Map
+
+const question = new Map([
+  ['question', 'What is the best programming language in the world??'],
+  [1, 'C'],
+  [2, 'Java'],
+  [3, 'Javascript'],
+  ['correct', 3],
+  [true, 'Correct!!'],
+  [false, 'Try again!!'],
+]);
+
+//console.log(question);
+
+//Iteration.
+
+console.log(question.get('question'));
+for (const [key, value] of question) {
+  if (typeof key === 'number') console.log(`Answer ${key}:${value}`);
+}
+
+//const answer = Number(prompt('Your answer'));
+
+//console.log(answer);
+
+//CONVERT MAP TO ARRAY
+
+console.log([...question]); //converting map into an a array [[key1, val1],[key2, val2]...].
+
+/*[
+  [
+    'question',
+    'What is the best programming language in the world??'
+  ],
+  [ 1, 'C' ],
+  [ 2, 'Java' ],
+  [ 3, 'Javascript' ],
+  [ 'correct', 3 ],
+  [ true, 'Correct!!' ],
+  [ false, 'Try again!!' ]
+] */
+
+console.log(question.entries());
+
+/*[Map Entries] {
+  [
+    'question',
+    'What is the best programming language in the world??'
+  ],
+  [ 1, 'C' ],
+  [ 2, 'Java' ],
+  [ 3, 'Javascript' ],
+  [ 'correct', 3 ],
+  [ true, 'Correct!!' ],
+  [ false, 'Try again!!' ]
+} */
+
+console.log(...question.keys());
+
+/* question 1 2 3 correct true false*/
+
+console.log(...question.values());
+
+/*What is the best programming language in the world?? C Java Javascript 3 Correct!! Try again!! */
