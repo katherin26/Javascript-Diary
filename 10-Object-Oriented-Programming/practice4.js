@@ -22,3 +22,10 @@ const game = {
 let [players1, players2] = game.players;
 console.log(players1); //[ 'Gorsssi', 'Pavard', 'Martinez' ]
 console.log(players2); //[ 'Brandt', 'Sancho', 'Gotze' ]
+
+//Destructuring, rest syntax.
+//add a new variable called chestLeader and use rest operator for the rest of the players.
+
+let [chestLeader, ...rest] = players1;
+console.log(chestLeader); //Gorsssi
+console.log(rest); //[ 'Pavard', 'Martinez' ]
