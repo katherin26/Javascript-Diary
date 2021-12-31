@@ -182,3 +182,14 @@ const odds = Object.values(game.odds);
 for (const odd of odds) average += odd;
 average /= odds.length;
 console.log(Math.floor(average)); //3
+
+//NOTE: Print the 3 odds to the console, but in a nice formatted way.
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `Victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
+
+/*Odd of Victory Bayern Munich 1.33
+Odd of draw 3.25
+Odd of Victory Borrussia Dortmund 6.5 */
