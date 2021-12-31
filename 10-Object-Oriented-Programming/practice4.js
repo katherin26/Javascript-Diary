@@ -29,3 +29,11 @@ console.log(players2); //[ 'Brandt', 'Sancho', 'Gotze' ]
 let [chestLeader, ...rest] = players1;
 console.log(chestLeader); //Gorsssi
 console.log(rest); //[ 'Pavard', 'Martinez' ]
+
+//Spread operator.
+//Create a new variable called allPlayers using rest operator and spread operator.
+
+let allPlayers = [...players1, ...players2];
+console.log(
+  allPlayers
+); /*[ 'Gorsssi', 'Pavard', 'Martinez', 'Brandt', 'Sancho', 'Gotze' ] */
