@@ -42,3 +42,23 @@ console.log(
 let players1Final = [...players1, 'Gonzales', 'loo', 'li'];
 console.log(players1Final);
 /*[ 'Gorsssi', 'Pavard', 'Martinez', 'Gonzales', 'loo', 'li' ] */
+
+///NOTE: Using spread and rest operator merch starterMenu and mainMenu in one single variable called menu, then print each value using a for of loop.
+
+const restaurant = {
+  name: 'CLassico Italiano',
+  location: 'Via Angelo Tavanti 23,Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', ' Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+};
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+
+for (const item of menu) {
+  console.log(item);
+}
