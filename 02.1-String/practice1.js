@@ -32,3 +32,11 @@ const capitalizeName = function (name) {
 
 capitalizeName('cats, dogs and birds.');
 //Cats, Dogs And Birds.
+
+//NOTE: Padding a string = Add a number of characters to the string.
+
+const message = 'Go to gate 43.';
+console.log(message.padStart(20, '+').padEnd(30, '+'));
+//++++++Go to gate 43.++++++++++
+console.log('Queen'.padStart(20, '+').padEnd(30, '+'));
+//+++++++++++++++Queen++++++++++
