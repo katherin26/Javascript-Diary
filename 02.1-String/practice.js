@@ -254,3 +254,13 @@ checkMiddleSeat('11B');
 checkMiddleSeat('11E');
 checkMiddleSeat('23C');
 checkMiddleSeat('3E');
+
+//NOTE:FIX CAPITALIZATION IN NAME.
+
+const passenger = 'dOggIe';
+const passengerLower = passenger.toLowerCase();
+console.log(passengerLower);
+
+const passengerCorrect =
+  passengerLower[0].toUpperCase() + passengerLower.slice(1);
+console.log(passengerCorrect); //Doggie
