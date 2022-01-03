@@ -65,3 +65,31 @@ const planesInLine = function (n) {
 planesInLine(2); //There are 2 planes in line ******
 planesInLine(4); //There are 4 planes in line ************
 planesInLine(6); //There are 6 planes in line ******************
+
+//NOTE: Using a function change the names to camel Case.
+
+let text = `first_underscorecase
+name_lastname
+Same_lastname
+calculate_AGE
+delayed_departure`;
+
+function toCamelCase(str) {
+  const [a, b] = str.trim().split('_');
+  return a.toLowerCase() + b[0].toUpperCase() + b.slice(1).toLowerCase();
+}
+
+let list = text.split('\n');
+console.log(list);
+
+let newArr = [];
+let newList = '';
+for (let text of list) {
+  let newText = toCamelCase(text);
+  newArr.push(newText);
+  newList += newText + '\n';
+}
+
+console.log(newArr.join('\n'));
+console.log(`----------------`);
+console.log(newList);
