@@ -12,3 +12,8 @@ console.log('Cat and dog'.split(' ')); // [ 'Cat', 'and', 'dog' ]
 const [firstName, lastName] = 'Catalina octavio'.split(' ');
 console.log(firstName); //Cataline
 console.log(lastName); //octavio
+
+//NOTE: Using join() method , change the lastName in Uppercase and add the Mr. at the beginning.
+
+const newName = ['Mr.', firstName, lastName.toUpperCase()].join(' ');
+console.log(newName); // Mr. Catalina OCTAVIO.
