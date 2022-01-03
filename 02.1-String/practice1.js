@@ -40,3 +40,15 @@ console.log(message.padStart(20, '+').padEnd(30, '+'));
 //++++++Go to gate 43.++++++++++
 console.log('Queen'.padStart(20, '+').padEnd(30, '+'));
 //+++++++++++++++Queen++++++++++
+
+//NOTE: Credit card number with padStart().
+
+const maskCreditCard = function (number) {
+  const str = number + '';
+  const last = str.slice(-4);
+  return last.padStart(str.length, '*');
+};
+
+console.log(maskCreditCard(542511452215444)); //***********5444
+
+console.log(maskCreditCard(454548444455884)); //***********5884
