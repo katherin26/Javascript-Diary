@@ -217,3 +217,27 @@ let splitInteger = function (num, parts) {
 };
 
 console.log(splitInteger(20, 6));
+
+//NOTE: Exercise with strings.
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(plane[0]); //A
+console.log(plane[1]); //3
+console.log(plane[2]); //2
+console.log('B737'[0]); //B
+console.log(airline.length); //16
+console.log('B737'.length); //4
+
+console.log(airline.indexOf('r')); //6
+console.log(airline.lastIndexOf('r')); //10
+console.log(airline.indexOf('Portugal')); //8
+
+console.log(airline.slice(4)); //Air Portugal
+console.log(airline.slice(2)); // P Air Portugal
+console.log(airline.slice(4, 7)); //Air
+console.log(airline.slice(0, airline.indexOf(' '))); //TAP
+console.log(airline.slice(airline.lastIndexOf(' ') + 1)); //Portugal
+console.log(airline.slice(-2)); //al
+console.log(airline.slice(1, -1)); //AP Air Portugal
