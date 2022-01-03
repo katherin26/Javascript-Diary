@@ -287,3 +287,6 @@ console.log(priceUS); //288.97$
 const announcement =
   'All passengers come to boarding door 23. boarding door 23!';
 console.log(announcement.replace('door', 'gate'));
+
+//NOTE: FIXED THE PROBLEM WITH REGULAR EXPRESSION.
+console.log(announcement.replace(/door/g, 'gate')); //All passengers come to boarding gate 23. Boarding gate 23!
