@@ -290,3 +290,30 @@ console.log(announcement.replace('door', 'gate'));
 
 //NOTE: FIXED THE PROBLEM WITH REGULAR EXPRESSION.
 console.log(announcement.replace(/door/g, 'gate')); //All passengers come to boarding gate 23. Boarding gate 23!
+
+//NOTE: INCLUDES
+
+const planes = 'A320neo';
+console.log(planes.includes('A320')); //true
+console.log(planes.includes('BOeing')); //false
+console.log(planes.includes('neo')); //true
+console.log(planes.startsWith('A3')); //true
+
+if (planes.startsWith('A') && planes.endsWith('neo')) {
+  console.log('Part of the NEW Arirbus Family!!');
+}
+
+//-----------BASIC EXERCISE----------------------//
+const checkBaggage = function (items) {
+  const baggage = items.toLowerCase();
+
+  if (baggage.includes('knife') || baggage.includes('gun')) {
+    console.log('You are NOT allowed on board!');
+  } else {
+    console.log('Welcome a board!!');
+  }
+};
+
+checkBaggage('I have a laptop, some Food and a pocket Knife'); //Your are NOT allowed on board!
+checkBaggage('Socks and camera'); //Welcome a board!
+checkBaggage('Got some snacks and a *gun* for protection'); //Your are NOT allowed on board!
