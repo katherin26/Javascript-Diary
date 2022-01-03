@@ -241,3 +241,16 @@ console.log(airline.slice(0, airline.indexOf(' '))); //TAP
 console.log(airline.slice(airline.lastIndexOf(' ') + 1)); //Portugal
 console.log(airline.slice(-2)); //al
 console.log(airline.slice(1, -1)); //AP Air Portugal
+
+//NOTE: CHECK THE MIDDLE SEAT IN AN AIRPLINE.
+
+const checkMiddleSeat = function (seat) {
+  const s = seat.slice(-1);
+  if (s === 'B' || s === 'E') console.log('You got the middle seat!!...');
+  else console.log('You got lucky...');
+};
+
+checkMiddleSeat('11B');
+checkMiddleSeat('11E');
+checkMiddleSeat('23C');
+checkMiddleSeat('3E');
