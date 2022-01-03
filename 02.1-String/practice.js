@@ -264,3 +264,16 @@ console.log(passengerLower);
 const passengerCorrect =
   passengerLower[0].toUpperCase() + passengerLower.slice(1);
 console.log(passengerCorrect); //Doggie
+
+//NOTE: COMPARING EMAILS.
+
+const email = 'abcdef@hello.com';
+const loginEmail = 'Abcdef@hello.com';
+const normalizedEmail = loginEmail.toLocaleLowerCase().trim();
+console.log(normalizedEmail); //abcdef@hello.com
+
+function isEmail(arg1, arg2) {
+  return arg1 === arg2;
+}
+
+console.log(isEmail(email, normalizedEmail)); //true
