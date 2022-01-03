@@ -52,3 +52,16 @@ const maskCreditCard = function (number) {
 console.log(maskCreditCard(542511452215444)); //***********5444
 
 console.log(maskCreditCard(454548444455884)); //***********5884
+
+//NOTE:  Repeat Method.
+
+const message2 = 'Bad Weather... ALL DEPARTURES DELAYED...';
+console.log(message2.repeat(5));
+
+const planesInLine = function (n) {
+  console.log(`There are ${n} planes in line ${'***'.repeat(n)}`);
+};
+
+planesInLine(2); //There are 2 planes in line ******
+planesInLine(4); //There are 4 planes in line ************
+planesInLine(6); //There are 6 planes in line ******************
