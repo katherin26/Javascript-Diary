@@ -176,3 +176,50 @@ function findPlant(arr) {
 }
 
 console.log(findPlant(plants)); //Marcus plant is eating Organic Food and the weight: 1 lb
+
+//NOTE: USING MAP().
+const numbers = [1, 2, 3, 4, 5];
+
+const doubled = numbers.map(number => number * 2);
+console.log(doubled);
+//[2,4,6,8,10]
+
+//Square Roots.
+
+let numbers2 = [1, 4, 9];
+let roots = numbers2.map(function (num) {
+  return Math.sqrt(num);
+});
+console.log(roots);
+// roots is now     [1, 2, 3]
+// numbers is still [1, 4, 9]
+
+//Reformat objects in an array.
+
+let arrExample = [
+  { key: 1, value: 10 },
+  { key: 2, value: 20 },
+  { key: 3, value: 30 },
+];
+
+let reformattedArr = arrExample.map(obj => {
+  let newObj = {};
+  newObj[obj.key] = obj.value;
+  return newObj;
+});
+
+console.log(reformattedArr);
+//[{'1':10},{'2':20},{'3':30}]
+
+//Filtered numbers with map().
+let numbers3 = [1, 2, 3, 4];
+let filteredNumbers = numbers3.map(function (num, index) {
+  if (index < 3) {
+    return num;
+  }
+});
+
+console.log(filteredNumbers);
+// index goes from 0, so the filterNumbers are 1,2,3 and undefined.
+// filteredNumbers is [1, 2, 3, undefined]
+// numbers is still [1, 2, 3, 4]
