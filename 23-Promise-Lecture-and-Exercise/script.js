@@ -50,3 +50,28 @@ function study1(time, name, cb) {
     cb(null, `${name} studied at ${time}`);
   }, 3000);
 }
+
+//NOW LETS USE ASYNC CODE THE OLD WAY.
+//When this function is called, it means we already have a result.
+wakeUp1('9:00 AM', 'Kt', function (error, result) {
+  console.log(result);
+
+  if (!error) {
+    brushTeeth1('9:15AM', 'KT', function (error, result) {
+      console.log(result);
+      //If there was no error, we can proceed with our next action.
+
+      if (!error) {
+        prepareCoffee1('9:30AM', 'Kt', function (error, result) {
+          console.log(result);
+          //This is becoming a callback hell , It's very difiicult to read.
+          if (!error) {
+            study1('10:00AM', 'kt', function (error, result) {
+              console.log(result);
+            });
+          }
+        });
+      }
+    });
+  }
+});
