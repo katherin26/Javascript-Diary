@@ -91,3 +91,23 @@ console.log(totalNumbers); //[1, 2, 3, 4,  5,6, 7, 8, 9, 10]
 
 const cloneArr = [...totalNumbers];
 console.log(cloneArr); //[1, 2, 3, 4,  5,6, 7, 8, 9, 10]
+
+//NOTE: REST OPERATOR.
+
+const people = {
+  name: 'Lupe',
+  age: 15,
+  country: 'Mexico',
+};
+
+const { name, ...others } = people;
+console.log(name); //Lupe
+console.log(others); //{age:15, country: 'Mexico'}
+
+function greetPeople({ name, ...otherProps }) {
+  console.log(
+    `Hello ${name}, you have this props ${JSON.stringify(otherProps)}`
+  );
+}
+
+greetPeople(people); //Hello Lupe, you have this props {"age":15,"country":"Mexico"}
