@@ -86,3 +86,8 @@ let numbers = [1, 2, 3, 4, 5, 6, 7];
 const totalNumbers = [...numbers, 8, 9, 10];
 
 console.log(totalNumbers); //[1, 2, 3, 4,  5,6, 7, 8, 9, 10]
+
+//NOTE: CLONE ARRAYS.
+
+const cloneArr = [...totalNumbers];
+console.log(cloneArr); //[1, 2, 3, 4,  5,6, 7, 8, 9, 10]
