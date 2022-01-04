@@ -13,7 +13,7 @@ Let's represent the following actions, each action take time to finish.
 */
 
 /*NOTE: THE OLD WAY WITH CALL BACKS.
-When a function takes time to finishm it does not immediately return a result, instead it receives
+When a function takes time to finish it does not immediately return a result, instead it receives
 a callback function which will be called with the result.
 */
 
@@ -164,7 +164,7 @@ wakeUp2('10:00AM', 'Bryan')
 (async () => {
   try {
     const result1 = await wakeUp2('10:00AM', 'Isaac');
-    console.log(result);
+    console.log(result1);
     const result2 = await brushTeeth2('10:15AM', 'Isaac');
     console.log(result2);
     const result3 = await prepareCoffee2('10:30Am', 'Isaac');
