@@ -152,3 +152,16 @@ totalData.forEach(function (current, i, arr) {
     console.log(`Dog number ${i + 1} is still a puppy!!`);
   }
 });
+
+//NOTE: EXERCISE WITH FOREACH, FIND AND ARRAYS.
+
+const plants = [
+  { weight: 10, brandFood: 'Organic Food', owners: ['lily', 'Peace'] },
+  { weight: 5, brandFood: 'Organic Food', owners: ['Mathew', 'lop'] },
+  { weight: 1, brandFood: 'Organic Food', owners: ['Marcus', 'Prim'] },
+  { weight: 4, brandFood: 'Organic Food', owners: ['Lola'] },
+];
+
+//Using for each loop over the array ann print the weight of each flower.
+
+plants.forEach(el => console.log(el.weight)); //10 5 1 4
