@@ -143,3 +143,15 @@ console.log(
     bills + tips
   }`
 );
+
+//NOTE: Ternary operator inside a function.
+
+let greeting = person => {
+  let name = person ? person.name : 'stranger';
+  return `Howdy, ${name}`;
+};
+
+console.log(greeting({ name: `Alice` })); //Alice
+console.log(greeting(null)); //stranger
+console.log(greeting({ name: `MATHEW` })); //MATHEW
+console.log(greeting()); //stranger
