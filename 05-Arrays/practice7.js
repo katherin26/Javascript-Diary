@@ -111,3 +111,15 @@ function greetPeople({ name, ...otherProps }) {
 }
 
 greetPeople(people); //Hello Lupe, you have this props {"age":15,"country":"Mexico"}
+
+//NOTE: Exercise with arrays.
+
+let person1Data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+let person2Data = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+//Copy of the array.
+
+let person1DataCopy = [...person1Data];
+console.log(person1DataCopy);
+//[1, 2, 3, 4,  5,6, 7, 8, 9, 10]
