@@ -106,3 +106,18 @@ function arrayToString(arr) {
 
 console.log(arrayToString(['k', 'e', 'l', 'l', 'o', 'g', 's']));
 console.log(arrayToString(['K', 'a', 't', 'a', 'l']));
+
+//---------------------------------------//
+
+const obj = {
+  name: 'Lola',
+  citiesVisited: ['Seoul', 'New york', 'California', 'Washington', 'Turquia'],
+  pets: [{ name: 'pepe' }, { name: 'pepa' }, { name: 'pepi' }],
+};
+
+//NOTE: String representation of object.
+
+const objString = JSON.stringify(obj);
+console.log(objString);
+
+/* {"name":"Lola","citiesVisited":["Seoul","New york","California","Washington","Turquia"],"pets":[{"name":"pepe"},{"name":"pepa"},{"name":"pepi"}]}*/
