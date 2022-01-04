@@ -152,3 +152,30 @@ wakeUp2('10:00AM', 'Bryan')
   .catch(function (error) {
     console.error(error);
   });
+
+/*Third way (async/await), this method uses promises, the only
+  thing different is the way we handle results and errors the way
+  we handle results and errors is more natural.
+  We can use the same promises from above.
+  Instead of using then to handle results, we can just await, whatever 
+  is passed to the resolve function inside the promise will be returned by await wakeup2.
+  */
+
+(async () => {
+  try {
+    const result1 = await wakeUp2('10:00AM', 'Isaac');
+    console.log(result);
+    const result2 = await brushTeeth2('10:15AM', 'Isaac');
+    console.log(result2);
+    const result3 = await prepareCoffee2('10:30Am', 'Isaac');
+    console.log(result3);
+    const result4 = await study2('11:00AM', 'Isaac');
+    console.log(result4);
+  } catch (e) {
+    //Same here, if any promise call reject, that error will be
+    //cought by the catch block.
+    console.log(e);
+  }
+})();
+
+//Async functions can also be used as promises.
