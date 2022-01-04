@@ -93,3 +93,16 @@ for (let text of list) {
 console.log(newArr.join('\n'));
 console.log(`----------------`);
 console.log(newList);
+
+//NOTE: ARRAY TO STRING USING A FUNCTION AND STRING().
+
+function arrayToString(arr) {
+  let str = '';
+  for (let i = 0; i < arr.length; i++) {
+    str = str + String(arr[i]);
+  }
+  return str;
+}
+
+console.log(arrayToString(['k', 'e', 'l', 'l', 'o', 'g', 's']));
+console.log(arrayToString(['K', 'a', 't', 'a', 'l']));
