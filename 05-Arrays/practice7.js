@@ -140,3 +140,15 @@ console.log(totalData);
    8,  9, 10, 11, 12, 13, 14,
   15, 16, 17, 18, 19, 20
 ] */
+
+//NOTE: Using for each to iterate and print the value in the array.
+
+totalData.forEach(function (current, i, arr) {
+  if (current > 3) {
+    console.log(
+      `Dog number ${i + 1} is an adult, and is ${current} yearls old.`
+    );
+  } else {
+    console.log(`Dog number ${i + 1} is still a puppy!!`);
+  }
+});
