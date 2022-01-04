@@ -79,3 +79,10 @@ function calcSum(n1, n2, n3) {
 console.log(calcSum(arrExample[0], arrExample[1], arrExample[2])); //6
 
 console.log(calcSum(...arrExample)); //6
+
+//NOTE: MERGE ARRAYS.
+
+let numbers = [1, 2, 3, 4, 5, 6, 7];
+const totalNumbers = [...numbers, 8, 9, 10];
+
+console.log(totalNumbers); //[1, 2, 3, 4,  5,6, 7, 8, 9, 10]
