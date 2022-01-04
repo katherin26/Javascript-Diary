@@ -179,3 +179,18 @@ wakeUp2('10:00AM', 'Bryan')
 })();
 
 //Async functions can also be used as promises.
+
+async function doSomething() {
+  return 'Did something';
+}
+
+/*When calling an async function with no await keyword, it will return a promise. */
+
+doSomething().then(result => console.log(result));
+
+//Or just go full async/await
+
+(async () => {
+  const result = await doSomething();
+  console.log(result);
+})();
