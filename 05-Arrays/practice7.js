@@ -123,3 +123,8 @@ let person2Data = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
 let person1DataCopy = [...person1Data];
 console.log(person1DataCopy);
 //[1, 2, 3, 4,  5,6, 7, 8, 9, 10]
+
+//Slice Method.
+
+let correctPerson1Data = person1DataCopy.slice(1, 3);
+console.log(correctPerson1Data); //[2,3]
