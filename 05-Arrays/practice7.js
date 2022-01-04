@@ -59,3 +59,23 @@ for (const [min, value] of gameEvents) {
       Second [half] 76 : GOAL,Substitution,Yellow Card,Red Card.
       Second [half] 80 : GOAL,Substitution,Yellow Card,Red Card.
       Second [half] 92 : GOAL,Substitution,Yellow Card,Red Card. */
+
+/* NOTE: SPREAD OPERATOR
+ In other words =
+
+ - Unpack values
+ - Expand values
+ - It extracts values or properties from an array or object and puts the in the destination.
+ */
+
+//SPREAD OPERATOR WITH ARRAYS.
+
+const arrExample = [1, 2, 3];
+
+function calcSum(n1, n2, n3) {
+  return n1 + n2 + n3;
+}
+
+console.log(calcSum(arrExample[0], arrExample[1], arrExample[2])); //6
+
+console.log(calcSum(...arrExample)); //6
