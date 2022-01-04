@@ -123,3 +123,32 @@ function study2(time, name) {
     }, 4000);
   });
 }
+
+/*Let's implement this returns a Promise object, this means we can use 
+methods like then and catch.
+This function represents the resolve function inside the promise.
+We can chain promises by returning another promise remember that brushTeeth2 returns
+a promise, we are just returning that promise again so we can chain it.
+
+*/
+
+wakeUp2('10:00AM', 'Bryan')
+  .then(function (result) {
+    console.log(result);
+    return brushTeeth2('10:15AM', 'Bryan');
+  })
+  .then(function (result) {
+    console.log(result);
+    return prepareCoffee2('10:30AM', 'Bryan');
+  })
+  .then(function (result) {
+    console.log(result);
+    return study2('11:00AM', 'Bryan');
+  })
+  .then(function (result) {
+    console.log(result);
+    //No more chaining.
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
