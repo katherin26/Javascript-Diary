@@ -165,3 +165,14 @@ const plants = [
 //Using for each loop over the array ann print the weight of each flower.
 
 plants.forEach(el => console.log(el.weight)); //10 5 1 4
+
+//Find Marcus's in the array and log the weight of the plant and the brand food.
+
+function findPlant(arr) {
+  const plant = arr.find(plant => plant.owners.includes('Marcus'));
+  console.log(
+    `Marcus plant is eating ${plant.brandFood} and the weight: ${plant.weight} lb`
+  );
+}
+
+console.log(findPlant(plants)); //Marcus plant is eating Organic Food and the weight: 1 lb
