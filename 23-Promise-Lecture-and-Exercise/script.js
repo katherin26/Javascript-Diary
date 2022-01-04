@@ -75,3 +75,51 @@ wakeUp1('9:00 AM', 'Kt', function (error, result) {
     });
   }
 });
+
+/*SECOND WAY (PROMISES)
+Much easier to read than callback hell, as you can see we no longer 
+pass a callback to receive our results.
+Instead, this functions returns a Promise, which is an object with its own methods
+to handle results (then) and errors (catch).
+
+A promise constructor receives a function, which is the function where our logic will
+be, when everything goes well we call resolve with the result, if something goes wrong , 
+we call reject with an error.
+*/
+
+function wakeUp2(time, name) {
+  return new Promise((resolve, reject) => {
+    /*We could call resolve immediately, but we want to simulate it takes time
+    In our example there is no error, there is no call to reject,
+    but in case there was an error, you should call it like reject('There was an error').
+     */
+    setTimeout(function () {
+      /*Resolve will be the function passed to the then method of the promise. */
+      resolve(`${name} woke up at ${time}`);
+    }, 4000);
+  });
+}
+
+function brushTeeth2(time, name) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve(`${name} brushed teeth at ${time}`);
+    }, 4000);
+  });
+}
+
+function prepareCoffee2(time, name) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve(`${name} prepared coffee at ${time}`);
+    }, 4000);
+  });
+}
+
+function study2(time, name) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      resolve(`${name} studied at ${time}`);
+    }, 4000);
+  });
+}
