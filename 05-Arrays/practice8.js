@@ -43,3 +43,18 @@ function printValue(arr) {
 }
 
 printValue(planets);
+
+/*NOTE: Loop over the 2 arrays and if there are any common courses print them. */
+
+let studentCourse1 = ['Math', 'English', 'Programming', 'Spanish'];
+let studentCourse2 = ['Geography', 'Spanish', 'Programming'];
+
+/*First : We iterate over the studentCourse1 and used the indexOf() method and this one return the first index at which a given element can be found in the array , or -1 if it is not present. , the second parameter is the start index in this case 0. That's why we used studentCourse[i],[0] 
+Then using if statement we write if the result is diferent from -1 print the studentCourse1[i];
+*/
+
+for (let i = 0; i < studentCourse1.length; i++) {
+  let result = studentCourse2.indexOf(studentCourse1[i], 0);
+
+  if (result !== -1) console.log(studentCourse1[i]);
+}
