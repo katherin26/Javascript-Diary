@@ -31,3 +31,15 @@ console.log(sortArr([3, 8, 7, 6, 5, -4, 3, 2, 1]));
 console.log(sortArr([30, 80, 7, 15, 5, -1, 3, 2, 1]));
 
 console.log(sortArr([30, 8, 71, 60, 50, -2, 3, 2, 1]));
+
+/*NOTE: Declare and initialize an array called Planets with 5 string values and print the values and the index. */
+
+let planets = ['Mercury', 'venus', 'Mars', 'Uranus', 'Saturn'];
+
+function printValue(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    console.log(i, arr[i]);
+  }
+}
+
+printValue(planets);
