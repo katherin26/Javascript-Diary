@@ -44,3 +44,16 @@ personCopy.name = 'Br';
 //This modified the name inside the original object.
 console.log(person.name); //Br
 console.log(personCopy.name); //Br
+
+//NOTE: COPY BY REFERENCE
+//ARRAYS
+
+let pets = ['Isaac', 'Ada'];
+let petsCopy = pets;
+
+petsCopy.pop();
+petsCopy.push('Jill');
+
+//MODIFIED THE ORIGINAL ARRAY BECAUSE POINT TO THE ORIGINAL ARRAY.
+console.log(pets); //[ 'Isaac', 'Jill' ]
+console.log(petsCopy); //[ 'Isaac', 'Jill' ]
