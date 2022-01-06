@@ -34,9 +34,7 @@ APIs that follow the REST principles are called RESTful.
 **{RESTful API}**
 
 The main charactetistic is the separation between the client and the server.
-Implementation of the Client and Implementation of the Server can be done independently without each knowing about the other, this means that the code on the client side can be changed at any time without affecting the operation of the server and the code of the server side can be changed without affecting the operation of the client by using a rest api different clients or computers hit the same rest end points perform the same actions and receive the same responses systems that follow the rest principles are stateless meaning that the server does not know anything about what state the client is in and viceversa in the rest architecture clients send requests to retrieve or modify resources and servers send responses to those requests and all of these requests follow the same structure an api request has to have an endpoint, meaning the url that we are requesting . For example whenever you go to a specific url you're basically just making a **get** request to get that specific website and in this case the endPoint is rapidapi.com/learn.
-
-Your api request also has to have a method
+Implementation of the Client and Implementation of the Server can be done independently without each knowing about the other, this means that the code on the client side can be changed at any time without affecting the operation of the server and the code of the server side can be changed without affecting the operation of the client by using a rest api different clients or computers hit the same rest end points perform the same actions and receive the same responses systems that follow the rest principles are stateless meaning that the server does not know anything about what state the client is in and viceversa in the rest architecture clients send requests to retrieve or modify resources and servers send responses to those requests and all of these requests follow the same structure an api request has to have an endpoint, meaning the url that we are requesting .
 
 **ANATOMY OF AN API REQUEST**
 
@@ -48,12 +46,28 @@ Headers:     Additional information for either the client or the server
 Body :       Information sent to the server
 ```
 
+For example whenever you go to a specific url you're basically just making a **get** request to get that specific website and in this case the endPoint is rapidapi.com/learn.
+Your api request also has to have a method meaning the type of the request we're making in this case let's say we're making a post request meaning we want to send some data over using that request an api request also has headers additional information for either the client or the server in this case that can be some information about the body and finally the body itself is the information sent to the server let's say that we want to create a new user with the name John Doe this was the anatomy of an api request rigth now we're going to take a look at the different methods that we can make post in just one of them let's take a look at the standard ways to make request and send responses.
+
 ```
 Select component to hightlith :  https://rapidapi.com/learn
 EndPoint                         POST
 Method                           Some information about the : "Body"
 Header                           Create a new user with the name "John Doe"
 Body
+
+```
+
+To talk about that we have to mention another acronym :
+
+**CRUD** = Stands for **Create**, **Read**, **Update** and **Delete**.
+
+```
+ In a rest enviroment CRUD often corresponds to the http methods
+ POST : Create,
+ GET : Read,
+ PUT: Update,
+ DELETE: Delete.
 
 ```
 
