@@ -29,3 +29,18 @@ stringCopy = 'Copy Name';
 
 console.log(string); //Original Name
 console.log(stringCopy); //Copy Name
+
+//NOTE: COPY BY REFERENCE
+//OBJECTS
+
+let person = {
+  name: 'Lola',
+  age: 29,
+};
+
+let personCopy = person;
+personCopy.name = 'Br';
+
+//This modified the name inside the original object.
+console.log(person.name); //Br
+console.log(personCopy.name); //Br
