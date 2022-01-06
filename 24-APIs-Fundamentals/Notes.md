@@ -34,6 +34,27 @@ APIs that follow the REST principles are called RESTful.
 **{RESTful API}**
 
 The main charactetistic is the separation between the client and the server.
-Implementation of the Client and Implementation of the Server can be done independently without each knowing about the other, this means that the code on the client side can be changed at any time without affecting the operation of the server and the code of the server side can be changed without affecting the operation of the client by using a rest api different clients or computers hit the same rest end points perform the same actions and receive the same responses systems that follow the rest principles are stateless meaning that the server does not know anything about what state the client is in and viceversa in the rest architecture clients send requests to retrieve or modify resources and servers send responses to those requests and all of these requests follow the same structure an api request has to have an endpoint, meaning the url that we are requesting . For example whenever you go to a specific url you're basically just making a get request to get that specific website
+Implementation of the Client and Implementation of the Server can be done independently without each knowing about the other, this means that the code on the client side can be changed at any time without affecting the operation of the server and the code of the server side can be changed without affecting the operation of the client by using a rest api different clients or computers hit the same rest end points perform the same actions and receive the same responses systems that follow the rest principles are stateless meaning that the server does not know anything about what state the client is in and viceversa in the rest architecture clients send requests to retrieve or modify resources and servers send responses to those requests and all of these requests follow the same structure an api request has to have an endpoint, meaning the url that we are requesting . For example whenever you go to a specific url you're basically just making a **get** request to get that specific website and in this case the endPoint is rapidapi.com/learn.
+
+Your api request also has to have a method
+
+**ANATOMY OF AN API REQUEST**
+
+```
+Name :       Description
+EndPoint :   The URL that you request for
+Method:      The type of your request
+Headers:     Additional information for either the client or the server
+Body :       Information sent to the server
+```
+
+```
+Select component to hightlith :  https://rapidapi.com/learn
+EndPoint                         POST
+Method                           Some information about the : "Body"
+Header                           Create a new user with the name "John Doe"
+Body
+
+```
 
 **HTTP** =
