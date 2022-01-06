@@ -123,3 +123,33 @@ let result3 = calcAvg(listArr3);
 console.log(`The result is "${result1}"`); //4
 console.log(`The result is "${result2}"`); //6
 console.log(`The result is "${result3}"`); //7
+
+//NOTE:  CLONE AN ARRAY USING A FOR LOOP.
+let listArr1 = [1, 2, 3, 4, 5, 6];
+let listArr2 = [10, 20, 30, 40, 50, 60];
+let listArr3 = [100, 200, 300, 400, 500, 600];
+
+function cloneArr(arr) {
+  let clone = [];
+  for (let i = 0; i < arr.length; i++) {
+    clone.push(arr[i]);
+  }
+  return clone;
+}
+
+let clone1 = cloneArr(listArr1);
+let clone2 = cloneArr(listArr2);
+let clone3 = cloneArr(listArr3);
+
+console.log(clone1);
+console.log(clone2);
+console.log(clone3);
+
+//Now this type of clone is a exact clone and you can modified the array clone1 using push or pop but the original remain intact.
+
+clone1.push('name');
+console.log(clone1);
+//[1,2,3,4,5,6,'name']
+
+//The original remain intact.
+console.log(listArr1); //[ 1, 2, 3, 4, 5, 6 ]
