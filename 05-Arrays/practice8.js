@@ -101,3 +101,25 @@ function findMax(arr) {
 
 let maxResult = findMax(arr);
 console.log(`Max: ${maxResult}`); //Max: 90
+
+//  NOTE: Create a function called calcAvg and sum all the numbers inside an array and inside that function used the total sum and return the average of each listArr.
+
+let listArr1 = [1, 2, 3, 4, 5, 6, 7];
+let listArr2 = [1, 2, 3, 4, 5, 6, 7, 8, 10];
+let listArr3 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 13, 14];
+
+function calcAvg(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  return Math.ceil(sum / arr.length);
+}
+
+let result1 = calcAvg(listArr1);
+let result2 = calcAvg(listArr2);
+let result3 = calcAvg(listArr3);
+
+console.log(`The result is "${result1}"`); //4
+console.log(`The result is "${result2}"`); //6
+console.log(`The result is "${result3}"`); //7

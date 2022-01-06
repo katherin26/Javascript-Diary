@@ -71,4 +71,8 @@ To talk about that we have to mention another acronym :
 
 ```
 
-**HTTP** =
+Rest requires that a client make a request to the server in order to retreive or modify the data on the server and **HTTP** request is generally consisted of an **http verb** which defines what kind of operation are we performing a header, which allows the client to pass along information about the request a path of the resource an optional message body containing data.
+
+**HTTP** = There are 4 basic HTTP verbs we use in request to interact with resources in a REST system.
+
+-First one is = Get request
