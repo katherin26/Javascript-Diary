@@ -153,3 +153,29 @@ console.log(clone1);
 
 //The original remain intact.
 console.log(listArr1); //[ 1, 2, 3, 4, 5, 6 ]
+
+//NOTE:COPY BY VALUE IN ARRAY AND OBJECT EXTRACTING EACH VALUE INTO A VARIABLE WITH ASSIGNMENT
+
+// ARRAY WITH AN OBJECT INSIDE.
+
+let arr1 = [1, 2, 3, { name: 'original name' }, ['a', 'b', 'c']];
+
+let copy1 = [arr1[0], arr1[1], arr1[2], arr1[3], arr1[4]];
+
+copy1[0]++; //2
+copy1[1]++; //3
+copy1[2] += 10; //13
+copy1[3].name = 'Isa'; //Isa
+copy1[4].push('d'); //'d'
+
+console.log(`----Original----`);
+console.log(arr1);
+//The only one by reference is name : Isa
+
+/*[ 1, 2, 3, { name: 'Isa' }, [ 'a', 'b', 'c', 'd' ] ]*/
+
+console.log(`----Copy----`);
+console.log(copy1);
+//The only one by reference is name : Isa
+
+/*[ 2, 3, 13, { name: 'Isa' }, [ 'a', 'b', 'c', 'd' ] ] */
