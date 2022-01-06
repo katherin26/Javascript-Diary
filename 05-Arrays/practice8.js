@@ -78,9 +78,26 @@ function positiveNum(arr) {
 
 console.log(positiveNum(numbers)); //[ 10, 12, 5, 90, 0, 1 ]
 
-//Using filter method , Filter the numbers bigger than 0.
+//NOTE: Using filter method , Filter the numbers bigger than 0.
 
 let unfilteredArr = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
 
 const filteredArr = unfilteredArr.filter(el => el >= 0);
 console.log(filteredArr); //[ 10, 12, 5, 90, 0, 1 ]
+
+//NOTE: Create a function called findMax and this function it should return the maximun value inside an array.
+
+let arr = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
+
+function findMax(arr) {
+  let max = arr[0];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] > max) {
+      max = arr[i];
+    }
+  }
+  return max;
+}
+
+let maxResult = findMax(arr);
+console.log(`Max: ${maxResult}`); //Max: 90
