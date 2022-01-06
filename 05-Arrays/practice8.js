@@ -58,3 +58,22 @@ for (let i = 0; i < studentCourse1.length; i++) {
 
   if (result !== -1) console.log(studentCourse1[i]);
 }
+
+/*NOTE: Create a function that receives an array of numbers and returns an array containing only the positive numbers. */
+
+let numbers = [-5, 10, -3, 12, -9, 5, 90, 0, 1];
+
+/*We cretate a function with the name positiveNum and we pass arr like parameter, Inside the function, we create an empty let variable called positives and this variable is gonna store the final result from the loop.
+The For Loop iterates over the array and with an if statement compares if the current index values is equal or bigger than 0 , if is true push the value to positives.
+ */
+function positiveNum(arr) {
+  let positives = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] >= 0) {
+      positives.push(arr[i]);
+    }
+  }
+  return positives;
+}
+
+console.log(positiveNum(numbers)); //[ 10, 12, 5, 90, 0, 1 ]
