@@ -59,6 +59,21 @@ Body
 
 ```
 
+**ANATOMY OF AN API RESPONSE**
+
+```
+Name : Description
+Headers : Additional information for either the client or the server .
+Body : The name of the requested user is "John Doe"
+
+```
+
+```
+Select component to highlight : Some information about the "Body" of the response.
+Headers : The name of the requested user is "John Doe"
+Body
+```
+
 To talk about that we have to mention another acronym :
 
 **CRUD** = Stands for **Create**, **Read**, **Update** and **Delete**.
