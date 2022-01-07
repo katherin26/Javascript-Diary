@@ -1,6 +1,7 @@
 1. PAW = is a full featured http client that let you test your apis.
 2. RapidAPI LEARN = https://rapidapi.com/learn/rest-apis/introduction?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel
 3. API HUB = https://rapidapi.com/hub?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel
+4. BEST PRACTICES = https://restfulapi.net/resource-naming/
 
 # **WHAT IS AN API**
 
@@ -75,4 +76,40 @@ Rest requires that a client make a request to the server in order to retreive or
 
 **HTTP** = There are 4 basic HTTP verbs we use in request to interact with resources in a REST system.
 
--First one is = Get request
+-First one is = **GET** request allows us to get a specific resource by id or get a collection of resources .
+
+-Second one is = **POST** Simply allows us to create a new resource.
+
+-Third one is = **PUT** Allows us to update a specific resource by id.
+
+-Four one = **DELETE** Allows us to remove a specific resource by id.
+
+**These were only the 4 main HTTP verbs , there are also a few more less known verbs.**
+
+## **HTTP STATUS**
+
+**200**= Everything went well.
+**404**= Which means that the requested resource couldn't be found
+
+## **1XX Informational Response**
+
+Everything that starts with 100s the request was received, something needs to continue.
+
+## **2XX Succesful**
+
+Everything that starts with 200s that means the request was successfully received, understood, and accepted.
+
+## **3XX Redirections**
+
+## **4XX Client-side erros**
+
+## **5XX Server-side errors**
+
+# **APIs Testing**
+
+Allows to check in detail all of the parts of existing APIs as i've mentioned apis have become the center of software development, luckily testing then can greatly improve the efficiency and help you deliver software faster than ever while there are many aspects of api testing it generally consists of making requests to a single resource or sometimes multiple api endpoints and validating the response whether for performance security , functional correctness, or just a status check.
+
+**For API testing**, we'll be using **PAW**
+
+Paw is a free to use APIs testing tool that allows you to send all kinds of HTTP requests!.
+It allows you to organize and create groups of request and envirionment variables for individual projects, whatever you send or receive paw will find the best way to display it, supports web pages, images, pdfs and has a full syntax highlighting for most programming languages. Paw knows about your mistakes and warns you when something looks wrong it makes you avoid common mistakes such as sending a body in a get request.
