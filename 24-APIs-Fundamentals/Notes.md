@@ -1,4 +1,5 @@
 1. PAW = is a full featured http client that let you test your apis.
+   = https://paw.app/projects/94952?code=it
 2. RapidAPI LEARN = https://rapidapi.com/learn/rest-apis/introduction?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel
 3. API HUB = https://rapidapi.com/hub?utm_source=youtube.com%2FJavaScriptMastery&utm_medium=DevRel&utm_campaign=DevRel
 4. BEST PRACTICES = https://restfulapi.net/resource-naming/
@@ -141,3 +142,37 @@ Allows to check in detail all of the parts of existing APIs as i've mentioned ap
 
 Paw is a free to use APIs testing tool that allows you to send all kinds of HTTP requests!.
 It allows you to organize and create groups of request and envirionment variables for individual projects, whatever you send or receive paw will find the best way to display it, supports web pages, images, pdfs and has a full syntax highlighting for most programming languages. Paw knows about your mistakes and warns you when something looks wrong it makes you avoid common mistakes such as sending a body in a get request.
+
+# **DIFERENT TYPES OF HTTP HEADERS**
+
+When a client requests to the server, the client can pass additional information as a part of the request via HTTP headers. As mentioned earlier, headers are case insensitive.
+
+Headers can container information about :
+
+1. The type of data that the client is sending to the server. It can also contain information about authenticating a user agent with the server.
+
+2. Headers can be grouped into four types based on their contexts:
+
+**Request Headers**
+
+The Request Headers pass information about the request.
+
+It contains information about the requested resource and the client making the request.
+
+A request header can contain information about the type of the request:
+
+1. The URL to which the request is being made
+2. Authentication details
+3. Cache policy as well as the user agent.
+
+**POPULAR REQUEST HEADERS**
+
+**ACCEPT**
+
+The accept HTTP header informs the server about the type of data tha the client can understand.
+
+```
+Accept: text/html
+Accept: application/xhtml+xml
+Accept: image/png
+```
