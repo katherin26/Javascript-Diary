@@ -236,3 +236,33 @@ Indicates the size of the message body in bytes.
 **CONTENT RANGE**
 
 Indicates the position of a partial message in a full body message.
+
+# **SECURITY**
+
+## **CSP**
+
+CSP is a protocol that can be used to provide an additional level of security over various issues like XSS, data injection, etc...
+
+CSP can be enabled on a server by passing : **The Content Security Policy** HTTP response header.
+
+It is a security measure that prevents attacks from running malicious content on a web application.
+
+Using CSP, It is posible to limit the amount of data sources that a web application can load, this is done by properly configuring the CSP headers.
+
+CSP can prevent errors that occurs due to unsigned inline Javascript and CSS style tags as well as Javascript code using eval().
+
+## **CORS**
+
+Is a mechanism based on the HTTP headers that allow the server to respond from what origins the serven can accept.
+
+The server can accept the request if it is being made from the same origin as the server but can reject requests from other origins or domains via **the same origin policy**
+
+## **THE SAME ORIGIN POLICY**
+
+Is a security mechanism that limits the ability of a document from one origin to interact with the resources present in a different origin.
+
+This security measure was taken to ensure that data from one domain can't be stolen from another.
+
+## **PREVENTION CORS ERRORS**
+
+Errors arising due to CORS can be prevented by using the correct configurations. You should always try to use wildcard or null in the CORS headers and allow requests from only trusted domains.
