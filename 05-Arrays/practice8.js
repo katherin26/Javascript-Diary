@@ -306,3 +306,46 @@ const arrNum = [10, -20, 30, -40, 50, -60, 70, 80, -90, 100];
 const sum = arrNum.reduce((acc, curVal) => acc + curVal);
 
 console.log(sum); //130
+
+//NOTE:   Differents ways to sum an array.
+
+const arrNum = [10, -20, 30, -40, 50, -60, 70, 80, -90, 100];
+
+const sum = arrNum.reduce((acc, curVal) => acc + curVal);
+
+console.log(sum); //130
+
+//With a For Loop.
+
+let sumFor = 0;
+for (let i = 0; i < arrNum.length; i++) {
+  sumFor = sumFor + arrNum[i];
+}
+console.log(sumFor); //130
+
+//With a function call calcSum.
+function calcSum(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum = sum + arr[i];
+  }
+  return sum;
+}
+
+console.log(calcSum(arrNum)); //130
+
+//FOR OF LOOP.
+
+let sumForLoop = 0;
+
+for (const value of arrNum) {
+  sumForLoop = sumForLoop + value;
+} //130
+
+//FOR IN LOOP
+
+let sumForInLoop = 0;
+
+for (const property in arrNum) {
+  sumForInLoop = sumForInLoop + arrNum[property];
+} //130
