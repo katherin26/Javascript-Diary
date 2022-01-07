@@ -218,3 +218,30 @@ console.log(slice);
 /*[
   'Bird',  'Guinea Pig']
 ] */
+
+/*NOTE: Using sort() */
+
+const fruits = [
+  { name: 'Apple0', type: 0 },
+  { name: 'Apple1', type: 1 },
+  { name: 'Apple2', type: 2 },
+  { name: 'Apple3', type: 3 },
+];
+
+fruits.sort(function (a, b) {
+  const nameA = a.name.toLocaleLowerCase();
+  const nameB = b.name.toLocaleLowerCase();
+
+  if (nameA > nameB) return -1;
+  if (nameA < nameB) return 1;
+  return 0;
+});
+
+console.log(fruits);
+
+/*[
+  { name: 'Apple3', type: 3 },
+  { name: 'Apple2', type: 2 },
+  { name: 'Apple1', type: 1 },
+  { name: 'Apple0', type: 0 }
+] */
