@@ -89,36 +89,49 @@ To talk about that we have to mention another acronym :
 
 Rest requires that a client make a request to the server in order to retreive or modify the data on the server and **HTTP** request is generally consisted of an **http verb** which defines what kind of operation are we performing a header, which allows the client to pass along information about the request a path of the resource an optional message body containing data.
 
+# **WHAT IS HTTP?**
+
+(Hypertext Transfer Protocol) is a protocol generally used by web services for serving HTML documents. A client request to a server for a resource, and the server sends a response.
+
 **HTTP** = There are 4 basic HTTP verbs we use in request to interact with resources in a REST system.
 
 -First one is = **GET** request allows us to get a specific resource by id or get a collection of resources .
 
 -Second one is = **POST** Simply allows us to create a new resource.
 
--Third one is = **PUT** Allows us to update a specific resource by id.
+-Third one is = **PATCH AND PUT** Allows us to update a specific resource by id. The main difference between PATCH and PUT is that PATCH is used to partially modify a resource, whereas PUT is used to update the entire resource on the server.
 
 -Four one = **DELETE** Allows us to remove a specific resource by id.
 
 **These were only the 4 main HTTP verbs , there are also a few more less known verbs.**
 
+# **WHAT ARE STATUS CODES??**
+
 ## **HTTP STATUS**
 
-**200**= Everything went well.
-**404**= Which means that the requested resource couldn't be found
-
 ## **1XX Informational Response**
+
+**100** = Informational.
 
 Everything that starts with 100s the request was received, something needs to continue.
 
 ## **2XX Succesful**
 
+**200**= Everything went well.
+
 Everything that starts with 200s that means the request was successfully received, understood, and accepted.
 
 ## **3XX Redirections**
 
-## **4XX Client-side erros**
+**300**= Redirection.
+
+## **4XX Client-side error**
+
+**404**= Which means that the requested resource couldn't be found
 
 ## **5XX Server-side errors**
+
+**500**= Server Error.
 
 # **APIs Testing**
 
