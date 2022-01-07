@@ -165,7 +165,7 @@ A request header can contain information about the type of the request:
 2. Authentication details
 3. Cache policy as well as the user agent.
 
-**POPULAR REQUEST HEADERS**
+## **POPULAR REQUEST HEADERS**
 
 **ACCEPT**
 
@@ -176,3 +176,63 @@ Accept: text/html
 Accept: application/xhtml+xml
 Accept: image/png
 ```
+
+**ACCEOT-ENCODING**
+
+The Accept-Encoding HTTP header informs the server about the type of encoding the client is able to understand.
+
+```
+Accept-Encoding: gzip
+Accept-Encoding: gzip, compress
+
+```
+
+and ....
+
+**AUTHORIZATION** = Pass credentials for authentication
+
+## **ACCEPT-LANGUAGE**
+
+Lets the server know which local is preferred and understood by the client.
+**CACHE-CONTROL** = Holds caching instructions for the client and the server.
+
+## **RESPONSE HEADERS**
+
+Contain information about the client, The response headers contain information about the server from which the resource is requested.
+
+## **REPRESENTATION HEADERS**
+
+Contain information about the resource body, which is sent in a response.
+
+**CONTENT-TYPE**
+
+Indicates the media type of the resource before any form of content-encoding.
+
+```
+Content-Type: text/html; charset=UTF-8
+
+```
+
+**CONTENT ENCODING**
+It is used primarly to do lossless compression of the payload.
+
+**CONTENT LANGUAGE**
+Intended for a particular type of audience.
+
+**CONTENT LOCATION**
+
+Indicates an alternate location for the response.
+
+## **PAYLOAD HEADERS**
+
+Contain information about the payload like the length of the message, range of the resource carried in the payload, encoding etc.
+
+Payloads headers include the following:
+
+**CONTENT LENGTH**
+
+Indicates the size of the message body in bytes.
+
+**CONTENT RANGE**
+
+Indicates the position of a partial message in a full body message.
