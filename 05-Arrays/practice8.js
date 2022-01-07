@@ -298,3 +298,11 @@ const chainingResult = numbers
   .map(obj => obj.value);
 
 console.log(chainingResult); //[ 6, 7, 8, 9, 10 ]
+
+//NOTE: USING REDUCE METHOD.
+
+const arrNum = [10, -20, 30, -40, 50, -60, 70, 80, -90, 100];
+
+const sum = arrNum.reduce((acc, curVal) => acc + curVal);
+
+console.log(sum); //130
