@@ -179,3 +179,42 @@ console.log(copy1);
 //The only one by reference is name : Isa
 
 /*[ 2, 3, 13, { name: 'Isa' }, [ 'a', 'b', 'c', 'd' ] ] */
+
+//NOTE: EXERCISE USING CONCAT AND SLICE.
+
+const animals = ['Dog', 'Cat', 'Bird', 'Guinea Pig'];
+
+const animals2 = ['Bunny', 'Butterfly', 'Pig', 'Snake'];
+
+//Concat 2 arrays.
+
+const combined = animals.concat(animals2);
+
+console.log(combined);
+
+/*[
+  'Dog',   'Cat',
+  'Bird',  'Guinea Pig',
+  'Bunny', 'Butterfly',
+  'Pig',   'Snake'
+] */
+
+//A copy with slice.
+
+const copy = combined.slice();
+console.log(copy);
+/*[
+  'Dog',   'Cat',
+  'Bird',  'Guinea Pig',
+  'Bunny', 'Butterfly',
+  'Pig',   'Snake'
+] */
+
+//A slice of the array.
+
+const slice = copy.slice(2, 4);
+console.log(slice);
+
+/*[
+  'Bird',  'Guinea Pig']
+] */
