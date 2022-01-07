@@ -245,3 +245,10 @@ console.log(fruits);
   { name: 'Apple1', type: 1 },
   { name: 'Apple0', type: 0 }
 ] */
+
+//NOTE: Using filter().
+
+const arrNumbers = [10, 11, 12, -13, 14, 15, 16, 17, 18, 19, 20];
+
+const filtered = arrNumbers.filter(n => n >= 0);
+console.log(filtered);
