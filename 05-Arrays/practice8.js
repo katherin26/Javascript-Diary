@@ -252,3 +252,49 @@ const arrNumbers = [10, 11, 12, -13, 14, 15, 16, 17, 18, 19, 20];
 
 const filtered = arrNumbers.filter(n => n >= 0);
 console.log(filtered);
+
+//NOTE: Using map and filter iterate over the array and log only the number > 5 .
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13];
+
+const result = numbers.filter(n => n >= 0);
+
+console.log(result); /*[1, 2, 3, 4,  5,
+  6, 7, 8, 9, 10
+]*/
+
+const resultmap = result.map(n => ({ value: n }));
+
+console.log(resultmap);
+
+/*[
+  { value: 1 }, { value: 2 },
+  { value: 3 }, { value: 4 },
+  { value: 5 }, { value: 6 },
+  { value: 7 }, { value: 8 },
+  { value: 9 }, { value: 10 }
+] */
+
+const filter2 = resultmap.filter(obj => obj.value > 5);
+console.log(filter2);
+
+/*[
+  { value: 6 },
+  { value: 7 },
+  { value: 8 },
+  { value: 9 },
+  { value: 10 }
+] */
+
+const map2 = filter2.map(obj => obj.value);
+console.log(map2); //[ 6, 7, 8, 9, 10 ]
+
+//Chaining map and filter.
+
+const chainingResult = numbers
+  .filter(n => n >= 0)
+  .map(n => ({ value: n }))
+  .filter(obj => obj.value > 5)
+  .map(obj => obj.value);
+
+console.log(chainingResult); //[ 6, 7, 8, 9, 10 ]
