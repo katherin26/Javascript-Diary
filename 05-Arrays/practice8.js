@@ -376,3 +376,21 @@ function includes2(arr, number) {
 }
 
 console.log(includes2(numbers, 2)); //true
+
+//NOTE: Using includes methods create a new array without the number 1, Create a function called except.
+
+const numbers = [10, 20, 3, 0, 50, 44, 55, 66, 22, 0, 1, 7];
+
+function except(arr, excluded) {
+  const result = [];
+
+  for (let element of arr)
+    if (!excluded.includes(element)) result.push(element);
+
+  return result;
+}
+
+const result = except(numbers, [1]);
+console.log(result);
+
+/*[10, 20,  3,  0, 50, 44, 55, 66, 22,  0, 7*/
