@@ -349,3 +349,30 @@ let sumForInLoop = 0;
 for (const property in arrNum) {
   sumForInLoop = sumForInLoop + arrNum[property];
 } //130
+
+//NOTE: Check if the number 10,-1 and 2 are included in an array called numbers.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13];
+
+//Solution using a function and a for of loop.
+function includes(arr, searchElement) {
+  for (let element of arr)
+    if (element === searchElement)
+      return `The number you are looking for is ${element} and exist in the array.`;
+  return false;
+}
+
+console.log(includes(numbers, 10));
+//The number you are looking for is 10 and exist in the array.
+console.log(includes(numbers, 0)); //false
+
+//Solution using includes method.
+const result = numbers.includes(10);
+console.log(result); //true
+
+//Solution using includes inside a function.
+function includes2(arr, number) {
+  return arr.includes(number);
+}
+
+console.log(includes2(numbers, 2)); //true
