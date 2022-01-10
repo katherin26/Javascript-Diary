@@ -394,3 +394,30 @@ const result = except(numbers, [1]);
 console.log(result);
 
 /*[10, 20,  3,  0, 50, 44, 55, 66, 22,  0, 7*/
+
+//NOTE: Find the ocurrences inside an array.
+
+const numbers = [1, 2, 3, 4, 5, 6, 1, 1, 1];
+
+function occurrences(arr, el) {
+  return arr.reduce((acc, curVal) => {
+    const occurrence = curVal === el ? 1 : 0;
+    console.log(`Total : ${acc}, Current Value : ${curVal}, Element : ${el}`);
+
+    return acc + occurrence;
+  }, 0);
+}
+
+const total = occurrences(numbers, 1);
+console.log(total);
+
+/*
+Total : 0, Current Value : 1, Element : 1
+Total : 1, Current Value : 2, Element : 1
+Total : 1, Current Value : 3, Element : 1
+Total : 1, Current Value : 4, Element : 1
+Total : 1, Current Value : 5, Element : 1
+Total : 1, Current Value : 6, Element : 1
+Total : 1, Current Value : 1, Element : 1
+
+ */
