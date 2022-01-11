@@ -155,3 +155,12 @@ console.log(greeting({ name: `Alice` })); //Alice
 console.log(greeting(null)); //stranger
 console.log(greeting({ name: `MATHEW` })); //MATHEW
 console.log(greeting()); //stranger
+
+//NOTE: Passing spread operator like argument.
+
+function sum3(discount, ...prices) {
+  const total = prices.reduce((a, b) => a + b);
+  return total * (1 - discount);
+}
+
+console.log(sum3(0.1, 20, 30));
