@@ -178,3 +178,31 @@ function getMax2(arr) {
 
 const max = getMax2(numbers);
 console.log(max);
+
+//NOTE: FILTER,SORT,REVERSE,MAP
+
+const movies = [
+  {
+    title: 'a',
+    year: 2015,
+    rating: 8.8,
+  },
+  {
+    title: 'b',
+    year: 2012,
+    rating: 4.7,
+  },
+  {
+    title: 'c',
+    year: 2016,
+    rating: 5.0,
+  },
+];
+
+const titles = movies
+  .filter(m => m.year === 2015 && m.rating >= 4)
+  .sort((a, b) => a.rating - b.rating)
+  .reverse()
+  .map(m => m.title);
+
+console.log(titles);
