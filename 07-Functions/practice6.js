@@ -164,3 +164,17 @@ function sum3(discount, ...prices) {
 }
 
 console.log(sum3(0.1, 20, 30));
+
+//NOTE: Get the max value.
+
+const numbers = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+
+function getMax2(arr) {
+  if (arr.length === 0) return undefined;
+  return arr.reduce((acc, cur) => {
+    return acc > cur ? acc : cur;
+  });
+}
+
+const max = getMax2(numbers);
+console.log(max);
