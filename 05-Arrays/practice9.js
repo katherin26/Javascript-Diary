@@ -14,3 +14,12 @@ function stringItUp(arr) {
 }
 
 stringItUp(data); //[ '2', '5', '100' ]
+
+//NOTE: Capitalize each of an array of names.
+
+let data2 = ['john', 'JACOB', 'jinGleHeimer', 'schmidt'];
+function capitalizeName(arr) {
+  return arr.map(el => el.toUpperCase());
+}
+
+capitalizeName(data2); //[ 'JOHN', 'JACOB', 'JINGLEHEIMER', 'SCHMIDT' ]
