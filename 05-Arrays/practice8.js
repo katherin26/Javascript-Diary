@@ -460,3 +460,10 @@ console.log(petMessages);
   'Isaac is 7 years old.',
   'Jill is 3 years old.'
 ] */
+
+//NOTE: Shallow copy can change the value in the original array pf objects.
+
+const isaac = { ...pets[1] };
+isaac.age = 8;
+
+console.log(isaac);
