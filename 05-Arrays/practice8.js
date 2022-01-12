@@ -441,3 +441,22 @@ for (let i = 0; i < lines.length; i++) {
 
   console.log(lines[i]);
 }
+
+//NOTE: USING MAP ITERATO OVER THE ARRAY OF OBJECTS.
+
+const pets = [
+  { name: 'Ada', age: 4 },
+  { name: 'Isaac', age: 7 },
+  { name: 'Jill', age: 3 },
+];
+
+const petMessages = pets.map(pet => {
+  return `${pet.name} is ${pet.age} years old.`;
+});
+
+console.log(petMessages);
+/*[
+  'Ada is 4 years old.',
+  'Isaac is 7 years old.',
+  'Jill is 3 years old.'
+] */
