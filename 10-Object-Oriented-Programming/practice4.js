@@ -258,3 +258,27 @@ console.log(...question.keys());
 console.log(...question.values());
 
 /*What is the best programming language in the world?? C Java Javascript 3 Correct!! Try again!! */
+
+//NOTE:  CREATE A NEW OBJECT WITH THE CLASS ANIMAL.
+
+class Animal {
+  constructor(name, age) {
+    this.name = name;
+    this.age = age;
+  }
+  //Methods
+  getName() {
+    return this.name;
+  }
+
+  sayWoofWoof() {
+    return `Woof Woof! I'm ${this.name}`;
+  }
+}
+
+//As in method 2 use new to create a new object.
+
+let mySecondPet = new Animal('fairy', 2);
+
+console.log(mySecondPet);
+console.log(mySecondPet.sayWoofWoof());
