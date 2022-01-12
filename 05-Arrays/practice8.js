@@ -473,3 +473,13 @@ const newPets = [...pets.slice(0, 1), ...pets.slice(2)];
 
 console.log(newPets);
 /*[ { name: 'Ada', age: 4 }, { name: 'Jill', age: 3 } ] */
+
+//NOTE: Using slice method.
+
+const numbers = [1, 2, 3, 4, 5, 6, 7];
+
+const firstThree = numbers.slice(0, 3);
+console.log(firstThree); //[ 1, 2, 3 ]
+
+const lastFour = numbers.slice(3);
+console.log(lastFour); //[ 4, 5, 6, 7 ]
