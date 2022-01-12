@@ -421,3 +421,23 @@ Total : 1, Current Value : 6, Element : 1
 Total : 1, Current Value : 1, Element : 1
 
  */
+
+//NOTE: Loop over the array of arrays and with destructuring print the number with the vocal a , b , c.
+
+const lines = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
+for (let i = 0; i < lines.length; i++) {
+  const [a, b, c] = lines[i];
+  console.log(`a : ${a}, b : ${b}, c : ${c}`);
+
+  console.log(lines[i]);
+}
