@@ -467,3 +467,9 @@ const isaac = { ...pets[1] };
 isaac.age = 8;
 
 console.log(isaac);
+
+//NOTE: Using slice print only Ada and Jill.
+const newPets = [...pets.slice(0, 1), ...pets.slice(2)];
+
+console.log(newPets);
+/*[ { name: 'Ada', age: 4 }, { name: 'Jill', age: 3 } ] */
