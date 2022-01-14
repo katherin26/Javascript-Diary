@@ -23,3 +23,23 @@ function capitalizeName(arr) {
 }
 
 capitalizeName(data2); //[ 'JOHN', 'JACOB', 'JINGLEHEIMER', 'SCHMIDT' ]
+
+//NOTE: Using a for of iterate over the array and used a function who multiply every value and push the result in a new variable.
+
+let array = [1, 2, 3, 4, 5];
+
+const multiply = (n1, n2) => {
+  return n1 * n2;
+};
+
+const result = [];
+for (let n of array) {
+  result.push(mult(n, 2));
+}
+
+console.log(result); //[ 2, 4, 6, 8, 10 ]
+
+//Using map iterate over the same array and use the method called toString to change the number values to string value.
+
+const tostring = array.map(n => n.toString());
+console.log(tostring); //[ '1', '2', '3', '4', '5' ]
