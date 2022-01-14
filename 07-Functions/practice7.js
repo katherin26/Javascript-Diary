@@ -12,3 +12,13 @@ function calcAverage(arr) {
 }
 
 console.log(calcAverage(arr)); //3
+
+//NOTE: Calculate the average using reduce.
+
+function calcAverage2(arr) {
+  let sum = arr.reduce((el, acc) => el + acc);
+
+  return sum / arr.length;
+}
+
+console.log(calcAverage2(arr)); //3
