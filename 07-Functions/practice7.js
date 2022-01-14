@@ -34,3 +34,15 @@ function calcAverage3(arr) {
 }
 
 console.log(calcAverage3(arr)); //3
+
+//NOTE: Calculate the average using for in.
+
+function calcAverage4(arr) {
+  let sum = 0;
+  for (const property in arr) {
+    sum += arr[property];
+  }
+  return sum / arr.length;
+}
+
+console.log(calcAverage4(arr)); //3
