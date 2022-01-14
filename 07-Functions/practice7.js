@@ -22,3 +22,15 @@ function calcAverage2(arr) {
 }
 
 console.log(calcAverage2(arr)); //3
+
+//NOTE: Calculate the average using for of.
+
+function calcAverage3(arr) {
+  let sum = 0;
+  for (const values of arr) {
+    sum += values;
+  }
+  return sum / arr.length;
+}
+
+console.log(calcAverage3(arr)); //3
