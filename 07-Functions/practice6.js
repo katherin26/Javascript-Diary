@@ -206,3 +206,23 @@ const titles = movies
   .map(m => m.title);
 
 console.log(titles);
+
+//NOTE: GLOBAL FUNCTION EXAMPLE
+
+//FUNCTION => GLOBAL(WINDOW,GLOBAL).
+
+const movie1 = {
+  title: 'Disaster',
+  play() {
+    console.log(this);
+  },
+};
+
+movie1.play();
+
+function PlayMovie2(title) {
+  this.title = title;
+  console.log(this);
+}
+
+const m = new PlayMovie2('Matrix');
