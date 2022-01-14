@@ -58,3 +58,15 @@ function calcAverage5(arr) {
 }
 
 console.log(calcAverage5(arr));
+
+//NOTE:  Calculate the average using map().
+
+function calcAverage6(arr) {
+  let sum = 0;
+  arr.map(el => {
+    sum += el;
+  });
+  return sum / arr.length;
+}
+
+console.log(calcAverage6(arr)); //3
