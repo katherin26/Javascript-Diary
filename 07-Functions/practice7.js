@@ -46,3 +46,15 @@ function calcAverage4(arr) {
 }
 
 console.log(calcAverage4(arr)); //3
+
+//NOTE: Calculate the average using for Each.
+
+function calcAverage5(arr) {
+  let sum = 0;
+  arr.forEach(el => {
+    sum += el;
+  });
+  return sum / arr.length;
+}
+
+console.log(calcAverage5(arr));
