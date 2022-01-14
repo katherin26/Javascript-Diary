@@ -43,3 +43,20 @@ console.log(result); //[ 2, 4, 6, 8, 10 ]
 
 const tostring = array.map(n => n.toString());
 console.log(tostring); //[ '1', '2', '3', '4', '5' ]
+
+//NOTE: Using map for multiply values inside an array.
+
+const numbers = [1, 2, 2, 3, 4, 5];
+
+const newNumbers = numbers.map(el => {
+  return el * 10;
+});
+console.log(newNumbers);
+// 10, 20, 20, 30, 40, 50 ]
+
+function calcMultiply(arr) {
+  return arr.map(el => el * 10);
+}
+
+console.log(calcMultiply(numbers));
+// 10, 20, 20, 30, 40, 50 ]
