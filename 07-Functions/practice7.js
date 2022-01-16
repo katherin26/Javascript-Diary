@@ -70,3 +70,22 @@ function calcAverage6(arr) {
 }
 
 console.log(calcAverage6(arr)); //3
+
+//NOTE: EXERCISE GET THE LONGEST NAME USING A FUNCTION AND FOR OF .
+
+let pets = ['lolaaaa', 'lelee', 'liliii'];
+
+function getLongestName(names) {
+  let getLongestNameIndex;
+
+  let maxNameLength = 0;
+  for (let [index, name] of names.entries()) {
+    if (name.length > maxNameLength) {
+      longestNameIndex = index;
+      maxNameLength = name.length;
+    }
+  }
+  return names[longestNameIndex];
+}
+
+console.log(getLongestName(pets)); //lolaaaa
