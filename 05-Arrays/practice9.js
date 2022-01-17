@@ -117,3 +117,19 @@ let roots = numbers2.map(function (num) {
 });
 
 console.log(roots); //[ 1, 2, 3 ]
+
+// Print new value for the object using map.
+
+let array = [
+  { clave: 1, valor: 10 },
+  { clave: 2, valor: 20 },
+  { clave: 3, valor: 30 },
+];
+
+let reformatedArray = array.map(function (obj) {
+  let newObj = {};
+  newObj[obj.clave] = obj.valor;
+  return newObj;
+});
+
+console.log(reformatedArray); //[ { '1': 10 }, { '2': 20 }, { '3': 30 } ]
