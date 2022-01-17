@@ -133,3 +133,29 @@ let reformatedArray = array.map(function (obj) {
 });
 
 console.log(reformatedArray); //[ { '1': 10 }, { '2': 20 }, { '3': 30 } ]
+
+//FILTER()
+//Using filter(), filter  the words higher than 6 letters.
+
+const words = [
+  'spray',
+  'limit',
+  'elite',
+  'exuberant',
+  'destruction',
+  'present',
+];
+
+const result = words.filter(word => word.length > 6);
+console.log(result); ////[ 'exuberant', 'destruction', 'present' ]
+
+//Using filter(), filter the ages greater than 18.
+const ages = [32, 33, 16, 40, 10, 12, 11];
+
+const resultFiltered = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+console.log(resultFiltered); //[ 32, 33, 40 ]
