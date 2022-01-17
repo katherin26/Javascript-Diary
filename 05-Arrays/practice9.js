@@ -95,3 +95,16 @@ const fruits5 = ['Banana', 'Orange', 'Apple', 'Mango'];
 
 fruits5.fill('kiwi', 2, 4);
 console.log(fruits5); //[ 'Banana', 'Orange', 'kiwi', 'kiwi' ]
+
+//NOTE: A NEW ARRAY.
+
+//Slice(start,end). Portion of original.
+
+console.log(arr.slice(0, 3)); //[1,2,3]
+
+//Map() loop , Computed from original.
+//Using map multiply each value.
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let doubles = numbers.map(el => el * 2);
+console.log(doubles); /*[2,  4,  6,  8, 10,12, 14, 16, 18, 20]*/
