@@ -60,3 +60,25 @@ function calcMultiply(arr) {
 
 console.log(calcMultiply(numbers));
 // 10, 20, 20, 30, 40, 50 ]
+
+//NOTE: METHODS THAT MUTATE THE ORIGINAL ARRAY.
+
+//Splice(index,howmany)
+let arr = [1, 2, 3, 4, 5];
+console.log(arr.splice(1, 2)); //2,3
+
+let fruits = ['Banana', 'Orange', 'Apple', 'Mango'];
+fruits.splice(2, 1, 'lemon', 'kiwi');
+console.log(fruits); //[ 'Banana', 'Orange', 'lemon', 'kiwi', 'Mango' ]
+
+//Sort(compareFunction).
+
+const fruits2 = ['Banana', 'Orange', 'Apple', 'Mango'];
+fruits2.sort();
+console.log(fruits2); //[ 'Apple', 'Banana', 'Mango', 'Orange' ]
+
+//Using sort() and reverse().
+
+const fruits3 = ['Banana', 'Orange', 'Apple', 'Mango'];
+fruits3.sort(); //[ 'Apple', 'Banana', 'Mango', 'Orange' ]
+fruits3.reverse(); //'Orange', 'Mango', 'Banana', 'Apple' ]
