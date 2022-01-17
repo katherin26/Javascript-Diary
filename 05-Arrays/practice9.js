@@ -82,3 +82,16 @@ console.log(fruits2); //[ 'Apple', 'Banana', 'Mango', 'Orange' ]
 const fruits3 = ['Banana', 'Orange', 'Apple', 'Mango'];
 fruits3.sort(); //[ 'Apple', 'Banana', 'Mango', 'Orange' ]
 fruits3.reverse(); //'Orange', 'Mango', 'Banana', 'Apple' ]
+
+//A fill(value, start, end).
+
+const fruits4 = ['Banana', 'Orange', 'Apple', 'Mango'];
+fruits4.fill('fill Method');
+console.log(fruits4);
+
+//[ 'fill Method', 'fill Method', 'fill Method', 'fill Method' ]
+
+const fruits5 = ['Banana', 'Orange', 'Apple', 'Mango'];
+
+fruits5.fill('kiwi', 2, 4);
+console.log(fruits5); //[ 'Banana', 'Orange', 'kiwi', 'kiwi' ]
