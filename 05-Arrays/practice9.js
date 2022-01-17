@@ -108,3 +108,12 @@ console.log(arr.slice(0, 3)); //[1,2,3]
 let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let doubles = numbers.map(el => el * 2);
 console.log(doubles); /*[2,  4,  6,  8, 10,12, 14, 16, 18, 20]*/
+
+//Using map calculate the root of each value.
+
+let numbers2 = [1, 4, 9];
+let roots = numbers2.map(function (num) {
+  return Math.sqrt(num);
+});
+
+console.log(roots); //[ 1, 2, 3 ]
