@@ -119,3 +119,18 @@ let forLoopFunction = num => {
 };
 
 forLoopFunction(0); //1 2 3 4 5
+
+//NOTE: The functions can be passed as arguments to other function.
+
+let sum = (n1, n2) => n1 + n2;
+let multiply = (n1, n2) => n1 * n2;
+
+function calcSumAndMultiply(num1, num2, sumFn, multFn) {
+  let sum = sumFn(num1, num2);
+  let multiply = multFn(num1, num2);
+
+  return { sum, multiply };
+}
+
+let result = calcSumAndMultiply(5, 5, sum, multiply);
+console.log(`Sum : ${result.sum}, Multiply : ${result.multiply}`);
