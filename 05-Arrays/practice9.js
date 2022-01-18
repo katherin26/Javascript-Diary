@@ -210,3 +210,14 @@ function averageRate(arr) {
   }
   return Math.ceil(sum / arr.length);
 }
+
+//console.log(averageRate(movies));//10
+
+//Take only the first two movies.
+
+let firstTwo = movies.map(function (mov) {
+  return mov.title;
+});
+
+let firstTitle = firstTwo.slice(0, 2);
+console.log(firstTitle); //[ 'The Shawshank Redemption', 'The Godfather' ]
