@@ -200,3 +200,13 @@ function orderAlphabetically(arr) {
 }
 
 console.log(orderAlphabetically(movies));
+
+//Average in rates.
+
+function averageRate(arr) {
+  let sum = 0;
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i].rate;
+  }
+  return Math.ceil(sum / arr.length);
+}
