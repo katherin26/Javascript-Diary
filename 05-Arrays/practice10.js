@@ -40,3 +40,10 @@ console.log(toUpperCase(patients));
   { name: 'OCELOT', temp: 40 },
   { name: 'SNAKE', temp: 20 }
 ] */
+
+//NOTE: Using map and toUpperCase() change the name of the patients.
+
+let patients = ['kkk', 'pppp', 'sss'];
+
+const toUpperCase = patients.map(name => name.toUpperCase());
+console.log(toUpperCase); //[ 'KKK', 'PPPP', 'SSS' ]
