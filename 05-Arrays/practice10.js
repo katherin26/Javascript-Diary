@@ -47,3 +47,48 @@ let patients = ['kkk', 'pppp', 'sss'];
 
 const toUpperCase = patients.map(name => name.toUpperCase());
 console.log(toUpperCase); //[ 'KKK', 'PPPP', 'SSS' ]
+
+//NOTE: Convert to upperCase and array of objects.
+
+function convertToUpperCase(arr) {
+  let newObj = arr.map(function (pt) {
+    pt.name = pt.name.toUpperCase();
+    return pt;
+  });
+  return newObj;
+}
+
+console.log(convertToUpperCase(patients2));
+//[ { name: 'KATHE', temp: 38 } ]*/
+
+//NOTE: USING FOR IN ITERATE OVER THE ARRAY AN PRINT THE KEYS AND THE VALUES.
+
+//Exercise 1.
+
+let colors = ['Yellow', 'Red', 'Green'];
+for (let value in colors) {
+  console.log(colors[value]);
+}
+
+/*
+yellow 
+red 
+green*/
+
+//Exercise 2.
+
+let object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`I am key = ${property}`);
+  console.log(`I am value = ${object[property]}`);
+}
+
+/*
+I am Property = a
+I am Object Property = 1
+I am Property = b
+I am Object Property = 2
+I am Property = c
+I am Object Property = 3
+ */
