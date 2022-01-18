@@ -221,3 +221,11 @@ let firstTwo = movies.map(function (mov) {
 
 let firstTitle = firstTwo.slice(0, 2);
 console.log(firstTitle); //[ 'The Shawshank Redemption', 'The Godfather' ]
+
+//Includes some word??
+
+let dramaMovies = movies.filter(el => el.genre.includes('Drama'));
+
+for (const value of dramaMovies) {
+  console.log(`${value.title} includes ${value.genre}`);
+}
