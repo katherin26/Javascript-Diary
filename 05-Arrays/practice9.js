@@ -159,3 +159,44 @@ function checkAdult(age) {
 }
 
 console.log(resultFiltered); //[ 32, 33, 40 ]
+
+//NOTE: Caculate the average and iterate over the movies array.
+
+let movies = [
+  {
+    title: 'The Shawshank Redemption',
+    year: 1994,
+    director: 'Frank Darabont',
+    duration: '2h',
+    genre: ['Crime', 'Drama'],
+    rate: 9.3,
+  },
+  {
+    title: 'The Godfather',
+    year: 1972,
+    director: 'Francis Ford Coppola',
+    duration: '2h 55min',
+    genre: ['Crime', 'Drama'],
+    rate: 9.2,
+  },
+  {
+    title: 'The Godfather: Part II',
+    year: 1974,
+    director: 'Francis Ford Coppola',
+    duration: '3h 22min',
+    genre: ['Crime', 'Drama'],
+    rate: 9,
+  },
+];
+
+//Using sort and localeCompare , organize the movies.
+
+function orderAlphabetically(arr) {
+  let clone = [...arr];
+  clone.sort(function (mov1, mov2) {
+    return mov1.title.localeCompare(mov2.title);
+  });
+  return clone;
+}
+
+console.log(orderAlphabetically(movies));
