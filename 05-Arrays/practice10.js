@@ -92,3 +92,41 @@ I am Object Property = 2
 I am Property = c
 I am Object Property = 3
  */
+
+//NOTE: If the numbers are % of two return the value into a new array.
+
+let nums = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+let evenNumbers = nums.filter(function (num) {
+  if (num % 2 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+});
+
+console.log(evenNumbers(nums)); //[ 2, 4, 6, 8 ]
+
+//NOTE:Get the sum of two arrays , actually the sum of all their elements.
+
+let arr1 = [3, 5, 22, 5, 7, 2, 45, 75, 89, 21, 2];
+let arr2 = [9, 2, 42, 55, 71, 22, 4, 5, 90, 25, 26];
+
+let firstSum = 0; //276
+let secondSum = 0; //351
+
+for (let i = 0; i < arr1.length; i++) {
+  firstSum = firstSum + arr1[i];
+}
+for (let j = 0; j < arr2.length; j++) {
+  secondSum = secondSum + arr2[j];
+}
+
+console.log(firstSum); //276
+console.log(secondSum); //351
+
+function calcSum(num1, num2) {
+  return num1 + num2;
+}
+
+console.log(calcSum(firstSum, secondSum)); //627
