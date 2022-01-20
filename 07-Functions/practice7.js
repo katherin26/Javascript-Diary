@@ -193,3 +193,9 @@ function calcSum(a, b) {
 }
 
 console.log(calcSum(1, 2)); //3
+
+//NOTE: Iterate over the array an print the elements.
+
+let months = ['January', 'February', 'March'];
+
+months.forEach(el => console.log(el)); //January February March
