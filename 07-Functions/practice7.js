@@ -199,3 +199,11 @@ console.log(calcSum(1, 2)); //3
 let months = ['January', 'February', 'March'];
 
 months.forEach(el => console.log(el)); //January February March
+
+//NOTE: Iterate over the array of days an print each element.
+
+let days = ['mon', 'thus', 'wed'];
+
+for (let i = 0; i < days.length; i++) {
+  console.log(days[i]);
+}
