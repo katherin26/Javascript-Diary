@@ -179,3 +179,17 @@ console.log(` 5 x 5 = ${multiply(5, 5)}`); // 5 x 5 = 25
 
 //You can also use the old concatenation a method.
 console.log(` 5 x 5 = ` + multiply(5, 5)); // 5 x 5 = 25
+
+//NOTE: Create a function and print Hello...
+function sayHello() {
+  return `Hello...`;
+}
+
+console.log(sayHello()); //Hello...
+
+//NOTE: Create a function called calcSum and return a sum a + b.
+function calcSum(a, b) {
+  return a + b;
+}
+
+console.log(calcSum(1, 2)); //3
