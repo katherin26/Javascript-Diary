@@ -134,3 +134,48 @@ function calcSumAndMultiply(num1, num2, sumFn, multFn) {
 
 let result = calcSumAndMultiply(5, 5, sum, multiply);
 console.log(`Sum : ${result.sum}, Multiply : ${result.multiply}`);
+
+//NOTE: FUNCTIONS.
+
+/*All functions work the same, they receive an input(s) and produce an output.
+n1 and n2 represent the parameters(inputs) this function expects when you invoket it.
+The parameters can have any name, choose a name that has meaning based on that the function is doing since
+we are doing a math operation it is reasonable to call then num1 and num2. 
+*/
+
+/*LOGIC 
+Process the inputs and generate an output result represents the output of this function this is what the
+function will return.
+Don't forget the return if you don't specify it, it will return undefined by default.
+*/
+
+let input = 10;
+let input2 = 7;
+
+function multiply(num1, num2) {
+  let result = num1 * num2;
+  return result;
+}
+
+/*To invoke a function just use its name parenthesis and include the arguments it expects 
+(arg1,arg2). Let's invoke it.
+Call it with literal values.
+*/
+
+console.log(multiply(10, 9)); //90
+
+//Call it using variables that hold the numbers.
+console.log(multiply(input, input2)); //70
+
+/*You can pass the invokation to a console.log to see, what a function returns just print the returned
+value. What Javascript does is that it first executes the function, gets the returned values and passes
+it to the console.log function, which prints it on the screen.
+*/
+console.log(multiply(2, 2)); //4
+
+//Use template literals to concatenate a text with the returned value.
+
+console.log(` 5 x 5 = ${multiply(5, 5)}`); // 5 x 5 = 25
+
+//You can also use the old concatenation a method.
+console.log(` 5 x 5 = ` + multiply(5, 5)); // 5 x 5 = 25
