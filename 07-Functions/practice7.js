@@ -221,3 +221,30 @@ for (const value in colors) {
 for (const value of colors) {
   console.log(value);
 } // pink Yellow Black
+
+//NOTE: Iterate over the array and print if a person is allowed or not.
+
+let people = [
+  { name: 'Bryan', age: 32 },
+  { name: 'Kathe', age: 29 },
+  { name: 'Ada', age: 3 },
+  { name: 'Isaac', age: 6 },
+  { name: 'Jill', age: 3 },
+  { name: 'Chiqui', age: 14 },
+];
+
+for (let i = 0; i < people.length; i++) {
+  if (people[i].age >= 18) {
+    console.log(`${people[i].name} You are allowed.`);
+  } else {
+    console.log(`${people[i].name} You are not allowed.`);
+  }
+}
+
+/*
+  Bryan You are allowed.
+  Kathe You are allowed.
+  Ada You are not allowed.
+  Isaac You are not allowed.
+  Jill You are not allowed.
+  Chiqui You are not allowed. */
