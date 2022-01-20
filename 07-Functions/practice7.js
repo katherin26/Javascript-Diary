@@ -215,3 +215,9 @@ let colors = ['pink', 'Yellow', 'Black'];
 for (const value in colors) {
   console.log(colors[value]);
 } // pink Yellow Black
+
+//Iterate over the array of colors using For Of and print the values.
+
+for (const value of colors) {
+  console.log(value);
+} // pink Yellow Black
