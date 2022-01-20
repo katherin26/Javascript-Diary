@@ -269,3 +269,26 @@ console.log(todayIs()); //Today is : Thu, 20 Jan 2022 20:09:12 G
 //NOTE: What is log in the following expression = "1" + 1.
 
 console.log('1' + 1);
+
+/*NOTE: Square every digit of a number, For example, if we run 9119 through the function, 811181 will come out because 92 is 81 and 12 is 1.
+note : The function accepts an integer and returns an integer.
+*/
+
+function squareDigits(num) {
+  return parseInt(
+    num
+      .toString()
+      .split('')
+      .map(n => n * n)
+      .join('')
+  );
+}
+
+console.log(squareDigits(9119));
+
+//NOTE: Using Math.pow
+function squareDigits2(b, e) {
+  return Math.pow(b, e);
+}
+
+console.log(squareDigits2(9, 2));
