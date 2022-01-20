@@ -141,4 +141,16 @@ const result = lettersSplit.filter(
 
 console.log(result.join(''));
 
-//NOTE: Regular expression in constructor.
+//NOTE: Using hasOwnProperty().
+let letters = 'abccdefee';
+let letterCount = {};
+for (let i = 0; i < letters.length; i++) {
+  console.log(letters[i]);
+  if (!letterCount.hasOwnProperty(letters[i])) {
+    letterCount[letters[i]] = 1;
+  } else {
+    letterCount[letters[i]]++;
+  }
+}
+
+console.log(letterCount);
