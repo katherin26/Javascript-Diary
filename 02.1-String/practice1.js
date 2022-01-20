@@ -121,3 +121,24 @@ const objString = JSON.stringify(obj);
 console.log(objString);
 
 /* {"name":"Lola","citiesVisited":["Seoul","New york","California","Washington","Turquia"],"pets":[{"name":"pepe"},{"name":"pepa"},{"name":"pepi"}]}*/
+
+/*NOTE: Given a string, remove any characters that are unique from the string.
+Example: 
+Input : "abccdefee"
+output: "cceee"
+ */
+
+let letters = 'abccdefee';
+console.log(letters.includes('e'));
+console.log(letters.match(/e/g).length);
+
+const lettersSplit = letters.split('');
+console.log(lettersSplit);
+
+const result = lettersSplit.filter(
+  letter => letters.match(new RegExp(`${letter}`, 'g')).length > 1
+);
+
+console.log(result.join(''));
+
+//NOTE: Regular expression in constructor.

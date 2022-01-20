@@ -157,3 +157,11 @@ function numb1(arr) {
 }
 
 console.log(numb1(arr));
+
+//NOTE: Using for loop for iterate over the array.
+
+let furniture = ['Table', 'Table2', 'Table3', 'Table4', 'Table5'];
+
+for (let i = 0; i < furniture.length; i++) {
+  console.log(furniture[i]);
+} //Table Table2 Table3 Table4 Table5

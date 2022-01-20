@@ -347,3 +347,5 @@ function currentDay(arr) {
 }
 
 console.log(currentDay());
+
+
