@@ -292,3 +292,26 @@ function squareDigits2(b, e) {
 }
 
 console.log(squareDigits2(9, 2));
+
+//NOTE: Take and string and transform this values into an array , then using filter remove the duplicates and create a newOne.
+
+const str = 'AAAABBBCCDAABBB';
+
+const result = str.split('');
+const filtered = result.filter(function (word, index) {
+  if (result.indexOf(word) === index) {
+    return true;
+  }
+});
+
+console.log(str); //AAAABBBCCDAABBB
+
+console.log(result);
+/*[
+  'A', 'A', 'A', 'A',
+  'B', 'B', 'B', 'C',
+  'C', 'D', 'A', 'A',
+  'B', 'B', 'B'
+] */
+console.log(filtered);
+/*[ 'A', 'B', 'C', 'D' ] */
