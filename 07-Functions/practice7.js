@@ -265,3 +265,7 @@ function todayIs() {
 }
 
 console.log(todayIs()); //Today is : Thu, 20 Jan 2022 20:09:12 G
+
+//NOTE: What is log in the following expression = "1" + 1.
+
+console.log('1' + 1);
