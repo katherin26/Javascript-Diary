@@ -257,3 +257,11 @@ function calcAverage(arr) {
 }
 
 console.log(calcAverage([1, 2, 3])); //2
+
+//NOTE: Print a function called today and return Toda is: and the date.
+
+function todayIs() {
+  return `Today is : ${new Date().toUTCString()}`;
+}
+
+console.log(todayIs()); //Today is : Thu, 20 Jan 2022 20:09:12 G
