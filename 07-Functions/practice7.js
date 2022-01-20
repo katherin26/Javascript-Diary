@@ -248,3 +248,12 @@ for (let i = 0; i < people.length; i++) {
   Isaac You are not allowed.
   Jill You are not allowed.
   Chiqui You are not allowed. */
+
+//NOTE: Create a function called calcAverage and calculate the sum and the average over an array.
+
+function calcAverage(arr) {
+  let sum = arr.reduce((el, acc) => el + acc);
+  return sum / arr.length;
+}
+
+console.log(calcAverage([1, 2, 3])); //2
