@@ -141,7 +141,7 @@ const result = lettersSplit.filter(
 
 console.log(result.join(''));
 
-//NOTE: Using hasOwnProperty().
+//NOTE: Using hasOwnProperty() and Count the ocurrency
 let letters = 'abccdefee';
 let letterCount = {};
 for (let i = 0; i < letters.length; i++) {
@@ -154,3 +154,15 @@ for (let i = 0; i < letters.length; i++) {
 }
 
 console.log(letterCount);
+
+// and remove the duplicates.
+
+let result2 = [];
+
+for (property in letterCount) {
+  if (letterCount[property] > 1) {
+    result2.push(property.repeat(letterCount[property]));
+  }
+}
+
+console.log(result2.join(''));
