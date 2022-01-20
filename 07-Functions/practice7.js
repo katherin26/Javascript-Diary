@@ -315,3 +315,35 @@ console.log(result);
 ] */
 console.log(filtered);
 /*[ 'A', 'B', 'C', 'D' ] */
+
+//NOTE: Get the current day , minutes and seconds.
+
+let weekdays = [
+  'Sunday',
+  'Monday',
+  'Tuesday',
+  'Wednesday',
+  'Thursday',
+  'Friday',
+  'Saturday',
+];
+
+function currentDay(arr) {
+  let currentDay = new Date();
+  let day = currentDay.getDay();
+  let hours = currentDay.getHours();
+
+  if (hours > 12) {
+    hours = hours - 12;
+    hours = `${hours} PM`;
+  } else {
+    hours = `${hours} AM `;
+  }
+
+  let minutes = currentDay.getMinutes();
+  let seconds = currentDay.getSeconds();
+
+  return `Today is : ${weekdays[day]} ${hours} : ${minutes} ${seconds}`;
+}
+
+console.log(currentDay());
