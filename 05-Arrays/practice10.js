@@ -130,3 +130,19 @@ function calcSum(num1, num2) {
 }
 
 console.log(calcSum(firstSum, secondSum)); //627
+
+//NOTE: A FOR LOOP INSIDE A FOR LOOP.
+
+const numbs = [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]];
+
+function numb(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+      newArr.push(arr[i][j]);
+    }
+  }
+  return newArr.sort((a, b) => a - b);
+}
+
+console.log(numb(numbs));
