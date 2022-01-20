@@ -207,3 +207,11 @@ let days = ['mon', 'thus', 'wed'];
 for (let i = 0; i < days.length; i++) {
   console.log(days[i]);
 }
+
+//NOTE: Iterate over the array of colors using For In and print the values.
+
+let colors = ['pink', 'Yellow', 'Black'];
+
+for (const value in colors) {
+  console.log(colors[value]);
+} // pink Yellow Black
