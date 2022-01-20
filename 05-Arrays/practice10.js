@@ -146,3 +146,14 @@ function numb(arr) {
 }
 
 console.log(numb(numbs));
+
+//NOTE: ARRAY FLAT().
+
+let arr = [[3, 2, 1], [4, 6, 5], [], [9, 7, 8]];
+
+function numb1(arr) {
+  let newArr = arr.flat();
+  return newArr;
+}
+
+console.log(numb1(arr));
