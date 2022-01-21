@@ -19,3 +19,24 @@ while (counter < 10) {
 }
 
 console.log(result); //1024
+
+/*NOTE: Write a loop that makes calls to console.log to output a triangle */
+
+for (let i = '#'; i.length < 12; i += '#') {
+  console.log(i);
+}
+
+/*
+   #
+   ##
+   ###
+   ####
+   #####
+   ######
+   #######
+   ########
+   #########
+   ##########
+   ###########
+   
+    */
