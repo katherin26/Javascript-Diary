@@ -56,3 +56,24 @@ for (let i = 0; i <= 100; i++) {
   if (i % 5 == 0) output += 'Buzz';
   console.log(`${i} ${output}`);
 }
+
+/*NOTE: Write a program that creates a string that represents an 8x8 grid, using new line characters 
+to separate lines. At each position of the grid there is either a space or a # character. The characters
+ should form a chessboard.*/
+
+let size = 8;
+
+let board = '';
+
+for (let i = 0; i < size; i++) {
+  for (let j = 0; j < size; j++) {
+    if ((j + i) % 2 == 0) {
+      board += ' ';
+    } else {
+      board += '#';
+    }
+  }
+  board += '\n';
+}
+
+console.log(board);
