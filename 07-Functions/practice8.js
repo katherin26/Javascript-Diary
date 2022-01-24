@@ -23,3 +23,22 @@ function isEven(num) {
 console.log(isEven(50)); //true
 console.log(isEven(75)); //false
 console.log(isEven(-1)); //false
+
+//NOTE: Bean Counting .
+
+function countC(str, ch) {
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] == ch) {
+      count += 1;
+    }
+  }
+  return count;
+}
+
+function countB(str) {
+  return countChar(str, 'B');
+}
+
+console.log(countC('BBC'));
+console.log(countChar(str, 'kakkerlak', 'k'));
