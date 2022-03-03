@@ -165,3 +165,10 @@ let furniture = ['Table', 'Table2', 'Table3', 'Table4', 'Table5'];
 for (let i = 0; i < furniture.length; i++) {
   console.log(furniture[i]);
 } //Table Table2 Table3 Table4 Table5
+
+//NOTE: What is logged to the console??
+
+let animals = ['cat', 'Chicken', 'dog', 'Pig', 'Raccoon'];
+let returnValue = animals.filter(animal => animal.includes('c'));
+
+console.log(returnValue);
