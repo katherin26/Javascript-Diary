@@ -172,3 +172,8 @@ let animals = ['cat', 'Chicken', 'dog', 'Pig', 'Raccoon'];
 let returnValue = animals.filter(animal => animal.includes('c'));
 
 console.log(returnValue);
+
+//NOTE: What is the result of the % of 2.
+
+let myArray = [0, 1, 2, 3, 4];
+myArray.forEach(num => console.log(num % 2)); //0 1 0 1 0
