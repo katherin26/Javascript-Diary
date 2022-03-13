@@ -217,3 +217,13 @@ Discard the changes from top of stash stack
 ```sh
 git stash drop
 ```
+
+## CHECK LISTENING PORTS WITH NETSTAT COMMAND
+
+```
+netstat -nlp | grep :5000
+```
+
+```
+lsof -n -i :5000 | grep LISTEN
+```
