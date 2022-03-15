@@ -27,11 +27,22 @@ const knowWord = async () => {
   let resultWord = await getDictionary(inputValue);
   console.log(resultWord);
   let ulElement = document.createElement('ul');
+  content.innerHTML = '';
   content.appendChild(ulElement);
 
   let liElement = document.createElement('li');
   liElement.innerText = `${resultWord.word} ${resultWord.phonetic} `;
   ulElement.appendChild(liElement);
+
+  const ulMeanings = document.createElement('ul');
+
+  for (let i = 0; i < resultWord.meanings.length; i++) {
+    console.log(resultWord.meanings[i]);
+    let meaningLi = document.createElement('li');
+    meaningLi.innerText = `${resultWord.meanings[i].partOfSpeech} ${resultWord.meanings[i].definitions[0].definition}`;
+    ulMeanings.appendChild(meaningLi);
+  }
+  liElement.appendChild(ulMeanings);
 
   //h2.innerHTML = `Meaning, ${resultWord.phonetic}`;
 };
