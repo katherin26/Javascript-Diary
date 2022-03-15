@@ -23,11 +23,17 @@ import { getDictionary } from './services/api.js';
 
 const knowWord = async () => {
   let inputValue = document.getElementById('word').value;
-  let h2 = document.getElementById('meaning-word');
-
+  let content = document.getElementById('meaning-word');
   let resultWord = await getDictionary(inputValue);
+  console.log(resultWord);
+  let ulElement = document.createElement('ul');
+  content.appendChild(ulElement);
 
-  h2.innerHTML = `Meaning, ${resultWord.phonetic}`;
+  let liElement = document.createElement('li');
+  liElement.innerText = `${resultWord.word} ${resultWord.phonetic} `;
+  ulElement.appendChild(liElement);
+
+  //h2.innerHTML = `Meaning, ${resultWord.phonetic}`;
 };
 
 let button = document.getElementById('word-btn');
