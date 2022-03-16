@@ -234,3 +234,85 @@ invoice.addProduct(product2);
 invoice.addProduct(product3);
 
 console.log(invoice.printInvoice());
+
+// Inheritance
+
+class Bird {
+  constructor(name) {
+    this.name = name;
+  }
+
+  fly() {
+    console.log('Flying like a bird updated');
+  }
+}
+
+class Eagle extends Bird {
+  constructor(name) {
+    super(name);
+  }
+}
+class HummingBird extends Bird {
+  constructor(name) {
+    super(name);
+  }
+}
+class Parrot extends Bird {
+  constructor(name) {
+    super(name);
+  }
+}
+
+const eagle = new Eagle('Proxy');
+const hummingbird = new HummingBird('Proxy');
+const parrot = new Parrot('Proxy');
+eagle.fly();
+hummingbird.fly();
+parrot.fly();
+
+// Polymorphism
+
+class Human {
+  constructor(name) {
+    this.name = name;
+  }
+
+  speak() {
+    console.log('Hello I am ', this.name);
+  }
+}
+
+class AmericanHuman extends Human {
+  constructor(name) {
+    super(name);
+  }
+}
+class ColombianHuman extends Human {
+  constructor(name) {
+    super(name);
+  }
+
+  speak() {
+    console.log('Hey parcero ', this.name);
+  }
+}
+class FrenchHuman extends Human {
+  constructor(name) {
+    super(name);
+  }
+}
+class GermanHuman extends Human {
+  constructor(name) {
+    super(name);
+  }
+}
+
+const american = new AmericanHuman('Gringo');
+const colombian = new ColombianHuman('parcero');
+const french = new FrenchHuman('frenchie');
+const german = new GermanHuman('guter');
+
+american.speak();
+colombian.speak();
+french.speak();
+german.speak();
