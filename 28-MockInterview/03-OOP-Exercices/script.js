@@ -101,3 +101,67 @@ const invoice = {
 };
 
 console.log(invoice.printInvoice());
+
+//NOTE: OBJECTS USING FUNCTION (CONSTRUCTOR FUNCTIONS):
+
+//CONSTRUCTOR FUNCTION
+function Product(name, price, quantity) {
+  this.name = name;
+  this.price = price;
+  this.quantity = quantity;
+}
+
+//METHODS:
+//We need add prototype always:
+
+Product.prototype.calculateTotal = function () {
+  return this.price * this.quantity;
+};
+
+//CONSTRUCTOR FUNCTION
+function Invoice() {
+  this.products = [];
+}
+
+//METHODS:
+Invoice.prototype.addProduct = function (product) {
+  this.products.push(product);
+  return this;
+};
+
+//METHODS:
+Invoice.prototype.calculatetotalPrice = function () {
+  return (
+    this.products[0].quantity +
+    this.products[1].quantity +
+    this.products[2].quantity
+  );
+};
+
+//METHODS:
+Invoice.prototype.printInvoice = function () {
+  return `
+        ${this.products[0].name} qty ${this.products[0].quantity} $${
+    this.products[0].price
+  }\n 
+        ${this.products[1].name} qty ${this.products[1].quantity} $${
+    this.products[1].price
+  }\n 
+        ${this.products[2].name} qty ${this.products[2].quantity} $${
+    this.products[2].price
+  }\n 
+
+        Total Price : $${this.calculatetotalPrice()}\n
+        Total Quantity : ${this.calculateTotalQuantity()}\n
+        
+    `;
+};
+
+const product1 = new Product('Milk', 10, 2);
+const product2 = new Product('Eggs', 20, 2);
+const product3 = new Product('Bread', 30, 2);
+const invoice = new invoice();
+
+invoice.addProduct(product1).addProduct(product2).addProduct(product3);
+
+console.log(invoice.printInvoice());
