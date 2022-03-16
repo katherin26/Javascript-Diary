@@ -165,3 +165,72 @@ const invoice = new invoice();
 invoice.addProduct(product1).addProduct(product2).addProduct(product3);
 
 console.log(invoice.printInvoice());
+
+//NOTE: CLASSES
+
+class Product {
+  constructor(name, price, quantity) {
+    this.name = name;
+    this.price = price;
+    this.quantity = quantity;
+  }
+
+  calculateTotal() {
+    return this.price * this.quantity;
+  }
+}
+
+class Invoice {
+  #products;
+  constructor() {
+    this.#products = [];
+  }
+
+  addProduct(product) {
+    this.#products.push(product);
+  }
+
+  calculatetotalPrice() {
+    return (
+      this.#products[0].price * this.#products[0].quantity +
+      this.#products[1].price * this.#products[1].quantity +
+      this.#products[2].price * this.#products[2].quantity
+    );
+  }
+
+  calculateTotalQuantity() {
+    return (
+      this.#products[0].quantity +
+      this.#products[1].quantity +
+      this.#products[2].quantity
+    );
+  }
+
+  printInvoice() {
+    return `
+      ${this.#products[0].name} qty ${this.#products[0].quantity} $${
+      this.#products[0].price
+    }\n
+      ${this.#products[1].name} qty ${this.#products[1].quantity} $${
+      this.#products[1].price
+    }\n
+      ${this.#products[2].name} qty ${this.#products[2].quantity} $${
+      this.#products[2].price
+    }\n
+
+      Total Price: $${this.calculatetotalPrice()}\n
+      Total Quantity : ${this.calculateTotalQuantity}
+      `;
+  }
+}
+
+const product1 = new Product('Milk', 10, 2);
+const product2 = new Product('Eggs', 20, 1);
+const product3 = new Product('Bread', 10, 2);
+const invoice = new Invoice();
+
+invoice.addProduct(product1);
+invoice.addProduct(product2);
+invoice.addProduct(product3);
+
+console.log(invoice.printInvoice());
