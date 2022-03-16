@@ -282,3 +282,88 @@ let mySecondPet = new Animal('fairy', 2);
 
 console.log(mySecondPet);
 console.log(mySecondPet.sayWoofWoof());
+
+/*NOTE: EXERCISE OOP CREATING CLASS CONSTRUCTOR AND CHILD INHERITANCE */
+
+class Laptop {
+  #brand;
+  #price;
+  #os;
+  constructor(brand, price, os) {
+    this.#brand = brand;
+    this.#price = price;
+    this.#os = os;
+  }
+
+  get brand() {
+    return this.#brand;
+  }
+
+  get price() {
+    return this.#price;
+  }
+
+  get os() {
+    return this.#os;
+  }
+
+  set price(price) {
+    this.#price = price;
+  }
+
+  toString() {
+    console.log(
+      `Brand : ${this.#brand} os : ${this.price} Price : ${this.os} `
+    );
+  }
+}
+
+const laptop = new Laptop('Mac', '12.000', 'os');
+
+//INHERITANCE (Tablet ===> Laptop)
+
+class Tablet extends Laptop {
+  #year;
+  constructor(brand, price, os, year) {
+    super(brand, price, os);
+    this.#year = year;
+  }
+
+  get year() {
+    return this.#year;
+  }
+
+  whyBuyMe() {
+    console.log(
+      `Because my brand is : ${this.brand} and my ${this.price} my os is : ${
+        this.os
+      } and my year : ${this.#year}`
+    );
+  }
+}
+
+const tablet = new Tablet('Dell', '5.000', 'Linux', '2020');
+
+//INHERITANCE (Laptop ==> Tablet ==> Phone)
+
+class phone extends Tablet {
+  #size;
+  constructor(brand, price, os, year, size) {
+    super(brand, price, os, year);
+    this.#size = size;
+  }
+
+  get size() {
+    return this.#size;
+  }
+
+  whyToBuyMe() {
+    console.log(
+      `Because I have all this info = ${this.brand} , ${this.price}, ${
+        this.os
+      } ${this.year} ${this.#size}`
+    );
+  }
+}
+
+const phone = new phone('Toshiba', '1.000', 'Microsift', '2022', 'small');
