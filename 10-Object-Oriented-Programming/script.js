@@ -190,3 +190,127 @@ const rivian = new EVCL('rivian', 120, 23);
 console.log(rivian);
 //console.log(rivian.#charge);
 rivian.accelerate().accelerate().brake().chargeBattery(50).accelerate();
+
+//NOTE: OBJECT ORIENTED PROGRAMMING EXERCISE
+
+class Product {
+  #name;
+  #price;
+  #description;
+  constructor(sku, name, price, description) {
+    this.sku = sku;
+    this.#name = name;
+    this.#price = price;
+    this.#description = description;
+  }
+  get name() {
+    return this.#name;
+  }
+  get price() {
+    return this.#price;
+  }
+  get description() {
+    return this.#description;
+  }
+}
+
+/*-----------------------------------------*/
+class ShoppingCartProduct {
+  #product;
+  #quantity;
+  #total;
+
+  constructor(product) {
+    this.#product = product;
+    this.#quantity = 1;
+    this.#total = product.price;
+  }
+
+  get total() {
+    return this.#total;
+  }
+
+  get product() {
+    return this.#product;
+  }
+
+  get quantity() {
+    return this.#quantity;
+  }
+
+  set quantity(value) {
+    if (value >= 0) {
+      console.log(`setting quantity`);
+      console.log(value);
+      console.log(this.#product.price);
+      this.#quantity = value;
+      this.#total = this.#quantity * this.#product.price;
+    }
+  }
+}
+
+class ShoppingCart {
+  #products;
+  #totalQuantity;
+  #totalPrice;
+
+  constructor() {
+    this.#products = [];
+    this.#totalQuantity = 0;
+    this.totalPrice = 0;
+  }
+
+  addToCart(product) {
+    for (let i = 0; i < this.#products.length; i++) {
+      if (this.#products[i].product.sku === product.sku) {
+        this.#products[i].quantity += 1;
+        return;
+      }
+    }
+    const shoppingCartProduct = new ShoppingCartProduct(product);
+    this.#products.push(shoppingCartProduct);
+  }
+  removeFromCart(product) {
+    for (let i = 0; i < this.#products.length; i++) {
+      if (this.#products[i].product.sku === product.sku) {
+        this.#products[i].quantity -= 1;
+        if (this.#products[i].quantity === 0) {
+          this.#products.splice(i, 1);
+        }
+      }
+    }
+  }
+
+  #calculateTotals() {
+    this.#totalQuantity = 0;
+    this.#totalPrice = 0;
+    for (let i = 0; i < this.#products.length; i++) {
+      this.#totalQuantity += this.#products[i].quantity;
+      this.#totalPrice += this.#products[i].total;
+    }
+  }
+
+  showCart() {
+    let cartSummary = `Product Sku UnitPrice Quantity Total\n`;
+
+    for (let product of this.#products) {
+      cartSummary += `${product.product.name} ${product.product.sku} ${product.product.price} ${product.quantity} ${product.total} \n`;
+    }
+    this.#calculateTotals();
+
+    cartSummary += `Total Quantity = ${this.#totalQuantity} Total Price ${
+      this.#totalPrice
+    }`;
+    console.log(cartSummary);
+  }
+}
+
+let milk = new Product('sku1', 'Milk', 15, 'A bottle of milk');
+let eggs = new Product('sku2', 'Eggs', 20, 'A box of eggs');
+let bread = new Product('sku3', 'Bread', 10, 'just a Bread');
+
+const myShoppingCart = new ShoppingCart();
+
+myShoppingCart.showCart();
+myShoppingCart.addToCart(milk);
+myShoppingCart.showCart();
