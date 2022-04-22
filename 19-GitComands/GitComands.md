@@ -227,3 +227,9 @@ netstat -nlp | grep :5000
 ```
 lsof -n -i :5000 | grep LISTEN
 ```
+
+## HOW TO CHANGE A GIT REMOTE
+
+```
+git remote set-url origin git@github.com:katherin26/portfolio-projects.git
+```
