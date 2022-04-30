@@ -52,3 +52,10 @@ function check(a,x){
         else "false";
     }
 }
+
+/* Square Sum*/
+
+function squareSum(numbers){
+    return numbers.reduce((previousValue, currentValue) => (currentValue *currentValue) + previousValue)
+}
+
