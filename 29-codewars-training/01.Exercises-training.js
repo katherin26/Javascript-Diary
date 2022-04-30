@@ -112,4 +112,11 @@ console.log(findNeedle(['moreJunk','needle']))
      return arrWord.join('');
  }
 
+
+ /*Write a function which converts the input string to uppercase.*/
+
+ function makeUpperCase(str){
+     return str.toUpperCase();
+ }
+
  
