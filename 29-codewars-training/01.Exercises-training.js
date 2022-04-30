@@ -23,3 +23,15 @@ function boolToWord(bool) {
   function doubleInteger(i){
       return i * 2;
   }
+
+/*Write a function which calculates the average of the numbers in a given list.*/
+
+let list = [1,2,3,4,5,6];
+
+function find_average(arr){
+    let sum = 0;
+    for(const value of arr){
+      sum += value
+    }
+    return sum/ arr.length;
+  }
