@@ -119,4 +119,8 @@ console.log(findNeedle(['moreJunk','needle']))
      return str.toUpperCase();
  }
 
- 
+ /*Double the numbers */
+
+ function maps(numbers){
+     return numbers.map((value) => value * 2)
+ }
