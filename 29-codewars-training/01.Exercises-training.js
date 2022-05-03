@@ -196,3 +196,54 @@ function sum(numbers){
   
   console.log(maps([1,2,3]));
 
+
+  Example : n=5 --> [5,4,3,2,1]*/
+
+  const reverseSeq = n => {
+    let newList = [];
+    for(let i = n ; i >= 1 ; i--){
+      newList.push(i)
+    }
+    return newList; 
+  }
+  
+  /*Alex just got a new hula hoop, he loves it but feels discouraged because his little brother is better than him
+  
+  Write a program where Alex can input (n) how many times the hoop goes round and it will return him an encouraging message :)
+  
+  If Alex gets 10 or more hoops, return the string "Great, now move on to tricks".
+  If he doesn't get 10 hoops, return the string "Keep at it until you get it".*/
+  
+  function hoopCount (n) {
+      if(n >= 10){
+        return `Great, now move on to tricks`
+      }else{
+        return `Keep at it until you get it`
+      }
+  }
+  
+  /*There was a test in your class and you passed it. Congratulations!
+  But you're an ambitious person. You want to know if you're better than the average student in your class.
+  
+  You receive an array with your peers' test scores. Now calculate the average and compare your score!
+  
+  Return True if you're better, else False!
+  
+  Note:
+  Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!*/
+  
+  function betterThanAverage(classPoints, yourPoints){
+    let scores = classPoints;
+    scores.push(yourPoints);
+    let average = scores.reduce((a,b) => a + b) / scores.length;
+    if( average < yourPoints){
+      return true;
+    }else{
+      return false;
+    }
+  }
+  
+  console.log(betterThanAverage([2,3],5));
+  console.log(betterThanAverage([2,3],8));
+  console.log(betterThanAverage([2,3],2));
+  console.log(betterThanAverage([2,3],7));
