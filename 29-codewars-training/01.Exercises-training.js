@@ -124,3 +124,75 @@ console.log(findNeedle(['moreJunk','needle']))
  function maps(numbers){
      return numbers.map((value) => value * 2)
  }
+
+
+ /*Write a function that takes an array of numbers and returns the sum of the numbers. The numbers can be negative or non-integer. If the array does not contain any numbers then you should return 0.*/
+
+function sum(numbers){
+    let sum = 0;
+    if(numbers.length === 0) return 0;
+    for (let i = 0; i < numbers.length; i++){
+      sum += numbers[i];
+    }
+    return sum;
+  }
+  
+  console.log(sum([1,5.2,4,0,-1]))
+  console.log(sum([]));
+  
+  
+  /*Simple, remove the spaces from the string, the return the resultant string.*/
+  
+  function noSpace(x){
+    let arrX = x.split(" ").join('')
+    return arrX;
+  }
+  
+  console.log(noSpace('a s d f e g t dd s s'));
+  
+  /*Can you find the needle in the haystack?
+  
+  Write a function findNeedle() that takes an array full of junk but containing one "needle"
+  
+  After your function finds the needle it should return a message (as a string) that says:
+  
+  "found the needle at position " plus the index it found the needle, so: */
+  
+  function findNeedle(haystack){
+    for (let i = 0 ; i < haystack.length; i++){
+      if(haystack[i] === "needle"){
+        console.log(`Found the needle at position : `,i)
+      }
+    }
+  }
+  
+  console.log(findNeedle(['moreJunk','needle']))
+  
+  /*It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.*/
+  
+  function removeChar(word){
+   let arrWord = word.split("");
+    arrWord.shift();
+    arrWord.pop();
+    return arrWord.join('')
+    
+  }
+  
+  console.log(removeChar('eloquent'));
+  
+  
+  /*Write a function which converts the input string to uppercase.*/
+  
+  function makeUpperCase(str){
+    return str.toUpperCase();
+  }
+  
+  console.log(makeUpperCase("hello"));
+  
+  
+  function maps(numbers){
+    return numbers.map((value) => value * 2)
+  }
+  
+  console.log(maps([1,2,3]));
+
