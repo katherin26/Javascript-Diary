@@ -233,3 +233,8 @@ lsof -n -i :5000 | grep LISTEN
 ```
 git remote set-url origin git@github.com:katherin26/portfolio-projects.git
 ```
+
+```
+git pull origin
+git push origin main
+```
