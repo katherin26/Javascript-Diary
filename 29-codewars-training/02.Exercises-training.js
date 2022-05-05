@@ -112,3 +112,100 @@ function grow(x) {
 }
 
 console.log(grow([1, 2, 3, 4]));
+
+/*When provided with a number between 0-9, return it in words.
+
+Input :: 1
+
+Output :: "One".*/
+
+function switchItUp(number) {
+  switch (number) {
+    case 1:
+      return 'Uno';
+      break;
+    case 2:
+      return 'Dos';
+      break;
+    case 3:
+      return 'Three';
+      break;
+    case 4:
+      return 'Four';
+      break;
+    case 5:
+      return 'Five';
+      break;
+    case 6:
+      return 'Six';
+      break;
+    case 7:
+      return 'Seven';
+      break;
+    case 8:
+      return 'Eight';
+      break;
+    case 9:
+      return 'Nine';
+      break;
+  }
+}
+
+/*console.log(switchItUp(9));*/
+
+/*Create a function that takes 2 integers in form of a string as an input, and outputs the sum (also as a string):
+
+Example: (Input1, Input2 -->Output)*/
+
+function sumStr(a, b) {
+  let str = parseInt(a) + parseInt(b);
+  return str.toString();
+}
+
+/*console.log(sumStr('4','5'));*/
+
+/*Implement a function which multiplies two numbers.*/
+
+function multiply(a, b) {
+  return a * b;
+}
+
+/*console.log(multiply(1,2))*/
+
+/*Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+
+Example:
+
+["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+None of the arrays will be empty, so you don't have to worry about that!
+*/
+
+function removeEveryOther(arr) {
+  return arr.filter(function (elem, index) {
+    return index % 2 === 0;
+  });
+}
+
+/*console.log(removeEveryOther(['Hello', 'Goodbye', 'Hello Again']),['Hello', 'Hello Again']);*/
+
+function removeEveryOther2(arr) {
+  let newArr = [];
+  for (let i = 0; i < arr.length; i += 2) {
+    newArr.push(arr[i]);
+  }
+  return newArr;
+}
+
+/*console.log(removeEveryOther2(['Hello', 'Goodbye', 'Hello Again']),['Hello', 'Hello Again']);*/
+
+function index(array, n) {
+  for (let i = 0; i < array.length; i++) {
+    if (i === n) {
+      return Math.pow(array[i], n);
+    }
+  }
+  return -1;
+}
+
+console.log(index([1, 2, 3, 4], 2));
