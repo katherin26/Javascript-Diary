@@ -214,3 +214,78 @@ function lovefunc(flower1, flower2) {
     return false;
   }
 }
+
+/*Complete the function that takes two integers (a, b, where a < b) and return an array of all integers between the input parameters, including them.
+
+For example:
+
+a = 1
+b = 4
+--> [1, 2, 3, 4]*/
+
+let a = 1;
+let b = 4;
+
+for (let i = a; i < b + 1; i++) {
+  console.log(i);
+}
+
+function between(a, b) {
+  let newArr = [];
+  for (let i = a; i <= b; i++) {
+    newArr.push(i);
+  }
+  return newArr;
+}
+
+console.log(between(1, 4));
+
+/*This is the first step to understanding FizzBuzz.
+
+Your inputs: a positive integer, n, greater than or equal to one. n is provided, you have NO CONTROL over its value.
+
+Your expected output is an array of positive integers from 1 to n (inclusive).
+
+Your job is to write an algorithm that gets you from the input to the output.*/
+
+function preFizz(n) {
+  let newArr = [];
+  for (let i = 1; i <= n; i++) {
+    newArr.push(i);
+  }
+  return newArr;
+}
+
+console.log(preFizz(5));
+
+function calculateAge(birthYear) {
+  return birthYear - 2022;
+}
+
+console.log(calculateAge(1992));
+
+function litres(time) {
+  return Math.floor(time * 0.5);
+}
+
+console.log(litres(2));
+
+/*Create a function that takes an integer as an argument and returns "Even" for even numbers or "Odd" for odd numbers.*/
+
+function even_or_odd(number) {
+  if (number % 2 === 0) {
+    console.log(`Even`);
+  } else {
+    console.log(`Odd`);
+  }
+}
+
+console.log(even_or_odd(2));
+console.log(even_or_odd(3));
+
+function even_or_odd(number) {
+  return number % 2 === 0 ? 'Even' : 'Odd';
+}
+
+console.log(even_or_odd(2));
+console.log(even_or_odd(3));
