@@ -179,3 +179,38 @@ function calculator(a, b, sign) {
 }
 
 console.log(calculator(1, 2, '+'));
+
+/*NOTE: Eliminate the !!*/
+
+function remove(string) {
+  let arr = string.split('');
+  let newArr = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] !== '!') {
+      newArr.push(arr[i]);
+    }
+  }
+  return newArr.join('');
+}
+
+console.log(remove('!Hi!!!!'));
+
+/*NOTE:A hero is on his way to the castle to complete his mission. However, he's been told that the castle is surrounded with a couple of powerful dragons! each dragon takes 2 bullets to be defeated, our hero has no idea how many bullets he should carry.. Assuming he's gonna grab a specific given number of bullets and move forward to fight another specific given number of dragons, will he survive?
+
+Return True if yes, False otherwise :) */
+
+function hero(bullets, dragons) {
+  return bullets >= dragons * 2;
+}
+
+console.log(hero(7, 5));
+
+function lovefunc(flower1, flower2) {
+  if (flower1 % 2 !== 0 && flower2 % 2 == 0) {
+    return true;
+  } else if (flower1 % 2 == 0 && flower2 % 2 !== 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
