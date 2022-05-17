@@ -238,3 +238,58 @@ function position(letter) {
 console.log(position('a'));
 console.log(position('z'));
 console.log(position('e'));
+
+/*Given three integers a,b,c, return the largest number obtained after inserting the following operators and brackets : + , * , ()
+
+In other words, try every combination of a,b,c with [*+()], and return the Maximin Obtained.
+*/
+
+function expressionMatter(a, b, c) {
+  let arr = [];
+
+  arr.push(a + b + c);
+  arr.push(a * b * c);
+  arr.push(a + b * c);
+  arr.push(a * b + c);
+  arr.push((a + b) * c);
+  arr.push(a * (b + c));
+
+  return arr.reduce((a, b) => Math.max(a, b));
+}
+
+console.log(expressionMatter(2, 1, 2));
+console.log(expressionMatter(2, 1, 1));
+
+/*Write a function that returns a string in which firstname is swapped with last name.
+
+nameShuffler('john McClane'); => "McClane john"
+*/
+
+function nameShuffler(str) {
+  let reversedStr = str.split(' ');
+  return reversedStr.reverse().join(' ');
+}
+
+console.log(nameShuffler('john McClane'));
+
+/*Write a function BMI that calculates body mass index (bmi = weight/height 2).
+
+if bmi <= 18.5 return "Underweight".
+if bmi <= 25.0 return "Normal".
+if bmi <= 30.0 return "Overweight".
+if bmi > 30 return "Obese".
+*/
+
+function bmi(weight, height) {
+  let bmi = Math.ceil(weight / (height * height));
+
+  return bmi <= 18.5
+    ? 'Underweight'
+    : bmi <= 25.0
+    ? 'Normal'
+    : bmi <= 30.0
+    ? 'Overweight'
+    : 'Obese';
+}
+
+console.log(bmi(80, 1.8));
