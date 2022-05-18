@@ -93,3 +93,124 @@ function check(a, x) {
 }
 
 console.log(check([101, 45, 75, 105, 99, 107], 107));
+
+/*NOTE: PRINT ALL THE NUMBERS*/
+
+function pipeFix(numbers) {
+  let newList = [];
+  for (let i = 0; i < numbers.length; i++) {
+    newList.push(numbers[i]);
+    if (numbers[i + 1] !== undefined && numbers[i + 1] !== numbers[i] + 1) {
+      newList.push(numbers[i] + 1);
+    }
+  }
+  return newList;
+}
+
+console.log(pipeFix([1, 2, 3, 12]));
+
+function pipeFix2(numbers) {
+  let newList = [];
+  //[1,2,3,12]
+  for (let i = 0; i < numbers.length; i++) {
+    let currentNumber = numbers[i];
+    let expectedNextNumber = currentNumber + 1;
+    let actualNextNumber = numbers[i + 1];
+    newList.push(currentNumber);
+    while (
+      actualNextNumber !== undefined &&
+      actualNextNumber !== expectedNextNumber
+    ) {
+      newList.push(expectedNextNumber);
+      expectedNextNumber = expectedNextNumber + 1;
+    }
+  }
+
+  return newList;
+}
+
+function pipeFix3(numbers) {
+  let arr = [];
+  let lastNumber = numbers[numbers.length - 1];
+  let startingNumber = numbers[0];
+
+  for (let i = startingNumber; i <= lastNumber; i++) {
+    arr.push(i);
+  }
+
+  return arr;
+}
+
+console.log(pipeFix2([1, 2, 3, 12]));
+console.log(pipeFix3([1, 2, 3, 12]));
+
+/*NOTE: Write a function that always returns 5 
+  Sounds easy right ? Just bear in mind that you can't use any of the following characters: 0123456789*+-/
+*/
+
+function unusualFive() {
+  return 'jesus'.length;
+}
+
+console.log(unusualFive());
+
+/*Complete the function so that it finds the average of the three scores passed to it and returns the letter value associated with that grade.
+
+Numerical Score	Letter Grade
+90 <= score <= 100	'A'
+80 <= score < 90	'B'
+70 <= score < 80	'C'
+60 <= score < 70	'D'
+0 <= score < 60	'F'
+Tested values are all between 0 and 100. Theres is no need to check for negative values or values greater than 100.
+*/
+
+function getGrade(s1, s2, s3) {
+  let sum = s1 + s2 + s3;
+  let average = sum / 3;
+
+  if (90 <= average && average <= 100) {
+    return 'A';
+  } else if (80 <= average && average < 90) {
+    return 'B';
+  } else if (70 <= average && average < 80) {
+    return 'C';
+  } else if (60 <= average && average < 70) {
+    return 'D';
+  } else {
+    return 'F';
+  }
+}
+
+console.log(getGrade(100));
+
+/*Write a function that checks if a given string (case insensitive is a palindrome. */
+
+function isPalindrome(x) {
+  let word = x.split('');
+  let reversed = word.reverse();
+  let X = x.toLowerCase();
+  let reversedX = reversed.join('');
+
+  return X == reversedX.toLowerCase() ? true : false;
+}
+
+/*NOTE: Just count Sheep !!!*/
+
+function countSheep(num) {
+  if (num === 0) return '';
+  for (let i = 0; i <= num; i++) {
+    console.log(`${i + 1} sheep...`);
+  }
+}
+
+console.log(countSheep(1));
+console.log(countSheep(0));
+
+/*NOTE: Write a function to split a string and convert it into an array of words.*/
+
+function stringToArray(string) {
+  return string.split(' ');
+}
+
+console.log(stringToArray('Robin Singh'));
