@@ -214,3 +214,24 @@ function stringToArray(string) {
 }
 
 console.log(stringToArray('Robin Singh'));
+
+/*Create a method that accepts a list and an item, and returns true if the item belongs to the list, otherwise false.*/
+
+function include(arr, item) {
+  let found = arr.find(el => el === item);
+
+  return found !== undefined ? true : false;
+}
+
+console.log(include([0, 1, 2, 3, 4], 0));
+
+/*Create a function called shortcut to remove the lowecase vowels (a,e,i,o,u) in a given string.*/
+
+function shortcut(string) {
+  let vowels = ['a', 'e', 'i', 'o', 'u'];
+  let strSplited = string.split('');
+
+  return strSplited.filter(word => !vowels.includes(word)).join('');
+}
+
+console.log(shortcut('hello'));
