@@ -223,3 +223,4 @@ function points(games) {
 }
 
 console.log(points(['1:0', '2:0', '3:0', '0:0']));
+
