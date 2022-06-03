@@ -17,3 +17,16 @@ function flat(arr, depth = 1) {
 }
 
 console.log(flat(arr, 2));
+
+/*NOTE: ITERATION AND RECURSION */
+
+for (let i = 1; i <= 5; i++) {
+  console.log(i);
+}
+
+function printNumbers(n, current = 1) {
+  if (current <= n) {
+    console.log(current);
+    printNumbers(n, ++current);
+  }
+}
