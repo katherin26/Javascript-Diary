@@ -76,3 +76,102 @@ function fakeBin(x) {
 }
 
 console.log(fakeBin(`4554`));
+
+/*NOTE: Using .length, shift(), arr.length -1, push(), pop())*/
+
+function getLength(arr) {
+  return arr.length;
+}
+console.log(getLength([1, 2, 3]));
+
+function getFirst(arr) {
+  return arr.shift();
+}
+console.log(getFirst([1, 2, 3]));
+
+function getLast(arr) {
+  return arr[arr.length - 1];
+}
+console.log(getLast([1, 2, 3]));
+
+function pushElement(arr) {
+  var el = 1;
+  arr.push(el);
+  return arr;
+}
+console.log(pushElement([1, 2, 3]));
+
+function popElement(arr) {
+  arr.pop();
+  return arr;
+}
+console.log(popElement([1, 2, 3]));
+
+/*Using if else statement*/
+
+function Sleigh(name, password) {
+  if (name === 'Santa Claus' && password === 'Ho Ho Ho!') {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+console.log(Sleigh('Santa Claus', 'Ho Ho Ho!'));
+
+/*Playing Cards*/
+
+function defineSuit(card) {
+  let arr = card.split('');
+  if (arr[1] === '♦') {
+    return 'diamantes';
+  } else if (arr[1] === '♥') {
+    return 'hearts';
+  } else if (arr[1] === '♣') {
+    return 'clubfs';
+  } else {
+    return 'spades';
+  }
+}
+
+console.log(defineSuit('3♦'));
+
+/*EVEN OR ODD*/
+
+function pickIt(arr) {
+  let odd = [];
+  let even = [];
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] % 2 === 0) {
+      odd.push(arr[i]);
+    } else {
+      even.push(arr[i]);
+    }
+  }
+
+  return [even, odd];
+}
+
+console.log(pickIt([1, 2]));
+
+/*Remove the 0*/
+
+function noBoringZeros(n) {
+  if (n === 0) return n;
+
+  let str = n.toString();
+  let arr = str.split('');
+
+  while (true) {
+    if (arr[arr.length - 1] === '0') {
+      arr.pop();
+    } else {
+      break;
+    }
+  }
+  return parseInt(arr.join(''));
+}
+
+console.log(noBoringZeros(0));
+console.log(noBoringZeros(9600000));
