@@ -168,3 +168,37 @@ function onlyElementAtEvenIndex(array) {
         O(n) ===> Lineal
 
 */
+
+//Exercice 11
+
+function subtotals(array) {
+  var subtotalArray = Array(array.length);
+  for (var i = 0; i < array.length; i++) {
+    var subtotal = 0;
+    for (var j = 0; j <= i; j++) {
+      subtotal += array[j];
+    }
+    subtotalArray[i] = subtotal;
+  }
+  return subtotalArray;
+}
+
+/*
+       1 + 1 1(n) + 2(n) = 2 + 3(n)
+
+        1(n)
+
+         1(n) + n * n + 2(n) * n = 1(n) + n^2 + 2(n^2)
+
+          2(n)
+
+          1(n)
+
+    ==> 2 + 3(n) + 1(n) + 1(n) + n^2 +  2(n^2) + 2(n) + 1(n)
+    
+            2 + 8(n) + 3(n^2)
+            
+             2 + 11(n^2)
+
+             ==> O(n^2)
+*/
