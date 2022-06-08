@@ -50,3 +50,34 @@ NOTE: The logarithm of a number roughly measures the number of times you can div
 2. Big O Notation can give us a high level understainding of the time or space complexity of an algorithm.
 3. Big O Notation doesn't care about precision, only about general trends (linear? quadratic? constant?).
 4. The time or space complexity (as measured by Big O) depends only on the algorithm, not the hardware used to run the algorithm.
+
+**The BIG O of the objects**
+
+```
+let instructor = {
+    firstName: "Kelly",
+    isInstructor: true,
+    favoriteNumbers:[1,2,3,4]
+}
+```
+
+**O(n)**
+
+```
+Object.keys(instructor)
+(3) ["firstName","isInstructor","favoriteNumbers"]
+```
+
+**O(n)**
+
+```
+Object.entries(instructor)
+(3) [Array(2), Array(2), Array(2)]
+```
+
+**O(1)**
+
+```
+instructor.hasOwnProperty("firstName")
+true
+```
