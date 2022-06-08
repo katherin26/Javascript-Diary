@@ -286,3 +286,38 @@ function subtotals(array) {
   }
   return subtotalArray;
 } //O(n)
+
+//Exercise logarithm 1.
+// We need to find the number 6 in the list.
+//It's a unordered list and this take 7 operations, for that reason is Lineal.
+
+let list = [8, 4, 5, 3, 2, 1, 6, 7, 9, 10]; // O(n)
+
+//Exercise logarithm 2.
+// We need to find the number 6 in the list.
+// It's a ordered list and this time takes 2 operations, but why?
+// We are using a best solution and is look the number in the first half and second half and compare.
+// after we compare the half with the number is going to be another half and half , finally our result is 6.
+// with 2 operations only.
+
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+[6, 7, 8, 9, 10];
+[6, 7];
+
+// 0(log10) ===> log2^10 = 2
+
+//Exercise logarithm 3.
+//We need to find list2 in list , how many operations take?
+
+let list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let list2 = [1, 5, 6];
+//is 1 < o > [1,2,3,4]
+//is 1 < o + a 2  [1,2]
+// is 1
+// 1 = 2 operation.
+// 5 = 1 operation
+
+//[6,7,8,9,10]
+//[6,7]
+
+// 6 = 2 operation
