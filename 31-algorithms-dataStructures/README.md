@@ -81,3 +81,28 @@ Object.entries(instructor)
 instructor.hasOwnProperty("firstName")
 true
 ```
+
+**ARRAYS -- ORDERED LISTS**
+
+```
+let names = ['Michael', 'Melissa','Andrea'];
+let values = [true, {}, [],2,"awesome"];
+```
+
+//NOTE: Insertion and removal at the start is worse than the end.
+
+1. Insertion - It depends
+2. Removal - It depends
+3. Searching - O(n)
+4. Access - O(1)
+
+```
+push- O(1)
+pop- O(1)
+shift- O(n)
+unshift- O(n)
+concat- O(n)
+slice- O(n)
+sort- O(n * log n)
+forEach/map/filter/reduce/etc - O(n)
+```
