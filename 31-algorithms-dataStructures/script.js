@@ -26,7 +26,13 @@ function addUpTo2(n) {
   return total;
 }
 
-console.log(addUpTo2(10)); //55 / O(n)
+console.log(addUpTo2(10));
+
+/* 1 + 1 + 1n + 2(n) + 2(n)
+    2 + 5(n)
+    
+     O(n)
+*/
 
 //Exercise 3
 
@@ -39,4 +45,32 @@ for (let i = 1; i <= 10; i++) {
       console.log(i, j, k);
     }
   }
-} //0(n3)
+}
+
+/*
+1 
+10 
+2(10) = 20
+
+10 
+10 * 10 
+10 * 10
+
+10 * 10 
+10 * 10 * 10
+10 * 10 * 10 
+
+= 0(n3)
+*/
+
+//Exercice 4
+
+let total = 0; // 1 assigment
+let i = 1; // 1 assigment
+i <= n; //1n
+i++; // 2n (1 addition and 1 assignment)
+total += i; //2n (1 addition and 1 assignment)
+
+// 1 + 1 + 1n + 2n + 2n
+// 2 + 5n
+// O(n)
