@@ -74,3 +74,34 @@ total += i; //2n (1 addition and 1 assignment)
 // 1 + 1 + 1n + 2n + 2n
 // 2 + 5n
 // O(n)
+
+//Exercise 5
+
+n = 3;
+let total = 0; //1 assignment
+let i = 0; //1 assignment
+i <= n; // (n = 3)
+i++; //2(3) = 6
+total += 1; // 2(6) = 6
+
+/*1 + 1 + n + 2(n) + 2(n)
+    2 + 4(n)
+     O(n)
+*/
+
+//Exercise 6
+
+n = 10;
+let total = 0; // 1 assigment
+let i = 0; // 1 assignment
+i <= n; // (n = 10)
+i++; // 1 assigment, 1 addition  = 2(n) = 20
+total += i; // 1 assigment, 1 addition = 2(n) = 20
+
+/* 1 + 1 + 1n + 2(n) + 2(n) 
+    2 + 5(n)
+        n
+
+    O(n)
+
+*/
