@@ -202,3 +202,87 @@ function subtotals(array) {
 
              ==> O(n^2)
 */
+
+//NOTE: Space Complexity
+/*Explanation: We have one variable called total, one number and the we're looping 
+through, and then we have a second declaration inside the for loop (let i = 0).
+
+So no matter what the size of the array is of NP or in this case, IRR, as it grows 
+it might be a thousends items.
+
+It doesn't have an impact on the space that's taken up because we only have these two
+variables and they exist no matter what.
+*/
+
+function sum(arr) {
+  let total = 0; //1 space
+  //1 space
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  return total;
+} //O(1) space
+
+function double(arr) {
+  let newArr = []; //o(n) Lineal(it's increasing with push (input = newArr))
+  for (let i = 0; i < arr.length; i++) {
+    newArr.push(2 * arr[i]);
+  }
+  return newArr;
+}
+
+//Exercise 1
+
+function logUpToE(n) {
+  for (var i = 1; i <= n; i++) {
+    console.log(i);
+  }
+} //O(1)
+
+//Exercise 2
+
+function logAtMost10(n) {
+  for (var i = 1; i <= Math.min(n, 10); i++) {
+    console.log(i);
+  }
+} // O(1)
+
+//Exercise 3
+
+function onlyElementsAtEvenIndex(array) {
+  var newArray = Array(Math.ceil(array.length / 2));
+  for (var i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      newArray[i / 2] = array[i];
+    }
+  }
+  return newArray;
+} // O(n)
+
+//Exercise 4
+
+function subtotals(array) {
+  var subtotalArray = Array(array.length);
+  for (var i = 0; i < array.length; i++) {
+    var subtotal = 0;
+    for (var j = 0; j <= i; j++) {
+      subtotal += array[j];
+    }
+    subtotalArray[i] = subtotal;
+  }
+  return subtotalArray;
+}
+
+//Exercise 5
+
+function subtotals(array) {
+  var subtotalArray = Array(array.length);
+  for (var i = 0; i < array.length; i++) {
+    var subtotal = 0;
+    for (var j = 0; j <= i; j++) {
+      subtotal += array[j];
+    }
+    subtotalArray[i] = subtotal;
+  }
+  return subtotalArray;
+} //O(n)
