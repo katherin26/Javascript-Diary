@@ -105,3 +105,66 @@ total += i; // 1 assigment, 1 addition = 2(n) = 20
     O(n)
 
 */
+
+//Exercise 7
+
+function logUpTo(n) {
+  for (var i = 1; i <= n; i++) {
+    console.log(i);
+  }
+}
+
+/* 1 + 1n + 2(n) + 1n
+        1 + 3(n)
+            4(n)
+            
+            O(n)
+ */
+
+//Exercise 8
+
+function logAtMost10(n) {
+  for (var i = 1; i <= Math.min((n, 10)); i++) {
+    console.log(i);
+  }
+}
+
+/*  1 + 1n + 2(n) + 1n
+        1 + 4(n)
+
+        O(1) ===> constante ((n) is going to be the minimun number below ten.)
+*/
+
+//Exercise 9
+
+function logAtLeast10(n) {
+  for (var i = 1; i <= Math.max(n, 10); i++) {
+    console.log(i);
+  }
+}
+
+/*
+    1 + 1n + 2(n) + 1n
+        1 + 4(n)
+          
+        O(n) ===> Lineal ((n) is going to be the maximun number)
+*/
+
+//Exercise 10
+
+function onlyElementAtEvenIndex(array) {
+  var newArray = Array(Math.ceil(array.length / 2));
+  for (var i = 0; i < array.length; i++) {
+    if (i % 2 === 0) {
+      newArray[i / 2] = array[i];
+    }
+  }
+  return newArray;
+}
+
+/* 3 + 1 + 1(n) + 2(n) + 1(n) + 1(n) + 1(n) + 1(n)
+        4 + 7(n)
+          
+        O(n) ===> Lineal
+
+*/
