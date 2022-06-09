@@ -175,3 +175,109 @@ function noBoringZeros(n) {
 
 console.log(noBoringZeros(0));
 console.log(noBoringZeros(9600000));
+
+/*Create a function finalGrade, which calculates the final grade of a student depending on two parameters: 
+1. a grade for the exam and 
+2. a number of completed projects.
+
+This function should take two arguments: exam - grade for exam (from 0 to 100); projects - number of completed projects (from 0 and above).
+
+The function should return a number (final grade). There are four types of final grades:
+
+1. 100, if a grade > 90 && projects > 10.
+2. 90, if a grade > 75 && projects > 5
+3. 75, if a grade > 50 && projects > 2.
+4. 0, in other cases 
+*/
+
+/*
+1. write a function
+2. parameters : exam and projects
+input ==> type integer
+3. if else statement , and > && operators.
+4. output ===> type integer
+*/
+
+function finalGrade(exam, projects) {
+  if (exam >= 90 && projects >= 10) {
+    return 100;
+  } else if (exam >= 75 && projects >= 5) {
+    return 90;
+  } else if (exam >= 50 && projects >= 2) {
+    return 75;
+  } else {
+    return 0;
+  }
+}
+
+/*Create a function with two arguments that will return an array of the first (n) multiples of (x).
+
+Assume both the given number and the number of times to count will be positive numbers greater than 0. 
+
+Return the results as an array.
+ */
+
+/*
+1. x = number that is going to be a multyple
+2. n = quantity of multyple
+3. x and n ====> positive numbers.
+3.1 math operation
+4. output = array with all the multiples
+*/
+
+// let x = 2;
+// let n = 10;
+// let multiples = []
+
+// for(let i = x ; i <= n ; i++){
+//   if(i % x === 0){
+//       multiples.push(i)
+//   }
+// }
+// console.log(multiples)
+
+function countBy(x, n) {
+  let z = [];
+  let i = x;
+
+  while (z.length < n) {
+    if (i % x === 0) {
+      z.push(i);
+    }
+    i++;
+  }
+  return z;
+}
+
+/*
+1. Write a function called apple
+2. parameter is going to be = x
+3. if(x) squared is more than 1000, return `It's hotter than the sun!!`
+4. Else return `Help yourself to a honeycomb Yorkie for the glovebox`.
+5. x = number and string
+*/
+
+function apple(x) {
+  let num = parseInt(x);
+  if (Math.pow(num, 2) > 1000) {
+    return `It\'s hotter than the sun!!`;
+  } else {
+    return `Help yourself to a honeycomb Yorkie for the glovebox.`;
+  }
+}
+
+console.log(apple('50'));
+console.log(apple(4));
+
+/*Each number should be formatted that it is rounded to two decimal places.
+You don't need to check whether the input is a valid number because only valid numbers are used in the tests.
+*/
+
+function twoDecimalPlaces(n) {
+  let str = n.toFixed(2);
+  return Number(str);
+}
+
+console.log(twoDecimalPlaces(4.659725356));
+console.log(twoDecimalPlaces(173735326.3783732637948948));
+console.log(twoDecimalPlaces(4.653725356));
