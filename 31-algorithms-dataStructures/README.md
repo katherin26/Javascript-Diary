@@ -106,3 +106,152 @@ slice- O(n)
 sort- O(n * log n)
 forEach/map/filter/reduce/etc - O(n)
 ```
+
+**HOW TO UNDERSTAND A PROBLEM AND SOLVE IT?**
+
+**Step 1 Understand the Problem.**
+
+1.  Can I restate the problem in my own words?
+2.  What are the inputs that go into the problem?
+3.  What are the outputs that should come from the solution to the problem?
+4.  Can the outputs be determined from the inputs? In other words, do I have enough information to solve the
+    problem? (You may not be able to answer this question until you set about solving the problem. That's okay; it's still worth considering the question at this early stage.)
+5.  How should I label the important pieces of data that are a part of the problems?
+
+**Step 2 Explore Concrete Examples**
+
+1. Coming up with examples can help you understand the problem better.
+2. Examples also provide sanity checks that your eventual solution works how it should.
+
+- Start with simple examples.
+- Progress to More Complex Examples.
+- Explore Examples with Empty inputs.
+- Explore Examples with Invalid Inputs.
+
+```
+Write a function which takes in a string and returns counts of each character in the string.
+
+1. Start with Simple Examples.
+
+charCount("aaaa"); // {a:4}
+
+2. Progress to More Complex Examples.
+
+"My phone number is 182763" ====> Contains numbers a 4 words.
+"Hello hi" ====> Uppercase and lowercase
+
+3. Explore Examples with Empty Inputs.
+
+charCount("") ===> What happened?
+
+4. Explore Examples with Invalid Inputs.
+
+charCount() ===> What happened?
+```
+
+**Step 3 Break It Down**
+
+1. Explicity write out the steps you need to take.
+
+" This forces you to think about the code you'll write before you write it, and helps you catch any lingering conceptual issues or misunderstandings before you dive in and have to worry about details. "
+
+```
+Let's do it with the same problem from earlier !
+
+Write a function which takes in a string and returns counts of each character in the string.
+
+function charCount(str){
+    // make object to return at end.
+    // Loop over string, for each character..
+            //If the char is a number/letter AND is a key in object, add one to count.
+            //If the char is a number/letter AND not in object, add it to object and set value to 1.
+            //If character is something else (space, period, etc...) don't do anything.
+    // return object at end
+}
+```
+
+**Step 4 Solve/Simplify**
+
+1. Solve a simpler problem !
+2. Find the core difficulty in what.
+3. Temporarily ignore that difficulty.
+4. Write a simplified solution.
+5. Then incorporate that difficulty back in.
+
+```
+Let's do it with the same problem from earlier !
+
+Write a function which takes in a string and returns counts of each character in the string.
+
+function charCount(str){
+    //make object to return at end.
+
+    var result = {};
+    //Loop over string, for each character...
+    for(var i = 0; i < str.length; i++){
+        var char = str[i];
+        //if the char is a number/letter AND is a key in object, add one to count.
+        if(result[char] > 0){
+            result[char]++;
+            //If the char is a number/letter AND not in object, add it to object and set value to 1.
+        }else{
+            retult[char] = 1;
+        };
+        //If character is something else(space, period, etc.) don't to anything
+        //Return object at end.
+
+        return result;
+    }
+}
+```
+
+**Step 5 Look Back & Refactor**
+
+1. Can you check the result?
+2. Can you derive the result differently?
+3. Can you understand it at a glance?
+4. Can you use the result or method for some other problem?
+5. Can you improve the performance of your solution?
+6. Can you think of other ways to refactor?
+7. How have other people solved this problem?
+
+```
+function charCount(str){
+    var obj = {};
+    for(var i = 0; i < str.length; i++){
+        var char = str[i].toLowerCase();
+        if(/[a-z0-9]/.test(char)){
+            obj[char]++;
+        }else{
+            obj[char] = 1;
+        };
+    }
+    return obj;
+}
+```
+
+```
+function charCount(str){
+    var obj = {};
+    for(var char of str){
+        if(isAlphaNumeric(char)){
+            char = char.toLowerCase();
+            obj[char] = ++obj[char] || 1;
+        }
+    }
+    return obj;
+}
+
+function isAlphaNumberic(char){
+    var code = char.charCodeAt(0);
+    if(!(code > 47 && code < 58) && //numeric (0-9)
+        !(code > 64 && code < 91) && //upper alpha(A-Z)
+        !(code > 96 && code < 123)) && {//lower alpha (a-z)
+        return false;
+        }
+        return true;
+}
+
+charCodeAt(0);
+
+```
