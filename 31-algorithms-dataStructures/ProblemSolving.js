@@ -36,3 +36,46 @@ function countLetters(str1, str2) {
 }
 
 console.log(countLetters('ada', 'ada'));
+
+/*Multiple pointers */
+//NOTE: Finf two number that the sum = 0
+
+function sumZero(arr) {
+  let start = 0;
+  let end = arr.length - 1;
+  let sum = 0;
+
+  while (start < end) {
+    sum = arr[start] + arr[end];
+
+    if (sum > 0) {
+      end--;
+    } else if (sum < 0) {
+      start++;
+    } else {
+      return [arr[start], arr[end]];
+    }
+  }
+  return undefined;
+}
+
+console.log(sumZero([-3, -2, -1, 0, 1, 2]));
+
+/*Multiple pointers = count Unique Values */
+
+function countUniqueValues(arr) {
+  if (arr.length === []) return 0;
+
+  let i = 0;
+
+  for (let j = 1; j < arr.length; j++) {
+    if (arr[i] !== arr[j]) {
+      i++;
+      arr[i] = arr[j];
+    }
+  }
+
+  return i + 1;
+}
+
+console.log(countUniqueValues([1, 2, 3, 4, 4, 4, 7, 7, 12, 12, 13]));
