@@ -264,3 +264,11 @@ charCodeAt(0);
 Creating **Pointers** or values that correspond to an index or position and move towards the beginning, end or middle based on a certain condition.
 
 **Very** efficient for solving problems with minimal space complexity as well.
+
+3. Sliding window
+
+This pattern involves creating a window which can either be an array or number from one position to another.
+
+Depending on a certain condition, the window wither increases or closes (and a new window is created).
+
+Very useful for keeping track of a subset of data in an array / string etc...
