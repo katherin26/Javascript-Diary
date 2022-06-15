@@ -167,3 +167,19 @@ console.log(5);
   power(10,1) return 10 * power(10,0) = 10 * 1
   power(10,0) return 1 
   */
+
+function factorial(num) {
+  if (num === 0) return 1;
+  return num * factorial(num - 1);
+}
+
+console.log(factorial(4)); //24
+
+/*
+  4 * factorial(3) -- 4 * 6 = 24
+  3 * factorial(2) -- 3 * 2 = 6
+  2 * factorial(1) -- 2 * 1 = 2
+  1 * factorial(0) -- 0 * 1 = 1
+  
+  factorial(0) return 1;
+  */
