@@ -272,3 +272,21 @@ This pattern involves creating a window which can either be an array or number f
 Depending on a certain condition, the window wither increases or closes (and a new window is created).
 
 Very useful for keeping track of a subset of data in an array / string etc...
+
+# **RECURSION**
+
+A process (a function in our case) that calls itself.
+
+NOTE: In almost all program languages, there is a built in data structure that manages what happens when functions are invoked.
+It's named the call Stack!!
+
+**The call Stack**
+
+1. It's a stack data structure, we'll talk about that later!!
+2. Any time a function is invoked it is placed (pushed) on the top of the call stack.
+3. When JS sees the return keyword or when the functions ends, the compiler will remove(pop).
+
+**Two essential parts of a recursive function!**
+
+1. Base Case
+2. Different Input
