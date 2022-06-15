@@ -150,3 +150,20 @@ console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
   8 % 2 !== 0
   9 % 2 !== 0 true
   */
+
+/*Write a function called power which accepts a base and an exponent. The function should return the power of the base to the exponent. This function should mimic the functionality of Math.pow()  do not worry about negative bases and exponents.*/
+
+function power(base, exponent) {
+  if (exponent <= 0) return 1;
+
+  return base * power(base, exponent - 1);
+}
+console.log(5);
+
+/*
+  power(10,4) return 10 * power(10,3) = 10 * 1000
+  power(10,3) return 10 * power(10,2) = 10 * 100 
+  power(10,2) return 10 * power(10,1) = 10 * 10 
+  power(10,1) return 10 * power(10,0) = 10 * 1
+  power(10,0) return 1 
+  */
