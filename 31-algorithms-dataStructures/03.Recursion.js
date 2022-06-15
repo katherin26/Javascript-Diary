@@ -120,3 +120,33 @@ console.log(factorial2(3)); //6
   
   3 * (2+1) = 6
   */
+
+/*Helper Method Recursion*/
+
+function collectOddValues(arr) {
+  let result = [];
+  function helper(helperInput) {
+    if (helperInput.length === 0) return;
+
+    if (helperInput[0] % 2 !== 0) {
+      result.push(helperInput[0]);
+    }
+    helper(helperInput.slice(1));
+  }
+  helper(arr);
+  return result;
+}
+
+console.log(collectOddValues([1, 2, 3, 4, 5, 6, 7, 8, 9]));
+
+/*
+  1 % 2 !== 0 true
+  2 % 2 !== 0
+  3 % 2 !== 0 true
+  4 % 2 !== 0
+  5 % 2 !== 0 true
+  6 % 2 !== 0
+  7 % 2 !== 0 true
+  8 % 2 !== 0
+  9 % 2 !== 0 true
+  */
