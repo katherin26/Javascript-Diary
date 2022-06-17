@@ -290,3 +290,24 @@ It's named the call Stack!!
 
 1. Base Case
 2. Different Input
+
+# **SEARCHING ALGORITHMS**
+
+There are mamny different search methods on arrays in Javascript :
+
+1. indexOf
+2. Includes
+3. Find
+4. findIndex
+
+**Example**: We need to check for the number 12.
+
+`[5,8,1,100,12,3,12]`
+
+1. Is 5 === 12 ===> NO
+2. Is 8 === 12 ===> NO
+3. Is 1 === 12 ===> NO
+4. Is 100 === 12 ===> NO
+5. Is 12 === 12 ===> YES RETURN
+6. Is 3 === 12 ===> NO
+7. Is 12 === 12 ===> YES RETURN
