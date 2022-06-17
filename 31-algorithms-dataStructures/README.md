@@ -311,3 +311,19 @@ There are mamny different search methods on arrays in Javascript :
 5. Is 12 === 12 ===> YES RETURN
 6. Is 3 === 12 ===> NO
 7. Is 12 === 12 ===> YES RETURN
+
+# **Binary Search**
+
+1. Binary Search is a much faster form of search.
+2. Rather than eliminating one element at a time, you can eliminate half of the remaining elements at a time.
+3. Binary search only works on **sorted arrays**!
+
+**PseudoCode**
+
+1.  This function accepts a sorted array and a value.
+2.  Create a **left pointer** at the start of the array, and a **right pointer** at the end of the array.
+3.  While the left pointer comes before the right pointer:
+
+         3.1 create a pointer in the middle.
+         3.2 If you find the value you want, return the index.
+         3.3 If the value is too small, move the left pointer up.
