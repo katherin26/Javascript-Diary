@@ -79,3 +79,14 @@ function binarySearch(sortedArray, needle) {
   8 = 8  ==>  Return 8;
   
   */
+
+/*NOTE: NAIVE STRING SEARCH EXERCISE*/
+
+/*
+1. Loop over the longer string.
+2. Loop over the shorter string.
+3. If the characters don't match, break out of the inner loop.
+4. If the characters do match, keep going.
+5. If you complete the inner loop and find a match, increment the count of matches.
+6. Return the count.
+*/
