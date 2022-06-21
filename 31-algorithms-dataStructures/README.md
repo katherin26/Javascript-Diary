@@ -374,3 +374,16 @@ Similar to bubble sort, but instead of first placing large values into sorted po
 [ 1 , 3 , 4 , 5 , 2 ]   => swap 1 and 5.
 
 ```
+
+# **INSERTION SORT**
+
+Builds up the sort by gradually creating a larger left half which is always sorted.
+
+```
+[5,3,4,1,2]
+  [3,5,4,1,2]
+    [3,4,5,1,2]
+      [1,3,4,5,2]
+        [1,2,3,4,5]
+
+```
