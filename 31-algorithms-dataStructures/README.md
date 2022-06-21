@@ -327,3 +327,31 @@ There are mamny different search methods on arrays in Javascript :
          3.1 create a pointer in the middle.
          3.2 If you find the value you want, return the index.
          3.3 If the value is too small, move the left pointer up.
+
+# **Bubble Sort**
+
+1.  Sorting is the process of rearranging the items in a collection (e.g. an array) so that the items are in some kind of order.
+
+         1.1 Sorting numbers from smallest to largest.
+         1.2 Sorting names alphabetically.
+         1.3 Sorting movies based on release year.
+         1.4 Sorting movies based on revenue.
+
+**BUBBLE SORT**
+
+A sorting algorithm where the largest values bubble up to the top!
+
+**First Iteration**
+
+```
+1. [5,3,4,1,2]
+    \ /
+2. [3,5,4,1,2]
+      \ /
+3. [3,4,5,1,2]
+        \ /
+4. [3,4,1,5,2]
+          \ /
+5. [3,4,1,2,5]
+
+```
