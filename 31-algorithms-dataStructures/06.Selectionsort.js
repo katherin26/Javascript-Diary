@@ -15,4 +15,50 @@ function selectionSort(arr) {
   return arr;
 }
 
-console.log(selectionSort([0, 2, 34, 22, 10, 19, 17]));
+console.log(selectionSort([5, 4, 3, 2, 1]));
+
+/* 
+Outer Loop : 
+
+i = 0 
+
+  j = 1
+
+       5  4  3  2  1  
+       i  j
+  
+  j = 2 
+
+       5  4  3  2  1
+       i     j 
+  
+  j = 3 
+
+       5  4  3  2  1
+       i        j
+
+  j = 4 
+
+       5  4  3  2  1
+       i           j 
+
+       1  4  3  2  5    1 => fully sorted
+
+-------------------------------------------
+
+Outer Loop : 
+
+i = 1 
+
+  j = 2
+
+       1  4  3  2  5  
+          i  j
+  
+  j = 3 
+
+       1  4  3  2  5  
+          i     j
+  
+       1  2  3  4  5    ==> 2 fully sorted
+*/
