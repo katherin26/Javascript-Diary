@@ -355,3 +355,22 @@ A sorting algorithm where the largest values bubble up to the top!
 5. [3,4,1,2,5]
 
 ```
+
+# **Selection Sort**
+
+Similar to bubble sort, but instead of first placing large values into sorted position, it places small values into sorted position.
+
+```
+[ 5 , 3 , 4 , 1 , 2 ]
+  \   /
+[ 5 , 3 , 4 , 1 , 2 ]
+  \       /
+[ 5 , 3 , 4 , 1 , 2 ]
+  \           /
+[ 5 , 3 , 4 , 1 , 2 ]  ==> in this point 1 is less than 5
+  \           /
+[ 5 , 3 , 4 , 1 , 2 ]
+  \               /
+[ 1 , 3 , 4 , 5 , 2 ]   => swap 1 and 5.
+
+```
