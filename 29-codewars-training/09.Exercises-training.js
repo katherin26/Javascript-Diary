@@ -281,3 +281,94 @@ function twoDecimalPlaces(n) {
 console.log(twoDecimalPlaces(4.659725356));
 console.log(twoDecimalPlaces(173735326.3783732637948948));
 console.log(twoDecimalPlaces(4.653725356));
+
+/*What day*/
+
+function whatday(num) {
+  if (1 === num) {
+    return `Sunday`;
+  } else if (2 === num) {
+    return `Monday`;
+  } else if (3 === num) {
+    return `Tuesday`;
+  } else if (4 === num) {
+    return `Wednesday`;
+  } else if (5 === num) {
+    return `Thursday`;
+  } else if (6 === num) {
+    return ` Friday`;
+  } else if (7 === num) {
+    return `Saturday`;
+  } else {
+    return `Wrong, please enter a number between 1 and 7`;
+  }
+}
+
+/*Traffic light: */
+
+function updateLight(current) {
+  if (current === 'green') {
+    return 'yellow';
+  } else if (current === 'yellow') {
+    return 'red';
+  } else {
+    return 'green';
+  }
+}
+
+/*How much I love you*/
+
+function howMuchILoveYou(nbPetals) {
+  if (nbPetals === 1 || nbPetals === 7) {
+    return `I love you`;
+  } else if (nbPetals === 2) {
+    return `a little`;
+  } else if (nbPetals === 3) {
+    return `a lot`;
+  } else if (nbPetals === 4) {
+    return `passionately`;
+  } else if (nbPetals === 5) {
+    return `madly`;
+  } else if (nbPetals === 6) {
+    return `not at all`;
+  }
+}
+
+/*3 Functions*/
+
+var a1 = 'A',
+  a2 = 'a',
+  b1 = 'B',
+  b2 = 'b',
+  c1 = 'C',
+  c2 = 'c',
+  d1 = 'D',
+  d2 = 'd',
+  e1 = 'E',
+  e2 = 'e',
+  n1 = 'N',
+  n2 = 'n';
+
+function Dad() {
+  return d1 + a2 + d2;
+}
+function Bee() {
+  return b1 + e2 + e2;
+}
+function banana() {
+  return b2 + a2 + n2 + a2 + n2 + a2;
+}
+
+/*Set Alarm*/
+
+function setAlarm(employed, vacation) {
+  if (
+    (employed === true && vacation === true) ||
+    (employed === false && vacation === true) ||
+    (employed === false && vacation === false)
+  ) {
+    return false;
+  } else {
+    return true;
+  }
+}
