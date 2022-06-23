@@ -30,3 +30,17 @@ function insertionSort(arr) {
 }
 
 console.log(insertionSort([2, 1, 9, 76, 4]));
+
+/*
+
+[ 2 ] 1 , 9 , 76 , 4 
+
+[ 1 , 2 ], 9 , 76 , 4
+
+[1, 2 , 9], 76 , 4
+
+[1, 2 , 9, 76], 4
+
+[1, 2 , 4 , 9, 76]  ===> output
+
+*/
